@@ -1,0 +1,206 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "puzzles": "Puzzles",
+    "about": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "Ingeniero Backend",
+    "subtitle": "Cloud Developer",
+    "description": "Especializado en Azure, .NET y arquitectura cloud. Desarrollo soluciones escalables con foco en código limpio, rendimiento y mantenibilidad.",
+    "cta": {
+      "projects": "Ver proyectos",
+      "contact": "Contactar"
+    },
+    "focus": {
+      "title": "Enfoque",
+      "architecture": {
+        "title": "Arquitectura",
+        "description": "Diseño de sistemas escalables y mantenibles. Priorizo la claridad estructural y la separación de responsabilidades."
+      },
+      "cleanCode": {
+        "title": "Código Limpio",
+        "description": "Código legible, bien documentado y fácil de mantener. Principios SOLID y buenas prácticas como base del desarrollo."
+      },
+      "performance": {
+        "title": "Rendimiento",
+        "description": "Optimización y eficiencia desde el diseño. Sistemas que escalan sin comprometer la calidad del código."
+      },
+      "professionalism": {
+        "title": "Profesionalidad",
+        "description": "Enfoque pragmático y soluciones prácticas. Entrego valor sin overengineering ni complejidad innecesaria."
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "description": "Una selección de proyectos que reflejan mi enfoque en arquitectura, código limpio y soluciones escalables.",
+    "comingSoon": "Próximamente: proyectos destacados en desarrollo."
+  },
+  "puzzles": {
+    "title": "Puzzles",
+    "description": "Puzzles de lógica diarios. Me encanta resolver puzzles y por eso hay una sección dedicada en mi portfolio.",
+    "intro": "Cada día se publica un nuevo puzzle de lógica que todos los visitantes ven. El mismo puzzle se muestra a todos durante ese día, y cada día se genera automáticamente uno nuevo.",
+    "comingSoon": "Próximamente: nuevos puzzles en desarrollo."
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description": "Backend Engineer especializado en Azure y .NET, con experiencia en desarrollo cloud y arquitectura de sistemas escalables.",
+    "intro": {
+      "paragraph1": "Soy ingeniero backend especializado en el desarrollo de sistemas cloud con Azure y .NET. Mi trabajo se centra en construir arquitecturas que escalan, APIs que funcionan bajo carga y código que se mantiene con el tiempo. Trabajo principalmente con Azure Functions, ASP.NET Core y servicios cloud, diseñando soluciones que equilibran rendimiento, mantenibilidad y coste operativo.",
+      "paragraph2": "En The Bubble Hub trabajo en sistemas backend que soportan aplicaciones móviles en producción. Mi responsabilidad abarca desde el análisis de requisitos hasta el diseño e implementación de lógica de negocio, definición de contratos de API e integración con servicios externos. Resuelvo problemas que van desde optimizar algoritmos de ranking y estructuras de datos, hasta diseñar flujos de autenticación seguros y gestionar sistemas de suscripción de Apple y Google que impactan directamente la experiencia del usuario. He desarrollado funciones serverless, diseñado esquemas de base de datos optimizados y construido pipelines de CI/CD. Esta exposición a sistemas en producción me ha enseñado a pensar en escalabilidad desde el diseño y a considerar el impacto de cada decisión técnica. He evolucionado de escribir código que funciona a diseñar sistemas que escalan, de resolver problemas individuales a pensar en arquitecturas completas.",
+      "paragraph3": "Antes de esto, en Ernst & Young trabajé en el SOC como consultor de tecnología y seguridad, especializado en ingeniería SIEM. Allí aprendí a pensar en sistemas a gran escala desde la perspectiva de observabilidad, confiabilidad y seguridad. Lideré migraciones de plataformas SIEM y desarrollé reglas de detección que procesaban millones de eventos diarios. Esta experiencia me dio una comprensión profunda de cómo funcionan los sistemas distribuidos bajo carga real y cómo diseñar pipelines de datos robustos. Aprendí que la observabilidad no es opcional: cuando un sistema procesa millones de eventos, necesitas métricas, logs y trazas para entender qué está pasando. Esta experiencia me dio una mentalidad que aplico constantemente: pensar en cómo un sistema puede fallar, cómo puede ser atacado, y cómo puede degradarse de forma controlada. Esta perspectiva ha sido fundamental en mi evolución como ingeniero backend.",
+      "paragraph4": "Mi formación en Ingeniería del Software me proporcionó una base sólida en fundamentos de computación, estructuras de datos, algoritmos y diseño de sistemas. Esta base teórica se aplica constantemente: cuando optimizo algoritmos, aplico conocimientos de complejidad computacional; cuando diseño estructuras de datos, entiendo las implicaciones de cada elección; cuando tomo decisiones arquitectónicas, tengo fundamentos para evaluar trade-offs. Durante la carrera desarrollé proyectos reales, como una plataforma web para gestión de contadores inteligentes, que me enseñó a traducir requisitos del mundo real en arquitecturas de software y a pensar en sistemas completos, no solo en código. Complementé esta formación técnica con un máster en Educación Secundaria, que me aportó habilidades de comunicación y estructuración de conocimiento que aplico al documentar sistemas y explicar decisiones técnicas. Esta combinación me permite diseñar sistemas técnicamente sólidos y comunicar por qué esas decisiones tienen sentido. Mi enfoque hacia el aprendizaje es continuo: estudio sistemas en producción, experimento con nuevas aproximaciones y busco entender no solo cómo hacer algo, sino por qué una solución es mejor que otra en un contexto determinado."
+    },
+    "experience": {
+      "title": "Experiencia",
+      "bubbleHub": {
+        "company": "The Bubble Hub",
+        "role": "Back-end Engineer",
+        "period": "Abril 2024 – Presente",
+        "location": "Málaga, España",
+        "description": "Desarrollo de soluciones backend escalables basadas en cloud usando Azure Functions y ASP.NET Core. Especializado en APIs RESTful, autenticación JWT/OAuth, integración de sistemas de suscripción (Apple/Google), y CI/CD con Azure DevOps."
+      },
+      "ey": {
+        "company": "Ernst & Young",
+        "role": "Technology and Security Consultant",
+        "period": "Abril 2022 – Abril 2024",
+        "location": "Málaga, España",
+        "description": "Especializado en ingeniería SIEM dentro del SOC, liderando migraciones, integración de fuentes y desarrollo de reglas avanzadas. Contribución a proyectos backend con enfoque en escalabilidad y seguridad."
+      }
+    },
+    "education": {
+      "title": "Formación",
+      "university": {
+        "name": "Universidad de Málaga",
+        "degree": "Grado en Ingeniería del Software",
+        "grade": "7.51/10",
+        "date": "Octubre 2022"
+      },
+      "master": {
+        "name": "Universidad Internacional de Andalucía",
+        "degree": "Máster en Educación Secundaria",
+        "grade": "8.9/10",
+        "date": "Septiembre 2025"
+      }
+    },
+    "skills": {
+      "title": "Tecnologías",
+      "advanced": "Avanzado: C#, Java, Azure Cloud, Docker, Python, ASP.NET, SQL, CosmosDB, MongoDB",
+      "intermediate": "Intermedio: Kubernetes, JavaScript, React, Django, Spring, SIEM (Splunk, QRadar, ElasticSearch)"
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "Estoy abierto a oportunidades y colaboraciones interesantes.",
+    "form": {
+      "title": "Enviar mensaje",
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "Tu mensaje...",
+      "submit": "Enviar",
+      "sending": "Enviando...",
+      "success": "Mensaje enviado correctamente. Te responderé pronto.",
+      "error": "Error al enviar el mensaje. Por favor, intenta de nuevo o usa el email directo.",
+      "consent": {
+        "text": "Acepto el procesamiento de mis datos personales según la",
+        "link": "Política de Privacidad"
+      }
+    },
+    "email": "Email",
+    "phone": "Teléfono",
+    "location": "Ubicación",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "copyright": "© {year} Jesús Jiménez Alcantara",
+    "domain": "jjalcantara.dev",
+    "privacy": "Política de Privacidad"
+  },
+  "a11y": {
+    "skipToContent": "Saltar al contenido principal"
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: Diciembre 2025",
+    "sections": {
+      "dataController": {
+        "title": "1. Responsable del Tratamiento",
+        "content": {
+          "name": "Nombre: Jesús Jiménez Alcantara",
+          "email": "Email: contact@jjalcantara.dev",
+          "location": "Ubicación: Vélez-Málaga, 29700, España"
+        }
+      },
+      "dataCollection": {
+        "title": "2. Datos que Recopilamos",
+        "content": {
+          "paragraph1": "A través del formulario de contacto de este sitio web, recopilamos los siguientes datos personales:",
+          "paragraph2": "Estos datos se recopilan únicamente cuando usted los proporciona voluntariamente al enviar el formulario de contacto. **Importante: estos datos NO se almacenan en este sitio web.** Los datos se envían directamente a través de Formspree y solo se utilizan para que yo pueda responder a su consulta por email.",
+          "list": {
+            "name": "Nombre",
+            "email": "Dirección de correo electrónico",
+            "message": "Mensaje o contenido de la comunicación"
+          }
+        }
+      },
+      "purpose": {
+        "title": "3. Finalidad del Tratamiento",
+        "content": {
+          "paragraph1": "Los datos personales recopilados se utilizan exclusivamente para responder a sus consultas y comunicaciones enviadas a través del formulario de contacto.",
+          "paragraph2": "No utilizamos sus datos para fines de marketing ni los compartimos con terceros para otros propósitos."
+        }
+      },
+      "legalBasis": {
+        "title": "4. Base Legal",
+        "content": "El tratamiento de sus datos personales se basa en su consentimiento explícito, que usted otorga al marcar la casilla de aceptación en el formulario de contacto antes de enviarlo."
+      },
+      "dataProcessing": {
+        "title": "5. Procesamiento de Datos",
+        "content": {
+          "paragraph1": "Los datos del formulario de contacto se procesan a través de Formspree, un servicio de terceros que actúa como procesador de datos. Formspree está certificado y cumple con el RGPD. **Este sitio web no almacena ningún dato personal de los usuarios.** Los datos se envían directamente a Formspree, que los procesa y me los reenvía por email.",
+          "paragraph2": "Puede consultar la política de privacidad de Formspree en:",
+          "link": "https://formspree.io/legal/privacy-policy"
+        }
+      },
+      "dataRetention": {
+        "title": "6. Conservación de Datos",
+        "content": "Este sitio web no almacena datos personales. Los datos enviados a través del formulario se procesan por Formspree y se me envían por email. La conservación de estos datos depende de la configuración de Formspree y de mi bandeja de entrada de email. Los datos se conservarán únicamente durante el tiempo necesario para responder a su consulta."
+      },
+      "yourRights": {
+        "title": "7. Sus Derechos",
+        "content": {
+          "intro": "De acuerdo con el Reglamento General de Protección de Datos (RGPD), usted tiene derecho a:",
+          "rights": {
+            "access": "Acceder a sus datos personales",
+            "rectification": "Rectificar datos inexactos o incompletos",
+            "erasure": "Solicitar la supresión de sus datos",
+            "objection": "Oponerse al tratamiento de sus datos",
+            "portability": "Solicitar la portabilidad de sus datos"
+          },
+          "contact": "Para ejercer estos derechos, puede contactar conmigo en: contact@jjalcantara.dev"
+        }
+      },
+      "cookies": {
+        "title": "8. Cookies",
+        "content": "Este sitio web no utiliza cookies propias. No se instalan cookies en su dispositivo cuando visita este sitio web."
+      },
+      "changes": {
+        "title": "9. Cambios en la Política de Privacidad",
+        "content": "Me reservo el derecho de actualizar esta política de privacidad cuando sea necesario. La fecha de la última actualización se indica al inicio de este documento."
+      },
+      "contact": {
+        "title": "10. Contacto",
+        "content": "Si tiene alguna pregunta sobre esta política de privacidad o sobre el tratamiento de sus datos personales, puede contactar conmigo en:",
+        "emailLabel": "Email"
+      }
+    }
+  }
+}
+

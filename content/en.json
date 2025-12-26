@@ -1,0 +1,206 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "puzzles": "Puzzles",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Backend Engineer",
+    "subtitle": "Cloud Developer",
+    "description": "Specialized in Azure, .NET, and cloud architecture. I develop scalable solutions with a focus on clean code, performance, and maintainability.",
+    "cta": {
+      "projects": "View projects",
+      "contact": "Contact"
+    },
+    "focus": {
+      "title": "Focus",
+      "architecture": {
+        "title": "Architecture",
+        "description": "Design of scalable and maintainable systems. I prioritize structural clarity and separation of concerns."
+      },
+      "cleanCode": {
+        "title": "Clean Code",
+        "description": "Readable, well-documented, and easy-to-maintain code. SOLID principles and best practices as the foundation of development."
+      },
+      "performance": {
+        "title": "Performance",
+        "description": "Optimization and efficiency from design. Systems that scale without compromising code quality."
+      },
+      "professionalism": {
+        "title": "Professionalism",
+        "description": "Pragmatic approach and practical solutions. I deliver value without overengineering or unnecessary complexity."
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "A selection of projects that reflect my focus on architecture, clean code, and scalable solutions.",
+    "comingSoon": "Coming soon: featured projects in development."
+  },
+  "puzzles": {
+    "title": "Puzzles",
+    "description": "Daily logic puzzles. I love solving puzzles, which is why there's a dedicated section in my portfolio.",
+    "intro": "A new logic puzzle is published each day that all visitors see. The same puzzle is shown to everyone during that day, and a new one is automatically generated each day.",
+    "comingSoon": "Coming soon: new puzzles in development."
+  },
+  "about": {
+    "title": "About",
+    "description": "Backend Engineer specialized in Azure and .NET, with experience in cloud development and scalable system architecture.",
+    "intro": {
+      "paragraph1": "I'm a backend engineer specialized in building cloud systems with Azure and .NET. My work focuses on creating architectures that scale, APIs that perform under load, and code that remains maintainable over time. I primarily work with Azure Functions, ASP.NET Core, and cloud services, designing solutions that balance performance, maintainability, and operational cost.",
+      "paragraph2": "At The Bubble Hub I work on backend systems that support mobile applications in production. My responsibility spans from analyzing requirements to designing and implementing business logic, defining API contracts, and integrating with external services. I solve problems ranging from optimizing ranking algorithms and data structures to designing secure authentication flows and managing Apple and Google subscription systems that directly impact user experience. I've developed serverless functions, designed optimized database schemas, and built CI/CD pipelines. This exposure to production systems has taught me to think in terms of scalability from design and to consider the impact of each technical decision. I've evolved from writing code that works to designing systems that scale, from solving individual problems to thinking about complete architectures.",
+      "paragraph3": "Before this, at Ernst & Young I worked in the SOC as a technology and security consultant, specialized in SIEM engineering. There I learned to think about large-scale systems from the perspective of observability, reliability, and security. I led SIEM platform migrations and developed detection rules that processed millions of daily events. This experience gave me a deep understanding of how distributed systems work under real load and how to design robust data pipelines. I learned that observability is not optional: when a system processes millions of events, you need metrics, logs, and traces to understand what's happening. This security experience gave me a mindset I constantly apply: thinking about how a system can fail, how it can be attacked, and how it can degrade gracefully. This perspective has been fundamental in my evolution as a backend engineer.",
+      "paragraph4": "My Software Engineering degree provided me with a solid foundation in computing fundamentals, data structures, algorithms, and system design. This theoretical foundation applies constantly: when I optimize algorithms, I apply computational complexity knowledge; when I design data structures, I understand the implications of each choice; when I make architectural decisions, I have foundations to evaluate trade-offs. During my studies I developed real projects, such as a web platform for smart meter management, which taught me to translate real-world requirements into software architectures and to think about complete systems, not just code. I complemented this technical education with a Master's in Secondary Education, which provided me with communication and knowledge structuring skills that I apply when documenting systems and explaining technical decisions. This combination allows me to design technically sound systems and communicate why those decisions make sense. My approach to learning is continuous: I study systems in production, experiment with new approaches, and seek to understand not just how to do something, but why one solution is better than another in a given context."
+    },
+    "experience": {
+      "title": "Experience",
+      "bubbleHub": {
+        "company": "The Bubble Hub",
+        "role": "Back-end Engineer",
+        "period": "April 2024 – Present",
+        "location": "Malaga, Spain",
+        "description": "Development of scalable cloud-based backend solutions using Azure Functions and ASP.NET Core. Specialized in RESTful APIs, JWT/OAuth authentication, subscription system integration (Apple/Google), and CI/CD with Azure DevOps."
+      },
+      "ey": {
+        "company": "Ernst & Young",
+        "role": "Technology and Security Consultant",
+        "period": "April 2022 – April 2024",
+        "location": "Malaga, Spain",
+        "description": "Specialized in SIEM engineering within the SOC, leading migrations, source integration, and advanced rule development. Contribution to backend projects with focus on scalability and security."
+      }
+    },
+    "education": {
+      "title": "Education",
+      "university": {
+        "name": "University of Malaga",
+        "degree": "Bachelor's Degree in Software Engineering",
+        "grade": "7.51/10",
+        "date": "October 2022"
+      },
+      "master": {
+        "name": "International University of Andalusia",
+        "degree": "Master's Degree in Secondary Education",
+        "grade": "8.9/10",
+        "date": "September 2025"
+      }
+    },
+    "skills": {
+      "title": "Technologies",
+      "advanced": "Advanced: C#, Java, Azure Cloud, Docker, Python, ASP.NET, SQL, CosmosDB, MongoDB",
+      "intermediate": "Intermediate: Kubernetes, JavaScript, React, Django, Spring, SIEM (Splunk, QRadar, ElasticSearch)"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "I'm open to interesting opportunities and collaborations.",
+    "form": {
+      "title": "Send message",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Your message...",
+      "submit": "Send",
+      "sending": "Sending...",
+      "success": "Message sent successfully. I'll get back to you soon.",
+      "error": "Error sending message. Please try again or use the direct email.",
+      "consent": {
+        "text": "I agree to the processing of my personal data according to the",
+        "link": "Privacy Policy"
+      }
+    },
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "copyright": "© {year} Jesús Jiménez Alcantara",
+    "domain": "jjalcantara.dev",
+    "privacy": "Privacy Policy"
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: December 2025",
+    "sections": {
+      "dataController": {
+        "title": "1. Data Controller",
+        "content": {
+          "name": "Name: Jesús Jiménez Alcantara",
+          "email": "Email: contact@jjalcantara.dev",
+          "location": "Location: Vélez-Málaga, 29700, Spain"
+        }
+      },
+      "dataCollection": {
+        "title": "2. Data We Collect",
+        "content": {
+          "paragraph1": "Through the contact form on this website, we collect the following personal data:",
+          "paragraph2": "This data is collected only when you voluntarily provide it by submitting the contact form. **Important: this data is NOT stored on this website.** The data is sent directly through Formspree and is only used so I can respond to your inquiry via email.",
+          "list": {
+            "name": "Name",
+            "email": "Email address",
+            "message": "Message or communication content"
+          }
+        }
+      },
+      "purpose": {
+        "title": "3. Purpose of Processing",
+        "content": {
+          "paragraph1": "The personal data collected is used exclusively to respond to your inquiries and communications sent through the contact form.",
+          "paragraph2": "We do not use your data for marketing purposes nor do we share it with third parties for other purposes."
+        }
+      },
+      "legalBasis": {
+        "title": "4. Legal Basis",
+        "content": "The processing of your personal data is based on your explicit consent, which you grant by checking the acceptance box in the contact form before submitting it."
+      },
+      "dataProcessing": {
+        "title": "5. Data Processing",
+        "content": {
+          "paragraph1": "Contact form data is processed through Formspree, a third-party service that acts as a data processor. Formspree is certified and complies with GDPR. **This website does not store any personal data from users.** The data is sent directly to Formspree, which processes it and forwards it to me via email.",
+          "paragraph2": "You can review Formspree's privacy policy at:",
+          "link": "https://formspree.io/legal/privacy-policy"
+        }
+      },
+      "dataRetention": {
+        "title": "6. Data Retention",
+        "content": "This website does not store personal data. Data sent through the form is processed by Formspree and forwarded to me via email. The retention of this data depends on Formspree's configuration and my email inbox. Data will be retained only for the time necessary to respond to your inquiry."
+      },
+      "yourRights": {
+        "title": "7. Your Rights",
+        "content": {
+          "intro": "In accordance with the General Data Protection Regulation (GDPR), you have the right to:",
+          "rights": {
+            "access": "Access your personal data",
+            "rectification": "Rectify inaccurate or incomplete data",
+            "erasure": "Request deletion of your data",
+            "objection": "Object to the processing of your data",
+            "portability": "Request portability of your data"
+          },
+          "contact": "To exercise these rights, you can contact me at: contact@jjalcantara.dev"
+        }
+      },
+      "cookies": {
+        "title": "8. Cookies",
+        "content": "This website does not use its own cookies. No cookies are installed on your device when you visit this website."
+      },
+      "changes": {
+        "title": "9. Changes to Privacy Policy",
+        "content": "I reserve the right to update this privacy policy when necessary. The date of the last update is indicated at the beginning of this document."
+      },
+      "contact": {
+        "title": "10. Contact",
+        "content": "If you have any questions about this privacy policy or about the processing of your personal data, you can contact me at:",
+        "emailLabel": "Email"
+      }
+    }
+  }
+}
+
