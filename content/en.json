@@ -108,7 +108,6 @@
   },
   "contact": {
     "title": "Contact",
-    "description": "I'm open to interesting opportunities and collaborations.",
     "form": {
       "title": "Send message",
       "name": "Name",

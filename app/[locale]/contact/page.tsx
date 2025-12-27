@@ -18,7 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: locale === "es" 
       ? "Contacto | Jesús Jiménez Alcántara" 
       : "Contact | Jesús Jiménez Alcántara",
-    description: t.contact.description,
+    description: locale === "es" 
+      ? "Página de contacto de Jesús Jiménez Alcántara, Backend Engineer" 
+      : "Contact page for Jesús Jiménez Alcántara, Backend Engineer",
     keywords: [
       "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcantara",
@@ -33,7 +35,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title: locale === "es" 
         ? "Contacto | Jesús Jiménez Alcántara" 
         : "Contact | Jesús Jiménez Alcántara",
-      description: t.contact.description,
+      description: locale === "es" 
+        ? "Página de contacto de Jesús Jiménez Alcántara, Backend Engineer" 
+        : "Contact page for Jesús Jiménez Alcántara, Backend Engineer",
       url: `${baseUrl}/${locale}/contact`,
     },
   };
@@ -51,11 +55,6 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight mb-6 text-black">
             {t.contact.title}
           </h1>
-        </ScrollAnimation>
-        <ScrollAnimation animation="fade-up" delay={100}>
-          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-2xl mb-12">
-            {t.contact.description}
-          </p>
         </ScrollAnimation>
 
         <section className="border-t border-gray-200 pt-12 mb-16" aria-labelledby="form-heading">
