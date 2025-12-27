@@ -49,6 +49,12 @@ body {
   outline-offset: 2px;
 }
 
+/* Touch manipulation for better mobile interaction */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Skip link styles */
 a[href="#main-content"]:focus {
   position: absolute;

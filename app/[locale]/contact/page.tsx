@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ContactForm from "@/components/ContactForm";
@@ -5,6 +6,37 @@ import ScrollAnimation from "@/components/ScrollAnimation";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale: localeParam } = await params;
+  const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
+  const t = getContent(locale);
+  const baseUrl = "https://jjalcantara.dev";
+
+  return {
+    title: locale === "es" 
+      ? "Contacto | Jesús Jiménez Alcántara" 
+      : "Contact | Jesús Jiménez Alcántara",
+    description: t.contact.description,
+    keywords: [
+      "Jesús Jiménez Alcántara",
+      "Jesus Jimenez Alcantara",
+      "contact",
+      "contacto",
+      "Backend Engineer",
+      "Ingeniero Backend",
+      "Málaga",
+      "contact@jjalcantara.dev",
+    ],
+    openGraph: {
+      title: locale === "es" 
+        ? "Contacto | Jesús Jiménez Alcántara" 
+        : "Contact | Jesús Jiménez Alcántara",
+      description: t.contact.description,
+      url: `${baseUrl}/${locale}/contact`,
+    },
+  };
 }
 
 export default async function Contact({ params }: { params: Promise<{ locale: string }> }) {

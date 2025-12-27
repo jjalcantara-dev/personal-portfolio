@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/StructuredData";
 import { defaultLocale, isValidLocale, locales } from "@/lib/i18n";
 import { getContent } from "@/lib/content";
 
@@ -26,36 +27,78 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = getContent(locale);
 
   const title = locale === "es"
-    ? "Jesús Jiménez Alcantara | Ingeniero Backend"
-    : "Jesús Jiménez Alcantara | Backend Engineer";
+    ? "Jesús Jiménez Alcántara | Ingeniero Backend | Azure & .NET Specialist"
+    : "Jesús Jiménez Alcántara | Backend Engineer | Azure & .NET Specialist";
 
   const baseUrl = "https://jjalcantara.dev";
   const canonicalUrl = `${baseUrl}/${locale}`;
 
   return {
     metadataBase: new URL(baseUrl),
+    icons: {
+      icon: [
+        { url: "/favicon_centered.png", type: "image/png", sizes: "512x512" },
+        { url: "/favicon_centered.png", type: "image/png", sizes: "192x192" },
+        { url: "/favicon_centered.png", type: "image/png", sizes: "96x96" },
+        { url: "/favicon_centered.png", type: "image/png", sizes: "64x64" },
+        { url: "/favicon_centered.png", type: "image/png", sizes: "48x48" },
+        { url: "/favicon_centered.png", type: "image/png", sizes: "32x32" },
+        { url: "/favicon_centered.png", type: "image/png", sizes: "16x16" },
+      ],
+      apple: [
+        { url: "/logo_final.png", type: "image/png", sizes: "180x180" },
+      ],
+      shortcut: [
+        { url: "/favicon_centered.png", type: "image/png" },
+      ],
+    },
     title: {
       default: title,
       template: "%s | jjalcantara.dev",
     },
     description: t.home.description,
     keywords: [
+      // Nombre completo con variaciones
+      "Jesús Jiménez Alcántara",
+      "Jesus Jimenez Alcantara",
+      "Jesús Jiménez Alcantara",
+      "Jesus Jimenez Alcántara",
+      "Jesús Jimenez Alcántara",
+      "Jesus Jiménez Alcantara",
+      "JJA",
+      "jjalcantara",
+      // Profesión y especialización
       "backend engineer",
       "software engineer",
       "software architecture",
       "backend development",
-      "Azure",
-      ".NET",
       "cloud developer",
       "ingeniero backend",
       "arquitectura software",
       "desarrollo backend",
+      // Tecnologías
+      "Azure",
+      ".NET",
       "C#",
       "ASP.NET",
+      "Azure Functions",
+      "Cloud Computing",
+      "Microservices",
+      "Docker",
+      "Kubernetes",
+      // Ubicación
+      "Málaga",
+      "Vélez-Málaga",
+      "Spain",
+      "España",
+      // Empresa
+      "The Bubble Hub",
+      "Backend Engineer Málaga",
+      "Ingeniero Backend Málaga",
     ],
-    authors: [{ name: "Jesús Jiménez Alcantara" }],
-    creator: "Jesús Jiménez Alcantara",
-    publisher: "Jesús Jiménez Alcantara",
+    authors: [{ name: "Jesús Jiménez Alcántara" }],
+    creator: "Jesús Jiménez Alcántara",
+    publisher: "Jesús Jiménez Alcántara",
     robots: {
       index: true,
       follow: true,
@@ -117,9 +160,14 @@ export default async function LocaleLayout({ children, params }: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#000000" />
         <meta name="format-detection" content="telephone=no" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/logo_final.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/logo_final.svg" />
+        <meta name="author" content="Jesús Jiménez Alcántara" />
+        <link rel="icon" type="image/png" href="/favicon_centered.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon_centered.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_centered.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_centered.png" />
+        <link rel="shortcut icon" type="image/png" href="/favicon_centered.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/logo_final.png" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${inter.variable} antialiased`}>
         <a
@@ -128,6 +176,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         >
           {t.a11y.skipToContent}
         </a>
+        <StructuredData locale={locale} />
         <div className="min-h-screen flex flex-col">
           <Header locale={locale} />
           <main id="main-content" className="flex-1" role="main" tabIndex={-1}>

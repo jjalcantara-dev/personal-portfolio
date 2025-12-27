@@ -37,7 +37,21 @@
   "projects": {
     "title": "Proyectos",
     "description": "Una selección de proyectos que reflejan mi enfoque en arquitectura, código limpio y soluciones escalables.",
-    "comingSoon": "Próximamente: proyectos destacados en desarrollo."
+    "current": {
+      "title": "Proyectos Actuales",
+      "prodigy": {
+        "name": "Prodigy Padel Academy",
+        "type": "Aplicación móvil",
+        "role": "Backend y Base de Datos",
+        "description": "Aplicación móvil para gestión y reserva de pistas de pádel. Desarrollo del backend completo y diseño de la base de datos para soportar usuarios, reservas, pagos y gestión de instalaciones."
+      },
+      "koru": {
+        "name": "Koru Acne",
+        "type": "Aplicación móvil",
+        "role": "Backend y Base de Datos",
+        "description": "Aplicación móvil para seguimiento y tratamiento del acné. Desarrollo del backend y arquitectura de datos para gestión de usuarios, historial médico, seguimiento de síntomas y recomendaciones personalizadas."
+      }
+    }
   },
   "puzzles": {
     "title": "Puzzles",

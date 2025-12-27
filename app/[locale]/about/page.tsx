@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { getContent } from "@/lib/content";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
@@ -5,6 +6,39 @@ import ScrollAnimation from "@/components/ScrollAnimation";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale: localeParam } = await params;
+  const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
+  const t = getContent(locale);
+  const baseUrl = "https://jjalcantara.dev";
+
+  return {
+    title: locale === "es" 
+      ? "Sobre mí | Jesús Jiménez Alcántara" 
+      : "About | Jesús Jiménez Alcántara",
+    description: t.about.description,
+    keywords: [
+      "Jesús Jiménez Alcántara",
+      "Jesus Jimenez Alcantara",
+      "Backend Engineer",
+      "Ingeniero Backend",
+      "Azure",
+      ".NET",
+      "The Bubble Hub",
+      "Ernst & Young",
+      "University of Malaga",
+      "Málaga",
+    ],
+    openGraph: {
+      title: locale === "es" 
+        ? "Sobre mí | Jesús Jiménez Alcántara" 
+        : "About | Jesús Jiménez Alcántara",
+      description: t.about.description,
+      url: `${baseUrl}/${locale}/about`,
+    },
+  };
 }
 
 export default async function About({ params }: { params: Promise<{ locale: string }> }) {
