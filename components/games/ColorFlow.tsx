@@ -167,3 +167,4 @@ export default function ColorFlow({ config, onSolve }: ColorFlowProps) {
   );
 }
 
+

@@ -41,3 +41,4 @@ export function validateExitPosition(config: GameConfig): { valid: boolean; erro
   return { valid: true };
 }
 
+

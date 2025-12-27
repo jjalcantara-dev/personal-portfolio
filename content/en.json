@@ -160,7 +160,8 @@
             "name": "Name",
             "email": "Email address",
             "message": "Message or communication content"
-          }
+          },
+          "paragraph3": "Additionally, this website may automatically collect certain technical data necessary for its operation, such as IP address, browser type, operating system, and pages visited. This data is collected through the hosting service (Vercel) and is used solely to ensure the proper functioning of the website and for security purposes. This data is not used to identify individual users or for marketing purposes."
         }
       },
       "purpose": {
@@ -178,40 +179,115 @@
         "title": "5. Data Processing",
         "content": {
           "paragraph1": "Contact form data is processed through Formspree, a third-party service that acts as a data processor. Formspree is certified and complies with GDPR. **This website does not store any personal data from users.** The data is sent directly to Formspree, which processes it and forwards it to me via email.",
-          "paragraph2": "You can review Formspree's privacy policy at:",
-          "link": "https://formspree.io/legal/privacy-policy"
+          "paragraph2": "This website is hosted on Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, United States), which acts as a data processor for hosting and delivering the website. Vercel may collect automatic technical data (IP address, server logs) necessary for the service operation.",
+          "paragraph3": "You can review our processors' privacy policies:",
+          "formspreeLink": "https://formspree.io/legal/privacy-policy",
+          "formspreeText": "Formspree's privacy policy",
+          "vercelLink": "https://vercel.com/legal/privacy-policy",
+          "vercelText": "Vercel's privacy policy"
         }
       },
       "dataRetention": {
         "title": "6. Data Retention",
-        "content": "This website does not store personal data. Data sent through the form is processed by Formspree and forwarded to me via email. The retention of this data depends on Formspree's configuration and my email inbox. Data will be retained only for the time necessary to respond to your inquiry."
+        "content": {
+          "paragraph1": "This website does not store personal data on its servers. Data sent through the form is processed by Formspree and forwarded to me via email. The retention of this data depends on Formspree's configuration and my email inbox.",
+          "paragraph2": "Data will be retained only for the time necessary to respond to your inquiry. Once the communication is concluded, data will be deleted within a maximum period of 2 years, unless there is a legal obligation requiring longer retention.",
+          "paragraph3": "The technical cookie used for rate limiting automatically expires after 24 hours. Data stored in localStorage (used as a backup for the cookie) is deleted when the user clears their browser's local storage."
+        }
       },
       "yourRights": {
         "title": "7. Your Rights",
         "content": {
           "intro": "In accordance with the General Data Protection Regulation (GDPR), you have the right to:",
           "rights": {
-            "access": "Access your personal data",
+            "access": "Access your personal data and obtain information about its processing",
             "rectification": "Rectify inaccurate or incomplete data",
-            "erasure": "Request deletion of your data",
+            "erasure": "Request deletion of your data (right to be forgotten)",
             "objection": "Object to the processing of your data",
-            "portability": "Request portability of your data"
+            "portability": "Request portability of your data in a structured format",
+            "restriction": "Request restriction of processing of your data",
+            "withdraw": "Withdraw your consent at any time without affecting the lawfulness of prior processing",
+            "automated": "Not be subject to decisions based solely on automated processing"
           },
-          "contact": "To exercise these rights, you can contact me at: contact@jjalcantara.dev"
+          "contact": "To exercise these rights, you can contact me at: contact@jjalcantara.dev",
+          "responseTime": "I commit to responding to your request within a maximum period of one month from receipt. If the request is complex or there are multiple requests, this period may be extended to two months, with notification to you.",
+          "complaint": "If you believe that the processing of your personal data violates the GDPR, you have the right to file a complaint with the Spanish Data Protection Agency (AEPD) at www.aepd.es or with the supervisory authority in your country of residence."
         }
       },
       "cookies": {
-        "title": "8. Cookies",
-        "content": "This website does not use its own cookies. No cookies are installed on your device when you visit this website."
+        "title": "8. Cookies and Similar Technologies",
+        "content": {
+          "paragraph1": "This website uses one essential technical cookie and localStorage to prevent mass submission of messages through the contact form.",
+          "paragraph2": "**Technical cookie:**",
+          "cookieName": "Name: contact_form_last_submit",
+          "cookiePurpose": "Purpose: Stores only a timestamp of the last form submission to limit submissions to one every 5 minutes.",
+          "cookieDuration": "Duration: 24 hours (automatically expires)",
+          "cookieType": "Type: Essential technical cookie (does not require consent under GDPR)",
+          "paragraph3": "**localStorage:**",
+          "localStoragePurpose": "This website also uses browser localStorage as a backup for the cookie to ensure rate limiting functionality even if cookies are disabled. The stored data is identical to the cookie (only a timestamp) and is deleted when the user clears their browser's local storage.",
+          "paragraph4": "**We do not use tracking, advertising, or analytics cookies.** We do not share this data with third parties and it is only used to ensure the proper functioning of the website.",
+          "paragraph5": "You can configure your browser to reject cookies or clear local storage at any time, although this may affect the contact form functionality."
+        }
+      },
+      "dataSecurity": {
+        "title": "9. Data Security",
+        "content": {
+          "paragraph1": "I implement appropriate technical and organizational measures to protect your personal data against unauthorized access, loss, destruction, or alteration. These measures include:",
+          "measures": {
+            "encryption": "Encryption of data in transit via HTTPS/TLS",
+            "headers": "Security headers configured (CSP, HSTS, X-Frame-Options, etc.)",
+            "validation": "Validation and sanitization of all input data",
+            "rateLimit": "Rate limiting to prevent abuse",
+            "access": "Restricted access to data only for authorized purposes"
+          },
+          "paragraph2": "Despite these measures, no method of transmission over the Internet or electronic storage is 100% secure. I cannot guarantee absolute security of data, but I commit to notifying you of any security breach that may affect your personal data."
+        }
+      },
+      "internationalTransfers": {
+        "title": "10. International Data Transfers",
+        "content": {
+          "paragraph1": "Contact form data is processed through Formspree, which has servers in the United States. Website hosting is provided through Vercel, also with servers in the United States.",
+          "paragraph2": "These transfers are made under the appropriate safeguards established in the GDPR:",
+          "guarantees": {
+            "clauses": "Standard contractual clauses approved by the European Commission",
+            "certification": "GDPR compliance certifications by processors",
+            "adequacy": "EU-US adequacy framework (when applicable)"
+          },
+          "paragraph3": "Formspree and Vercel have implemented technical and organizational measures to ensure that your personal data receives an adequate level of protection equivalent to that established in the GDPR."
+        }
+      },
+      "minors": {
+        "title": "11. Protection of Minors",
+        "content": "This website is not directed to minors under 16 years of age. We do not intentionally collect personal data from minors under 16 without parental or legal guardian consent. If you are aware that a minor has provided personal data through this website, please contact me immediately at contact@jjalcantara.dev so I can delete such information."
+      },
+      "ccpa": {
+        "title": "12. California Residents' Rights (CCPA)",
+        "content": {
+          "paragraph1": "If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA):",
+          "rights": {
+            "know": "Right to know what personal data is collected, used, shared, or sold",
+            "delete": "Right to request deletion of your personal data",
+            "optOut": "Right to opt-out of the sale of your personal data (we do not sell data)",
+            "nonDiscrimination": "Right to not be discriminated against for exercising your privacy rights"
+          },
+          "paragraph2": "To exercise these rights, you can contact me at contact@jjalcantara.dev. We do not sell or share personal data with third parties for commercial purposes."
+        }
       },
       "changes": {
-        "title": "9. Changes to Privacy Policy",
-        "content": "I reserve the right to update this privacy policy when necessary. The date of the last update is indicated at the beginning of this document."
+        "title": "13. Changes to Privacy Policy",
+        "content": {
+          "paragraph1": "I reserve the right to update this privacy policy when necessary to reflect changes in data processing practices, legal requirements, or website improvements.",
+          "paragraph2": "Any material changes will be notified by updating the \"Last updated\" date at the beginning of this document. It is recommended to periodically review this policy to stay informed about how we protect your data.",
+          "paragraph3": "If changes are substantial, you will be notified through a prominent notice on the website or by email if possible."
+        }
       },
       "contact": {
-        "title": "10. Contact",
-        "content": "If you have any questions about this privacy policy or about the processing of your personal data, you can contact me at:",
-        "emailLabel": "Email"
+        "title": "14. Contact",
+        "content": {
+          "paragraph1": "If you have any questions about this privacy policy, about the processing of your personal data, or wish to exercise your rights, you can contact me at:",
+          "emailLabel": "Email",
+          "paragraph2": "As the data controller, I commit to responding to all your inquiries and requests in a timely manner and in accordance with applicable legislation."
+        }
       }
     }
   }

@@ -160,7 +160,8 @@
             "name": "Nombre",
             "email": "Dirección de correo electrónico",
             "message": "Mensaje o contenido de la comunicación"
-          }
+          },
+          "paragraph3": "Adicionalmente, este sitio web puede recopilar automáticamente ciertos datos técnicos necesarios para su funcionamiento, como la dirección IP, tipo de navegador, sistema operativo y páginas visitadas. Estos datos se recopilan a través del servicio de hosting (Vercel) y se utilizan únicamente para garantizar el correcto funcionamiento del sitio web y para fines de seguridad. Estos datos no se utilizan para identificar usuarios individuales ni para fines de marketing."
         }
       },
       "purpose": {
@@ -178,40 +179,115 @@
         "title": "5. Procesamiento de Datos",
         "content": {
           "paragraph1": "Los datos del formulario de contacto se procesan a través de Formspree, un servicio de terceros que actúa como procesador de datos. Formspree está certificado y cumple con el RGPD. **Este sitio web no almacena ningún dato personal de los usuarios.** Los datos se envían directamente a Formspree, que los procesa y me los reenvía por email.",
-          "paragraph2": "Puede consultar la política de privacidad de Formspree en:",
-          "link": "https://formspree.io/legal/privacy-policy"
+          "paragraph2": "Este sitio web está alojado en Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, Estados Unidos), que actúa como procesador de datos para el alojamiento y entrega del sitio web. Vercel puede recopilar datos técnicos automáticos (dirección IP, logs del servidor) necesarios para el funcionamiento del servicio.",
+          "paragraph3": "Puede consultar las políticas de privacidad de nuestros procesadores:",
+          "formspreeLink": "https://formspree.io/legal/privacy-policy",
+          "formspreeText": "Política de privacidad de Formspree",
+          "vercelLink": "https://vercel.com/legal/privacy-policy",
+          "vercelText": "Política de privacidad de Vercel"
         }
       },
       "dataRetention": {
         "title": "6. Conservación de Datos",
-        "content": "Este sitio web no almacena datos personales. Los datos enviados a través del formulario se procesan por Formspree y se me envían por email. La conservación de estos datos depende de la configuración de Formspree y de mi bandeja de entrada de email. Los datos se conservarán únicamente durante el tiempo necesario para responder a su consulta."
+        "content": {
+          "paragraph1": "Este sitio web no almacena datos personales en sus servidores. Los datos enviados a través del formulario se procesan por Formspree y se me envían por email. La conservación de estos datos depende de la configuración de Formspree y de mi bandeja de entrada de email.",
+          "paragraph2": "Los datos se conservarán únicamente durante el tiempo necesario para responder a su consulta. Una vez finalizada la comunicación, los datos se eliminarán en un plazo máximo de 2 años, salvo que exista una obligación legal que requiera una conservación más prolongada.",
+          "paragraph3": "La cookie técnica utilizada para el rate limiting expira automáticamente después de 24 horas. Los datos almacenados en localStorage (utilizados como respaldo de la cookie) se eliminan cuando el usuario borra el almacenamiento local de su navegador."
+        }
       },
       "yourRights": {
         "title": "7. Sus Derechos",
         "content": {
           "intro": "De acuerdo con el Reglamento General de Protección de Datos (RGPD), usted tiene derecho a:",
           "rights": {
-            "access": "Acceder a sus datos personales",
+            "access": "Acceder a sus datos personales y obtener información sobre su tratamiento",
             "rectification": "Rectificar datos inexactos o incompletos",
-            "erasure": "Solicitar la supresión de sus datos",
+            "erasure": "Solicitar la supresión de sus datos (derecho al olvido)",
             "objection": "Oponerse al tratamiento de sus datos",
-            "portability": "Solicitar la portabilidad de sus datos"
+            "portability": "Solicitar la portabilidad de sus datos en un formato estructurado",
+            "restriction": "Solicitar la limitación del tratamiento de sus datos",
+            "withdraw": "Retirar su consentimiento en cualquier momento sin afectar la licitud del tratamiento previo",
+            "automated": "No ser objeto de decisiones basadas únicamente en el tratamiento automatizado"
           },
-          "contact": "Para ejercer estos derechos, puede contactar conmigo en: contact@jjalcantara.dev"
+          "contact": "Para ejercer estos derechos, puede contactar conmigo en: contact@jjalcantara.dev",
+          "responseTime": "Me comprometo a responder a su solicitud en un plazo máximo de un mes desde su recepción. Si la solicitud es compleja o hay múltiples solicitudes, este plazo puede extenderse hasta dos meses, informándole de ello.",
+          "complaint": "Si considera que el tratamiento de sus datos personales vulnera el RGPD, tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) en www.aepd.es o ante la autoridad de control de su país de residencia."
         }
       },
       "cookies": {
-        "title": "8. Cookies",
-        "content": "Este sitio web no utiliza cookies propias. No se instalan cookies en su dispositivo cuando visita este sitio web."
+        "title": "8. Cookies y Tecnologías Similares",
+        "content": {
+          "paragraph1": "Este sitio web utiliza una cookie técnica esencial y localStorage para prevenir el envío masivo de mensajes a través del formulario de contacto.",
+          "paragraph2": "**Cookie técnica:**",
+          "cookieName": "Nombre: contact_form_last_submit",
+          "cookiePurpose": "Finalidad: Almacena únicamente un timestamp (marca de tiempo) del último envío del formulario para limitar los envíos a uno cada 5 minutos.",
+          "cookieDuration": "Duración: 24 horas (expira automáticamente)",
+          "cookieType": "Tipo: Cookie técnica esencial (no requiere consentimiento según RGPD)",
+          "paragraph3": "**localStorage:**",
+          "localStoragePurpose": "Este sitio web también utiliza localStorage del navegador como respaldo de la cookie para garantizar el funcionamiento del rate limiting incluso si las cookies están deshabilitadas. Los datos almacenados son idénticos a los de la cookie (únicamente un timestamp) y se eliminan cuando el usuario borra el almacenamiento local de su navegador.",
+          "paragraph4": "**No utilizamos cookies de seguimiento, publicidad o análisis.** No compartimos estos datos con terceros y solo se utilizan para garantizar el correcto funcionamiento del sitio web.",
+          "paragraph5": "Puede configurar su navegador para rechazar cookies o borrar el almacenamiento local en cualquier momento, aunque esto puede afectar la funcionalidad del formulario de contacto."
+        }
+      },
+      "dataSecurity": {
+        "title": "9. Seguridad de los Datos",
+        "content": {
+          "paragraph1": "Implemento medidas técnicas y organizativas apropiadas para proteger sus datos personales contra el acceso no autorizado, la pérdida, la destrucción o la alteración. Estas medidas incluyen:",
+          "measures": {
+            "encryption": "Cifrado de datos en tránsito mediante HTTPS/TLS",
+            "headers": "Headers de seguridad configurados (CSP, HSTS, X-Frame-Options, etc.)",
+            "validation": "Validación y sanitización de todos los datos de entrada",
+            "rateLimit": "Limitación de tasa para prevenir abusos",
+            "access": "Acceso restringido a los datos solo para fines autorizados"
+          },
+          "paragraph2": "A pesar de estas medidas, ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro. No puedo garantizar la seguridad absoluta de los datos, pero me comprometo a notificarle de cualquier violación de seguridad que pueda afectar sus datos personales."
+        }
+      },
+      "internationalTransfers": {
+        "title": "10. Transferencias Internacionales de Datos",
+        "content": {
+          "paragraph1": "Los datos del formulario de contacto se procesan a través de Formspree, que tiene servidores en Estados Unidos. El alojamiento del sitio web se realiza a través de Vercel, también con servidores en Estados Unidos.",
+          "paragraph2": "Estas transferencias se realizan bajo las garantías adecuadas establecidas en el RGPD:",
+          "guarantees": {
+            "clauses": "Cláusulas contractuales tipo aprobadas por la Comisión Europea",
+            "certification": "Certificaciones de cumplimiento del RGPD por parte de los procesadores",
+            "adequacy": "Marco de adecuación UE-EEUU (cuando aplique)"
+          },
+          "paragraph3": "Formspree y Vercel han implementado medidas técnicas y organizativas para garantizar que sus datos personales reciban un nivel de protección adecuado equivalente al establecido en el RGPD."
+        }
+      },
+      "minors": {
+        "title": "11. Protección de Menores",
+        "content": "Este sitio web no está dirigido a menores de 16 años. No recopilamos intencionalmente datos personales de menores de 16 años sin el consentimiento de los padres o tutores legales. Si tiene conocimiento de que un menor ha proporcionado datos personales a través de este sitio web, por favor contacte conmigo inmediatamente en contact@jjalcantara.dev para que pueda eliminar dicha información."
+      },
+      "ccpa": {
+        "title": "12. Derechos de los Residentes de California (CCPA)",
+        "content": {
+          "paragraph1": "Si es residente de California, tiene derechos adicionales bajo la Ley de Privacidad del Consumidor de California (CCPA):",
+          "rights": {
+            "know": "Derecho a saber qué datos personales se recopilan, utilizan, comparten o venden",
+            "delete": "Derecho a solicitar la eliminación de sus datos personales",
+            "optOut": "Derecho a optar por no vender sus datos personales (no vendemos datos)",
+            "nonDiscrimination": "Derecho a no ser discriminado por ejercer sus derechos de privacidad"
+          },
+          "paragraph2": "Para ejercer estos derechos, puede contactar conmigo en contact@jjalcantara.dev. No vendemos ni compartimos datos personales con terceros para fines comerciales."
+        }
       },
       "changes": {
-        "title": "9. Cambios en la Política de Privacidad",
-        "content": "Me reservo el derecho de actualizar esta política de privacidad cuando sea necesario. La fecha de la última actualización se indica al inicio de este documento."
+        "title": "13. Cambios en la Política de Privacidad",
+        "content": {
+          "paragraph1": "Me reservo el derecho de actualizar esta política de privacidad cuando sea necesario para reflejar cambios en las prácticas de tratamiento de datos, requisitos legales o mejoras en el sitio web.",
+          "paragraph2": "Cualquier cambio material será notificado mediante la actualización de la fecha de \"Última actualización\" al inicio de este documento. Se recomienda revisar periódicamente esta política para estar informado sobre cómo protegemos sus datos.",
+          "paragraph3": "Si los cambios son sustanciales, se le notificará mediante un aviso destacado en el sitio web o por correo electrónico si es posible."
+        }
       },
       "contact": {
-        "title": "10. Contacto",
-        "content": "Si tiene alguna pregunta sobre esta política de privacidad o sobre el tratamiento de sus datos personales, puede contactar conmigo en:",
-        "emailLabel": "Email"
+        "title": "14. Contacto",
+        "content": {
+          "paragraph1": "Si tiene alguna pregunta sobre esta política de privacidad, sobre el tratamiento de sus datos personales, o desea ejercer sus derechos, puede contactar conmigo en:",
+          "emailLabel": "Email",
+          "paragraph2": "Como responsable del tratamiento, me comprometo a responder a todas sus consultas y solicitudes de manera oportuna y conforme a la legislación aplicable."
+        }
       }
     }
   }

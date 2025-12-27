@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
+import CookieBanner from "@/components/CookieBanner";
 import { defaultLocale, isValidLocale, locales } from "@/lib/i18n";
 import { getContent } from "@/lib/content";
 
@@ -146,6 +147,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       // yandex: "tu-codigo-yandex",
       // bing: "tu-codigo-bing",
     },
+    manifest: "/manifest.json",
   };
 }
 
@@ -155,7 +157,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const t = getContent(locale);
 
   return (
-    <html lang={locale} className="scroll-smooth">
+    <html lang={locale} className="scroll-smooth" data-scroll-behavior="smooth">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#000000" />
@@ -167,7 +169,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon_centered.png" />
         <link rel="shortcut icon" type="image/png" href="/favicon_centered.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/logo_final.png" />
-        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${inter.variable} antialiased`}>
         <a
@@ -183,6 +184,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             {children}
           </main>
           <Footer locale={locale} />
+          <CookieBanner locale={locale} />
         </div>
       </body>
     </html>

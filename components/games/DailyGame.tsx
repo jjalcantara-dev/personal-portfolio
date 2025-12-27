@@ -1,6 +1,5 @@
 'use client';
 
-import { useMemo } from 'react';
 import { gameLibrary, getDailyGame } from '@/lib/games';
 import GameBoard from './GameBoard';
 import CountdownTimer from './CountdownTimer';
@@ -11,13 +10,10 @@ interface DailyGameProps {
 }
 
 export default function DailyGame({ locale }: DailyGameProps) {
-  const dailyGame = useMemo(() => {
-    return getDailyGame(gameLibrary);
-  }, []);
+  const dailyGame = getDailyGame(gameLibrary);
 
   const handleSolve = () => {
     // Optional: Add celebration or analytics
-    console.log('Game solved!');
   };
 
   return (

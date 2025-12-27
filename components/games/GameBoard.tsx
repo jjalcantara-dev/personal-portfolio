@@ -1,10 +1,12 @@
 'use client';
 
-import { useMemo } from 'react';
+import dynamic from 'next/dynamic';
 import type { GameConfig } from '@/lib/games';
-import PathBridge from './PathBridge';
-import BlockSlide from './BlockSlide';
-import ColorFlow from './ColorFlow';
+
+// Lazy load game components to reduce initial bundle size
+const PathBridge = dynamic(() => import('./PathBridge'), { ssr: false });
+const BlockSlide = dynamic(() => import('./BlockSlide'), { ssr: false });
+const ColorFlow = dynamic(() => import('./ColorFlow'), { ssr: false });
 
 interface GameBoardProps {
   config: GameConfig;
@@ -13,8 +15,8 @@ interface GameBoardProps {
 }
 
 export default function GameBoard({ config, locale, onSolve }: GameBoardProps) {
-  const title = useMemo(() => config.title[locale], [config.title, locale]);
-  const instruction = useMemo(() => config.instruction[locale], [config.instruction, locale]);
+  const title = config.title[locale];
+  const instruction = config.instruction[locale];
 
   const renderGame = () => {
     switch (config.type) {

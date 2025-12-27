@@ -203,3 +203,4 @@ Después de añadir un mapa:
 - Puedes tener tantos mapas como quieras en el array `games`
 - El sistema de selección diaria rotará automáticamente entre todos los mapas
 
+
