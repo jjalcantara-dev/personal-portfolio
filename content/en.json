@@ -43,13 +43,13 @@
         "name": "Prodigy Padel Academy",
         "type": "Mobile Application",
         "role": "Backend and Database",
-        "description": "Mobile application for padel court management and booking. Full backend development and database design to support users, bookings, payments, and facility management."
+        "description": "Mobile application that presents for the first time a proven padel teaching methodology with over 25 years of experience. Full backend development and database design to support users, online training tools from years of methodical padel training, structured educational content, and player progress tracking."
       },
       "koru": {
         "name": "Koru Acne",
         "type": "Mobile Application",
         "role": "Backend and Database",
-        "description": "Mobile application for acne tracking and treatment. Backend development and data architecture for user management, medical history, symptom tracking, and personalized recommendations."
+        "description": "Mobile application for skin tracking and acne support community. Backend development and data architecture for user management, visual skin tracking through selfies and interactive charts, trigger identification, educational articles, and wellness resources."
       }
     }
   },
