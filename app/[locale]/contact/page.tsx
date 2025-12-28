@@ -91,19 +91,6 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
             <ScrollAnimation animation="fade-up" delay={100}>
               <div className="group transition-all duration-300 hover:translate-x-2">
                 <h3 className="text-sm font-medium text-gray-500 mb-3 uppercase tracking-wide">
-                  {t.contact.phone}
-                </h3>
-                <a
-                  href="tel:+34644961763"
-                  className="text-lg text-black hover:underline focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-sm inline-block transition-colors duration-300 group-hover:text-gray-800"
-                >
-                  +34 644 961 763
-                </a>
-              </div>
-            </ScrollAnimation>
-            <ScrollAnimation animation="fade-up" delay={200}>
-              <div className="group transition-all duration-300 hover:translate-x-2">
-                <h3 className="text-sm font-medium text-gray-500 mb-3 uppercase tracking-wide">
                   {t.contact.location}
                 </h3>
                 <p className="text-lg text-black transition-colors duration-300 group-hover:text-gray-800">
@@ -111,7 +98,7 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
                 </p>
               </div>
             </ScrollAnimation>
-            <ScrollAnimation animation="fade-up" delay={300}>
+            <ScrollAnimation animation="fade-up" delay={200}>
               <div className="group transition-all duration-300 hover:translate-x-2">
                 <h3 className="text-sm font-medium text-gray-500 mb-3 uppercase tracking-wide">
                   {t.contact.linkedin}
