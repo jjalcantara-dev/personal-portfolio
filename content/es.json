@@ -43,13 +43,19 @@
         "name": "Prodigy Padel Academy",
         "type": "Aplicación móvil",
         "role": "Backend y Base de Datos",
-        "description": "Aplicación móvil que presenta por primera vez una metodología de enseñanza de pádel probada con más de 25 años de experiencia. Desarrollo del backend completo y diseño de la base de datos para soportar usuarios, herramientas en línea de entrenamiento metódico, contenidos educativos estructurados y seguimiento del progreso de jugadores."
+        "description": "Aplicación móvil que presenta por primera vez una metodología de enseñanza de pádel probada con más de 25 años de experiencia. Desarrollo del backend completo y diseño de la base de datos para soportar usuarios, herramientas en línea de entrenamiento metódico, contenidos educativos estructurados y seguimiento del progreso de jugadores.",
+        "appStore": "https://apps.apple.com/es/app/prodigy-padel-academy/id6463727496?l=es_ES",
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.prodigypadelacademy.app&hl=es",
+        "developerNote": "Desarrollador backend de la aplicación."
       },
       "koru": {
         "name": "Koru Acne",
         "type": "Aplicación móvil",
         "role": "Backend y Base de Datos",
-        "description": "Aplicación móvil para seguimiento de la piel y comunidad de apoyo para el acné. Desarrollo del backend y arquitectura de datos para gestión de usuarios, seguimiento visual de la piel mediante selfies y gráficos interactivos, identificación de factores desencadenantes, artículos educativos y recursos de bienestar."
+        "description": "Aplicación móvil para seguimiento de la piel y comunidad de apoyo para el acné. Desarrollo del backend y arquitectura de datos para gestión de usuarios, seguimiento visual de la piel mediante selfies y gráficos interactivos, identificación de factores desencadenantes, artículos educativos y recursos de bienestar.",
+        "appStore": "https://apps.apple.com/es/app/koru-your-acne-coach/id6466275209",
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.koruacne.app",
+        "developerNote": "Desarrollador backend de la aplicación."
       }
     }
   },

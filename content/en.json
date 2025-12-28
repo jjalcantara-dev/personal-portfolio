@@ -43,13 +43,19 @@
         "name": "Prodigy Padel Academy",
         "type": "Mobile Application",
         "role": "Backend and Database",
-        "description": "Mobile application that presents for the first time a proven padel teaching methodology with over 25 years of experience. Full backend development and database design to support users, online training tools from years of methodical padel training, structured educational content, and player progress tracking."
+        "description": "Mobile application that presents for the first time a proven padel teaching methodology with over 25 years of experience. Full backend development and database design to support users, online training tools from years of methodical padel training, structured educational content, and player progress tracking.",
+        "appStore": "https://apps.apple.com/es/app/prodigy-padel-academy/id6463727496?l=es_ES",
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.prodigypadelacademy.app&hl=es",
+        "developerNote": "Backend developer of the application."
       },
       "koru": {
         "name": "Koru Acne",
         "type": "Mobile Application",
         "role": "Backend and Database",
-        "description": "Mobile application for skin tracking and acne support community. Backend development and data architecture for user management, visual skin tracking through selfies and interactive charts, trigger identification, educational articles, and wellness resources."
+        "description": "Mobile application for skin tracking and acne support community. Backend development and data architecture for user management, visual skin tracking through selfies and interactive charts, trigger identification, educational articles, and wellness resources.",
+        "appStore": "https://apps.apple.com/es/app/koru-your-acne-coach/id6466275209",
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.koruacne.app",
+        "developerNote": "Backend developer of the application."
       }
     }
   },
