@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { getContent } from "@/lib/content";
 import type { Locale } from "@/lib/i18n";
 import { getLastSubmitTime, setLastSubmitTime } from "@/lib/cookies";
@@ -40,6 +41,7 @@ const sanitizeSubject = (name: string): string => {
 
 export default function ContactForm({ locale }: Props) {
   const t = getContent(locale);
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -199,6 +201,37 @@ export default function ContactForm({ locale }: Props) {
       return;
     }
     
+    // Verificar reCAPTCHA
+    let recaptchaToken = "";
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+    
+    if (siteKey && executeRecaptcha) {
+      try {
+        // executeRecaptcha puede mostrar un popup de desafío si Google detecta comportamiento sospechoso
+        // Normalmente es invisible y solo genera el token en segundo plano
+        recaptchaToken = await executeRecaptcha("contact_form");
+        if (!recaptchaToken) {
+          // Si no se obtiene token, puede ser que Google mostró un desafío y el usuario no lo completó
+          setStatus("error");
+          setErrors({ 
+            _general: locale === "es" 
+              ? "Por favor completa la verificación de seguridad" 
+              : "Please complete the security verification" 
+          });
+          return;
+        }
+      } catch (error) {
+        // Si reCAPTCHA falla completamente, mostrar error
+        setStatus("error");
+        setErrors({ 
+          _general: locale === "es" 
+            ? "Error en la verificación de seguridad. Por favor intenta de nuevo." 
+            : "Security verification error. Please try again." 
+        });
+        return;
+      }
+    }
+    
     // IMPORTANTE: Guardar el timestamp ANTES de enviar para prevenir múltiples envíos simultáneos
     const submitTime = Date.now();
     setLastSubmitTime(submitTime);
@@ -229,17 +262,24 @@ export default function ContactForm({ locale }: Props) {
     const sanitizedSubject = sanitizeSubject(sanitizedName);
 
     try {
+      const requestBody: Record<string, string> = {
+        name: sanitizedName,
+        email: sanitizedEmail,
+        message: sanitizedMessage,
+        _subject: `Contact from ${sanitizedSubject} - jjalcantara.dev`,
+      };
+
+      // Añadir token de reCAPTCHA si está disponible
+      if (recaptchaToken) {
+        requestBody["g-recaptcha-response"] = recaptchaToken;
+      }
+
       const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          name: sanitizedName,
-          email: sanitizedEmail,
-          message: sanitizedMessage,
-          _subject: `Contact from ${sanitizedSubject} - jjalcantara.dev`,
-        }),
+        body: JSON.stringify(requestBody),
       });
 
       if (response.ok) {

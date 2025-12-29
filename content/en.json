@@ -231,8 +231,10 @@
           "cookieType": "Type: Essential technical cookie (does not require consent under GDPR)",
           "paragraph3": "**localStorage:**",
           "localStoragePurpose": "This website also uses browser localStorage as a backup for the cookie to ensure rate limiting functionality even if cookies are disabled. The stored data is identical to the cookie (only a timestamp) and is deleted when the user clears their browser's local storage.",
-          "paragraph4": "**We do not use tracking, advertising, or analytics cookies.** We do not share this data with third parties and it is only used to ensure the proper functioning of the website.",
-          "paragraph5": "You can configure your browser to reject cookies or clear local storage at any time, although this may affect the contact form functionality."
+          "paragraph4": "**reCAPTCHA:**",
+          "recaptchaDescription": "This website uses Google reCAPTCHA v3 to protect the contact form against spam and abuse. reCAPTCHA v3 works in the background and analyzes user behavior to determine if it is human or a bot. Google may collect information about your device, browser, and browsing behavior. This information is used solely to provide and improve the reCAPTCHA service. The use of reCAPTCHA is subject to Google's Privacy Policy (https://policies.google.com/privacy) and Google's Terms of Service (https://policies.google.com/terms).",
+          "paragraph5": "**We do not use tracking, advertising, or analytics cookies.** We do not share this data with third parties and it is only used to ensure the proper functioning of the website.",
+          "paragraph6": "You can configure your browser to reject cookies or clear local storage at any time, although this may affect the contact form functionality."
         }
       },
       "dataSecurity": {

@@ -231,8 +231,10 @@
           "cookieType": "Tipo: Cookie técnica esencial (no requiere consentimiento según RGPD)",
           "paragraph3": "**localStorage:**",
           "localStoragePurpose": "Este sitio web también utiliza localStorage del navegador como respaldo de la cookie para garantizar el funcionamiento del rate limiting incluso si las cookies están deshabilitadas. Los datos almacenados son idénticos a los de la cookie (únicamente un timestamp) y se eliminan cuando el usuario borra el almacenamiento local de su navegador.",
-          "paragraph4": "**No utilizamos cookies de seguimiento, publicidad o análisis.** No compartimos estos datos con terceros y solo se utilizan para garantizar el correcto funcionamiento del sitio web.",
-          "paragraph5": "Puede configurar su navegador para rechazar cookies o borrar el almacenamiento local en cualquier momento, aunque esto puede afectar la funcionalidad del formulario de contacto."
+          "paragraph4": "**reCAPTCHA:**",
+          "recaptchaDescription": "Este sitio web utiliza Google reCAPTCHA v3 para proteger el formulario de contacto contra spam y abusos. reCAPTCHA v3 funciona en segundo plano y analiza el comportamiento del usuario para determinar si es humano o un bot. Google puede recopilar información sobre su dispositivo, navegador y comportamiento de navegación. Esta información se utiliza únicamente para proporcionar y mejorar el servicio de reCAPTCHA. El uso de reCAPTCHA está sujeto a la Política de Privacidad de Google (https://policies.google.com/privacy) y los Términos de Servicio de Google (https://policies.google.com/terms).",
+          "paragraph5": "**No utilizamos cookies de seguimiento, publicidad o análisis.** No compartimos estos datos con terceros y solo se utilizan para garantizar el correcto funcionamiento del sitio web.",
+          "paragraph6": "Puede configurar su navegador para rechazar cookies o borrar el almacenamiento local en cualquier momento, aunque esto puede afectar la funcionalidad del formulario de contacto."
         }
       },
       "dataSecurity": {

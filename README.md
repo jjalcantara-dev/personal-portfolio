@@ -118,6 +118,7 @@ Las variables de entorno se configuran en:
 
 Añade:
 - `NEXT_PUBLIC_FORMSPREE_ID`: Tu ID de Formspree
+- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`: Tu Site Key de Google reCAPTCHA v3 (opcional, el formulario funcionará sin ella pero sin protección anti-spam)
 
 ## 📁 Estructura del Proyecto
 
