@@ -26,9 +26,9 @@ export default function Footer({ locale }: Props) {
             <Image
               src="/logo_final.svg"
               alt=""
-              width={80}
-              height={80}
-              className="h-16 w-auto opacity-60 hover:opacity-100 transition-opacity"
+              width={50}
+              height={50}
+              className="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity"
               aria-hidden="true"
             />
           </Link>
