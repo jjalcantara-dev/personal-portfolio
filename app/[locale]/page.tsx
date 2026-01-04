@@ -21,8 +21,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <ParallaxLogo
               src="/logo_final.svg"
               alt=""
-              width={200}
-              height={200}
+              width={150}
+              height={150}
               priority
             />
           </div>
