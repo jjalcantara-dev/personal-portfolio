@@ -115,7 +115,7 @@
         { "name": "Cloud & DevOps", "items": ["Azure Functions", "Azure DevOps", "App Service", "CosmosDB", "Vercel", "Docker", "Kubernetes", "Jenkins", "Redis"] },
         { "name": "Databases", "items": ["PostgreSQL", "SQL Server", "MongoDB", "CosmosDB", "Azure Table Storage"] },
         { "name": "APIs & Auth", "items": ["REST API", "OpenAPI/Swagger", "JWT", "OAuth 2.0", "Stripe", "Postman"] },
-        { "name": "Testing", "items": ["JUnit", "Selenium", "Testing Pyramid (Unit / Integration / E2E)"] },
+        { "name": "Testing", "items": ["Unit Testing", "Integration Testing", "E2E Testing", "JUnit", "Selenium"] },
         { "name": "Practices", "items": ["SOLID", "Clean Architecture", "RBAC", "Scrum", "Git", "GitHub", "Jira", "UML"] }
       ]
     }
@@ -169,7 +169,8 @@
         "title": "2. Data We Collect",
         "content": {
           "paragraph1": "Through the contact form on this website, we collect the following personal data:",
-          "paragraph2": "This data is collected only when you voluntarily provide it by submitting the contact form. **Important: this data is NOT stored on this website.** The data is sent via the contact API and is only used so I can respond to your inquiry via email.",
+          "important": "Important: this data is NOT stored on this website.",
+          "paragraph2": "The data is sent via the contact API and is only used so I can respond to your inquiry via email.",
           "list": {
             "name": "Name",
             "email": "Email address",
@@ -192,7 +193,8 @@
       "dataProcessing": {
         "title": "5. Data Processing",
         "content": {
-          "paragraph1": "Contact form data is processed through a server-side API and sent via Resend, an email delivery service. **This website does not store any personal data from users.** The data is used solely to send me an email notification and is not retained by any third-party form processor.",
+          "paragraph1": "Contact form data is processed through a server-side API and sent via Resend, an email delivery service.",
+          "important": "This website does not store any personal data from users. The data is used solely to send me an email notification and is not retained by any third-party processor.",
           "paragraph2": "This website is hosted on Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, United States), which acts as a data processor for hosting and delivering the website. Vercel may collect automatic technical data (IP address, server logs) necessary for the service operation.",
           "paragraph3": "You can review our processors' privacy policies:",
           "formspreeLink": "https://resend.com/legal/privacy-policy",
@@ -232,14 +234,18 @@
         "title": "8. Cookies and Similar Technologies",
         "content": {
           "paragraph1": "This website uses one essential technical cookie and localStorage to prevent mass submission of messages through the contact form.",
-          "paragraph2": "**Technical cookie:**",
-          "cookieName": "Name: contact_form_last_submit",
-          "cookiePurpose": "Purpose: Stores only a timestamp of the last form submission to limit submissions to one every 5 minutes.",
-          "cookieDuration": "Duration: 24 hours (automatically expires)",
-          "cookieType": "Type: Essential technical cookie (does not require consent under GDPR)",
-          "paragraph3": "**localStorage:**",
-          "localStoragePurpose": "This website also uses browser localStorage as a backup for the cookie to ensure rate limiting functionality even if cookies are disabled. The stored data is identical to the cookie (only a timestamp) and is deleted when the user clears their browser's local storage.",
-          "paragraph4": "**We do not use tracking, advertising, or analytics cookies.** We do not share this data with third parties and it is only used to ensure the proper functioning of the website.",
+          "cookieLabel": "Technical cookie",
+          "cookieName": "contact_form_last_submit",
+          "cookieNameLabel": "Name",
+          "cookiePurpose": "Stores only a timestamp of the last form submission to limit submissions to 3 per 10 minutes.",
+          "cookiePurposeLabel": "Purpose",
+          "cookieDuration": "24 hours (automatically expires)",
+          "cookieDurationLabel": "Duration",
+          "cookieType": "Essential technical — does not require consent under GDPR",
+          "cookieTypeLabel": "Type",
+          "localStorageLabel": "localStorage",
+          "localStoragePurpose": "Used as a backup for the cookie to ensure rate limiting even if cookies are disabled. Stores only a timestamp and is deleted when the user clears their browser's local storage.",
+          "noTracking": "No tracking, advertising, or analytics cookies are used. No information is shared with third parties.",
           "paragraph6": "You can configure your browser to reject cookies or clear local storage at any time, although this may affect the contact form functionality."
         }
       },

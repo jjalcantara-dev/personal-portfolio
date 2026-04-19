@@ -3,35 +3,35 @@ import { locales } from "@/lib/i18n";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://jjalcantara.dev";
-  
-  const routes = [
-    "",
-    "/about",
-    "/contact",
-    "/projects",
-    "/puzzles",
-    "/privacy",
+
+  const routes: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
+    { path: "",          priority: 1.0, freq: "weekly"  },
+    { path: "/about",   priority: 0.9, freq: "monthly" },
+    { path: "/projects",priority: 0.9, freq: "monthly" },
+    { path: "/contact", priority: 0.7, freq: "yearly"  },
+    { path: "/puzzles", priority: 0.6, freq: "daily"   },
+    { path: "/privacy", priority: 0.3, freq: "yearly"  },
   ];
 
-  const sitemapEntries: MetadataRoute.Sitemap = [];
+  const entries: MetadataRoute.Sitemap = [];
 
   locales.forEach((locale) => {
-    routes.forEach((route) => {
-      sitemapEntries.push({
-        url: `${baseUrl}/${locale}${route}`,
+    routes.forEach(({ path, priority, freq }) => {
+      entries.push({
+        url: `${baseUrl}/${locale}${path}`,
         lastModified: new Date(),
-        changeFrequency: route === "" ? "monthly" : "yearly",
-        priority: route === "" ? 1 : 0.8,
+        changeFrequency: freq,
+        priority,
         alternates: {
           languages: {
-            es: `${baseUrl}/es${route}`,
-            en: `${baseUrl}/en${route}`,
+            "es-ES": `${baseUrl}/es${path}`,
+            "en-US": `${baseUrl}/en${path}`,
+            "x-default": `${baseUrl}/es${path}`,
           },
         },
       });
     });
   });
 
-  return sitemapEntries;
+  return entries;
 }
-

@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
+  --spring: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
@@ -19,7 +20,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Screen reader only class */
+/* ─── Accessibility ─────────────────────────────── */
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -43,19 +45,16 @@ body {
   white-space: normal;
 }
 
-/* Focus visible improvements */
 *:focus-visible {
   outline: 2px solid #000;
   outline-offset: 2px;
 }
 
-/* Touch manipulation for better mobile interaction */
 .touch-manipulation {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Skip link styles */
 a[href="#main-content"]:focus {
   position: absolute;
   top: 1rem;
@@ -68,90 +67,67 @@ a[href="#main-content"]:focus {
   border-radius: 0.125rem;
 }
 
-/* Scroll animations */
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(2rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ─── Scroll Progress Bar ───────────────────────── */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #000;
+  transform-origin: left;
+  z-index: 100;
+  pointer-events: none;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/* ─── Tag / Badge hover ─────────────────────────── */
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #000;
+  border: 1px solid #d1d5db;
+  padding: 0.25rem 0.625rem;
+  border-radius: 2px;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 150ms ease;
+  cursor: default;
+  user-select: none;
 }
 
-@keyframes slide-left {
-  from {
-    opacity: 0;
-    transform: translateX(2rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.tag:hover {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+  transform: translateY(-1px);
 }
 
-@keyframes slide-right {
-  from {
-    opacity: 0;
-    transform: translateX(-2rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+/* ─── Smooth scroll ─────────────────────────────── */
 
-.animate-fade-up {
-  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-fade-in {
-  animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-slide-left {
-  animation: slide-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-slide-right {
-  animation: slide-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Smooth scroll behavior */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
 }
 
-/* Respect reduced motion preference */
+/* ─── Reduced motion ────────────────────────────── */
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-fade-up,
-  .animate-fade-in,
-  .animate-slide-left,
-  .animate-slide-right {
-    animation: none;
-    opacity: 1;
-    transform: none;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  
-  .will-change-transform {
-    transform: none !important;
-    opacity: 1 !important;
+
+  .scroll-progress {
+    display: none;
   }
 }
 
-/* Performance optimization */
+/* ─── Performance ───────────────────────────────── */
+
 .will-change-transform {
   will-change: transform, opacity;
 }

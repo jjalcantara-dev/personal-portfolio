@@ -9,7 +9,8 @@
       "Bash(npm uninstall *)",
       "Bash(node *)",
       "Bash(npm list *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(python3 *)"
     ]
   }
 }

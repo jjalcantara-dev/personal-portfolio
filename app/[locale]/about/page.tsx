@@ -110,9 +110,9 @@ export default async function About({ params }: { params: Promise<{ locale: stri
             </ScrollAnimation>
             <div className="space-y-12" role="list">
               <ScrollAnimation animation="slide-left" delay={100}>
-                <article className="border-l-2 border-gray-200 pl-6 group transition-all duration-300 hover:border-gray-400" role="listitem">
+                <article className="border-l-2 border-gray-200 pl-6 group transition-all duration-300 hover:border-black" role="listitem">
                   <div className="mb-3">
-                    <h3 className="text-lg font-medium text-black mb-1 transition-colors duration-300 group-hover:text-gray-800">
+                    <h3 className="text-lg font-medium text-black mb-1">
                       {t.about.experience.bubbleHub.role}
                     </h3>
                     <p className="text-sm text-gray-600 mb-2">
@@ -129,9 +129,9 @@ export default async function About({ params }: { params: Promise<{ locale: stri
               </ScrollAnimation>
 
               <ScrollAnimation animation="slide-left" delay={200}>
-                <article className="border-l-2 border-gray-200 pl-6 group transition-all duration-300 hover:border-gray-400" role="listitem">
+                <article className="border-l-2 border-gray-200 pl-6 group transition-all duration-300 hover:border-black" role="listitem">
                   <div className="mb-3">
-                    <h3 className="text-lg font-medium text-black mb-1 transition-colors duration-300 group-hover:text-gray-800">
+                    <h3 className="text-lg font-medium text-black mb-1">
                       {t.about.experience.ey.role}
                     </h3>
                     <p className="text-sm text-gray-600 mb-2">
@@ -157,7 +157,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
             </ScrollAnimation>
             <div className="space-y-8" role="list">
               <ScrollAnimation animation="fade-up" delay={100}>
-                <article role="listitem" className="group transition-all duration-300 hover:translate-x-2">
+                <article role="listitem" className="group transition-all duration-300 hover:translate-x-1">
                   <h3 className="text-lg font-medium text-black mb-1 transition-colors duration-300 group-hover:text-gray-800">
                     {t.about.education.university.degree}
                   </h3>
@@ -170,7 +170,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
                 </article>
               </ScrollAnimation>
               <ScrollAnimation animation="fade-up" delay={200}>
-                <article role="listitem" className="group transition-all duration-300 hover:translate-x-2">
+                <article role="listitem" className="group transition-all duration-300 hover:translate-x-1">
                   <h3 className="text-lg font-medium text-black mb-1 transition-colors duration-300 group-hover:text-gray-800">
                     {t.about.education.master.degree}
                   </h3>
@@ -187,30 +187,46 @@ export default async function About({ params }: { params: Promise<{ locale: stri
 
           <section className="border-t border-gray-200 pt-12" aria-labelledby="skills-heading">
             <ScrollAnimation animation="fade-up" delay={0}>
-              <h2 id="skills-heading" className="text-2xl sm:text-3xl font-light mb-8 text-black">
+              <h2 id="skills-heading" className="text-2xl sm:text-3xl font-light mb-10 text-black">
                 {t.about.skills.title}
               </h2>
             </ScrollAnimation>
-            <div className="space-y-8">
-              {t.about.skills.categories.map((category, i) => (
-                <ScrollAnimation key={category.name} animation="fade-up" delay={i * 75}>
-                  <div>
-                    <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
-                      {category.name}
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {category.items.map((item) => (
-                        <span
-                          key={item}
-                          className="text-sm text-black border border-gray-300 px-3 py-1 rounded-sm"
-                        >
-                          {item}
-                        </span>
-                      ))}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2">
+              {t.about.skills.categories.map((category, i) => {
+                const isRight = i % 2 === 1;
+                const row = Math.floor(i / 2);
+                return (
+                  <ScrollAnimation
+                    key={category.name}
+                    animation="fade-up"
+                    delay={row * 90 + (isRight ? 50 : 0)}
+                  >
+                    <div
+                      className={[
+                        "py-8 border-t border-gray-100",
+                        isRight
+                          ? "sm:pl-10 sm:border-l sm:border-gray-100"
+                          : "sm:pr-10",
+                      ].join(" ")}
+                    >
+                      <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-[0.14em] mb-4 select-none">
+                        {category.name}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {category.items.map((item) => (
+                          <span
+                            key={item}
+                            className="inline-block text-sm text-gray-800 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-sm transition-all duration-150 hover:bg-black hover:text-white hover:border-black cursor-default select-none"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </ScrollAnimation>
-              ))}
+                  </ScrollAnimation>
+                );
+              })}
             </div>
           </section>
         </div>

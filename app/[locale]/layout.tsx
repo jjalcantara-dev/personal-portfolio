@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
 import CookieBanner from "@/components/CookieBanner";
+import ScrollProgress from "@/components/ScrollProgress";
 import { defaultLocale, isValidLocale, locales } from "@/lib/i18n";
 import { getContent } from "@/lib/content";
 
@@ -120,10 +121,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: t.home.description,
       images: [
         {
-          url: `${baseUrl}/logo_final.svg`,
-          width: 1200,
-          height: 630,
-          alt: "Jesús Jiménez Alcantara - Backend Engineer",
+          url: `${baseUrl}/profile.png`,
+          width: 800,
+          height: 800,
+          alt: "Jesús Jiménez Alcántara - Backend Engineer",
         },
       ],
     },
@@ -178,6 +179,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           {t.a11y.skipToContent}
         </a>
         <StructuredData locale={locale} />
+        <ScrollProgress />
         <div className="min-h-screen flex flex-col">
           <Header locale={locale} />
           <main id="main-content" className="flex-1" role="main" tabIndex={-1}>

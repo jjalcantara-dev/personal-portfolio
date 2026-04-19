@@ -115,7 +115,7 @@
         { "name": "Cloud y DevOps", "items": ["Azure Functions", "Azure DevOps", "App Service", "CosmosDB", "Vercel", "Docker", "Kubernetes", "Jenkins", "Redis"] },
         { "name": "Bases de datos", "items": ["PostgreSQL", "SQL Server", "MongoDB", "CosmosDB", "Azure Table Storage"] },
         { "name": "APIs y Auth", "items": ["REST API", "OpenAPI/Swagger", "JWT", "OAuth 2.0", "Stripe", "Postman"] },
-        { "name": "Testing", "items": ["JUnit", "Selenium", "Pirámide de Testing (Unit / Integración / E2E)"] },
+        { "name": "Testing", "items": ["Unit Testing", "Integration Testing", "E2E Testing", "JUnit", "Selenium"] },
         { "name": "Prácticas", "items": ["SOLID", "Clean Architecture", "RBAC", "Scrum", "Git", "GitHub", "Jira", "UML"] }
       ]
     }
@@ -169,7 +169,8 @@
         "title": "2. Datos que Recopilamos",
         "content": {
           "paragraph1": "A través del formulario de contacto de este sitio web, recopilamos los siguientes datos personales:",
-          "paragraph2": "Estos datos se recopilan únicamente cuando usted los proporciona voluntariamente al enviar el formulario de contacto. **Importante: estos datos NO se almacenan en este sitio web.** Los datos se envían a través de la API de contacto y solo se utilizan para que yo pueda responder a su consulta por email.",
+          "important": "Importante: estos datos NO se almacenan en este sitio web.",
+          "paragraph2": "Los datos se envían a través de la API de contacto y solo se utilizan para que yo pueda responder a su consulta por email.",
           "list": {
             "name": "Nombre",
             "email": "Dirección de correo electrónico",
@@ -192,7 +193,8 @@
       "dataProcessing": {
         "title": "5. Procesamiento de Datos",
         "content": {
-          "paragraph1": "Los datos del formulario de contacto se procesan a través de una API propia y se envían mediante Resend, un servicio de entrega de emails. **Este sitio web no almacena ningún dato personal de los usuarios.** Los datos se utilizan únicamente para enviarme una notificación por email y no son retenidos por ningún procesador de formularios externo.",
+          "paragraph1": "Los datos del formulario de contacto se procesan a través de una API propia y se envían mediante Resend, un servicio de entrega de emails.",
+          "important": "Este sitio web no almacena ningún dato personal de los usuarios. Los datos se utilizan únicamente para enviarme una notificación por email y no son retenidos por ningún procesador externo.",
           "paragraph2": "Este sitio web está alojado en Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, Estados Unidos), que actúa como procesador de datos para el alojamiento y entrega del sitio web. Vercel puede recopilar datos técnicos automáticos (dirección IP, logs del servidor) necesarios para el funcionamiento del servicio.",
           "paragraph3": "Puede consultar las políticas de privacidad de nuestros procesadores:",
           "formspreeLink": "https://resend.com/legal/privacy-policy",
@@ -232,14 +234,18 @@
         "title": "8. Cookies y Tecnologías Similares",
         "content": {
           "paragraph1": "Este sitio web utiliza una cookie técnica esencial y localStorage para prevenir el envío masivo de mensajes a través del formulario de contacto.",
-          "paragraph2": "**Cookie técnica:**",
-          "cookieName": "Nombre: contact_form_last_submit",
-          "cookiePurpose": "Finalidad: Almacena únicamente un timestamp (marca de tiempo) del último envío del formulario para limitar los envíos a uno cada 5 minutos.",
-          "cookieDuration": "Duración: 24 horas (expira automáticamente)",
-          "cookieType": "Tipo: Cookie técnica esencial (no requiere consentimiento según RGPD)",
-          "paragraph3": "**localStorage:**",
-          "localStoragePurpose": "Este sitio web también utiliza localStorage del navegador como respaldo de la cookie para garantizar el funcionamiento del rate limiting incluso si las cookies están deshabilitadas. Los datos almacenados son idénticos a los de la cookie (únicamente un timestamp) y se eliminan cuando el usuario borra el almacenamiento local de su navegador.",
-          "paragraph4": "**No utilizamos cookies de seguimiento, publicidad o análisis.** No compartimos estos datos con terceros y solo se utilizan para garantizar el correcto funcionamiento del sitio web.",
+          "cookieLabel": "Cookie técnica",
+          "cookieName": "contact_form_last_submit",
+          "cookieNameLabel": "Nombre",
+          "cookiePurpose": "Almacena únicamente un timestamp del último envío del formulario para limitar los envíos a 3 cada 10 minutos.",
+          "cookiePurposeLabel": "Finalidad",
+          "cookieDuration": "24 horas (expira automáticamente)",
+          "cookieDurationLabel": "Duración",
+          "cookieType": "Técnica esencial — no requiere consentimiento según el RGPD",
+          "cookieTypeLabel": "Tipo",
+          "localStorageLabel": "localStorage",
+          "localStoragePurpose": "Se usa como respaldo de la cookie para garantizar el rate limiting incluso si las cookies están deshabilitadas. Almacena únicamente un timestamp y se elimina cuando el usuario borra el almacenamiento local del navegador.",
+          "noTracking": "No se utilizan cookies de seguimiento, publicidad ni análisis. No se comparte información con terceros.",
           "paragraph6": "Puede configurar su navegador para rechazar cookies o borrar el almacenamiento local en cualquier momento, aunque esto puede afectar la funcionalidad del formulario de contacto."
         }
       },

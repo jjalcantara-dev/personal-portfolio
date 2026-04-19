@@ -260,13 +260,17 @@ export default function ContactForm({ locale }: Props) {
         </div>
       )}
 
-      {status === "error" && (
+      {status === "error" && errors._general !== "rate_limited" && (
         <div className="p-4 bg-gray-100 border-2 border-gray-300 text-gray-700" role="alert" aria-live="assertive">
-          {errors._general === "rate_limited"
-            ? (locale === "es"
-                ? `Por seguridad, el formulario tiene un límite de 3 envíos cada 10 minutos. Por favor espera antes de intentarlo de nuevo${timeRemaining > 0 ? ` (${formatTimeRemaining(timeRemaining)})` : ""}.`
-                : `For security reasons, the form is limited to 3 submissions every 10 minutes. Please wait before trying again${timeRemaining > 0 ? ` (${formatTimeRemaining(timeRemaining)})` : ""}.`)
-            : (errors._general || t.contact.form.error)}
+          {errors._general || t.contact.form.error}
+        </div>
+      )}
+
+      {timeRemaining > 0 && (
+        <div className="p-4 bg-gray-100 border-2 border-gray-300 text-gray-700" role="status" aria-live="polite">
+          {locale === "es"
+            ? `Por seguridad, el formulario tiene un límite de 3 envíos cada 10 minutos. Podrás enviar otro mensaje en ${formatTimeRemaining(timeRemaining)}.`
+            : `For security reasons, the form is limited to 3 submissions every 10 minutes. You can send another message in ${formatTimeRemaining(timeRemaining)}.`}
         </div>
       )}
 

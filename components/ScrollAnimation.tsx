@@ -1,60 +1,65 @@
 "use client";
 
-import { useEffect, useRef, useState, ReactNode } from "react";
+import { CSSProperties, ReactNode, useEffect, useRef, useState } from "react";
 
-type ScrollAnimationProps = {
+type AnimationType = "fade-up" | "fade-in" | "slide-left" | "slide-right" | "scale-up";
+
+type Props = {
   children: ReactNode;
   delay?: number;
   className?: string;
-  animation?: "fade-up" | "fade-in" | "slide-left" | "slide-right";
+  animation?: AnimationType;
   threshold?: number;
 };
+
+const HIDDEN: Record<AnimationType, CSSProperties> = {
+  "fade-up":     { opacity: 0, transform: "translateY(22px)" },
+  "fade-in":     { opacity: 0 },
+  "slide-left":  { opacity: 0, transform: "translateX(22px)" },
+  "slide-right": { opacity: 0, transform: "translateX(-22px)" },
+  "scale-up":    { opacity: 0, transform: "scale(0.95)" },
+};
+
+const VISIBLE: CSSProperties = { opacity: 1, transform: "none" };
+
+const EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
 
 export default function ScrollAnimation({
   children,
   delay = 0,
   className = "",
   animation = "fade-up",
-  threshold = 0.1,
-}: ScrollAnimationProps) {
-  const [isVisible, setIsVisible] = useState(false);
+  threshold = 0.08,
+}: Props) {
+  const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setVisible(true);
           observer.disconnect();
         }
       },
-      {
-        threshold,
-        rootMargin: "0px 0px -50px 0px",
-      }
+      { threshold, rootMargin: "0px 0px -40px 0px" }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
+    observer.observe(el);
+    return () => observer.disconnect();
   }, [threshold]);
-
-  const animationClasses = {
-    "fade-up": isVisible ? "animate-fade-up" : "opacity-0 translate-y-8",
-    "fade-in": isVisible ? "animate-fade-in" : "opacity-0",
-    "slide-left": isVisible ? "animate-slide-left" : "opacity-0 translate-x-8",
-    "slide-right": isVisible ? "animate-slide-right" : "opacity-0 -translate-x-8",
-  };
 
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${animationClasses[animation]} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      className={className}
+      style={{
+        transition: `opacity 0.65s ${EASING} ${delay}ms, transform 0.65s ${EASING} ${delay}ms`,
+        ...(visible ? VISIBLE : HIDDEN[animation]),
+      }}
     >
       {children}
     </div>

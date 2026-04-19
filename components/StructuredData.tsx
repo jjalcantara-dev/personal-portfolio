@@ -6,92 +6,102 @@ type Props = {
 
 export default function StructuredData({ locale }: Props) {
   const baseUrl = "https://jjalcantara.dev";
-  
+
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Jesús Jiménez Alcántara",
-    "alternateName": [
+    name: "Jesús Jiménez Alcántara",
+    alternateName: [
       "Jesus Jimenez Alcantara",
       "Jesús Jiménez Alcantara",
       "Jesus Jimenez Alcántara",
       "JJA",
-      "jjalcantara"
+      "jjalcantara",
     ],
-    "jobTitle": locale === "es" ? "Ingeniero Backend" : "Backend Engineer",
-    "description": locale === "es"
-      ? "Ingeniero Backend especializado en Azure, .NET y arquitectura cloud. Desarrollo soluciones escalables con foco en código limpio, rendimiento y mantenibilidad."
-      : "Backend Engineer specialized in Azure, .NET and cloud architecture. I develop scalable solutions with focus on clean code, performance and maintainability.",
-    "url": baseUrl,
-    "sameAs": [
-      // Añade tus redes sociales cuando las tengas
-      // "https://github.com/jjalcantara",
-      // "https://linkedin.com/in/jjalcantara",
-      // "https://twitter.com/jjalcantara"
+    jobTitle: locale === "es" ? "Ingeniero Backend" : "Backend Engineer",
+    description:
+      locale === "es"
+        ? "Ingeniero Backend con más de 4 años de experiencia diseñando sistemas cloud-native escalables con ASP.NET Core, Azure y PostgreSQL. Especializado en APIs REST, autenticación (JWT, OAuth 2.0, RBAC) e integración de pagos (Stripe, App Store, Google Play)."
+        : "Backend Engineer with 4+ years of experience building scalable cloud-native systems using ASP.NET Core, Azure and PostgreSQL. Specialized in REST APIs, authentication (JWT, OAuth 2.0, RBAC) and payment integrations (Stripe, App Store, Google Play).",
+    url: baseUrl,
+    image: `${baseUrl}/profile.png`,
+    sameAs: [
+      "https://github.com/jjalcantara",
+      "https://linkedin.com/in/jjalcantara",
     ],
-    "email": "contact@jjalcantara.dev",
-    "address": {
+    email: "contact@jjalcantara.dev",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Vélez-Málaga",
-      "addressRegion": "Málaga",
-      "addressCountry": "ES"
+      addressLocality: "Vélez-Málaga",
+      postalCode: "29700",
+      addressRegion: "Málaga",
+      addressCountry: "ES",
     },
-    "alumniOf": [
+    alumniOf: [
       {
         "@type": "EducationalOrganization",
-        "name": "University of Malaga",
-        "address": {
+        name: "Universidad de Málaga",
+        alternateName: "UMA",
+        address: {
           "@type": "PostalAddress",
-          "addressLocality": "Malaga",
-          "addressCountry": "ES"
-        }
+          addressLocality: "Málaga",
+          addressCountry: "ES",
+        },
       },
       {
         "@type": "EducationalOrganization",
-        "name": "International University of Andalusia",
-        "address": {
+        name: "Universidad Internacional de La Rioja",
+        alternateName: "UNIR",
+        address: {
           "@type": "PostalAddress",
-          "addressRegion": "Andalusia",
-          "addressCountry": "ES"
-        }
-      }
+          addressLocality: "Logroño",
+          addressCountry: "ES",
+        },
+      },
     ],
-    "knowsAbout": [
+    knowsAbout: [
       "Backend Development",
       "Cloud Computing",
       "Azure",
       ".NET",
       "C#",
-      "ASP.NET",
-      "Software Architecture",
-      "Microservices",
-      "RESTful APIs",
+      "ASP.NET Core",
+      "REST API Design",
+      "PostgreSQL",
+      "Redis",
+      "JWT",
+      "OAuth 2.0",
+      "RBAC",
+      "Stripe",
       "Docker",
       "Kubernetes",
       "CI/CD",
-      "Software Engineering"
+      "SOLID Principles",
+      "Clean Architecture",
+      "Software Engineering",
     ],
-    "worksFor": {
+    worksFor: {
       "@type": "Organization",
-      "name": "The Bubble Hub",
-      "jobTitle": locale === "es" ? "Ingeniero Backend" : "Backend Engineer"
-    }
+      name: "The Bubble Hub",
+      url: "https://thebbhub.com",
+    },
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Jesús Jiménez Alcántara - Backend Engineer",
-    "alternateName": "jjalcantara.dev",
-    "url": baseUrl,
-    "description": locale === "es"
-      ? "Portfolio profesional de Jesús Jiménez Alcántara, Ingeniero Backend especializado en Azure y .NET"
-      : "Professional portfolio of Jesús Jiménez Alcántara, Backend Engineer specialized in Azure and .NET",
-    "author": {
+    name: "Jesús Jiménez Alcántara — Backend Engineer",
+    alternateName: "jjalcantara.dev",
+    url: baseUrl,
+    description:
+      locale === "es"
+        ? "Portfolio profesional de Jesús Jiménez Alcántara, Ingeniero Backend especializado en Azure, .NET y PostgreSQL."
+        : "Professional portfolio of Jesús Jiménez Alcántara, Backend Engineer specialized in Azure, .NET and PostgreSQL.",
+    author: {
       "@type": "Person",
-      "name": "Jesús Jiménez Alcántara"
+      name: "Jesús Jiménez Alcántara",
     },
-    "inLanguage": [locale === "es" ? "es-ES" : "en-US", locale === "es" ? "en-US" : "es-ES"]
+    inLanguage: ["es-ES", "en-US"],
   };
 
   return (
@@ -107,4 +117,3 @@ export default function StructuredData({ locale }: Props) {
     </>
   );
 }
-

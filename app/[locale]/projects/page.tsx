@@ -68,7 +68,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
           <div className="space-y-16">
             {/* Prodigy Padel Academy */}
             <ScrollAnimation animation="fade-up" delay={300}>
-              <article className="border-b border-gray-200 pb-16 last:border-b-0 last:pb-0">
+              <article className="border-b border-gray-200 pb-16 last:border-b-0 last:pb-0 group/card">
                 <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 mb-6">
                   <div className="flex-shrink-0 flex items-center justify-center sm:justify-start w-full sm:w-auto">
                     <div className="bg-white border border-gray-200 rounded-sm p-4 sm:p-6 flex items-center justify-center" style={{ minWidth: '140px', minHeight: '100px' }}>
@@ -102,7 +102,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
                     {t.projects.current.prodigy.techStack && (
                       <div className="flex flex-wrap gap-2 mb-4">
                         {t.projects.current.prodigy.techStack.map((tech) => (
-                          <span key={tech} className="text-xs text-black border border-gray-300 px-2.5 py-1 rounded-sm">
+                          <span key={tech} className="tag text-xs px-2.5 py-1">
                             {tech}
                           </span>
                         ))}
@@ -114,7 +114,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
                           href={t.projects.current.prodigy.appStore}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 hover:border-black transition-colors rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                          className="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 hover:border-black hover:-translate-y-px hover:shadow-md transition-all duration-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
                           aria-label={locale === 'es' ? 'Descargar en App Store' : 'Download on App Store'}
                         >
                           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -128,7 +128,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
                           href={t.projects.current.prodigy.googlePlay}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 hover:border-black transition-colors rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                          className="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 hover:border-black hover:-translate-y-px hover:shadow-md transition-all duration-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
                           aria-label={locale === 'es' ? 'Descargar en Google Play' : 'Download on Google Play'}
                         >
                           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -147,7 +147,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
 
             {/* Koru Acne */}
             <ScrollAnimation animation="fade-up" delay={400}>
-              <article className="border-b border-gray-200 pb-16 last:border-b-0 last:pb-0">
+              <article className="border-b border-gray-200 pb-16 last:border-b-0 last:pb-0 group/card">
                 <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 mb-6">
                   <div className="flex-shrink-0 flex items-center justify-center sm:justify-start w-full sm:w-auto">
                     <div className="bg-white border border-gray-200 rounded-sm p-4 sm:p-6 flex items-center justify-center" style={{ minWidth: '140px', minHeight: '100px' }}>
@@ -181,7 +181,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
                     {t.projects.current.koru.techStack && (
                       <div className="flex flex-wrap gap-2 mb-4">
                         {t.projects.current.koru.techStack.map((tech) => (
-                          <span key={tech} className="text-xs text-black border border-gray-300 px-2.5 py-1 rounded-sm">
+                          <span key={tech} className="tag text-xs px-2.5 py-1">
                             {tech}
                           </span>
                         ))}
@@ -193,7 +193,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
                           href={t.projects.current.koru.appStore}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 hover:border-black transition-colors rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                          className="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 hover:border-black hover:-translate-y-px hover:shadow-md transition-all duration-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
                           aria-label={locale === 'es' ? 'Descargar en App Store' : 'Download on App Store'}
                         >
                           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -207,7 +207,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
                           href={t.projects.current.koru.googlePlay}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 hover:border-black transition-colors rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                          className="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 hover:border-black hover:-translate-y-px hover:shadow-md transition-all duration-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
                           aria-label={locale === 'es' ? 'Descargar en Google Play' : 'Download on Google Play'}
                         >
                           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

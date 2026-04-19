@@ -42,20 +42,20 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <div className="flex flex-col sm:flex-row gap-4 justify-center" role="group" aria-label="Call to action buttons">
               <Link
                 href={`/${locale}/about`}
-                className="inline-block px-8 py-3.5 bg-black text-white text-sm font-medium hover:bg-gray-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                className="inline-block px-8 py-3.5 bg-black text-white text-sm font-medium hover:bg-gray-800 hover:-translate-y-px hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
               >
                 {t.home.cta.about}
               </Link>
               <Link
                 href={`/${locale}/projects`}
-                className="inline-block px-8 py-3.5 border-2 border-black text-black text-sm font-medium hover:bg-black hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                className="inline-block px-8 py-3.5 border-2 border-black text-black text-sm font-medium hover:bg-black hover:text-white hover:-translate-y-px hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
               >
                 {t.home.cta.projects}
               </Link>
               <a
                 href="/jesus_jimenez_alcantara_cv.pdf"
                 download
-                className="inline-block px-8 py-3.5 border-2 border-gray-400 text-gray-700 text-sm font-medium hover:border-black hover:text-black transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                className="inline-block px-8 py-3.5 border-2 border-gray-300 text-gray-600 text-sm font-medium hover:border-black hover:text-black hover:-translate-y-px transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
               >
                 {t.home.cta.cv}
               </a>
@@ -72,7 +72,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <ScrollAnimation animation="fade-up" delay={100}>
             <article 
               role="listitem"
-              className="group transition-all duration-300 hover:translate-y-[-2px]"
+              className="group transition-all duration-300 hover:-translate-y-1"
             >
               <h3 className="text-lg font-medium mb-3 text-black transition-colors duration-300 group-hover:text-gray-800">
                 {t.home.focus.architecture.title}
@@ -85,7 +85,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <ScrollAnimation animation="fade-up" delay={200}>
             <article 
               role="listitem"
-              className="group transition-all duration-300 hover:translate-y-[-2px]"
+              className="group transition-all duration-300 hover:-translate-y-1"
             >
               <h3 className="text-lg font-medium mb-3 text-black transition-colors duration-300 group-hover:text-gray-800">
                 {t.home.focus.cleanCode.title}
@@ -98,7 +98,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <ScrollAnimation animation="fade-up" delay={300}>
             <article 
               role="listitem"
-              className="group transition-all duration-300 hover:translate-y-[-2px]"
+              className="group transition-all duration-300 hover:-translate-y-1"
             >
               <h3 className="text-lg font-medium mb-3 text-black transition-colors duration-300 group-hover:text-gray-800">
                 {t.home.focus.performance.title}
@@ -111,7 +111,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <ScrollAnimation animation="fade-up" delay={400}>
             <article 
               role="listitem"
-              className="group transition-all duration-300 hover:translate-y-[-2px]"
+              className="group transition-all duration-300 hover:-translate-y-1"
             >
               <h3 className="text-lg font-medium mb-3 text-black transition-colors duration-300 group-hover:text-gray-800">
                 {t.home.focus.professionalism.title}
