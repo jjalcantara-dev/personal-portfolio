@@ -1,0 +1,41 @@
+# Jesús Jiménez Alcántara — jjalcantara.dev
+
+Personal portfolio of Jesús Jiménez Alcántara, Backend Engineer specialized in Azure, .NET and cloud architecture.
+
+## About
+
+Backend Engineer at The Bubble Hub (April 2024 – Present), Málaga, Spain. Previously Technology and Security Consultant at Ernst & Young (2022–2024), specialized in SIEM engineering within a SOC.
+
+Degree in Software Engineering (Universidad de Málaga, 7.51/10). Master's in Secondary Education (Universidad Internacional de Andalucía, 8.9/10).
+
+Skills:
+- Advanced: C#, Java, Azure Cloud, Docker, Python, ASP.NET, SQL, CosmosDB, MongoDB
+- Intermediate: Kubernetes, JavaScript, React, Django, Spring, SIEM (Splunk, QRadar, ElasticSearch)
+
+## Pages
+
+- / — Home. Introduction as Backend Engineer and Cloud Developer.
+- /projects — Projects. Current and past work.
+- /about — About. Full professional profile, experience and education.
+- /contact — Contact. Form with server-side rate limiting via Redis.
+- /puzzles — Daily logic puzzles. One puzzle per day, same for all visitors.
+- /privacy — Privacy Policy (GDPR compliant).
+
+All pages available in Spanish (/es) and English (/en). Default language is Spanish.
+
+## Current Projects
+
+**Prodigy Padel Academy** — Mobile app for padel teaching methodology with 25+ years of experience. Role: Backend and Database development.
+- App Store: https://apps.apple.com/es/app/prodigy-padel-academy/id6463727496?l=es_ES
+- Google Play: https://play.google.com/store/apps/details?id=com.prodigypadelacademy.app&hl=es
+
+**Koru Acne** — Mobile app for skin tracking and acne support community. Role: Backend and Database architecture.
+- App Store: https://apps.apple.com/es/app/koru-your-acne-coach/id6466275209
+- Google Play: https://play.google.com/store/apps/details?id=com.koruacne.app
+
+## Contact
+
+- Email: contact@jjalcantara.dev
+- Location: Vélez-Málaga, 29700, Spain
+- LinkedIn: linkedin.com/in/jjalcantara
+- GitHub: github.com/jjalcantara

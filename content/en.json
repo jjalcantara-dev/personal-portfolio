@@ -8,11 +8,13 @@
   },
   "home": {
     "title": "Backend Engineer",
-    "subtitle": "Cloud Developer",
-    "description": "Specialized in Azure, .NET, and cloud architecture. I develop scalable solutions with a focus on clean code, performance, and maintainability.",
+    "subtitle": "ASP.NET Core · Azure · REST APIs",
+    "description": "I design and build cloud-native backend systems with ASP.NET Core and Azure Functions. Specialized in REST APIs, authentication, payment integrations (Stripe, App Store, Google Play), and PostgreSQL database architecture.",
     "cta": {
       "projects": "View projects",
-      "contact": "Contact"
+      "contact": "Contact",
+      "about": "About me",
+      "cv": "Download CV"
     },
     "focus": {
       "title": "Focus",
@@ -36,26 +38,26 @@
   },
   "projects": {
     "title": "Projects",
-    "description": "A selection of projects that reflect my focus on architecture, clean code, and scalable solutions.",
+    "description": "Products I've contributed to as Backend Engineer at The Bubble Hub.",
     "current": {
-      "title": "Current Projects",
+      "title": "Professional Work",
       "prodigy": {
         "name": "Prodigy Padel Academy",
         "type": "Mobile Application",
-        "role": "Backend and Database",
-        "description": "Mobile application that presents for the first time a proven padel teaching methodology with over 25 years of experience. Full backend development and database design to support users, online training tools from years of methodical padel training, structured educational content, and player progress tracking.",
+        "role": "Backend Engineer",
+        "description": "Sports training platform for padel players, built around a proven 25-year methodology. Backend: gamification system (points, levels, achievements, leaderboards), Stripe payments, App Store and Google Play in-app purchases, optimized PostgreSQL architecture, Redis rate limiting, and JWT authentication with RBAC and OAuth 2.0.",
+        "techStack": ["ASP.NET Core", "Azure Functions", "PostgreSQL", "Redis", "Stripe", "JWT", "RBAC", "OAuth 2.0"],
         "appStore": "https://apps.apple.com/es/app/prodigy-padel-academy/id6463727496?l=es_ES",
-        "googlePlay": "https://play.google.com/store/apps/details?id=com.prodigypadelacademy.app&hl=es",
-        "developerNote": "Backend developer of the application."
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.prodigypadelacademy.app&hl=es"
       },
       "koru": {
         "name": "Koru Acne",
         "type": "Mobile Application",
-        "role": "Backend and Database",
-        "description": "Mobile application for skin tracking and acne support community. Backend development and data architecture for user management, visual skin tracking through selfies and interactive charts, trigger identification, educational articles, and wellness resources.",
+        "role": "Backend Engineer",
+        "description": "Mobile application for skin tracking and acne support community. Backend: REST API design, JWT and OAuth 2.0 authentication, database architecture for user management, visual skin tracking, trigger factor identification, and wellness resources.",
+        "techStack": ["ASP.NET Core", "Azure Functions", "PostgreSQL", "JWT", "OAuth 2.0", "REST API"],
         "appStore": "https://apps.apple.com/es/app/koru-your-acne-coach/id6466275209",
-        "googlePlay": "https://play.google.com/store/apps/details?id=com.koruacne.app",
-        "developerNote": "Backend developer of the application."
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.koruacne.app"
       }
     }
   },
@@ -67,12 +69,12 @@
   },
   "about": {
     "title": "About",
-    "description": "Backend Engineer specialized in Azure and .NET, with experience in cloud development and scalable system architecture.",
+    "description": "Backend Engineer with 4+ years of experience designing and building scalable cloud-native systems using ASP.NET Core, Azure Functions, and Java. Specialized in REST API design, authentication systems (JWT, OAuth 2.0, RBAC), payment integrations (Stripe, App Store, Google Play), and PostgreSQL database architecture. Currently at The Bubble Hub, leading backend development across two products serving thousands of monthly active users.",
     "intro": {
       "paragraph1": "I'm a backend engineer specialized in building cloud systems with Azure and .NET. My work focuses on creating architectures that scale, APIs that perform under load, and code that remains maintainable over time. I primarily work with Azure Functions, ASP.NET Core, and cloud services, designing solutions that balance performance, maintainability, and operational cost.",
       "paragraph2": "At The Bubble Hub I work on backend systems that support mobile applications in production. My responsibility spans from analyzing requirements to designing and implementing business logic, defining API contracts, and integrating with external services. I solve problems ranging from optimizing ranking algorithms and data structures to designing secure authentication flows and managing Apple and Google subscription systems that directly impact user experience. I've developed serverless functions, designed optimized database schemas, and built CI/CD pipelines. This exposure to production systems has taught me to think in terms of scalability from design and to consider the impact of each technical decision. I've evolved from writing code that works to designing systems that scale, from solving individual problems to thinking about complete architectures.",
       "paragraph3": "Before this, at Ernst & Young I worked in the SOC as a technology and security consultant, specialized in SIEM engineering. There I learned to think about large-scale systems from the perspective of observability, reliability, and security. I led SIEM platform migrations and developed detection rules that processed millions of daily events. This experience gave me a deep understanding of how distributed systems work under real load and how to design robust data pipelines. I learned that observability is not optional: when a system processes millions of events, you need metrics, logs, and traces to understand what's happening. This security experience gave me a mindset I constantly apply: thinking about how a system can fail, how it can be attacked, and how it can degrade gracefully. This perspective has been fundamental in my evolution as a backend engineer.",
-      "paragraph4": "My Software Engineering degree provided me with a solid foundation in computing fundamentals, data structures, algorithms, and system design. This theoretical foundation applies constantly: when I optimize algorithms, I apply computational complexity knowledge; when I design data structures, I understand the implications of each choice; when I make architectural decisions, I have foundations to evaluate trade-offs. During my studies I developed real projects, such as a web platform for smart meter management, which taught me to translate real-world requirements into software architectures and to think about complete systems, not just code. I complemented this technical education with a Master's in Secondary Education, which provided me with communication and knowledge structuring skills that I apply when documenting systems and explaining technical decisions. This combination allows me to design technically sound systems and communicate why those decisions make sense. My approach to learning is continuous: I study systems in production, experiment with new approaches, and seek to understand not just how to do something, but why one solution is better than another in a given context."
+      "paragraph4": "My Software Engineering degree provided me with a solid foundation in computing fundamentals, data structures, algorithms, and system design. This theoretical foundation applies constantly: when I optimize algorithms, I apply computational complexity knowledge; when I design data structures, I understand the implications of each choice; when I make architectural decisions, I have foundations to evaluate trade-offs. During my studies I developed real projects, such as a web platform for smart meter management, which taught me to translate real-world requirements into software architectures and to think about complete systems, not just code. I am currently pursuing a Master's in Artificial Intelligence at UNIR, with the goal of integrating ML and AI techniques into backend system design: from data pipelines to APIs that serve models in production. My approach to learning is continuous: I study systems in production, experiment with new approaches, and seek to understand not just how to do something, but why one solution is better than another in a given context."
     },
     "experience": {
       "title": "Experience",
@@ -100,16 +102,22 @@
         "date": "October 2022"
       },
       "master": {
-        "name": "International University of Andalusia",
-        "degree": "Master's Degree in Secondary Education",
-        "grade": "8.9/10",
-        "date": "September 2025"
+        "name": "UNIR - Universidad Internacional de La Rioja",
+        "degree": "Master's Degree in Artificial Intelligence",
+        "grade": "In progress",
+        "date": "Expected March 2027"
       }
     },
     "skills": {
       "title": "Technologies",
-      "advanced": "Advanced: C#, Java, Azure Cloud, Docker, Python, ASP.NET, SQL, CosmosDB, MongoDB",
-      "intermediate": "Intermediate: Kubernetes, JavaScript, React, Django, Spring, SIEM (Splunk, QRadar, ElasticSearch)"
+      "categories": [
+        { "name": "Languages & Frameworks", "items": ["C#", "ASP.NET Core", ".NET", "Java", "Spring", "Python", "JavaScript", "Next.js"] },
+        { "name": "Cloud & DevOps", "items": ["Azure Functions", "Azure DevOps", "App Service", "CosmosDB", "Vercel", "Docker", "Kubernetes", "Jenkins", "Redis"] },
+        { "name": "Databases", "items": ["PostgreSQL", "SQL Server", "MongoDB", "CosmosDB", "Azure Table Storage"] },
+        { "name": "APIs & Auth", "items": ["REST API", "OpenAPI/Swagger", "JWT", "OAuth 2.0", "Stripe", "Postman"] },
+        { "name": "Testing", "items": ["JUnit", "Selenium", "Testing Pyramid (Unit / Integration / E2E)"] },
+        { "name": "Practices", "items": ["SOLID", "Clean Architecture", "RBAC", "Scrum", "Git", "GitHub", "Jira", "UML"] }
+      ]
     }
   },
   "contact": {
@@ -161,7 +169,7 @@
         "title": "2. Data We Collect",
         "content": {
           "paragraph1": "Through the contact form on this website, we collect the following personal data:",
-          "paragraph2": "This data is collected only when you voluntarily provide it by submitting the contact form. **Important: this data is NOT stored on this website.** The data is sent directly through Formspree and is only used so I can respond to your inquiry via email.",
+          "paragraph2": "This data is collected only when you voluntarily provide it by submitting the contact form. **Important: this data is NOT stored on this website.** The data is sent via the contact API and is only used so I can respond to your inquiry via email.",
           "list": {
             "name": "Name",
             "email": "Email address",
@@ -184,11 +192,11 @@
       "dataProcessing": {
         "title": "5. Data Processing",
         "content": {
-          "paragraph1": "Contact form data is processed through Formspree, a third-party service that acts as a data processor. Formspree is certified and complies with GDPR. **This website does not store any personal data from users.** The data is sent directly to Formspree, which processes it and forwards it to me via email.",
+          "paragraph1": "Contact form data is processed through a server-side API and sent via Resend, an email delivery service. **This website does not store any personal data from users.** The data is used solely to send me an email notification and is not retained by any third-party form processor.",
           "paragraph2": "This website is hosted on Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, United States), which acts as a data processor for hosting and delivering the website. Vercel may collect automatic technical data (IP address, server logs) necessary for the service operation.",
           "paragraph3": "You can review our processors' privacy policies:",
-          "formspreeLink": "https://formspree.io/legal/privacy-policy",
-          "formspreeText": "Formspree's privacy policy",
+          "formspreeLink": "https://resend.com/legal/privacy-policy",
+          "formspreeText": "Resend's privacy policy",
           "vercelLink": "https://vercel.com/legal/privacy-policy",
           "vercelText": "Vercel's privacy policy"
         }
@@ -196,7 +204,7 @@
       "dataRetention": {
         "title": "6. Data Retention",
         "content": {
-          "paragraph1": "This website does not store personal data on its servers. Data sent through the form is processed by Formspree and forwarded to me via email. The retention of this data depends on Formspree's configuration and my email inbox.",
+          "paragraph1": "This website does not store personal data on its servers. Data sent through the form is delivered to me via email through Resend and is not retained by any third-party processor beyond what is necessary for delivery.",
           "paragraph2": "Data will be retained only for the time necessary to respond to your inquiry. Once the communication is concluded, data will be deleted within a maximum period of 2 years, unless there is a legal obligation requiring longer retention.",
           "paragraph3": "The technical cookie used for rate limiting automatically expires after 24 hours. Data stored in localStorage (used as a backup for the cookie) is deleted when the user clears their browser's local storage."
         }
@@ -231,9 +239,7 @@
           "cookieType": "Type: Essential technical cookie (does not require consent under GDPR)",
           "paragraph3": "**localStorage:**",
           "localStoragePurpose": "This website also uses browser localStorage as a backup for the cookie to ensure rate limiting functionality even if cookies are disabled. The stored data is identical to the cookie (only a timestamp) and is deleted when the user clears their browser's local storage.",
-          "paragraph4": "**reCAPTCHA:**",
-          "recaptchaDescription": "This website uses Google reCAPTCHA v3 to protect the contact form against spam and abuse. reCAPTCHA v3 works in the background and analyzes user behavior to determine if it is human or a bot. Google may collect information about your device, browser, and browsing behavior. This information is used solely to provide and improve the reCAPTCHA service. The use of reCAPTCHA is subject to Google's Privacy Policy (https://policies.google.com/privacy) and Google's Terms of Service (https://policies.google.com/terms).",
-          "paragraph5": "**We do not use tracking, advertising, or analytics cookies.** We do not share this data with third parties and it is only used to ensure the proper functioning of the website.",
+          "paragraph4": "**We do not use tracking, advertising, or analytics cookies.** We do not share this data with third parties and it is only used to ensure the proper functioning of the website.",
           "paragraph6": "You can configure your browser to reject cookies or clear local storage at any time, although this may affect the contact form functionality."
         }
       },
@@ -254,14 +260,14 @@
       "internationalTransfers": {
         "title": "10. International Data Transfers",
         "content": {
-          "paragraph1": "Contact form data is processed through Formspree, which has servers in the United States. Website hosting is provided through Vercel, also with servers in the United States.",
+          "paragraph1": "Contact form data is delivered via Resend, which has servers in the United States. Website hosting is provided through Vercel, also with servers in the United States.",
           "paragraph2": "These transfers are made under the appropriate safeguards established in the GDPR:",
           "guarantees": {
             "clauses": "Standard contractual clauses approved by the European Commission",
             "certification": "GDPR compliance certifications by processors",
             "adequacy": "EU-US adequacy framework (when applicable)"
           },
-          "paragraph3": "Formspree and Vercel have implemented technical and organizational measures to ensure that your personal data receives an adequate level of protection equivalent to that established in the GDPR."
+          "paragraph3": "Resend and Vercel have implemented technical and organizational measures to ensure that your personal data receives an adequate level of protection equivalent to that established in the GDPR."
         }
       },
       "minors": {

@@ -8,11 +8,13 @@
   },
   "home": {
     "title": "Ingeniero Backend",
-    "subtitle": "Cloud Developer",
-    "description": "Especializado en Azure, .NET y arquitectura cloud. Desarrollo soluciones escalables con foco en código limpio, rendimiento y mantenibilidad.",
+    "subtitle": "ASP.NET Core · Azure · REST APIs",
+    "description": "Diseño y desarrollo sistemas backend cloud-native con ASP.NET Core y Azure Functions. Especializado en APIs REST, autenticación, integración de pagos (Stripe, App Store, Google Play) y arquitectura PostgreSQL.",
     "cta": {
       "projects": "Ver proyectos",
-      "contact": "Contactar"
+      "contact": "Contactar",
+      "about": "Sobre mí",
+      "cv": "Descargar CV"
     },
     "focus": {
       "title": "Enfoque",
@@ -36,26 +38,26 @@
   },
   "projects": {
     "title": "Proyectos",
-    "description": "Una selección de proyectos que reflejan mi enfoque en arquitectura, código limpio y soluciones escalables.",
+    "description": "Productos en los que he trabajado como Ingeniero Backend en The Bubble Hub.",
     "current": {
-      "title": "Proyectos Actuales",
+      "title": "Trabajo Profesional",
       "prodigy": {
         "name": "Prodigy Padel Academy",
         "type": "Aplicación móvil",
-        "role": "Backend y Base de Datos",
-        "description": "Aplicación móvil que presenta por primera vez una metodología de enseñanza de pádel probada con más de 25 años de experiencia. Desarrollo del backend completo y diseño de la base de datos para soportar usuarios, herramientas en línea de entrenamiento metódico, contenidos educativos estructurados y seguimiento del progreso de jugadores.",
+        "role": "Backend Engineer",
+        "description": "Plataforma de entrenamiento deportivo para jugadores de pádel, con una metodología de más de 25 años. Backend: sistema de gamificación (puntos, niveles, logros y clasificaciones), pagos con Stripe, compras in-app de App Store y Google Play, arquitectura PostgreSQL optimizada, rate limiting con Redis, y autenticación JWT con RBAC y OAuth 2.0.",
+        "techStack": ["ASP.NET Core", "Azure Functions", "PostgreSQL", "Redis", "Stripe", "JWT", "RBAC", "OAuth 2.0"],
         "appStore": "https://apps.apple.com/es/app/prodigy-padel-academy/id6463727496?l=es_ES",
-        "googlePlay": "https://play.google.com/store/apps/details?id=com.prodigypadelacademy.app&hl=es",
-        "developerNote": "Desarrollador backend de la aplicación."
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.prodigypadelacademy.app&hl=es"
       },
       "koru": {
         "name": "Koru Acne",
         "type": "Aplicación móvil",
-        "role": "Backend y Base de Datos",
-        "description": "Aplicación móvil para seguimiento de la piel y comunidad de apoyo para el acné. Desarrollo del backend y arquitectura de datos para gestión de usuarios, seguimiento visual de la piel mediante selfies y gráficos interactivos, identificación de factores desencadenantes, artículos educativos y recursos de bienestar.",
+        "role": "Backend Engineer",
+        "description": "Aplicación móvil para seguimiento de la piel y comunidad de apoyo para el acné. Backend: diseño de APIs REST, autenticación JWT y OAuth 2.0, arquitectura de base de datos para gestión de usuarios, seguimiento visual de la piel, identificación de factores desencadenantes y recursos de bienestar.",
+        "techStack": ["ASP.NET Core", "Azure Functions", "PostgreSQL", "JWT", "OAuth 2.0", "REST API"],
         "appStore": "https://apps.apple.com/es/app/koru-your-acne-coach/id6466275209",
-        "googlePlay": "https://play.google.com/store/apps/details?id=com.koruacne.app",
-        "developerNote": "Desarrollador backend de la aplicación."
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.koruacne.app"
       }
     }
   },
@@ -67,12 +69,12 @@
   },
   "about": {
     "title": "Sobre mí",
-    "description": "Backend Engineer especializado en Azure y .NET, con experiencia en desarrollo cloud y arquitectura de sistemas escalables.",
+    "description": "Ingeniero Backend con más de 4 años de experiencia diseñando y desarrollando sistemas cloud-native escalables con ASP.NET Core, Azure Functions y Java. Especializado en diseño de APIs REST, sistemas de autenticación (JWT, OAuth 2.0, RBAC), integración de pagos (Stripe, App Store, Google Play) y arquitectura de bases de datos PostgreSQL. Actualmente en The Bubble Hub, liderando el desarrollo backend de dos productos con miles de usuarios activos mensuales.",
     "intro": {
       "paragraph1": "Soy ingeniero backend especializado en el desarrollo de sistemas cloud con Azure y .NET. Mi trabajo se centra en construir arquitecturas que escalan, APIs que funcionan bajo carga y código que se mantiene con el tiempo. Trabajo principalmente con Azure Functions, ASP.NET Core y servicios cloud, diseñando soluciones que equilibran rendimiento, mantenibilidad y coste operativo.",
       "paragraph2": "En The Bubble Hub trabajo en sistemas backend que soportan aplicaciones móviles en producción. Mi responsabilidad abarca desde el análisis de requisitos hasta el diseño e implementación de lógica de negocio, definición de contratos de API e integración con servicios externos. Resuelvo problemas que van desde optimizar algoritmos de ranking y estructuras de datos, hasta diseñar flujos de autenticación seguros y gestionar sistemas de suscripción de Apple y Google que impactan directamente la experiencia del usuario. He desarrollado funciones serverless, diseñado esquemas de base de datos optimizados y construido pipelines de CI/CD. Esta exposición a sistemas en producción me ha enseñado a pensar en escalabilidad desde el diseño y a considerar el impacto de cada decisión técnica. He evolucionado de escribir código que funciona a diseñar sistemas que escalan, de resolver problemas individuales a pensar en arquitecturas completas.",
       "paragraph3": "Antes de esto, en Ernst & Young trabajé en el SOC como consultor de tecnología y seguridad, especializado en ingeniería SIEM. Allí aprendí a pensar en sistemas a gran escala desde la perspectiva de observabilidad, confiabilidad y seguridad. Lideré migraciones de plataformas SIEM y desarrollé reglas de detección que procesaban millones de eventos diarios. Esta experiencia me dio una comprensión profunda de cómo funcionan los sistemas distribuidos bajo carga real y cómo diseñar pipelines de datos robustos. Aprendí que la observabilidad no es opcional: cuando un sistema procesa millones de eventos, necesitas métricas, logs y trazas para entender qué está pasando. Esta experiencia me dio una mentalidad que aplico constantemente: pensar en cómo un sistema puede fallar, cómo puede ser atacado, y cómo puede degradarse de forma controlada. Esta perspectiva ha sido fundamental en mi evolución como ingeniero backend.",
-      "paragraph4": "Mi formación en Ingeniería del Software me proporcionó una base sólida en fundamentos de computación, estructuras de datos, algoritmos y diseño de sistemas. Esta base teórica se aplica constantemente: cuando optimizo algoritmos, aplico conocimientos de complejidad computacional; cuando diseño estructuras de datos, entiendo las implicaciones de cada elección; cuando tomo decisiones arquitectónicas, tengo fundamentos para evaluar trade-offs. Durante la carrera desarrollé proyectos reales, como una plataforma web para gestión de contadores inteligentes, que me enseñó a traducir requisitos del mundo real en arquitecturas de software y a pensar en sistemas completos, no solo en código. Complementé esta formación técnica con un máster en Educación Secundaria, que me aportó habilidades de comunicación y estructuración de conocimiento que aplico al documentar sistemas y explicar decisiones técnicas. Esta combinación me permite diseñar sistemas técnicamente sólidos y comunicar por qué esas decisiones tienen sentido. Mi enfoque hacia el aprendizaje es continuo: estudio sistemas en producción, experimento con nuevas aproximaciones y busco entender no solo cómo hacer algo, sino por qué una solución es mejor que otra en un contexto determinado."
+      "paragraph4": "Mi formación en Ingeniería del Software me proporcionó una base sólida en fundamentos de computación, estructuras de datos, algoritmos y diseño de sistemas. Esta base teórica se aplica constantemente: cuando optimizo algoritmos, aplico conocimientos de complejidad computacional; cuando diseño estructuras de datos, entiendo las implicaciones de cada elección; cuando tomo decisiones arquitectónicas, tengo fundamentos para evaluar trade-offs. Durante la carrera desarrollé proyectos reales, como una plataforma web para gestión de contadores inteligentes, que me enseñó a traducir requisitos del mundo real en arquitecturas de software y a pensar en sistemas completos, no solo en código. Actualmente curso un Máster en Inteligencia Artificial en UNIR, con el objetivo de integrar técnicas de ML e IA en el diseño de sistemas backend: desde pipelines de datos hasta APIs que exponen modelos en producción. Mi enfoque hacia el aprendizaje es continuo: estudio sistemas en producción, experimento con nuevas aproximaciones y busco entender no solo cómo hacer algo, sino por qué una solución es mejor que otra en un contexto determinado."
     },
     "experience": {
       "title": "Experiencia",
@@ -100,16 +102,22 @@
         "date": "Octubre 2022"
       },
       "master": {
-        "name": "Universidad Internacional de Andalucía",
-        "degree": "Máster en Educación Secundaria",
-        "grade": "8.9/10",
-        "date": "Septiembre 2025"
+        "name": "UNIR - Universidad Internacional de La Rioja",
+        "degree": "Máster en Inteligencia Artificial",
+        "grade": "En curso",
+        "date": "Previsto marzo 2027"
       }
     },
     "skills": {
       "title": "Tecnologías",
-      "advanced": "Avanzado: C#, Java, Azure Cloud, Docker, Python, ASP.NET, SQL, CosmosDB, MongoDB",
-      "intermediate": "Intermedio: Kubernetes, JavaScript, React, Django, Spring, SIEM (Splunk, QRadar, ElasticSearch)"
+      "categories": [
+        { "name": "Lenguajes y Frameworks", "items": ["C#", "ASP.NET Core", ".NET", "Java", "Spring", "Python", "JavaScript", "Next.js"] },
+        { "name": "Cloud y DevOps", "items": ["Azure Functions", "Azure DevOps", "App Service", "CosmosDB", "Vercel", "Docker", "Kubernetes", "Jenkins", "Redis"] },
+        { "name": "Bases de datos", "items": ["PostgreSQL", "SQL Server", "MongoDB", "CosmosDB", "Azure Table Storage"] },
+        { "name": "APIs y Auth", "items": ["REST API", "OpenAPI/Swagger", "JWT", "OAuth 2.0", "Stripe", "Postman"] },
+        { "name": "Testing", "items": ["JUnit", "Selenium", "Pirámide de Testing (Unit / Integración / E2E)"] },
+        { "name": "Prácticas", "items": ["SOLID", "Clean Architecture", "RBAC", "Scrum", "Git", "GitHub", "Jira", "UML"] }
+      ]
     }
   },
   "contact": {
@@ -161,7 +169,7 @@
         "title": "2. Datos que Recopilamos",
         "content": {
           "paragraph1": "A través del formulario de contacto de este sitio web, recopilamos los siguientes datos personales:",
-          "paragraph2": "Estos datos se recopilan únicamente cuando usted los proporciona voluntariamente al enviar el formulario de contacto. **Importante: estos datos NO se almacenan en este sitio web.** Los datos se envían directamente a través de Formspree y solo se utilizan para que yo pueda responder a su consulta por email.",
+          "paragraph2": "Estos datos se recopilan únicamente cuando usted los proporciona voluntariamente al enviar el formulario de contacto. **Importante: estos datos NO se almacenan en este sitio web.** Los datos se envían a través de la API de contacto y solo se utilizan para que yo pueda responder a su consulta por email.",
           "list": {
             "name": "Nombre",
             "email": "Dirección de correo electrónico",
@@ -184,11 +192,11 @@
       "dataProcessing": {
         "title": "5. Procesamiento de Datos",
         "content": {
-          "paragraph1": "Los datos del formulario de contacto se procesan a través de Formspree, un servicio de terceros que actúa como procesador de datos. Formspree está certificado y cumple con el RGPD. **Este sitio web no almacena ningún dato personal de los usuarios.** Los datos se envían directamente a Formspree, que los procesa y me los reenvía por email.",
+          "paragraph1": "Los datos del formulario de contacto se procesan a través de una API propia y se envían mediante Resend, un servicio de entrega de emails. **Este sitio web no almacena ningún dato personal de los usuarios.** Los datos se utilizan únicamente para enviarme una notificación por email y no son retenidos por ningún procesador de formularios externo.",
           "paragraph2": "Este sitio web está alojado en Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, Estados Unidos), que actúa como procesador de datos para el alojamiento y entrega del sitio web. Vercel puede recopilar datos técnicos automáticos (dirección IP, logs del servidor) necesarios para el funcionamiento del servicio.",
           "paragraph3": "Puede consultar las políticas de privacidad de nuestros procesadores:",
-          "formspreeLink": "https://formspree.io/legal/privacy-policy",
-          "formspreeText": "Política de privacidad de Formspree",
+          "formspreeLink": "https://resend.com/legal/privacy-policy",
+          "formspreeText": "Política de privacidad de Resend",
           "vercelLink": "https://vercel.com/legal/privacy-policy",
           "vercelText": "Política de privacidad de Vercel"
         }
@@ -196,7 +204,7 @@
       "dataRetention": {
         "title": "6. Conservación de Datos",
         "content": {
-          "paragraph1": "Este sitio web no almacena datos personales en sus servidores. Los datos enviados a través del formulario se procesan por Formspree y se me envían por email. La conservación de estos datos depende de la configuración de Formspree y de mi bandeja de entrada de email.",
+          "paragraph1": "Este sitio web no almacena datos personales en sus servidores. Los datos enviados a través del formulario se entregan por email mediante Resend y no son retenidos por ningún procesador externo más allá de lo necesario para la entrega.",
           "paragraph2": "Los datos se conservarán únicamente durante el tiempo necesario para responder a su consulta. Una vez finalizada la comunicación, los datos se eliminarán en un plazo máximo de 2 años, salvo que exista una obligación legal que requiera una conservación más prolongada.",
           "paragraph3": "La cookie técnica utilizada para el rate limiting expira automáticamente después de 24 horas. Los datos almacenados en localStorage (utilizados como respaldo de la cookie) se eliminan cuando el usuario borra el almacenamiento local de su navegador."
         }
@@ -231,9 +239,7 @@
           "cookieType": "Tipo: Cookie técnica esencial (no requiere consentimiento según RGPD)",
           "paragraph3": "**localStorage:**",
           "localStoragePurpose": "Este sitio web también utiliza localStorage del navegador como respaldo de la cookie para garantizar el funcionamiento del rate limiting incluso si las cookies están deshabilitadas. Los datos almacenados son idénticos a los de la cookie (únicamente un timestamp) y se eliminan cuando el usuario borra el almacenamiento local de su navegador.",
-          "paragraph4": "**reCAPTCHA:**",
-          "recaptchaDescription": "Este sitio web utiliza Google reCAPTCHA v3 para proteger el formulario de contacto contra spam y abusos. reCAPTCHA v3 funciona en segundo plano y analiza el comportamiento del usuario para determinar si es humano o un bot. Google puede recopilar información sobre su dispositivo, navegador y comportamiento de navegación. Esta información se utiliza únicamente para proporcionar y mejorar el servicio de reCAPTCHA. El uso de reCAPTCHA está sujeto a la Política de Privacidad de Google (https://policies.google.com/privacy) y los Términos de Servicio de Google (https://policies.google.com/terms).",
-          "paragraph5": "**No utilizamos cookies de seguimiento, publicidad o análisis.** No compartimos estos datos con terceros y solo se utilizan para garantizar el correcto funcionamiento del sitio web.",
+          "paragraph4": "**No utilizamos cookies de seguimiento, publicidad o análisis.** No compartimos estos datos con terceros y solo se utilizan para garantizar el correcto funcionamiento del sitio web.",
           "paragraph6": "Puede configurar su navegador para rechazar cookies o borrar el almacenamiento local en cualquier momento, aunque esto puede afectar la funcionalidad del formulario de contacto."
         }
       },
@@ -254,14 +260,14 @@
       "internationalTransfers": {
         "title": "10. Transferencias Internacionales de Datos",
         "content": {
-          "paragraph1": "Los datos del formulario de contacto se procesan a través de Formspree, que tiene servidores en Estados Unidos. El alojamiento del sitio web se realiza a través de Vercel, también con servidores en Estados Unidos.",
+          "paragraph1": "Los datos del formulario de contacto se entregan mediante Resend, que tiene servidores en Estados Unidos. El alojamiento del sitio web se realiza a través de Vercel, también con servidores en Estados Unidos.",
           "paragraph2": "Estas transferencias se realizan bajo las garantías adecuadas establecidas en el RGPD:",
           "guarantees": {
             "clauses": "Cláusulas contractuales tipo aprobadas por la Comisión Europea",
             "certification": "Certificaciones de cumplimiento del RGPD por parte de los procesadores",
             "adequacy": "Marco de adecuación UE-EEUU (cuando aplique)"
           },
-          "paragraph3": "Formspree y Vercel han implementado medidas técnicas y organizativas para garantizar que sus datos personales reciban un nivel de protección adecuado equivalente al establecido en el RGPD."
+          "paragraph3": "Resend y Vercel han implementado medidas técnicas y organizativas para garantizar que sus datos personales reciban un nivel de protección adecuado equivalente al establecido en el RGPD."
         }
       },
       "minors": {

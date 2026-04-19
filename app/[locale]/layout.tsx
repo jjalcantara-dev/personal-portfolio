@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
 import CookieBanner from "@/components/CookieBanner";
-import ReCaptchaProvider from "@/components/ReCaptchaProvider";
 import { defaultLocale, isValidLocale, locales } from "@/lib/i18n";
 import { getContent } from "@/lib/content";
 
@@ -179,16 +178,14 @@ export default async function LocaleLayout({ children, params }: Props) {
           {t.a11y.skipToContent}
         </a>
         <StructuredData locale={locale} />
-        <ReCaptchaProvider>
-          <div className="min-h-screen flex flex-col">
-            <Header locale={locale} />
-            <main id="main-content" className="flex-1" role="main" tabIndex={-1}>
-              {children}
-            </main>
-            <Footer locale={locale} />
-            <CookieBanner locale={locale} />
-          </div>
-        </ReCaptchaProvider>
+        <div className="min-h-screen flex flex-col">
+          <Header locale={locale} />
+          <main id="main-content" className="flex-1" role="main" tabIndex={-1}>
+            {children}
+          </main>
+          <Footer locale={locale} />
+          <CookieBanner locale={locale} />
+        </div>
       </body>
     </html>
   );

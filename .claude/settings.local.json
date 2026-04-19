@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npx next *)",
+      "Bash(node_modules\\\\.bin\\\\next build *)",
+      "Bash(./node_modules/.bin/next build *)",
+      "Bash(npm install *)",
+      "Bash(npm uninstall *)",
+      "Bash(node *)",
+      "Bash(npm list *)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}

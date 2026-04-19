@@ -99,10 +99,14 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
                     <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-4">
                       {t.projects.current.prodigy.description}
                     </p>
-                    {t.projects.current.prodigy.developerNote && (
-                      <p className="text-sm text-gray-600 italic mb-4">
-                        {t.projects.current.prodigy.developerNote}
-                      </p>
+                    {t.projects.current.prodigy.techStack && (
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {t.projects.current.prodigy.techStack.map((tech) => (
+                          <span key={tech} className="text-xs text-black border border-gray-300 px-2.5 py-1 rounded-sm">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     )}
                     {t.projects.current.prodigy.appStore && t.projects.current.prodigy.googlePlay && (
                       <div className="flex flex-wrap gap-3 mt-4">
@@ -174,10 +178,14 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
                     <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-4">
                       {t.projects.current.koru.description}
                     </p>
-                    {t.projects.current.koru.developerNote && (
-                      <p className="text-sm text-gray-600 italic mb-4">
-                        {t.projects.current.koru.developerNote}
-                      </p>
+                    {t.projects.current.koru.techStack && (
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {t.projects.current.koru.techStack.map((tech) => (
+                          <span key={tech} className="text-xs text-black border border-gray-300 px-2.5 py-1 rounded-sm">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     )}
                     {t.projects.current.koru.appStore && t.projects.current.koru.googlePlay && (
                       <div className="flex flex-wrap gap-3 mt-4">

@@ -187,21 +187,30 @@ export default async function About({ params }: { params: Promise<{ locale: stri
 
           <section className="border-t border-gray-200 pt-12" aria-labelledby="skills-heading">
             <ScrollAnimation animation="fade-up" delay={0}>
-              <h2 id="skills-heading" className="text-2xl sm:text-3xl font-light mb-6 text-black">
+              <h2 id="skills-heading" className="text-2xl sm:text-3xl font-light mb-8 text-black">
                 {t.about.skills.title}
               </h2>
             </ScrollAnimation>
-            <div className="space-y-4">
-              <ScrollAnimation animation="fade-up" delay={100}>
-                <p className="text-base text-gray-700">
-                  <span className="font-medium text-black">{t.about.skills.advanced}</span>
-                </p>
-              </ScrollAnimation>
-              <ScrollAnimation animation="fade-up" delay={200}>
-                <p className="text-base text-gray-700">
-                  <span className="font-medium text-black">{t.about.skills.intermediate}</span>
-                </p>
-              </ScrollAnimation>
+            <div className="space-y-8">
+              {t.about.skills.categories.map((category, i) => (
+                <ScrollAnimation key={category.name} animation="fade-up" delay={i * 75}>
+                  <div>
+                    <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
+                      {category.name}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {category.items.map((item) => (
+                        <span
+                          key={item}
+                          className="text-sm text-black border border-gray-300 px-3 py-1 rounded-sm"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </ScrollAnimation>
+              ))}
             </div>
           </section>
         </div>

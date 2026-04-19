@@ -41,17 +41,24 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <ScrollAnimation animation="fade-up" delay={300}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center" role="group" aria-label="Call to action buttons">
               <Link
+                href={`/${locale}/about`}
+                className="inline-block px-8 py-3.5 bg-black text-white text-sm font-medium hover:bg-gray-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+              >
+                {t.home.cta.about}
+              </Link>
+              <Link
                 href={`/${locale}/projects`}
                 className="inline-block px-8 py-3.5 border-2 border-black text-black text-sm font-medium hover:bg-black hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
               >
                 {t.home.cta.projects}
               </Link>
-              <Link
-                href={`/${locale}/contact`}
-                className="inline-block px-8 py-3.5 bg-black text-white text-sm font-medium hover:bg-gray-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+              <a
+                href="/jesus_jimenez_alcantara_cv.pdf"
+                download
+                className="inline-block px-8 py-3.5 border-2 border-gray-400 text-gray-700 text-sm font-medium hover:border-black hover:text-black transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
               >
-                {t.home.cta.contact}
-              </Link>
+                {t.home.cta.cv}
+              </a>
             </div>
           </ScrollAnimation>
         </div>

@@ -206,13 +206,7 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
                     <p><strong>{t.privacy.sections.cookies.content.paragraph3}</strong></p>
                     <p>{t.privacy.sections.cookies.content.localStoragePurpose}</p>
                     {t.privacy.sections.cookies.content.paragraph4 && (
-                      <p><strong>{t.privacy.sections.cookies.content.paragraph4}</strong></p>
-                    )}
-                    {t.privacy.sections.cookies.content.recaptchaDescription && (
-                      <p>{t.privacy.sections.cookies.content.recaptchaDescription}</p>
-                    )}
-                    {t.privacy.sections.cookies.content.paragraph5 && (
-                      <p>{t.privacy.sections.cookies.content.paragraph5}</p>
+                      <p>{t.privacy.sections.cookies.content.paragraph4}</p>
                     )}
                     {t.privacy.sections.cookies.content.paragraph6 && (
                       <p>{t.privacy.sections.cookies.content.paragraph6}</p>
