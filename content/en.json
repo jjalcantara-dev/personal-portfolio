@@ -58,6 +58,16 @@
         "techStack": ["ASP.NET Core", "Azure Functions", "PostgreSQL", "JWT", "OAuth 2.0", "REST API"],
         "appStore": "https://apps.apple.com/es/app/koru-your-acne-coach/id6466275209",
         "googlePlay": "https://play.google.com/store/apps/details?id=com.koruacne.app"
+      },
+      "dailydermatalks": {
+        "name": "DailyDermaTalks",
+        "type": "Web Application",
+        "role": "Fullstack Engineer",
+        "status": "Launching Soon",
+        "description": "Web platform for the Cantabria Labs dermatology community, with restricted access and controlled capacity: access is granted manually by an administrator. Full design and implementation: REST APIs, JWT authentication with role-based RBAC, CMS for content management, Upstash Redis rate limiting, and PostgreSQL database architecture. Deployed on Vercel.",
+        "techStack": ["Next.js", "PostgreSQL", "Vercel", "Upstash Redis", "JWT", "RBAC", "CMS"],
+        "url": "https://dailydermatalks.com",
+        "visitLabel": "Visit website"
       }
     }
   },

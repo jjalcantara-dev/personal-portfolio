@@ -223,6 +223,72 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
                 </div>
               </article>
             </ScrollAnimation>
+            {/* DailyDermaTalks */}
+            <ScrollAnimation animation="fade-up" delay={500}>
+              <article className="border-b border-gray-200 pb-16 last:border-b-0 last:pb-0 group/card">
+                <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 mb-6">
+                  <div className="flex-shrink-0 flex items-center justify-center sm:justify-start w-full sm:w-auto">
+                    <div className="bg-white border border-gray-200 rounded-sm p-4 sm:p-6 flex items-center justify-center" style={{ minWidth: '140px', minHeight: '100px' }}>
+                      <svg className="w-12 h-12 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-3 mb-3">
+                      <h3 className="text-xl sm:text-2xl font-medium text-black">
+                        {t.projects.current.dailydermatalks.name}
+                      </h3>
+                      <span className="inline-flex items-center text-xs px-2.5 py-1 bg-gray-100 text-gray-600 rounded-sm font-medium">
+                        {t.projects.current.dailydermatalks.status}
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+                      <span className="inline-flex items-center">
+                        <span className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-2"></span>
+                        {t.projects.current.dailydermatalks.type}
+                      </span>
+                      <span className="inline-flex items-center">
+                        <span className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-2"></span>
+                        {t.projects.current.dailydermatalks.role}
+                      </span>
+                    </div>
+                    <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-4">
+                      {t.projects.current.dailydermatalks.description}
+                    </p>
+                    {t.projects.current.dailydermatalks.techStack && (
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {t.projects.current.dailydermatalks.techStack.map((tech) => (
+                          <span key={tech} className="tag text-xs px-2.5 py-1">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    {t.projects.current.dailydermatalks.url && (
+                      <div className="flex flex-wrap gap-3 mt-4">
+                        <a
+                          href={t.projects.current.dailydermatalks.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 hover:border-black hover:-translate-y-px hover:shadow-md transition-all duration-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                          aria-label={t.projects.current.dailydermatalks.visitLabel}
+                        >
+                          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                          </svg>
+                          <span className="text-sm font-medium text-black">
+                            {t.projects.current.dailydermatalks.visitLabel}
+                          </span>
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </article>
+            </ScrollAnimation>
           </div>
         </section>
       </article>
