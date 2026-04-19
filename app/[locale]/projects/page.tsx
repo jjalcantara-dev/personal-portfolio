@@ -156,7 +156,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
                         alt={`${t.projects.current.dailydermatalks.name} logo`}
                         width={138}
                         height={56}
-                        className="w-auto h-8 sm:h-10 object-contain"
+                        className="w-auto h-16 sm:h-20 object-contain"
                       />
                     </div>
                   </div>
