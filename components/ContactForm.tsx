@@ -59,7 +59,7 @@ export default function ContactForm({ locale }: Props) {
         ? Math.max(0, Math.ceil((RATE_LIMIT_MS - (Date.now() - lastSubmit)) / 1000))
         : 0;
       setTimeRemaining(remaining);
-      if (remaining === 0 && status === "error" && (errors._general?.includes("espera") || errors._general?.includes("wait"))) {
+      if (remaining === 0 && status === "error" && errors._general === "rate_limited") {
         setErrors({});
         setStatus("idle");
       }
@@ -102,13 +102,8 @@ export default function ContactForm({ locale }: Props) {
 
     const lastSubmit = getLastSubmitTime();
     if (lastSubmit > 0 && Date.now() - lastSubmit < RATE_LIMIT_MS) {
-      const remaining = Math.ceil((RATE_LIMIT_MS - (Date.now() - lastSubmit)) / 1000);
       setStatus("error");
-      setErrors({
-        _general: locale === "es"
-          ? `Por favor espera antes de enviar nuevamente. Tiempo restante: ${formatTimeRemaining(remaining)}`
-          : `Please wait before submitting again. Time remaining: ${formatTimeRemaining(remaining)}`,
-      });
+      setErrors({ _general: "rate_limited" });
       return;
     }
 
@@ -140,13 +135,8 @@ export default function ContactForm({ locale }: Props) {
       } else {
         const data = await response.json().catch(() => ({})) as { error?: string; retryAfter?: number };
         if (response.status === 429) {
-          const wait = data.retryAfter ? formatTimeRemaining(data.retryAfter) : "";
           setStatus("error");
-          setErrors({
-            _general: locale === "es"
-              ? `Demasiados intentos. Por favor espera${wait ? ` ${wait}` : ""}.`
-              : `Too many attempts. Please wait${wait ? ` ${wait}` : ""}.`,
-          });
+          setErrors({ _general: "rate_limited" });
         } else {
           setStatus("error");
           setErrors({ _general: locale === "es" ? "Error al enviar el mensaje. Por favor intenta de nuevo." : "Error sending message. Please try again." });
@@ -272,10 +262,10 @@ export default function ContactForm({ locale }: Props) {
 
       {status === "error" && (
         <div className="p-4 bg-gray-100 border-2 border-gray-300 text-gray-700" role="alert" aria-live="assertive">
-          {errors._general?.includes("espera") || errors._general?.includes("wait")
+          {errors._general === "rate_limited"
             ? (locale === "es"
-                ? `Por favor espera antes de enviar nuevamente. Tiempo restante: ${formatTimeRemaining(timeRemaining)}`
-                : `Please wait before submitting again. Time remaining: ${formatTimeRemaining(timeRemaining)}`)
+                ? `Por seguridad, el formulario tiene un límite de 3 envíos cada 10 minutos. Por favor espera antes de intentarlo de nuevo${timeRemaining > 0 ? ` (${formatTimeRemaining(timeRemaining)})` : ""}.`
+                : `For security reasons, the form is limited to 3 submissions every 10 minutes. Please wait before trying again${timeRemaining > 0 ? ` (${formatTimeRemaining(timeRemaining)})` : ""}.`)
             : (errors._general || t.contact.form.error)}
         </div>
       )}

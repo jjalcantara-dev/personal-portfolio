@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
-        source: "/:path((?!es|en|api|_next|favicon\\.ico|manifest$|robots\\.txt$|sitemap\\.xml$|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|json)$).*)",
+        source: "/:path((?!es|en|api|_next|favicon\\.ico|manifest$|robots\\.txt$|sitemap\\.xml$|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|json|pdf)$).*)",
         destination: "/es/:path*",
         permanent: false,
       },
