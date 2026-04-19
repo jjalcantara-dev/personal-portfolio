@@ -65,6 +65,9 @@ export default async function About({ params }: { params: Promise<{ locale: stri
                 </div>
               </div>
               <div className="flex-1">
+                <p className="text-sm font-medium text-gray-500 tracking-widest uppercase mb-3 select-none">
+                  Jesús Jiménez Alcántara
+                </p>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight mb-4 text-black">
                   {t.about.title}
                 </h1>

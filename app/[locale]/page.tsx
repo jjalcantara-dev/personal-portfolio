@@ -26,7 +26,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               priority
             />
           </div>
-          <ScrollAnimation animation="fade-up" delay={100}>
+          <ScrollAnimation animation="fade-up" delay={80}>
+            <p className="text-sm font-medium text-gray-500 tracking-widest uppercase mb-4 select-none">
+              Jesús Jiménez Alcántara
+            </p>
+          </ScrollAnimation>
+          <ScrollAnimation animation="fade-up" delay={150}>
             <h1 id="main-heading" className="text-5xl sm:text-6xl md:text-7xl font-light tracking-tight mb-6 text-black">
               {t.home.title}
               <br />
