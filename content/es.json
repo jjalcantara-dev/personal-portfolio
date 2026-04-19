@@ -233,20 +233,25 @@
       "cookies": {
         "title": "8. Cookies y Tecnologías Similares",
         "content": {
-          "paragraph1": "Este sitio web utiliza una cookie técnica esencial y localStorage para prevenir el envío masivo de mensajes a través del formulario de contacto.",
-          "cookieLabel": "Cookie técnica",
+          "paragraph1": "Este sitio web utiliza dos cookies técnicas esenciales y localStorage para su correcto funcionamiento.",
+          "cookieLabel": "Cookie de rate limiting",
           "cookieName": "contact_form_last_submit",
           "cookieNameLabel": "Nombre",
-          "cookiePurpose": "Almacena únicamente un timestamp del último envío del formulario para limitar los envíos a 3 cada 10 minutos.",
+          "cookiePurpose": "Almacena únicamente un timestamp del último envío del formulario para limitar los envíos a 3 por hora.",
           "cookiePurposeLabel": "Finalidad",
           "cookieDuration": "24 horas (expira automáticamente)",
           "cookieDurationLabel": "Duración",
           "cookieType": "Técnica esencial — no requiere consentimiento según el RGPD",
           "cookieTypeLabel": "Tipo",
+          "cookie2Label": "Cookie de preferencia de idioma",
+          "cookie2Name": "preferred_locale",
+          "cookie2Purpose": "Guarda el idioma seleccionado por el usuario (es / en) para que el sitio se muestre siempre en el idioma elegido sin volver a redirigir según el navegador.",
+          "cookie2Duration": "1 año",
+          "cookie2Type": "Técnica esencial — no requiere consentimiento según el RGPD",
           "localStorageLabel": "localStorage",
-          "localStoragePurpose": "Se usa como respaldo de la cookie para garantizar el rate limiting incluso si las cookies están deshabilitadas. Almacena únicamente un timestamp y se elimina cuando el usuario borra el almacenamiento local del navegador.",
+          "localStoragePurpose": "Se usa como respaldo de la cookie de rate limiting para garantizar su funcionamiento incluso si las cookies están deshabilitadas. Almacena únicamente un timestamp y se elimina cuando el usuario borra el almacenamiento local del navegador.",
           "noTracking": "No se utilizan cookies de seguimiento, publicidad ni análisis. No se comparte información con terceros.",
-          "paragraph6": "Puede configurar su navegador para rechazar cookies o borrar el almacenamiento local en cualquier momento, aunque esto puede afectar la funcionalidad del formulario de contacto."
+          "paragraph6": "Puede configurar su navegador para rechazar cookies o borrar el almacenamiento local en cualquier momento, aunque esto puede afectar la funcionalidad del formulario de contacto y la preferencia de idioma."
         }
       },
       "dataSecurity": {

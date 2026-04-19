@@ -12,7 +12,7 @@ const redis = new Redis({
 
 const ratelimit = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(3, "10 m"),
+  limiter: Ratelimit.slidingWindow(3, "1 h"),
   prefix: "contact",
 });
 

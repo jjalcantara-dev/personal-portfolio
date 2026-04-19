@@ -246,6 +246,20 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
 
                   <div className="space-y-3">
                     <h3 className="text-base font-medium text-black">
+                      {s.cookies.content.cookie2Label}
+                    </h3>
+                    <CookieTable
+                      rows={[
+                        { label: s.cookies.content.cookieNameLabel, value: s.cookies.content.cookie2Name },
+                        { label: s.cookies.content.cookiePurposeLabel, value: s.cookies.content.cookie2Purpose },
+                        { label: s.cookies.content.cookieDurationLabel, value: s.cookies.content.cookie2Duration },
+                        { label: s.cookies.content.cookieTypeLabel, value: s.cookies.content.cookie2Type },
+                      ]}
+                    />
+                  </div>
+
+                  <div className="space-y-3">
+                    <h3 className="text-base font-medium text-black">
                       {s.cookies.content.localStorageLabel}
                     </h3>
                     <p>{s.cookies.content.localStoragePurpose}</p>

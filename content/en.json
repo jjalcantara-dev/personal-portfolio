@@ -233,20 +233,25 @@
       "cookies": {
         "title": "8. Cookies and Similar Technologies",
         "content": {
-          "paragraph1": "This website uses one essential technical cookie and localStorage to prevent mass submission of messages through the contact form.",
-          "cookieLabel": "Technical cookie",
+          "paragraph1": "This website uses two essential technical cookies and localStorage for its proper functioning.",
+          "cookieLabel": "Rate limiting cookie",
           "cookieName": "contact_form_last_submit",
           "cookieNameLabel": "Name",
-          "cookiePurpose": "Stores only a timestamp of the last form submission to limit submissions to 3 per 10 minutes.",
+          "cookiePurpose": "Stores only a timestamp of the last form submission to limit submissions to 3 per hour.",
           "cookiePurposeLabel": "Purpose",
           "cookieDuration": "24 hours (automatically expires)",
           "cookieDurationLabel": "Duration",
           "cookieType": "Essential technical — does not require consent under GDPR",
           "cookieTypeLabel": "Type",
+          "cookie2Label": "Language preference cookie",
+          "cookie2Name": "preferred_locale",
+          "cookie2Purpose": "Stores the language selected by the user (es / en) so the site always displays in the chosen language without redirecting based on browser settings.",
+          "cookie2Duration": "1 year",
+          "cookie2Type": "Essential technical — does not require consent under GDPR",
           "localStorageLabel": "localStorage",
-          "localStoragePurpose": "Used as a backup for the cookie to ensure rate limiting even if cookies are disabled. Stores only a timestamp and is deleted when the user clears their browser's local storage.",
+          "localStoragePurpose": "Used as a backup for the rate limiting cookie to ensure its functionality even if cookies are disabled. Stores only a timestamp and is deleted when the user clears their browser's local storage.",
           "noTracking": "No tracking, advertising, or analytics cookies are used. No information is shared with third parties.",
-          "paragraph6": "You can configure your browser to reject cookies or clear local storage at any time, although this may affect the contact form functionality."
+          "paragraph6": "You can configure your browser to reject cookies or clear local storage at any time, although this may affect the contact form functionality and language preference."
         }
       },
       "dataSecurity": {

@@ -24,6 +24,8 @@ export default function LanguageSwitcher() {
     : pathname;
 
   const switchLocale = (newLocale: Locale) => {
+    // Persist the explicit choice so the middleware respects it on future visits
+    document.cookie = `preferred_locale=${newLocale};path=/;max-age=31536000;SameSite=Lax`;
     router.push(`/${newLocale}${pathWithoutLocale}`);
     setIsOpen(false);
   };

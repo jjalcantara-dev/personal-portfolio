@@ -14,7 +14,7 @@ type Props = {
 const MAX_NAME_LENGTH = 100;
 const MAX_EMAIL_LENGTH = 254;
 const MAX_MESSAGE_LENGTH = 2000;
-const RATE_LIMIT_MS = 300000; // 5 min client-side UX guard
+const RATE_LIMIT_MS = 3600000; // 1 h client-side UX guard
 
 const emailRegex =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
@@ -269,8 +269,8 @@ export default function ContactForm({ locale }: Props) {
       {timeRemaining > 0 && (
         <div className="p-4 bg-gray-100 border-2 border-gray-300 text-gray-700" role="status" aria-live="polite">
           {locale === "es"
-            ? `Por seguridad, el formulario tiene un límite de 3 envíos cada 10 minutos. Podrás enviar otro mensaje en ${formatTimeRemaining(timeRemaining)}.`
-            : `For security reasons, the form is limited to 3 submissions every 10 minutes. You can send another message in ${formatTimeRemaining(timeRemaining)}.`}
+            ? `Por seguridad, el formulario tiene un límite de 3 envíos por hora. Podrás enviar otro mensaje en ${formatTimeRemaining(timeRemaining)}.`
+            : `For security reasons, the form is limited to 3 submissions per hour. You can send another message in ${formatTimeRemaining(timeRemaining)}.`}
         </div>
       )}
 
