@@ -25,7 +25,7 @@ function detectLocale(acceptLanguage: string | null): Locale {
   return DEFAULT;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Already has a locale prefix → let it through
