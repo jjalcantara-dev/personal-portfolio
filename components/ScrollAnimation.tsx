@@ -10,6 +10,7 @@ type Props = {
   className?: string;
   animation?: AnimationType;
   threshold?: number;
+  rootMargin?: string;
 };
 
 const HIDDEN: Record<AnimationType, CSSProperties> = {
@@ -30,6 +31,7 @@ export default function ScrollAnimation({
   className = "",
   animation = "fade-up",
   threshold = 0.08,
+  rootMargin = "0px 0px -40px 0px",
 }: Props) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -45,7 +47,7 @@ export default function ScrollAnimation({
           observer.disconnect();
         }
       },
-      { threshold, rootMargin: "0px 0px -40px 0px" }
+      { threshold, rootMargin }
     );
 
     observer.observe(el);

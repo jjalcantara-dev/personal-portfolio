@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import ScrollAnimation from "@/components/ScrollAnimation";
 
 type Person = {
   name: string;
@@ -44,20 +43,32 @@ const GlobeIcon = () => (
 
 const linkClass = "inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 hover:border-black hover:-translate-y-px hover:shadow-md transition-all duration-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2";
 
+const EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
+
 export default function CollabList({ people, visitLabel }: Props) {
   const [list, setList] = useState(people);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setList((prev) => [...prev].sort(() => Math.random() - 0.5));
+    setMounted(true);
   }, []);
 
   return (
     <ul className="space-y-12 list-none m-0 p-0">
       {list.map((person, index) => {
         const isLinkedIn = person.url.includes("linkedin.com");
+        const delay = index * 80;
         return (
-          <ScrollAnimation key={person.url} animation="fade-up" delay={200 + index * 100}>
-            <li className="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
+          <li
+            key={person.url}
+            className="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "none" : "translateY(22px)",
+              transition: `opacity 0.65s ${EASING} ${delay}ms, transform 0.65s ${EASING} ${delay}ms`,
+            }}
+          >
               <article className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
                 <div className="flex-shrink-0">
                   {person.image ? (
@@ -121,8 +132,7 @@ export default function CollabList({ people, visitLabel }: Props) {
                   </div>
                 </div>
               </article>
-            </li>
-          </ScrollAnimation>
+          </li>
         );
       })}
     </ul>
