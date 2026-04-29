@@ -28,8 +28,22 @@ function sanitize(str: string): string {
 }
 
 export async function POST(req: NextRequest) {
+  const origin = req.headers.get("origin");
+  const host = req.headers.get("host") ?? "";
+  if (origin) {
+    try {
+      if (new URL(origin).host !== host) {
+        return NextResponse.json({ error: "forbidden" }, { status: 403 });
+      }
+    } catch {
+      return NextResponse.json({ error: "forbidden" }, { status: 403 });
+    }
+  }
+
   const ip =
-    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+    req.headers.get("x-real-ip") ??
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+    "unknown";
 
   const { success, reset } = await ratelimit.limit(ip);
   if (!success) {
@@ -58,7 +72,7 @@ export async function POST(req: NextRequest) {
   }
 
   const cleanName = sanitize(name);
-  const cleanEmail = email.trim().toLowerCase();
+  const cleanEmail = email.replace(/[\r\n]/g, "").trim().toLowerCase();
   const cleanMessage = sanitize(message);
 
   if (!cleanName || cleanName.length > MAX_NAME_LENGTH) {

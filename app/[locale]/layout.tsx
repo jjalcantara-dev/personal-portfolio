@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BottomNav from "@/components/BottomNav";
+import MobileLocaleToggle from "@/components/MobileLocaleToggle";
 import StructuredData from "@/components/StructuredData";
 import CookieBanner from "@/components/CookieBanner";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -180,7 +182,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         </a>
         <StructuredData locale={locale} />
         <ScrollProgress />
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col pb-[calc(env(safe-area-inset-bottom)+57px)] sm:pb-0">
           <Header locale={locale} />
           <main id="main-content" className="flex-1" role="main" tabIndex={-1}>
             {children}
@@ -188,6 +190,8 @@ export default async function LocaleLayout({ children, params }: Props) {
           <Footer locale={locale} />
           <CookieBanner locale={locale} />
         </div>
+        <BottomNav locale={locale} />
+        <MobileLocaleToggle locale={locale} />
       </body>
     </html>
   );

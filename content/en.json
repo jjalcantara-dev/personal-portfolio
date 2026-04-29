@@ -112,6 +112,24 @@
         "linkedinUrl": "",
         "image": "/collab/adrian.jpg",
         "description": "Software Engineer with 3+ years at Dedalus building hospital management software. Currently SAI teacher in Melilla."
+      },
+      {
+        "name": "Keyla Xu",
+        "role": "Consultant & Incident Responder at EY | eJPT | Reverse Engineering & Malware Intelligence",
+        "url": "https://www.linkedin.com/in/keylaxu/",
+        "linkLabel": "LinkedIn",
+        "linkedinUrl": "",
+        "image": "/collab/keyla.jpg",
+        "description": "Software Engineering graduate from UMA with a background in Telecommunications. Consultant at EY specializing in incident response and analytics with Power BI."
+      },
+      {
+        "name": "María Victoria Ramos León",
+        "role": "QA/BA for Banco Santander | Confirming | Syndication & Distribution | Mathematician | Data Scientist",
+        "url": "https://www.linkedin.com/in/maria-victoria-ramos-leon/",
+        "linkLabel": "LinkedIn",
+        "linkedinUrl": "",
+        "image": "/collab/victoria.jpg",
+        "description": "QA and Business Analyst on a banking Confirming project. Mathematician with experience in international projects, data analysis, and process optimization."
       }
     ]
   },

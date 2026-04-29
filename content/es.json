@@ -112,6 +112,24 @@
         "linkedinUrl": "",
         "image": "/collab/adrian.jpg",
         "description": "Ingeniero del Software con más de 3 años en Dedalus desarrollando software de gestión hospitalaria. Actualmente profesor de SAI en Melilla."
+      },
+      {
+        "name": "Keyla Xu",
+        "role": "Consultant & Incident Responder en EY | eJPT | Reverse Engineering & Malware Intelligence",
+        "url": "https://www.linkedin.com/in/keylaxu/",
+        "linkLabel": "LinkedIn",
+        "linkedinUrl": "",
+        "image": "/collab/keyla.jpg",
+        "description": "Graduada en Ingeniería de Software por la UMA, con experiencia previa en Telecomunicaciones. Consultora en EY especializada en respuesta a incidencias y analítica con Power BI."
+      },
+      {
+        "name": "María Victoria Ramos León",
+        "role": "QA/BA en Banco Santander | Confirming | Syndication & Distribution | Matemática | Data Scientist",
+        "url": "https://www.linkedin.com/in/maria-victoria-ramos-leon/",
+        "linkLabel": "LinkedIn",
+        "linkedinUrl": "",
+        "image": "/collab/victoria.jpg",
+        "description": "QA y Business Analyst en un proyecto bancario de Confirming. Matemática con experiencia en proyectos internacionales, análisis de datos y optimización de procesos."
       }
     ]
   },

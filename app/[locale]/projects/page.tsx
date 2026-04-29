@@ -4,6 +4,15 @@ import { getContent } from "@/lib/content";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 
+function isSafeUrl(url: string): boolean {
+  try {
+    const { protocol } = new URL(url);
+    return protocol === "https:" || protocol === "http:";
+  } catch {
+    return false;
+  }
+}
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
@@ -191,7 +200,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
                         ))}
                       </div>
                     )}
-                    {t.projects.current.dailydermatalks.url && (
+                    {t.projects.current.dailydermatalks.url && isSafeUrl(t.projects.current.dailydermatalks.url) && (
                       <div className="flex flex-wrap gap-3 mt-4">
                         <a
                           href={t.projects.current.dailydermatalks.url}

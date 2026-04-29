@@ -18,6 +18,15 @@ type Props = {
   visitLabel: string;
 };
 
+function isSafeUrl(url: string): boolean {
+  try {
+    const { protocol } = new URL(url);
+    return protocol === "https:" || protocol === "http:";
+  } catch {
+    return false;
+  }
+}
+
 function getInitials(name: string): string {
   return name
     .split(/\s+/)
@@ -105,19 +114,21 @@ export default function CollabList({ people, visitLabel }: Props) {
                     </p>
                   )}
                   <div className="flex flex-wrap gap-3 mt-4">
-                    <a
-                      href={person.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={linkClass}
-                      aria-label={`${visitLabel}: ${person.name}`}
-                    >
-                      {isLinkedIn ? <LinkedInIcon /> : <GlobeIcon />}
-                      <span className="text-sm font-medium text-black">
-                        {person.linkLabel}
-                      </span>
-                    </a>
-                    {person.linkedinUrl && (
+                    {isSafeUrl(person.url) && (
+                      <a
+                        href={person.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={linkClass}
+                        aria-label={`${visitLabel}: ${person.name}`}
+                      >
+                        {isLinkedIn ? <LinkedInIcon /> : <GlobeIcon />}
+                        <span className="text-sm font-medium text-black">
+                          {person.linkLabel}
+                        </span>
+                      </a>
+                    )}
+                    {person.linkedinUrl && isSafeUrl(person.linkedinUrl) && (
                       <a
                         href={person.linkedinUrl}
                         target="_blank"

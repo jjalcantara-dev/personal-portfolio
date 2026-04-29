@@ -4,6 +4,13 @@ type Props = {
   locale: Locale;
 };
 
+function safeJsonLd(obj: unknown): string {
+  return JSON.stringify(obj)
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026");
+}
+
 export default function StructuredData({ locale }: Props) {
   const baseUrl = "https://jjalcantara.dev";
 
@@ -108,11 +115,11 @@ export default function StructuredData({ locale }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(personSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(websiteSchema) }}
       />
     </>
   );

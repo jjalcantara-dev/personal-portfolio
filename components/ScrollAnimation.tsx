@@ -30,15 +30,32 @@ export default function ScrollAnimation({
   delay = 0,
   className = "",
   animation = "fade-up",
-  threshold = 0.08,
-  rootMargin = "0px 0px -40px 0px",
+  threshold = 0.01,
+  rootMargin = "0px 0px 60px 0px",
 }: Props) {
+  // mounted: whether JS has run and we should apply animation styles
+  // visible: whether the element has entered the viewport
+  const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // If the element is already in the viewport on load, show it immediately
+    // without any animation — avoids flash of invisible content on mobile
+    const rect = el.getBoundingClientRect();
+    const alreadyInView = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (alreadyInView) {
+      setMounted(true);
+      setVisible(true);
+      return;
+    }
+
+    // Element is below the fold: mark as mounted (apply hidden styles) and observe
+    setMounted(true);
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -52,16 +69,20 @@ export default function ScrollAnimation({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [threshold]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div
       ref={ref}
       className={className}
-      style={{
-        transition: `opacity 0.65s ${EASING} ${delay}ms, transform 0.65s ${EASING} ${delay}ms`,
-        ...(visible ? VISIBLE : HIDDEN[animation]),
-      }}
+      style={
+        mounted
+          ? {
+              transition: `opacity 0.65s ${EASING} ${delay}ms, transform 0.65s ${EASING} ${delay}ms`,
+              ...(visible ? VISIBLE : HIDDEN[animation]),
+            }
+          : undefined
+      }
     >
       {children}
     </div>

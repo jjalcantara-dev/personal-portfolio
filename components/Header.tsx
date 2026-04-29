@@ -22,7 +22,7 @@ export default function Header({ locale }: Props) {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`hidden sm:block sticky top-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/85 backdrop-blur-md border-b border-gray-200/70 shadow-[0_1px_12px_rgba(0,0,0,0.06)]"
           : "bg-white border-b border-gray-200"
@@ -37,8 +37,10 @@ export default function Header({ locale }: Props) {
             role="toolbar"
             aria-label="Navigation and language selection"
           >
-            <Navigation locale={locale} />
-            <div className="ml-6 sm:ml-8 md:ml-12 lg:ml-16 border-l border-gray-200 pl-6 sm:pl-8 md:pl-10">
+            <div className="hidden sm:flex">
+              <Navigation locale={locale} />
+            </div>
+            <div className="sm:ml-8 md:ml-12 lg:ml-16 sm:border-l sm:border-gray-200 sm:pl-8 md:pl-10">
               <LanguageSwitcher />
             </div>
           </div>
