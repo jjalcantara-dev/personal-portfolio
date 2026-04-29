@@ -1,4 +1,4 @@
-# Portfolio Personal - Jesús Jiménez Alcantara
+# Portfolio Personal - Jesús Jiménez Alcántara
 
 Portfolio personal profesional desarrollado con Next.js 16, TypeScript y Tailwind CSS. Diseño minimalista, elegante y completamente accesible.
 
@@ -202,4 +202,4 @@ Este proyecto es privado y personal.
 
 ## 👤 Autor
 
-Jesús Jiménez Alcantara - [jjalcantara.dev](https://jjalcantara.dev)
+Jesús Jiménez Alcántara - [jjalcantara.dev](https://jjalcantara.dev)

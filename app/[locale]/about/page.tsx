@@ -56,7 +56,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
                 <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-gray-200">
                   <Image
                     src="/profile.png"
-                    alt="Foto de perfil de Jesús Jiménez Alcantara"
+                    alt="Foto de perfil de Jesús Jiménez Alcántara"
                     width={160}
                     height={160}
                     className="object-cover w-full h-full"

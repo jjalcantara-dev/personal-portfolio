@@ -13,7 +13,7 @@ export default function StructuredData({ locale }: Props) {
     name: "Jesús Jiménez Alcántara",
     alternateName: [
       "Jesus Jimenez Alcantara",
-      "Jesús Jiménez Alcantara",
+      "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcántara",
       "JJA",
       "jjalcantara",

@@ -16,7 +16,7 @@ export default function Navigation({ locale }: Props) {
   const navItems = [
     { href: `/${locale}`,          label: t.nav.home },
     { href: `/${locale}/projects`, label: t.nav.projects },
-    { href: `/${locale}/puzzles`,  label: t.nav.puzzles },
+    { href: `/${locale}/collab`,   label: t.nav.collab },
     { href: `/${locale}/about`,    label: t.nav.about },
     { href: `/${locale}/contact`,  label: t.nav.contact },
   ];

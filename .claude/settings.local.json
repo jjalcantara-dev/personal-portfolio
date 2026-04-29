@@ -10,7 +10,15 @@
       "Bash(node *)",
       "Bash(npm list *)",
       "Bash(npx tsc *)",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "WebFetch(domain:jugomo.dev)",
+      "Bash(curl -s -L -o \"C:/Users/yisus-gamer/Documents/GitHub/portfolio/public/collab/julio.jpg\" \"https://media.licdn.com/dms/image/v2/C4E03AQFmDvVEtbRp2Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516876448343?e=1779321600&v=beta&t=Kwn9xe3CrI7_LiUBXLMDgARusP-9Bc4R3hhZvRzNQp0\")",
+      "PowerShell(Get-NetTCPConnection *)",
+      "WebFetch(domain:www.linkedin.com)",
+      "Bash(curl -s -L -o \"C:/Users/yisus-gamer/Documents/GitHub/portfolio/public/collab/salva.jpg\" \"https://media.licdn.com/dms/image/v2/D5603AQHKJoFh7YNrhA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699967184520?e=1779321600&v=beta&t=djZ5uGD16XKll7pHA0P_RPU6Xnj1T3jEHXqo2nJZKzM\")",
+      "Bash(curl -s -L -o \"C:/Users/yisus-gamer/Documents/GitHub/portfolio/public/collab/david.jpg\" \"https://media.licdn.com/dms/image/v2/D4D03AQGQz-4pUPpFUw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709383345066?e=1779321600&v=beta&t=ztGokhZlLOhe5CNWXIjXq9U_MZ_NUlnIN7BHE55dI3U\")",
+      "WebFetch(domain:es.linkedin.com)",
+      "Bash(curl -s -L -o \"C:/Users/yisus-gamer/Documents/GitHub/portfolio/public/collab/adrian.jpg\" \"https://media.licdn.com/dms/image/v2/D5603AQHhveJshKNjjA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727958901417?e=1779321600&v=beta&t=kX9C4B6r1zccagee3gfT_DeflnV0UROkBbYj_Clqbc0\")"
     ]
   }
 }

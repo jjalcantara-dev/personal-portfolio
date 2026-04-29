@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       // Nombre completo con variaciones
       "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcantara",
-      "Jesús Jiménez Alcantara",
+      "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcántara",
       "Jesús Jimenez Alcántara",
       "Jesus Jiménez Alcantara",

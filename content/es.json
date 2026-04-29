@@ -2,6 +2,7 @@
   "nav": {
     "home": "Inicio",
     "projects": "Proyectos",
+    "collab": "Colaboradores",
     "puzzles": "Puzzles",
     "about": "Sobre mí",
     "contact": "Contacto"
@@ -70,6 +71,49 @@
         "visitLabel": "Visitar web"
       }
     }
+  },
+  "collab": {
+    "title": "Colaboradores",
+    "description": "Personas con las que he trabajado y en las que confío profesionalmente.",
+    "visitLabel": "Visitar web",
+    "people": [
+      {
+        "name": "Julio González Mora",
+        "role": "Solutions Engineer",
+        "url": "https://jugomo.dev",
+        "linkLabel": "jugomo.dev",
+        "linkedinUrl": "https://www.linkedin.com/in/jugomo18/",
+        "image": "/collab/julio.jpg",
+        "description": "Ingeniero con más de 15 años construyendo software en producción en mobile, web y cloud."
+      },
+      {
+        "name": "Salvador Jesús González Chicano",
+        "role": "Junior Developer · Python · Selenium · Bots",
+        "url": "https://www.linkedin.com/in/salvagonzalezchicano/",
+        "linkLabel": "LinkedIn",
+        "linkedinUrl": "",
+        "image": "/collab/salva.jpg",
+        "description": "Graduado en Matemáticas, especializado en automatización de procesos, Python, Selenium y desarrollo de bots."
+      },
+      {
+        "name": "David Galisteo Pujol",
+        "role": "Frontend Developer · React · Angular",
+        "url": "https://www.linkedin.com/in/davidgalisteopujol/",
+        "linkLabel": "LinkedIn",
+        "linkedinUrl": "",
+        "image": "/collab/david.jpg",
+        "description": "Frontend developer especializado en React, Angular y TypeScript."
+      },
+      {
+        "name": "Adrián Solís Melcón",
+        "role": "Profesor de Sistemas y Aplicaciones Informáticas · Software Engineer",
+        "url": "https://www.linkedin.com/in/adri%C3%A1n-sol%C3%ADs-melc%C3%B3n-124037233/",
+        "linkLabel": "LinkedIn",
+        "linkedinUrl": "",
+        "image": "/collab/adrian.jpg",
+        "description": "Ingeniero del Software con más de 3 años en Dedalus desarrollando software de gestión hospitalaria. Actualmente profesor de SAI en Melilla."
+      }
+    ]
   },
   "puzzles": {
     "title": "Puzzles",
@@ -156,7 +200,7 @@
     "github": "GitHub"
   },
   "footer": {
-    "copyright": "© {year} Jesús Jiménez Alcantara",
+    "copyright": "© {year} Jesús Jiménez Alcántara",
     "domain": "jjalcantara.dev",
     "privacy": "Política de Privacidad"
   },
@@ -170,7 +214,7 @@
       "dataController": {
         "title": "1. Responsable del Tratamiento",
         "content": {
-          "name": "Nombre: Jesús Jiménez Alcantara",
+          "name": "Nombre: Jesús Jiménez Alcántara",
           "email": "Email: contact@jjalcantara.dev",
           "location": "Ubicación: Vélez-Málaga, 29700, España"
         }

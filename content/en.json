@@ -2,6 +2,7 @@
   "nav": {
     "home": "Home",
     "projects": "Projects",
+    "collab": "Collab",
     "puzzles": "Puzzles",
     "about": "About",
     "contact": "Contact"
@@ -70,6 +71,49 @@
         "visitLabel": "Visit website"
       }
     }
+  },
+  "collab": {
+    "title": "Collab",
+    "description": "People I've worked with and trust professionally.",
+    "visitLabel": "Visit website",
+    "people": [
+      {
+        "name": "Julio González Mora",
+        "role": "Solutions Engineer",
+        "url": "https://jugomo.dev",
+        "linkLabel": "jugomo.dev",
+        "linkedinUrl": "https://www.linkedin.com/in/jugomo18/",
+        "image": "/collab/julio.jpg",
+        "description": "Engineer with 15+ years building production software across mobile, web, and cloud."
+      },
+      {
+        "name": "Salvador Jesús González Chicano",
+        "role": "Junior Developer · Python · Selenium · Bots",
+        "url": "https://www.linkedin.com/in/salvagonzalezchicano/",
+        "linkLabel": "LinkedIn",
+        "linkedinUrl": "",
+        "image": "/collab/salva.jpg",
+        "description": "Mathematics graduate specialized in process automation, Python, Selenium, and bot development."
+      },
+      {
+        "name": "David Galisteo Pujol",
+        "role": "Frontend Developer · React · Angular",
+        "url": "https://www.linkedin.com/in/davidgalisteopujol/",
+        "linkLabel": "LinkedIn",
+        "linkedinUrl": "",
+        "image": "/collab/david.jpg",
+        "description": "Frontend developer specialized in React, Angular, and TypeScript."
+      },
+      {
+        "name": "Adrián Solís Melcón",
+        "role": "Computer Systems & Applications Teacher · Software Engineer",
+        "url": "https://www.linkedin.com/in/adri%C3%A1n-sol%C3%ADs-melc%C3%B3n-124037233/",
+        "linkLabel": "LinkedIn",
+        "linkedinUrl": "",
+        "image": "/collab/adrian.jpg",
+        "description": "Software Engineer with 3+ years at Dedalus building hospital management software. Currently SAI teacher in Melilla."
+      }
+    ]
   },
   "puzzles": {
     "title": "Puzzles",
@@ -156,7 +200,7 @@
     "github": "GitHub"
   },
   "footer": {
-    "copyright": "© {year} Jesús Jiménez Alcantara",
+    "copyright": "© {year} Jesús Jiménez Alcántara",
     "domain": "jjalcantara.dev",
     "privacy": "Privacy Policy"
   },
@@ -170,7 +214,7 @@
       "dataController": {
         "title": "1. Data Controller",
         "content": {
-          "name": "Name: Jesús Jiménez Alcantara",
+          "name": "Name: Jesús Jiménez Alcántara",
           "email": "Email: contact@jjalcantara.dev",
           "location": "Location: Vélez-Málaga, 29700, Spain"
         }

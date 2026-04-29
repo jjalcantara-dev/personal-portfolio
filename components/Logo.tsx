@@ -29,7 +29,7 @@ export default function Logo({ locale, size = "medium" }: LogoProps) {
     <Link 
       href={`/${locale}`} 
       className="inline-block focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-sm"
-      aria-label="Jesús Jiménez Alcantara - Ir a inicio"
+      aria-label="Jesús Jiménez Alcántara - Ir a inicio"
     >
       <Image
         src="/logo_final.svg"
