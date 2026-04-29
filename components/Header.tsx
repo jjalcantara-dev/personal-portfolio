@@ -5,6 +5,7 @@ import Logo from "./Logo";
 import Navigation from "./Navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 import type { Locale } from "@/lib/i18n";
+import { clr } from "@/lib/constants/colors";
 
 type Props = {
   locale: Locale;
@@ -24,8 +25,8 @@ export default function Header({ locale }: Props) {
     <header
       className={`hidden sm:block sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/85 backdrop-blur-md border-b border-gray-200/70 shadow-[0_1px_12px_rgba(0,0,0,0.06)]"
-          : "bg-white border-b border-gray-200"
+          ? `${clr.bg.frosted} backdrop-blur-md border-b ${clr.border.baseOpa} shadow-[0_1px_12px_rgba(0,0,0,0.06)]`
+          : `${clr.bg.white} border-b ${clr.border.base}`
       }`}
       role="banner"
     >
@@ -40,7 +41,7 @@ export default function Header({ locale }: Props) {
             <div className="hidden sm:flex">
               <Navigation locale={locale} />
             </div>
-            <div className="sm:ml-8 md:ml-12 lg:ml-16 sm:border-l sm:border-gray-200 sm:pl-8 md:pl-10">
+            <div className={`sm:ml-8 md:ml-12 lg:ml-16 sm:border-l ${clr.border.base} sm:pl-8 md:pl-10`}>
               <LanguageSwitcher />
             </div>
           </div>

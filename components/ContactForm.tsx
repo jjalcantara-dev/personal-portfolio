@@ -6,6 +6,7 @@ import { getContent } from "@/lib/content";
 import type { Locale } from "@/lib/i18n";
 import { getLastSubmitTime, setLastSubmitTime } from "@/lib/cookies";
 import type { FormStatus, FormErrors } from "@/lib/types";
+import { clr, focusRing } from "@/lib/constants/colors";
 
 type Props = {
   locale: Locale;
@@ -158,10 +159,15 @@ export default function ContactForm({ locale }: Props) {
     }
   };
 
+  const inputBase = `w-full px-4 py-3 border-2 focus:outline-none transition-colors ${clr.text.primary} ${clr.bg.white}`;
+  const inputError = clr.border.error;
+  const inputNormal = `${clr.border.muted} focus:border-black`;
+  const feedbackBox = `p-4 ${clr.bg.subtle} border-2 ${clr.border.muted} ${clr.text.body}`;
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6" aria-label={t.contact.form.title} noValidate>
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="name" className={`block text-sm font-medium ${clr.text.body} mb-2`}>
           {t.contact.form.name}
           <span className="sr-only"> ({locale === "es" ? "requerido" : "required"})</span>
         </label>
@@ -175,15 +181,15 @@ export default function ContactForm({ locale }: Props) {
           aria-required="true"
           maxLength={MAX_NAME_LENGTH}
           placeholder={t.contact.form.namePlaceholder}
-          className={`w-full px-4 py-3 border-2 focus:outline-none transition-colors text-black bg-white ${errors.name ? "border-red-500" : "border-gray-300 focus:border-black"}`}
+          className={`${inputBase} ${errors.name ? inputError : inputNormal}`}
           aria-invalid={errors.name ? "true" : "false"}
           aria-describedby={errors.name ? "name-error" : undefined}
         />
-        {errors.name && <p id="name-error" className="mt-1 text-sm text-red-600" role="alert">{errors.name}</p>}
+        {errors.name && <p id="name-error" className={`mt-1 text-sm ${clr.text.error}`} role="alert">{errors.name}</p>}
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="email" className={`block text-sm font-medium ${clr.text.body} mb-2`}>
           {t.contact.form.email}
           <span className="sr-only"> ({locale === "es" ? "requerido" : "required"})</span>
         </label>
@@ -198,15 +204,15 @@ export default function ContactForm({ locale }: Props) {
           autoComplete="email"
           maxLength={MAX_EMAIL_LENGTH}
           placeholder={t.contact.form.emailPlaceholder}
-          className={`w-full px-4 py-3 border-2 focus:outline-none transition-colors text-black bg-white ${errors.email ? "border-red-500" : "border-gray-300 focus:border-black"}`}
+          className={`${inputBase} ${errors.email ? inputError : inputNormal}`}
           aria-invalid={errors.email ? "true" : "false"}
           aria-describedby={errors.email ? "email-error" : undefined}
         />
-        {errors.email && <p id="email-error" className="mt-1 text-sm text-red-600" role="alert">{errors.email}</p>}
+        {errors.email && <p id="email-error" className={`mt-1 text-sm ${clr.text.error}`} role="alert">{errors.email}</p>}
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="message" className={`block text-sm font-medium ${clr.text.body} mb-2`}>
           {t.contact.form.message}
           <span className="sr-only"> ({locale === "es" ? "requerido" : "required"})</span>
         </label>
@@ -220,13 +226,13 @@ export default function ContactForm({ locale }: Props) {
           rows={6}
           maxLength={MAX_MESSAGE_LENGTH}
           placeholder={t.contact.form.messagePlaceholder}
-          className={`w-full px-4 py-3 border-2 focus:outline-none transition-colors text-black bg-white resize-none ${errors.message ? "border-red-500" : "border-gray-300 focus:border-black"}`}
+          className={`${inputBase} resize-none ${errors.message ? inputError : inputNormal}`}
           aria-invalid={errors.message ? "true" : "false"}
           aria-describedby={errors.message ? "message-error" : undefined}
         />
         <div className="mt-1 flex justify-between">
-          {errors.message && <p id="message-error" className="text-sm text-red-600" role="alert">{errors.message}</p>}
-          <p className={`text-sm ml-auto ${formData.message.length > MAX_MESSAGE_LENGTH * 0.9 ? "text-gray-600" : "text-gray-400"}`}>
+          {errors.message && <p id="message-error" className={`text-sm ${clr.text.error}`} role="alert">{errors.message}</p>}
+          <p className={`text-sm ml-auto ${formData.message.length > MAX_MESSAGE_LENGTH * 0.9 ? clr.text.muted : clr.text.faint}`}>
             {formData.message.length} / {MAX_MESSAGE_LENGTH}
           </p>
         </div>
@@ -242,11 +248,11 @@ export default function ContactForm({ locale }: Props) {
             onChange={(e) => setConsent(e.target.checked)}
             required
             aria-required="true"
-            className="mt-1 w-4 h-4 border-2 border-gray-300 focus:border-black focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-sm text-black"
+            className={`mt-1 w-4 h-4 border-2 ${clr.border.muted} focus:border-black focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-sm ${clr.text.primary}`}
           />
-          <label htmlFor="consent" className="text-sm text-gray-700 leading-relaxed">
+          <label htmlFor="consent" className={`text-sm ${clr.text.body} leading-relaxed`}>
             {t.contact.form.consent.text}{" "}
-            <Link href={`/${locale}/privacy`} className="underline hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-sm" target="_blank" rel="noopener noreferrer">
+            <Link href={`/${locale}/privacy`} className={`underline hover:text-black ${focusRing}`} target="_blank" rel="noopener noreferrer">
               {t.contact.form.consent.link}
             </Link>
             <span className="sr-only"> ({locale === "es" ? "requerido" : "required"})</span>
@@ -255,19 +261,19 @@ export default function ContactForm({ locale }: Props) {
       </div>
 
       {status === "success" && (
-        <div className="p-4 bg-gray-100 border-2 border-gray-300 text-gray-700" role="status" aria-live="polite">
+        <div className={feedbackBox} role="status" aria-live="polite">
           {t.contact.form.success}
         </div>
       )}
 
       {status === "error" && errors._general !== "rate_limited" && (
-        <div className="p-4 bg-gray-100 border-2 border-gray-300 text-gray-700" role="alert" aria-live="assertive">
+        <div className={feedbackBox} role="alert" aria-live="assertive">
           {errors._general || t.contact.form.error}
         </div>
       )}
 
       {timeRemaining > 0 && (
-        <div className="p-4 bg-gray-100 border-2 border-gray-300 text-gray-700" role="status" aria-live="polite">
+        <div className={feedbackBox} role="status" aria-live="polite">
           {locale === "es"
             ? `Por seguridad, el formulario tiene un límite de 3 envíos por hora. Podrás enviar otro mensaje en ${formatTimeRemaining(timeRemaining)}.`
             : `For security reasons, the form is limited to 3 submissions per hour. You can send another message in ${formatTimeRemaining(timeRemaining)}.`}
@@ -277,7 +283,7 @@ export default function ContactForm({ locale }: Props) {
       <button
         type="submit"
         disabled={status === "sending" || !consent || timeRemaining > 0}
-        className="w-full sm:w-auto px-8 py-3.5 bg-black text-white text-sm font-medium hover:bg-gray-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+        className={`w-full sm:w-auto px-8 py-3.5 ${clr.bg.primary} ${clr.text.white} text-sm font-medium hover:bg-gray-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed`}
       >
         {status === "sending" ? t.contact.form.sending : t.contact.form.submit}
       </button>

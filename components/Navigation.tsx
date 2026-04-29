@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getContent } from "@/lib/content";
 import type { Locale } from "@/lib/i18n";
+import { clr, focusRing } from "@/lib/constants/colors";
+import { tx } from "@/lib/constants/typography";
 
 type Props = {
   locale: Locale;
@@ -34,14 +36,14 @@ export default function Navigation({ locale }: Props) {
             <li key={item.href} className="m-0 p-0">
               <Link
                 href={item.href}
-                className={`group relative text-xs sm:text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-sm px-1 pb-1 ${
-                  isActive ? "text-black" : "text-gray-500 hover:text-black"
+                className={`group relative ${tx.nav} transition-colors duration-200 ${focusRing} px-1 pb-1 ${
+                  isActive ? clr.text.primary : `${clr.text.subtle} hover:text-black`
                 }`}
                 aria-current={isActive ? "page" : undefined}
               >
                 {item.label}
                 <span
-                  className={`absolute bottom-0 left-0 h-[2px] bg-black transition-[width] duration-300 ease-out ${
+                  className={`absolute bottom-0 left-0 h-[2px] ${clr.bg.primary} transition-[width] duration-300 ease-out ${
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 />

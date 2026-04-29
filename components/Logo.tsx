@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
+import { focusRing } from "@/lib/constants/colors";
 
 type Props = {
   locale: Locale;
@@ -26,9 +27,9 @@ export default function Logo({ locale, size = "medium" }: LogoProps) {
   };
 
   return (
-    <Link 
-      href={`/${locale}`} 
-      className="inline-block focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-sm"
+    <Link
+      href={`/${locale}`}
+      className={`inline-block ${focusRing}`}
       aria-label="Jesús Jiménez Alcántara - Ir a inicio"
     >
       <Image
@@ -43,4 +44,3 @@ export default function Logo({ locale, size = "medium" }: LogoProps) {
     </Link>
   );
 }
-

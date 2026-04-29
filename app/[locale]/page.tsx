@@ -3,6 +3,8 @@ import { getContent } from "@/lib/content";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import ParallaxLogo from "@/components/ParallaxLogo";
+import { clr, btnPrimary, btnOutline, btnGhost } from "@/lib/constants/colors";
+import { tx } from "@/lib/constants/typography";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -14,10 +16,17 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const t = getContent(locale);
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20 md:py-32">
-      <section className="mb-24" aria-labelledby="main-heading">
-        <div className="text-center mb-16">
-          <div className="mb-12 flex justify-center">
+    <div className="max-w-4xl mx-auto px-4 pb-16 sm:px-6 sm:pb-0 sm:py-20 md:py-32">
+
+      {/* Hero — full screen height on mobile */}
+      <section
+        className={`flex flex-col justify-center min-h-[calc(100svh-57px)] py-8 sm:min-h-0 sm:py-0 sm:mb-24`}
+        aria-labelledby="main-heading"
+      >
+        <div className="text-center">
+
+          {/* Logo */}
+          <div className="mb-5 sm:mb-12 flex justify-center">
             <ParallaxLogo
               src="/logo_final.svg"
               alt=""
@@ -26,42 +35,59 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               priority
             />
           </div>
+
+          {/* Name */}
           <ScrollAnimation animation="fade-up" delay={80}>
-            <p className="text-sm font-medium text-gray-500 tracking-widest uppercase mb-4 select-none">
+            <p className={`${tx.label} sm:text-sm ${clr.text.faint} mb-2 sm:mb-4 select-none`}>
               Jesús Jiménez Alcántara
             </p>
           </ScrollAnimation>
+
+          {/* H1 */}
           <ScrollAnimation animation="fade-up" delay={150}>
-            <h1 id="main-heading" className="text-5xl sm:text-6xl md:text-7xl font-light tracking-tight mb-6 text-black">
+            <h1
+              id="main-heading"
+              className={`${tx.h1Hero} mb-2 sm:mb-6 ${clr.text.primary}`}
+            >
               {t.home.title}
-              <br />
-              <span className="font-normal">{t.home.subtitle}</span>
+              {/* Desktop: subtitle inside h1 */}
+              <span className="hidden sm:inline">
+                <br />
+                <span className="font-normal">{t.home.subtitle}</span>
+              </span>
             </h1>
+
+            {/* Mobile: subtitle as separate lines */}
+            <div className="sm:hidden flex flex-col gap-0.5 mb-3 mt-1">
+              {t.home.subtitle.split(" · ").map((item) => (
+                <span key={item} className={`${tx.subtitle} ${clr.text.faint}`}>
+                  {item}
+                </span>
+              ))}
+            </div>
           </ScrollAnimation>
+
+          {/* Description */}
           <ScrollAnimation animation="fade-up" delay={200}>
-            <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto mb-10">
+            <p className={`text-sm sm:text-xl ${clr.text.muted} leading-relaxed max-w-2xl mx-auto mb-6 sm:mb-10`}>
               {t.home.description}
             </p>
           </ScrollAnimation>
+
+          {/* CTAs */}
           <ScrollAnimation animation="fade-up" delay={300}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center" role="group" aria-label="Call to action buttons">
-              <Link
-                href={`/${locale}/about`}
-                className="inline-block px-8 py-3.5 bg-black text-white text-sm font-medium hover:bg-gray-800 hover:-translate-y-px hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-              >
+            <div
+              className="flex flex-col sm:flex-row gap-2.5 sm:gap-4 justify-center"
+              role="group"
+              aria-label="Call to action buttons"
+            >
+              <Link href={`/${locale}/about`} className={btnPrimary}>
                 {t.home.cta.about}
               </Link>
-              <Link
-                href={`/${locale}/projects`}
-                className="inline-block px-8 py-3.5 border-2 border-black text-black text-sm font-medium hover:bg-black hover:text-white hover:-translate-y-px hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-              >
+              <Link href={`/${locale}/projects`} className={btnOutline}>
                 {t.home.cta.projects}
               </Link>
-              <a
-                href="/jesus_jimenez_alcantara_cv.pdf"
-                download
-                className="inline-block px-8 py-3.5 border-2 border-gray-300 text-gray-600 text-sm font-medium hover:border-black hover:text-black hover:-translate-y-px transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-              >
+              <a href="/jesus_jimenez_alcantara_cv.pdf" download className={btnGhost}>
                 {t.home.cta.cv}
               </a>
             </div>
@@ -69,66 +95,39 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
       </section>
 
-      <section className="border-t border-gray-200 pt-16" aria-labelledby="focus-heading">
+      {/* Focus section — starts below the fold on mobile */}
+      <section className={`border-t ${clr.border.base} pt-10 sm:pt-16`} aria-labelledby="focus-heading">
         <ScrollAnimation animation="fade-up" delay={0}>
-          <h2 id="focus-heading" className="text-2xl sm:text-3xl font-light mb-12 text-black">{t.home.focus.title}</h2>
+          <h2
+            id="focus-heading"
+            className={`text-xl sm:text-3xl font-light mb-8 sm:mb-12 ${clr.text.primary}`}
+          >
+            {t.home.focus.title}
+          </h2>
         </ScrollAnimation>
-        <div className="grid sm:grid-cols-2 gap-10 sm:gap-12" role="list">
-          <ScrollAnimation animation="fade-up" delay={100}>
-            <article 
-              role="listitem"
-              className="group transition-all duration-300 hover:-translate-y-1"
-            >
-              <h3 className="text-lg font-medium mb-3 text-black transition-colors duration-300 group-hover:text-gray-800">
-                {t.home.focus.architecture.title}
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                {t.home.focus.architecture.description}
-              </p>
-            </article>
-          </ScrollAnimation>
-          <ScrollAnimation animation="fade-up" delay={200}>
-            <article 
-              role="listitem"
-              className="group transition-all duration-300 hover:-translate-y-1"
-            >
-              <h3 className="text-lg font-medium mb-3 text-black transition-colors duration-300 group-hover:text-gray-800">
-                {t.home.focus.cleanCode.title}
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                {t.home.focus.cleanCode.description}
-              </p>
-            </article>
-          </ScrollAnimation>
-          <ScrollAnimation animation="fade-up" delay={300}>
-            <article 
-              role="listitem"
-              className="group transition-all duration-300 hover:-translate-y-1"
-            >
-              <h3 className="text-lg font-medium mb-3 text-black transition-colors duration-300 group-hover:text-gray-800">
-                {t.home.focus.performance.title}
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                {t.home.focus.performance.description}
-              </p>
-            </article>
-          </ScrollAnimation>
-          <ScrollAnimation animation="fade-up" delay={400}>
-            <article 
-              role="listitem"
-              className="group transition-all duration-300 hover:-translate-y-1"
-            >
-              <h3 className="text-lg font-medium mb-3 text-black transition-colors duration-300 group-hover:text-gray-800">
-                {t.home.focus.professionalism.title}
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                {t.home.focus.professionalism.description}
-              </p>
-            </article>
-          </ScrollAnimation>
+        <div className="grid sm:grid-cols-2 gap-6 sm:gap-12" role="list">
+          {[
+            { key: "architecture",    item: t.home.focus.architecture,    delay: 100 },
+            { key: "cleanCode",       item: t.home.focus.cleanCode,       delay: 200 },
+            { key: "performance",     item: t.home.focus.performance,     delay: 300 },
+            { key: "professionalism", item: t.home.focus.professionalism, delay: 400 },
+          ].map(({ key, item, delay }) => (
+            <ScrollAnimation key={key} animation="fade-up" delay={delay}>
+              <article
+                role="listitem"
+                className="group transition-all duration-300 hover:-translate-y-1"
+              >
+                <h3 className={`text-base sm:text-lg font-medium mb-2 sm:mb-3 ${clr.text.primary} transition-colors duration-300 group-hover:text-gray-800`}>
+                  {item.title}
+                </h3>
+                <p className={`text-sm sm:text-base ${clr.text.muted} leading-relaxed`}>
+                  {item.description}
+                </p>
+              </article>
+            </ScrollAnimation>
+          ))}
         </div>
       </section>
     </div>
   );
 }
-

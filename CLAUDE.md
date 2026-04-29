@@ -33,7 +33,14 @@ Copy `.env.example` to `.env.local` and fill in:
 
 **Contact Form:** Uses a Next.js API route (`app/api/contact/route.ts`). Emails sent via Resend. Rate limited server-side with Upstash Redis (3 req/10 min per IP). GDPR-compliant: explicit consent checkbox required before submission.
 
-**Styling:** Tailwind CSS v4 with PostCSS. Global styles in `app/globals.css`. Inter font via `next/font/google`.
+**Styling:** Tailwind CSS v4 with PostCSS. Global styles in `app/globals.css`. Inter font via `next/font/google`. `@source "../lib/**/*.ts"` is set in `globals.css` so Tailwind scans the constants files.
+
+**Design system constants:**
+- `lib/constants/colors.ts` — semantic color tokens (`clr`, `focusRing`, `btnPrimary`, `btnOutline`, `btnGhost`, `externalLink`, `skillTag`). Use these everywhere instead of hardcoded Tailwind color classes.
+- `lib/constants/typography.ts` — semantic type scale (`tx`). Use these for all heading/body/label sizes.
+- **Rule:** modifier-prefixed classes (e.g. `group-hover:text-gray-800`) must stay hardcoded in components — Tailwind cannot scan dynamic class strings.
+
+**Mobile navigation (`components/BottomNav.tsx`):** Fixed bottom nav, visible only on mobile (`sm:hidden`). Features filled/solid icons for the active section, a persistent pill background on the active item, and labels always visible for all items. The active label for `/collab` uses the short label "Colab" (not "Colaboradores") to avoid truncation on narrow screens.
 
 **Adding content:** Edit `content/es.json` and `content/en.json` in parallel — both must stay in sync.
 
@@ -48,12 +55,14 @@ This is the personal portfolio of **Jesús Jiménez Alcántara**, a Backend Engi
 ### Professional positioning
 - **Title:** Backend Engineer
 - **Stack:** ASP.NET Core, Azure Functions, PostgreSQL, Redis, MongoDB, CosmosDB, Docker, Next.js, Vercel
-- **Current role:** Backend Engineer at The Bubble Hub (April 2024 – Present)
+- **Most recent role:** Backend Engineer at The Bubble Hub (April 2024 – April 2026)
 - **Previous role:** Technology and Security Consultant at Ernst & Young (April 2022 – April 2024)
 - **Education:** Bachelor's in Software Engineering, UMA (7.51/10) · Master's in AI, UNIR (in progress, expected March 2027)
 - **Languages:** Spanish (native), English (B2)
 - **Contact:** jesusjimalc98@gmail.com · linkedin.com/in/jjalcantara
 - **Open to:** New backend engineering opportunities
+
+> **Important:** Jesús is no longer at The Bubble Hub (last day: 30 April 2026). Do NOT use "actualmente en" / "currently at" language anywhere on the site. The Bubble Hub appears only as a past employer with closed dates in the experience timeline.
 
 ### Key technical expertise
 - REST API design (requirements gathering, use case definition, edge case mapping, OpenAPI/Swagger documentation)
@@ -71,11 +80,11 @@ This is the personal portfolio of **Jesús Jiménez Alcántara**, a Backend Engi
 ## Pending Improvements by Page
 
 ### / — Hero (Home)
-- **Headline:** Should clearly state "Backend Engineer" as the primary identity — not "Software Engineer" or generic "Developer"
-- **Subheadline:** Should mention ASP.NET Core, Azure, and REST APIs as core stack
-- **CTAs:** Primary CTA should link to /about or download CV. Secondary CTA to /projects
-- **Tone:** Professional, direct, technical — no buzzwords like "passionate" or "enthusiastic"
-- **CV download:** Add a downloadable PDF CV link (filename: `jesus_jimenez_alcantara_cv.pdf`). Place in `/public/`
+- Hero occupies full mobile viewport height (`min-h-[calc(100svh-57px)]`); focus section starts below the fold. ✅
+- Headline: "Backend Engineer" / "Ingeniero Backend". ✅
+- Subheadline: ASP.NET Core · Azure · REST APIs. ✅
+- CTAs: About, Projects, CV download. ✅
+- **CV download:** PDF must exist at `/public/jesus_jimenez_alcantara_cv.pdf`.
 
 ### /projects — Projects
 - **The Bubble Hub products** should be featured prominently:
@@ -90,13 +99,12 @@ This is the personal portfolio of **Jesús Jiménez Alcántara**, a Backend Engi
 - **DO use** concrete, technical framing:
   - 4+ years professional backend experience
   - Specialization in cloud-native systems, API design, auth, payments, database architecture
-  - Current role at The Bubble Hub
   - Background at EY in enterprise backend and SecDevOps
   - Pursuing Master's in AI at UNIR
 - **Professional summary to use (ES):**
-  > Ingeniero Backend con más de 4 años de experiencia diseñando y desarrollando sistemas cloud-native escalables con ASP.NET Core, Azure Functions y Java. Especializado en diseño de APIs REST, sistemas de autenticación (JWT, OAuth 2.0, RBAC), integración de pagos (Stripe, App Store, Google Play) y arquitectura de bases de datos PostgreSQL. Actualmente en The Bubble Hub, liderando el desarrollo backend de dos productos con miles de usuarios activos mensuales.
+  > Ingeniero Backend con más de 4 años de experiencia diseñando y desarrollando sistemas cloud-native escalables con ASP.NET Core, Azure Functions y Java. Especializado en diseño de APIs REST, sistemas de autenticación (JWT, OAuth 2.0, RBAC), integración de pagos (Stripe, App Store, Google Play) y arquitectura de bases de datos PostgreSQL. Experiencia liderando el desarrollo backend de productos con miles de usuarios activos mensuales.
 - **Professional summary to use (EN):**
-  > Backend Engineer with 4+ years of experience designing and building scalable cloud-native systems using ASP.NET Core, Azure Functions, and Java. Specialized in REST API design, authentication systems (JWT, OAuth 2.0, RBAC), payment integrations (Stripe, App Store, Google Play), and PostgreSQL database architecture. Currently at The Bubble Hub, leading backend development across two products serving thousands of monthly active users.
+  > Backend Engineer with 4+ years of experience designing and building scalable cloud-native systems using ASP.NET Core, Azure Functions, and Java. Specialized in REST API design, authentication systems (JWT, OAuth 2.0, RBAC), payment integrations (Stripe, App Store, Google Play), and PostgreSQL database architecture. Experience leading backend development across products serving thousands of monthly active users.
 - **Skills section:** Group by category, not a flat list:
   - Languages & Frameworks: C#, ASP.NET Core, .NET, Java, Spring, Python, JavaScript, Next.js
   - Cloud & DevOps: Azure (Functions, DevOps, App Service, Table Storage, Blob Storage, CosmosDB), Vercel, Docker, Kubernetes, Jenkins, Redis
@@ -104,7 +112,7 @@ This is the personal portfolio of **Jesús Jiménez Alcántara**, a Backend Engi
   - APIs & Auth: REST API, Swagger/OpenAPI, JWT, OAuth 2.0, Stripe, Postman
   - Testing: Testing pyramid (unit/integration/E2E), JUnit, Selenium
   - Practices: SOLID, Clean Architecture, RBAC, Agile/Scrum, Git, GitHub, Jira, UML
-- **Experience timeline:** Show The Bubble Hub and EY with correct dates and descriptions (see professional profile above)
+- **Experience timeline:** The Bubble Hub: April 2024 – April 2026. EY: April 2022 – April 2024.
 - **Education:** UMA + UNIR (in progress)
 
 ### /contact — Contact
@@ -126,5 +134,5 @@ This is the personal portfolio of **Jesús Jiménez Alcántara**, a Backend Engi
 - **Language:** All content must exist in both `es` and `en` — update both JSON files in every change
 - **Tone:** Direct, technical, professional. No generic soft skills, no filler adjectives
 - **Keywords to include naturally:** ASP.NET Core, Azure, REST API, PostgreSQL, Redis, JWT, OAuth, RBAC, Stripe, CI/CD, SOLID, Clean Architecture, Backend Engineer
-- **Do not include:** phone number on any public-facing page, personal hobbies unrelated to tech, generic "I'm passionate about technology" copy
+- **Do not include:** phone number on any public-facing page, personal hobbies unrelated to tech, generic "I'm passionate about technology" copy, references to The Bubble Hub as current employer
 - **CV download:** The CV PDF should be available at `/public/jesus_jimenez_alcantara_cv.pdf` and linked from both the hero and the about page

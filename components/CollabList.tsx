@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { clr, externalLink } from "@/lib/constants/colors";
+import { tx } from "@/lib/constants/typography";
 
 type Person = {
   name: string;
@@ -50,8 +52,6 @@ const GlobeIcon = () => (
   </svg>
 );
 
-const linkClass = "inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 hover:border-black hover:-translate-y-px hover:shadow-md transition-all duration-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2";
-
 const EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
 
 export default function CollabList({ people, visitLabel }: Props) {
@@ -71,78 +71,78 @@ export default function CollabList({ people, visitLabel }: Props) {
         return (
           <li
             key={person.url}
-            className="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0"
+            className={`border-b ${clr.border.base} pb-12 last:border-b-0 last:pb-0`}
             style={{
               opacity: mounted ? 1 : 0,
               transform: mounted ? "none" : "translateY(22px)",
               transition: `opacity 0.65s ${EASING} ${delay}ms, transform 0.65s ${EASING} ${delay}ms`,
             }}
           >
-              <article className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
-                <div className="flex-shrink-0">
-                  {person.image ? (
-                    <Image
-                      src={person.image}
-                      alt={person.name}
-                      width={96}
-                      height={96}
-                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border border-gray-200"
-                    />
-                  ) : (
-                    <div
-                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-700 text-xl sm:text-2xl font-light tracking-wide"
-                      aria-hidden="true"
-                    >
-                      {getInitials(person.name)}
-                    </div>
-                  )}
-                </div>
+            <article className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
+              <div className="flex-shrink-0">
+                {person.image ? (
+                  <Image
+                    src={person.image}
+                    alt={person.name}
+                    width={96}
+                    height={96}
+                    className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border ${clr.border.base}`}
+                  />
+                ) : (
+                  <div
+                    className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full ${clr.bg.subtle} border ${clr.border.base} flex items-center justify-center ${clr.text.body} text-xl sm:text-2xl font-light tracking-wide`}
+                    aria-hidden="true"
+                  >
+                    {getInitials(person.name)}
+                  </div>
+                )}
+              </div>
 
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-xl sm:text-2xl font-medium text-black mb-2">
-                    {person.name}
-                  </h3>
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-3">
-                    <span className="inline-flex items-center">
-                      <span className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-2"></span>
-                      {person.role}
-                    </span>
-                  </div>
-                  {person.description && (
-                    <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-4">
-                      {person.description}
-                    </p>
-                  )}
-                  <div className="flex flex-wrap gap-3 mt-4">
-                    {isSafeUrl(person.url) && (
-                      <a
-                        href={person.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={linkClass}
-                        aria-label={`${visitLabel}: ${person.name}`}
-                      >
-                        {isLinkedIn ? <LinkedInIcon /> : <GlobeIcon />}
-                        <span className="text-sm font-medium text-black">
-                          {person.linkLabel}
-                        </span>
-                      </a>
-                    )}
-                    {person.linkedinUrl && isSafeUrl(person.linkedinUrl) && (
-                      <a
-                        href={person.linkedinUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={linkClass}
-                        aria-label={`LinkedIn: ${person.name}`}
-                      >
-                        <LinkedInIcon />
-                        <span className="text-sm font-medium text-black">LinkedIn</span>
-                      </a>
-                    )}
-                  </div>
+              <div className="flex-1 min-w-0">
+                <h3 className={`${tx.h3} ${clr.text.primary} mb-2`}>
+                  {person.name}
+                </h3>
+                <div className={`flex flex-wrap gap-4 text-sm ${clr.text.muted} mb-3`}>
+                  <span className="inline-flex items-center">
+                    <span className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-2"></span>
+                    {person.role}
+                  </span>
                 </div>
-              </article>
+                {person.description && (
+                  <p className={`${tx.bodyLg} ${clr.text.body} mb-4`}>
+                    {person.description}
+                  </p>
+                )}
+                <div className="flex flex-wrap gap-3 mt-4">
+                  {isSafeUrl(person.url) && (
+                    <a
+                      href={person.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={externalLink}
+                      aria-label={`${visitLabel}: ${person.name}`}
+                    >
+                      {isLinkedIn ? <LinkedInIcon /> : <GlobeIcon />}
+                      <span className={`text-sm font-medium ${clr.text.primary}`}>
+                        {person.linkLabel}
+                      </span>
+                    </a>
+                  )}
+                  {person.linkedinUrl && isSafeUrl(person.linkedinUrl) && (
+                    <a
+                      href={person.linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={externalLink}
+                      aria-label={`LinkedIn: ${person.name}`}
+                    >
+                      <LinkedInIcon />
+                      <span className={`text-sm font-medium ${clr.text.primary}`}>LinkedIn</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </article>
           </li>
         );
       })}

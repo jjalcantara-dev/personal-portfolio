@@ -87,7 +87,7 @@ export default function ParallaxLogo({
         width={width}
         height={height}
         priority={priority}
-        className="h-20 sm:h-28 md:h-32 w-auto"
+        className="h-14 sm:h-28 md:h-32 w-auto"
         aria-hidden="true"
       />
     </div>

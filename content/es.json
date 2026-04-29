@@ -10,7 +10,7 @@
   "home": {
     "title": "Ingeniero Backend",
     "subtitle": "ASP.NET Core · Azure · REST APIs",
-    "description": "Diseño y desarrollo sistemas backend cloud-native con ASP.NET Core y Azure Functions. Especializado en APIs REST, autenticación, integración de pagos (Stripe, App Store, Google Play) y arquitectura PostgreSQL.",
+    "description": "Diseño APIs REST y sistemas de pago con ASP.NET Core y Azure. Cuatro años construyendo el backend de aplicaciones móviles en producción con miles de usuarios.",
     "cta": {
       "projects": "Ver proyectos",
       "contact": "Contactar",

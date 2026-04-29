@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getContent } from "@/lib/content";
 import type { Locale } from "@/lib/i18n";
+import { clr, focusRing } from "@/lib/constants/colors";
 
 type Props = {
   locale: Locale;
@@ -14,7 +15,7 @@ export default function Footer({ locale }: Props) {
   const logoLink = (
     <Link
       href={`/${locale}`}
-      className="focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-sm"
+      className={focusRing}
       aria-label="Ir a inicio"
     >
       <Image
@@ -29,24 +30,24 @@ export default function Footer({ locale }: Props) {
   );
 
   return (
-    <footer className="border-t border-gray-200 mt-auto" role="contentinfo">
+    <footer className={`border-t ${clr.border.base} mt-auto`} role="contentinfo">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 sm:py-6">
 
         {/* Mobile layout */}
         <div className="flex items-center justify-between sm:hidden">
-          <div className="flex flex-col gap-1.5 text-sm text-gray-600 flex-1 min-w-0">
+          <div className={`flex flex-col gap-1.5 text-sm ${clr.text.muted} flex-1 min-w-0`}>
             <p>{t.footer.copyright.replace("{year}", currentYear.toString())}</p>
-            <div className="flex items-center gap-x-3 text-gray-500">
+            <div className={`flex items-center gap-x-3 ${clr.text.subtle}`}>
               <Link
                 href={`/${locale}/puzzles`}
-                className="hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-sm"
+                className={`hover:text-black transition-colors ${focusRing}`}
               >
                 {t.nav.puzzles}
               </Link>
-              <span className="text-gray-300" aria-hidden="true">·</span>
+              <span className={clr.text.ghost} aria-hidden="true">·</span>
               <Link
                 href={`/${locale}/privacy`}
-                className="hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-sm"
+                className={`hover:text-black transition-colors ${focusRing}`}
               >
                 {t.footer.privacy}
               </Link>
@@ -59,21 +60,21 @@ export default function Footer({ locale }: Props) {
 
         {/* Desktop layout */}
         <div className="hidden sm:flex sm:items-center sm:justify-between">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-600">
+          <div className={`flex flex-wrap items-center gap-x-4 gap-y-2 text-sm ${clr.text.muted}`}>
             <p>{t.footer.copyright.replace("{year}", currentYear.toString())}</p>
-            <span className="text-gray-300" aria-hidden="true">•</span>
-            <p className="text-gray-500">{t.footer.domain}</p>
-            <span className="text-gray-300" aria-hidden="true">•</span>
+            <span className={clr.text.ghost} aria-hidden="true">•</span>
+            <p className={clr.text.subtle}>{t.footer.domain}</p>
+            <span className={clr.text.ghost} aria-hidden="true">•</span>
             <Link
               href={`/${locale}/puzzles`}
-              className="text-gray-600 hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-sm"
+              className={`${clr.text.muted} hover:text-black transition-colors ${focusRing}`}
             >
               {t.nav.puzzles}
             </Link>
-            <span className="text-gray-300" aria-hidden="true">•</span>
+            <span className={clr.text.ghost} aria-hidden="true">•</span>
             <Link
               href={`/${locale}/privacy`}
-              className="text-gray-600 hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-sm"
+              className={`${clr.text.muted} hover:text-black transition-colors ${focusRing}`}
             >
               {t.footer.privacy}
             </Link>

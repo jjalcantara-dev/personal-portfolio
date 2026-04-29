@@ -3,6 +3,8 @@ import Image from "next/image";
 import { getContent } from "@/lib/content";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
+import { clr, skillTag } from "@/lib/constants/colors";
+import { tx } from "@/lib/constants/typography";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -15,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const baseUrl = "https://jjalcantara.dev";
 
   return {
-    title: locale === "es" 
-      ? "Sobre mí | Jesús Jiménez Alcántara" 
+    title: locale === "es"
+      ? "Sobre mí | Jesús Jiménez Alcántara"
       : "About | Jesús Jiménez Alcántara",
     description: t.about.description,
     keywords: [
@@ -32,8 +34,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "Málaga",
     ],
     openGraph: {
-      title: locale === "es" 
-        ? "Sobre mí | Jesús Jiménez Alcántara" 
+      title: locale === "es"
+        ? "Sobre mí | Jesús Jiménez Alcántara"
         : "About | Jesús Jiménez Alcántara",
       description: t.about.description,
       url: `${baseUrl}/${locale}/about`,
@@ -53,7 +55,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
           <ScrollAnimation animation="fade-up" delay={0}>
             <div className="flex flex-col sm:flex-row items-start gap-8 mb-8">
               <div className="flex-shrink-0">
-                <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-gray-200">
+                <div className={`relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 ${clr.border.base}`}>
                   <Image
                     src="/profile.png"
                     alt="Foto de perfil de Jesús Jiménez Alcántara"
@@ -65,13 +67,13 @@ export default async function About({ params }: { params: Promise<{ locale: stri
                 </div>
               </div>
               <div className="flex-1">
-                <p className="text-sm font-medium text-gray-500 tracking-widest uppercase mb-3 select-none">
+                <p className={`text-sm font-medium ${clr.text.subtle} tracking-widest uppercase mb-3 select-none`}>
                   Jesús Jiménez Alcántara
                 </p>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight mb-4 text-black">
+                <h1 className={`${tx.h1} mb-4 ${clr.text.primary}`}>
                   {t.about.title}
                 </h1>
-                <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
+                <p className={`${tx.bodyXl} ${clr.text.body}`}>
                   {t.about.description}
                 </p>
               </div>
@@ -79,25 +81,25 @@ export default async function About({ params }: { params: Promise<{ locale: stri
           </ScrollAnimation>
         </div>
 
-        <div className="border-t border-gray-200 pt-12 mb-16">
+        <div className={`border-t ${clr.border.base} pt-12 mb-16`}>
           <div className="space-y-6 max-w-2xl">
             <ScrollAnimation animation="fade-up" delay={0}>
-              <p className="text-base sm:text-lg text-gray-700 leading-relaxed text-justify">
+              <p className={`${tx.bodyLg} ${clr.text.body} text-justify`}>
                 {t.about.intro.paragraph1}
               </p>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-up" delay={100}>
-              <p className="text-base sm:text-lg text-gray-700 leading-relaxed text-justify">
+              <p className={`${tx.bodyLg} ${clr.text.body} text-justify`}>
                 {t.about.intro.paragraph2}
               </p>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-up" delay={200}>
-              <p className="text-base sm:text-lg text-gray-700 leading-relaxed text-justify">
+              <p className={`${tx.bodyLg} ${clr.text.body} text-justify`}>
                 {t.about.intro.paragraph3}
               </p>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-up" delay={300}>
-              <p className="text-base sm:text-lg text-gray-700 leading-relaxed text-justify">
+              <p className={`${tx.bodyLg} ${clr.text.body} text-justify`}>
                 {t.about.intro.paragraph4}
               </p>
             </ScrollAnimation>
@@ -107,44 +109,44 @@ export default async function About({ params }: { params: Promise<{ locale: stri
         <div className="space-y-16">
           <section aria-labelledby="experience-heading">
             <ScrollAnimation animation="fade-up" delay={0}>
-              <h2 id="experience-heading" className="text-2xl sm:text-3xl font-light mb-8 text-black">
+              <h2 id="experience-heading" className={`${tx.h2} mb-8 ${clr.text.primary}`}>
                 {t.about.experience.title}
               </h2>
             </ScrollAnimation>
             <div className="space-y-12" role="list">
               <ScrollAnimation animation="slide-left" delay={100}>
-                <article className="border-l-2 border-gray-200 pl-6 group transition-all duration-300 hover:border-black" role="listitem">
+                <article className={`border-l-2 ${clr.border.base} pl-6 group transition-all duration-300 hover:border-black`} role="listitem">
                   <div className="mb-3">
-                    <h3 className="text-lg font-medium text-black mb-1">
+                    <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1`}>
                       {t.about.experience.bubbleHub.role}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <p className={`text-sm ${clr.text.muted} mb-2`}>
                       {t.about.experience.bubbleHub.company} • {t.about.experience.bubbleHub.location}
                     </p>
-                    <p className="text-xs text-gray-500 uppercase tracking-wide" aria-label={`Período: ${t.about.experience.bubbleHub.period}`}>
+                    <p className={`text-xs ${clr.text.subtle} uppercase tracking-wide`} aria-label={`Período: ${t.about.experience.bubbleHub.period}`}>
                       {t.about.experience.bubbleHub.period}
                     </p>
                   </div>
-                  <p className="text-base text-gray-700 leading-relaxed">
+                  <p className={`text-base ${clr.text.body} leading-relaxed`}>
                     {t.about.experience.bubbleHub.description}
                   </p>
                 </article>
               </ScrollAnimation>
 
               <ScrollAnimation animation="slide-left" delay={200}>
-                <article className="border-l-2 border-gray-200 pl-6 group transition-all duration-300 hover:border-black" role="listitem">
+                <article className={`border-l-2 ${clr.border.base} pl-6 group transition-all duration-300 hover:border-black`} role="listitem">
                   <div className="mb-3">
-                    <h3 className="text-lg font-medium text-black mb-1">
+                    <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1`}>
                       {t.about.experience.ey.role}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <p className={`text-sm ${clr.text.muted} mb-2`}>
                       {t.about.experience.ey.company} • {t.about.experience.ey.location}
                     </p>
-                    <p className="text-xs text-gray-500 uppercase tracking-wide" aria-label={`Período: ${t.about.experience.ey.period}`}>
+                    <p className={`text-xs ${clr.text.subtle} uppercase tracking-wide`} aria-label={`Período: ${t.about.experience.ey.period}`}>
                       {t.about.experience.ey.period}
                     </p>
                   </div>
-                  <p className="text-base text-gray-700 leading-relaxed">
+                  <p className={`text-base ${clr.text.body} leading-relaxed`}>
                     {t.about.experience.ey.description}
                   </p>
                 </article>
@@ -152,35 +154,35 @@ export default async function About({ params }: { params: Promise<{ locale: stri
             </div>
           </section>
 
-          <section className="border-t border-gray-200 pt-12" aria-labelledby="education-heading">
+          <section className={`border-t ${clr.border.base} pt-12`} aria-labelledby="education-heading">
             <ScrollAnimation animation="fade-up" delay={0}>
-              <h2 id="education-heading" className="text-2xl sm:text-3xl font-light mb-8 text-black">
+              <h2 id="education-heading" className={`${tx.h2} mb-8 ${clr.text.primary}`}>
                 {t.about.education.title}
               </h2>
             </ScrollAnimation>
             <div className="space-y-8" role="list">
               <ScrollAnimation animation="fade-up" delay={100}>
                 <article role="listitem" className="group transition-all duration-300 hover:translate-x-1">
-                  <h3 className="text-lg font-medium text-black mb-1 transition-colors duration-300 group-hover:text-gray-800">
+                  <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1 transition-colors duration-300 group-hover:text-gray-800`}>
                     {t.about.education.university.degree}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-1">
+                  <p className={`text-sm ${clr.text.muted} mb-1`}>
                     {t.about.education.university.name}
                   </p>
-                  <p className="text-xs text-gray-500">
+                  <p className={`text-xs ${clr.text.subtle}`}>
                     {t.about.education.university.grade} • {t.about.education.university.date}
                   </p>
                 </article>
               </ScrollAnimation>
               <ScrollAnimation animation="fade-up" delay={200}>
                 <article role="listitem" className="group transition-all duration-300 hover:translate-x-1">
-                  <h3 className="text-lg font-medium text-black mb-1 transition-colors duration-300 group-hover:text-gray-800">
+                  <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1 transition-colors duration-300 group-hover:text-gray-800`}>
                     {t.about.education.master.degree}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-1">
+                  <p className={`text-sm ${clr.text.muted} mb-1`}>
                     {t.about.education.master.name}
                   </p>
-                  <p className="text-xs text-gray-500">
+                  <p className={`text-xs ${clr.text.subtle}`}>
                     {t.about.education.master.grade} • {t.about.education.master.date}
                   </p>
                 </article>
@@ -188,9 +190,9 @@ export default async function About({ params }: { params: Promise<{ locale: stri
             </div>
           </section>
 
-          <section className="border-t border-gray-200 pt-12" aria-labelledby="skills-heading">
+          <section className={`border-t ${clr.border.base} pt-12`} aria-labelledby="skills-heading">
             <ScrollAnimation animation="fade-up" delay={0}>
-              <h2 id="skills-heading" className="text-2xl sm:text-3xl font-light mb-10 text-black">
+              <h2 id="skills-heading" className={`${tx.h2} mb-10 ${clr.text.primary}`}>
                 {t.about.skills.title}
               </h2>
             </ScrollAnimation>
@@ -207,21 +209,18 @@ export default async function About({ params }: { params: Promise<{ locale: stri
                   >
                     <div
                       className={[
-                        "py-8 border-t border-gray-100",
+                        `py-8 border-t ${clr.border.soft}`,
                         isRight
-                          ? "sm:pl-10 sm:border-l sm:border-gray-100"
+                          ? `sm:pl-10 sm:border-l ${clr.border.soft}`
                           : "sm:pr-10",
                       ].join(" ")}
                     >
-                      <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-[0.14em] mb-4 select-none">
+                      <p className={`${tx.captionLabel} ${clr.text.faint} mb-4 select-none`}>
                         {category.name}
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {category.items.map((item) => (
-                          <span
-                            key={item}
-                            className="inline-block text-sm text-gray-800 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-sm transition-all duration-150 hover:bg-black hover:text-white hover:border-black cursor-default select-none"
-                          >
+                          <span key={item} className={skillTag}>
                             {item}
                           </span>
                         ))}
@@ -237,4 +236,3 @@ export default async function About({ params }: { params: Promise<{ locale: stri
     </div>
   );
 }
-

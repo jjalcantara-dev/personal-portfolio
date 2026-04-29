@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import type { Locale } from "@/lib/i18n";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
+import { clr, focusRing } from "@/lib/constants/colors";
+import { tx } from "@/lib/constants/typography";
 
 const localeNames: Record<Locale, string> = {
   es: "Español",
@@ -24,14 +26,12 @@ export default function LanguageSwitcher() {
     : pathname;
 
   const switchLocale = (newLocale: Locale) => {
-    // Persist the explicit choice so the middleware respects it on future visits
     const secure = window.location.protocol === "https:";
     document.cookie = `preferred_locale=${newLocale};path=/;max-age=31536000;SameSite=Lax${secure ? ";Secure" : ""}`;
     router.push(`/${newLocale}${pathWithoutLocale}`);
     setIsOpen(false);
   };
 
-  // Cerrar el desplegable al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -48,7 +48,6 @@ export default function LanguageSwitcher() {
     };
   }, [isOpen]);
 
-  // Cerrar con Escape
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -73,7 +72,7 @@ export default function LanguageSwitcher() {
         aria-label="Select language"
         aria-expanded={isOpen}
         aria-haspopup="true"
-        className="flex items-center gap-1.5 text-xs sm:text-sm font-medium uppercase tracking-wider text-gray-600 hover:text-black transition-colors px-2 py-1.5 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+        className={`flex items-center gap-1.5 ${tx.nav} uppercase tracking-wider ${clr.text.muted} hover:text-black transition-colors px-2 py-1.5 ${focusRing}`}
       >
         <span>{currentLocale}</span>
         <svg
@@ -94,7 +93,7 @@ export default function LanguageSwitcher() {
 
       {isOpen && (
         <div
-          className="absolute right-0 mt-1 w-40 bg-white border border-gray-200 rounded-sm shadow-lg z-50"
+          className={`absolute right-0 mt-1 w-40 ${clr.bg.white} border ${clr.border.base} rounded-sm shadow-lg z-50`}
           role="menu"
           aria-orientation="vertical"
         >
@@ -106,15 +105,15 @@ export default function LanguageSwitcher() {
               role="menuitem"
               className={`w-full text-left px-4 py-2.5 text-sm font-medium transition-colors focus:outline-none focus:bg-gray-50 ${
                 currentLocale === locale
-                  ? "text-black bg-gray-50"
-                  : "text-gray-600 hover:text-black hover:bg-gray-50"
+                  ? `${clr.text.primary} ${clr.bg.soft}`
+                  : `${clr.text.muted} hover:text-black hover:bg-gray-50`
               }`}
             >
               <div className="flex items-center justify-between">
                 <span>{localeNames[locale]}</span>
                 {currentLocale === locale && (
                   <svg
-                    className="w-4 h-4 text-black"
+                    className={`w-4 h-4 ${clr.text.primary}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -136,4 +135,3 @@ export default function LanguageSwitcher() {
     </div>
   );
 }
-
