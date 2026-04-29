@@ -54,7 +54,7 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
           </h1>
         </ScrollAnimation>
         <ScrollAnimation animation="fade-up" delay={100}>
-          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-2xl mb-12">
+          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-3xl mb-12">
             {t.projects.description}
           </p>
         </ScrollAnimation>
