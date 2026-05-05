@@ -45,7 +45,7 @@ export default function CookieBanner({ locale }: CookieBannerProps) {
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 ${clr.bg.white} border-t-2 ${clr.border.muted} shadow-lg z-50 px-4 py-4 sm:py-5`}
+      className={`fixed bottom-14 sm:bottom-0 left-0 right-0 ${clr.bg.white} border-t-2 ${clr.border.muted} shadow-lg z-50 px-4 py-4 sm:py-5`}
       role="region"
       aria-label={locale === 'es' ? 'Información sobre cookies' : 'Cookie information'}
     >

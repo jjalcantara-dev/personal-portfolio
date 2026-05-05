@@ -87,10 +87,19 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <Link href={`/${locale}/projects`} className={btnOutline}>
                 {t.home.cta.projects}
               </Link>
-              <a href="/jesus_jimenez_alcantara_cv.pdf" download className={btnGhost}>
+              <a href={`/jesus_jimenez_alcantara_cv_${locale}.pdf`} target="_blank" rel="noopener noreferrer" className={btnGhost}>
                 {t.home.cta.cv}
               </a>
             </div>
+            {locale === "es" && (
+              <p className={`mt-3 text-xs ${clr.text.faint} text-center`}>
+                Prefer English?{" "}
+                <Link href="/en" className="underline underline-offset-2 hover:text-gray-600 transition-colors">
+                  Switch to English
+                </Link>{" "}
+                to download the English CV.
+              </p>
+            )}
           </ScrollAnimation>
         </div>
       </section>
