@@ -39,7 +39,7 @@
   },
   "projects": {
     "title": "Proyectos",
-    "description": "Productos en los que he trabajado como Ingeniero Backend en The Bubble Hub.",
+    "description": "Trabajo profesional como Backend Engineer y proyectos personales.",
     "current": {
       "title": "Trabajo Profesional",
       "prodigy": {
@@ -69,6 +69,19 @@
         "techStack": ["Next.js", "PostgreSQL", "Vercel", "Upstash Redis", "JWT", "RBAC", "CMS"],
         "url": "https://dailydermatalks.com",
         "visitLabel": "Visitar web"
+      }
+    },
+    "personal": {
+      "title": "Proyectos Personales",
+      "galivivienda": {
+        "name": "Calculadora VPO Galivivienda",
+        "type": "Aplicación web",
+        "category": "Civic Tech",
+        "role": "Proyecto personal",
+        "description": "Calculadora interactiva para analizar el coste real de una VPO cooperativa en Vélez-Málaga, basada en la documentación pública de la promoción Galivivienda Fortalezas de Vélez (188 viviendas, EMVIPSA). Construida porque la información oficial está dispersa en varios contratos con condiciones poco claras. Permite simular escenarios de IPC, años de alquiler y porcentaje de descuento para calcular el coste total antes de firmar. Implementación: cálculos financieros en tiempo real con capitalización compuesta mensual, gráfico de evolución del alquiler con JS puro sin canvas ni librerías, diseño responsive con grid adaptativo y bottom-sheet nativo en mobile, y SEO completo con JSON-LD. Tracción orgánica inmediata al compartirla en grupos locales de Facebook.",
+        "techStack": ["HTML", "CSS", "JavaScript", "Vercel"],
+        "url": "https://vpo.jjalcantara.dev",
+        "visitLabel": "Abrir calculadora"
       }
     }
   },

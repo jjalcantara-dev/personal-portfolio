@@ -306,6 +306,80 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
             </ScrollAnimation>
           </div>
         </section>
+
+        {/* Personal Projects */}
+        <section className={`border-t ${clr.border.base} pt-12 mt-16`} aria-labelledby="personal-projects-heading">
+          <ScrollAnimation animation="fade-up" delay={200}>
+            <h2 id="personal-projects-heading" className={`${tx.h2} tracking-tight mb-12 ${clr.text.primary}`}>
+              {t.projects.personal.title}
+            </h2>
+          </ScrollAnimation>
+
+          <div className="space-y-16">
+            <ScrollAnimation animation="fade-up" delay={300}>
+              <article className={`border-b ${clr.border.base} pb-16 last:border-b-0 last:pb-0 group/card`}>
+                <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 mb-6">
+                  <div className="flex-shrink-0 flex items-center justify-center sm:justify-start w-full sm:w-auto">
+                    <div className={`${clr.bg.white} border ${clr.border.base} rounded-sm p-4 sm:p-6 flex items-center justify-center`} style={{ minWidth: '140px', minHeight: '100px' }}>
+                      <span className={`text-2xl font-bold tracking-tight ${clr.text.muted}`}>VPO</span>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-3 mb-3">
+                      <h3 className={`${tx.h3} ${clr.text.primary}`}>
+                        {t.projects.personal.galivivienda.name}
+                      </h3>
+                      <span className={`inline-flex items-center text-xs px-2.5 py-1 ${clr.bg.subtle} ${clr.text.muted} rounded-sm font-medium`}>
+                        {t.projects.personal.galivivienda.category}
+                      </span>
+                    </div>
+                    <div className={`flex flex-wrap gap-4 text-sm ${clr.text.muted} mb-4`}>
+                      <span className="inline-flex items-center">
+                        <span className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-2"></span>
+                        {t.projects.personal.galivivienda.type}
+                      </span>
+                      <span className="inline-flex items-center">
+                        <span className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-2"></span>
+                        {t.projects.personal.galivivienda.role}
+                      </span>
+                    </div>
+                    <p className={`${tx.bodyLg} ${clr.text.body} mb-4`}>
+                      {t.projects.personal.galivivienda.description}
+                    </p>
+                    {t.projects.personal.galivivienda.techStack && (
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {t.projects.personal.galivivienda.techStack.map((tech) => (
+                          <span key={tech} className="tag text-xs px-2.5 py-1">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    {t.projects.personal.galivivienda.url && isSafeUrl(t.projects.personal.galivivienda.url) && (
+                      <div className="flex flex-wrap gap-3 mt-4">
+                        <a
+                          href={t.projects.personal.galivivienda.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={externalLink}
+                          aria-label={t.projects.personal.galivivienda.visitLabel}
+                        >
+                          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                          </svg>
+                          <span className={`text-sm font-medium ${clr.text.primary}`}>
+                            {t.projects.personal.galivivienda.visitLabel}
+                          </span>
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </article>
+            </ScrollAnimation>
+          </div>
+        </section>
       </article>
     </div>
   );

@@ -39,7 +39,7 @@
   },
   "projects": {
     "title": "Projects",
-    "description": "Products I've contributed to as Backend Engineer at The Bubble Hub.",
+    "description": "Professional backend engineering work and personal projects.",
     "current": {
       "title": "Professional Work",
       "prodigy": {
@@ -69,6 +69,19 @@
         "techStack": ["Next.js", "PostgreSQL", "Vercel", "Upstash Redis", "JWT", "RBAC", "CMS"],
         "url": "https://dailydermatalks.com",
         "visitLabel": "Visit website"
+      }
+    },
+    "personal": {
+      "title": "Personal Projects",
+      "galivivienda": {
+        "name": "Galivivienda VPO Calculator",
+        "type": "Web Application",
+        "category": "Civic Tech",
+        "role": "Personal project",
+        "description": "Interactive calculator to analyze the real cost of a cooperative VPO housing unit in Vélez-Málaga, based on the public documentation for the Galivivienda Fortalezas de Vélez development (188 units, EMVIPSA). Built because the official information is fragmented across multiple contracts with unclear terms — lets users simulate different IPC scenarios, rental years, and discount percentages to calculate the actual total cost before signing. Implementation: real-time financial calculations with monthly compound interest, a rent evolution chart rendered with pure JS (no canvas or libraries), responsive design with adaptive grid and native mobile bottom-sheet, and full SEO with JSON-LD. Immediate organic traction when shared in local Facebook groups.",
+        "techStack": ["HTML", "CSS", "JavaScript", "Vercel"],
+        "url": "https://vpo.jjalcantara.dev",
+        "visitLabel": "Open calculator"
       }
     }
   },
