@@ -81,19 +81,6 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
               <h2 className={h2Class}>{s.dataCollection.title}</h2>
               <div className={`space-y-4 ${bodyClass}`}>
                 <p>{s.dataCollection.content.paragraph1}</p>
-                {s.dataCollection.content.list && (
-                  <ul className="list-disc list-inside space-y-1 ml-4">
-                    <li>{s.dataCollection.content.list.name}</li>
-                    <li>{s.dataCollection.content.list.email}</li>
-                    <li>{s.dataCollection.content.list.message}</li>
-                  </ul>
-                )}
-                {s.dataCollection.content.important && (
-                  <Callout>{s.dataCollection.content.important}</Callout>
-                )}
-                {s.dataCollection.content.paragraph2 && (
-                  <p>{s.dataCollection.content.paragraph2}</p>
-                )}
                 {s.dataCollection.content.paragraph3 && (
                   <p>{s.dataCollection.content.paragraph3}</p>
                 )}
@@ -128,9 +115,6 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
               <h2 className={h2Class}>{s.dataProcessing.title}</h2>
               <div className={`space-y-4 ${bodyClass}`}>
                 <p>{s.dataProcessing.content.paragraph1}</p>
-                {s.dataProcessing.content.important && (
-                  <Callout>{s.dataProcessing.content.important}</Callout>
-                )}
                 {s.dataProcessing.content.paragraph2 && (
                   <p>{s.dataProcessing.content.paragraph2}</p>
                 )}
@@ -138,13 +122,11 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
                   <>
                     <p>{s.dataProcessing.content.paragraph3}</p>
                     <ul className="list-disc list-inside space-y-1 ml-4">
-                      {s.dataProcessing.content.vercelLink && (
-                        <li>
-                          <a href={s.dataProcessing.content.vercelLink} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                            {s.dataProcessing.content.vercelText}
-                          </a>
-                        </li>
-                      )}
+                      <li>
+                        <a href={s.dataProcessing.content.vercelLink} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                          {s.dataProcessing.content.vercelText}
+                        </a>
+                      </li>
                     </ul>
                   </>
                 )}
@@ -164,9 +146,6 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
                     <p>{s.dataRetention.content.paragraph1}</p>
                     {s.dataRetention.content.paragraph2 && (
                       <p>{s.dataRetention.content.paragraph2}</p>
-                    )}
-                    {s.dataRetention.content.paragraph3 && (
-                      <p>{s.dataRetention.content.paragraph3}</p>
                     )}
                   </>
                 )}
