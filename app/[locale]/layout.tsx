@@ -71,32 +71,45 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "Jesus Jiménez Alcantara",
       "JJA",
       "jjalcantara",
+      "jjalcantara-dev",
       // Profesión y especialización
       "backend engineer",
-      "software engineer",
-      "software architecture",
-      "backend development",
-      "cloud developer",
       "ingeniero backend",
-      "arquitectura software",
-      "desarrollo backend",
-      // Tecnologías
-      "Azure",
+      "backend development",
+      "cloud-native backend",
+      "REST API design",
+      "API design",
+      "software architecture",
+      "cloud developer",
+      // Tecnologías principales
+      "ASP.NET Core",
+      "ASP.NET",
       ".NET",
       "C#",
-      "ASP.NET",
+      "Azure",
       "Azure Functions",
-      "Cloud Computing",
-      "Microservices",
+      "PostgreSQL",
+      "Redis",
+      // Auth y pagos
+      "JWT",
+      "OAuth 2.0",
+      "RBAC",
+      "Stripe",
+      // Prácticas
+      "SOLID",
+      "Clean Architecture",
+      "CI/CD",
       "Docker",
-      "Kubernetes",
       // Ubicación
       "Málaga",
       "Vélez-Málaga",
       "Spain",
       "España",
+      // Perfiles
+      "github.com/jjalcantara-dev",
       // Empresa
       "The Bubble Hub",
+      "Ernst Young",
       "Backend Engineer Málaga",
       "Ingeniero Backend Málaga",
     ],
@@ -184,7 +197,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <ScrollProgress />
         <div className="min-h-screen flex flex-col pb-[calc(env(safe-area-inset-bottom)+57px)] sm:pb-0">
           <Header locale={locale} />
-          <main id="main-content" className="flex-1" role="main" tabIndex={-1}>
+          <main id="main-content" className="flex-1 flex flex-col" role="main" tabIndex={-1}>
             {children}
           </main>
           <Footer locale={locale} />

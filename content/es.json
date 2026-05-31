@@ -10,7 +10,7 @@
   "home": {
     "title": "Ingeniero Backend",
     "subtitle": "ASP.NET Core · Azure · REST APIs",
-    "description": "Diseño APIs REST y sistemas de pago con ASP.NET Core y Azure. Cuatro años construyendo el backend de aplicaciones móviles en producción con miles de usuarios.",
+    "description": "Diseño APIs REST y sistemas de pago con ASP.NET Core y Azure. Cuatro años construyendo el backend de aplicaciones móviles en producción con más de 3.000 usuarios activos mensuales.",
     "cta": {
       "projects": "Ver proyectos",
       "contact": "Contactar",
@@ -18,22 +18,22 @@
       "cv": "Descargar CV"
     },
     "focus": {
-      "title": "Enfoque",
+      "title": "En qué trabajo",
       "architecture": {
-        "title": "Arquitectura",
-        "description": "Diseño de sistemas escalables y mantenibles. Priorizo la claridad estructural y la separación de responsabilidades."
+        "title": "APIs y Contratos",
+        "description": "Diseño APIs REST de ciclo completo: análisis de requisitos, definición de casos de uso, documentación OpenAPI/Swagger y soporte en producción. Priorizo la claridad de los contratos, la gestión de versiones y la compatibilidad con clientes móviles. He diseñado y mantenido APIs consumidas por más de 3.000 usuarios activos mensuales."
       },
       "cleanCode": {
-        "title": "Código Limpio",
-        "description": "Código legible, bien documentado y fácil de mantener. Principios SOLID y buenas prácticas como base del desarrollo."
+        "title": "Cloud y Arquitectura",
+        "description": "Arquitectura cloud-native con Azure Functions y ASP.NET Core. Diseño sistemas con procesamiento asíncrono event-driven usando Azure Storage Queues y Worker Services. Evalúo el modelo de despliegue, serverless vs App Service, analizando coste operativo, escalabilidad y latencia según los requisitos de cada producto."
       },
       "performance": {
-        "title": "Rendimiento",
-        "description": "Optimización y eficiencia desde el diseño. Sistemas que escalan sin comprometer la calidad del código."
+        "title": "Seguridad",
+        "description": "Seguridad aplicada desde el primer commit, no como capa adicional. Implemento autenticación JWT stateless, RBAC por endpoint, OAuth 2.0 con Google y Apple, y rate limiting con Redis contra ataques de fuerza bruta y credential stuffing. Background en SecDevOps en entornos enterprise con Ernst & Young."
       },
       "professionalism": {
-        "title": "Profesionalidad",
-        "description": "Enfoque pragmático y soluciones prácticas. Entrego valor sin overengineering ni complejidad innecesaria."
+        "title": "Pagos e Integraciones",
+        "description": "Integración completa de Stripe: webhooks, idempotencia y gestión del ciclo de vida de suscripciones. Suscripciones nativas con App Store de Apple y Google Play con validación server-side de receipts. He construido sistemas de pago en producción que procesan transacciones de usuarios reales sin incidencias."
       }
     }
   },
@@ -154,28 +154,28 @@
   },
   "about": {
     "title": "Sobre mí",
-    "description": "Ingeniero Backend con más de 4 años de experiencia diseñando y desarrollando sistemas cloud-native escalables con ASP.NET Core, Azure Functions y Java. Especializado en diseño de APIs REST, sistemas de autenticación (JWT, OAuth 2.0, RBAC), integración de pagos (Stripe, App Store, Google Play) y arquitectura de bases de datos PostgreSQL. Actualmente en The Bubble Hub, liderando el desarrollo backend de dos productos con miles de usuarios activos mensuales.",
+    "description": "Ingeniero Backend con más de 4 años de experiencia construyendo y manteniendo sistemas en producción. En The Bubble Hub lideré el desarrollo backend de dos productos móviles con más de 3.000 usuarios activos mensuales. Mi trabajo se centra en ASP.NET Core, Azure, APIs REST, PostgreSQL y sistemas de autenticación y pago.",
     "intro": {
-      "paragraph1": "Soy ingeniero backend especializado en el desarrollo de sistemas cloud con Azure y .NET. Mi trabajo se centra en construir arquitecturas que escalan, APIs que funcionan bajo carga y código que se mantiene con el tiempo. Trabajo principalmente con Azure Functions, ASP.NET Core y servicios cloud, diseñando soluciones que equilibran rendimiento, mantenibilidad y coste operativo.",
-      "paragraph2": "En The Bubble Hub trabajo en sistemas backend que soportan aplicaciones móviles en producción. Mi responsabilidad abarca desde el análisis de requisitos hasta el diseño e implementación de lógica de negocio, definición de contratos de API e integración con servicios externos. Resuelvo problemas que van desde optimizar algoritmos de ranking y estructuras de datos, hasta diseñar flujos de autenticación seguros y gestionar sistemas de suscripción de Apple y Google que impactan directamente la experiencia del usuario. He desarrollado funciones serverless, diseñado esquemas de base de datos optimizados y construido pipelines de CI/CD. Esta exposición a sistemas en producción me ha enseñado a pensar en escalabilidad desde el diseño y a considerar el impacto de cada decisión técnica. He evolucionado de escribir código que funciona a diseñar sistemas que escalan, de resolver problemas individuales a pensar en arquitecturas completas.",
-      "paragraph3": "Antes de esto, en Ernst & Young trabajé en el SOC como consultor de tecnología y seguridad, especializado en ingeniería SIEM. Allí aprendí a pensar en sistemas a gran escala desde la perspectiva de observabilidad, confiabilidad y seguridad. Lideré migraciones de plataformas SIEM y desarrollé reglas de detección que procesaban millones de eventos diarios. Esta experiencia me dio una comprensión profunda de cómo funcionan los sistemas distribuidos bajo carga real y cómo diseñar pipelines de datos robustos. Aprendí que la observabilidad no es opcional: cuando un sistema procesa millones de eventos, necesitas métricas, logs y trazas para entender qué está pasando. Esta experiencia me dio una mentalidad que aplico constantemente: pensar en cómo un sistema puede fallar, cómo puede ser atacado, y cómo puede degradarse de forma controlada. Esta perspectiva ha sido fundamental en mi evolución como ingeniero backend.",
-      "paragraph4": "Mi formación en Ingeniería del Software me proporcionó una base sólida en fundamentos de computación, estructuras de datos, algoritmos y diseño de sistemas. Esta base teórica se aplica constantemente: cuando optimizo algoritmos, aplico conocimientos de complejidad computacional; cuando diseño estructuras de datos, entiendo las implicaciones de cada elección; cuando tomo decisiones arquitectónicas, tengo fundamentos para evaluar trade-offs. Durante la carrera desarrollé proyectos reales, como una plataforma web para gestión de contadores inteligentes, que me enseñó a traducir requisitos del mundo real en arquitecturas de software y a pensar en sistemas completos, no solo en código. Actualmente curso un Máster en Inteligencia Artificial en UNIR, con el objetivo de integrar técnicas de ML e IA en el diseño de sistemas backend: desde pipelines de datos hasta APIs que exponen modelos en producción. Mi enfoque hacia el aprendizaje es continuo: estudio sistemas en producción, experimento con nuevas aproximaciones y busco entender no solo cómo hacer algo, sino por qué una solución es mejor que otra en un contexto determinado."
+      "paragraph1": "En The Bubble Hub fui responsable del ciclo completo de ingeniería backend de dos productos móviles con más de 3.000 usuarios activos mensuales: análisis de requisitos, diseño de contratos de API, arquitectura de datos, implementación, integración con servicios externos y soporte en producción. Tomé decisiones técnicas sobre arquitectura, modelo de datos y seguridad.",
+      "paragraph2": "El backend que diseñé cubre seguridad en capas, procesamiento asíncrono event-driven e integraciones de pago complejas con Stripe, App Store y Google Play. Cada decisión de arquitectura tuvo impacto directo en el rendimiento y la experiencia de usuario.",
+      "paragraph3": "Antes de esto, en Ernst & Young trabajé en entornos enterprise con ciclos de vida de software regulados y requisitos de seguridad estrictos. Ese contexto, marcado por SecDevOps, auditorías y sistemas que procesaban millones de eventos diarios, moldea cómo abordo cualquier diseño hoy: seguridad aplicada desde el primer commit, no como capa adicional.",
+      "paragraph4": "Actualmente curso un Máster en Inteligencia Artificial en UNIR, orientado al diseño de sistemas backend y arquitectura cloud-native. Me interesa especialmente el diseño de arquitecturas backend mantenibles, sistemas distribuidos y soluciones cloud capaces de evolucionar a largo plazo."
     },
     "experience": {
       "title": "Experiencia",
       "bubbleHub": {
         "company": "The Bubble Hub",
         "role": "Back-end Engineer",
-        "period": "Abril 2024 – Presente",
+        "period": "Abril 2024 – Abril 2026",
         "location": "Málaga, España",
-        "description": "Desarrollo de soluciones backend escalables basadas en cloud usando Azure Functions y ASP.NET Core. Especializado en APIs RESTful, autenticación JWT/OAuth, integración de sistemas de suscripción (Apple/Google), y CI/CD con Azure DevOps."
+        "description": "Lideré el desarrollo backend de Prodigy Padel Academy y Koru: dos productos móviles con más de 3.000 usuarios activos mensuales. Responsabilidad completa sobre el ciclo de ingeniería: análisis de requisitos, diseño de contratos OpenAPI/Swagger, implementación con ASP.NET Core y Azure Functions, integraciones de pago (Stripe, Apple IAP, Google Play) y soporte en producción. Arquitectura PostgreSQL optimizada, autenticación JWT/RBAC/OAuth 2.0, rate limiting con Redis, procesamiento asíncrono con Azure Storage Queues y pipelines CI/CD con SonarCloud en Azure DevOps."
       },
       "ey": {
         "company": "Ernst & Young",
         "role": "Technology and Security Consultant",
         "period": "Abril 2022 – Abril 2024",
         "location": "Málaga, España",
-        "description": "Especializado en ingeniería SIEM dentro del SOC, liderando migraciones, integración de fuentes y desarrollo de reglas avanzadas. Contribución a proyectos backend con enfoque en escalabilidad y seguridad."
+        "description": "Desarrollo backend y SecDevOps en entornos enterprise con ciclos de vida de software regulados. Componentes ASP.NET con seguridad aplicada desde el diseño: validación de inputs, cifrado de datos, control de acceso por mínimo privilegio. Optimización de pipelines CI/CD con Jenkins y GitHub Actions. Integración de más de 10 fuentes de seguridad en plataformas SIEM (IBM QRadar, Splunk, Wazuh)."
       }
     },
     "education": {
@@ -207,25 +207,8 @@
   },
   "contact": {
     "title": "Contacto",
-    "form": {
-      "title": "Enviar mensaje",
-      "name": "Nombre",
-      "namePlaceholder": "Tu nombre",
-      "email": "Email",
-      "emailPlaceholder": "tu@email.com",
-      "message": "Mensaje",
-      "messagePlaceholder": "Tu mensaje...",
-      "submit": "Enviar",
-      "sending": "Enviando...",
-      "success": "Mensaje enviado correctamente. Te responderé pronto.",
-      "error": "Error al enviar el mensaje. Por favor, intenta de nuevo o usa el email directo.",
-      "consent": {
-        "text": "Acepto el procesamiento de mis datos personales según la",
-        "link": "Política de Privacidad"
-      }
-    },
+    "subtitle": "Disponible para nuevas oportunidades.",
     "email": "Email",
-    "phone": "Teléfono",
     "location": "Ubicación",
     "linkedin": "LinkedIn",
     "github": "GitHub"
@@ -246,44 +229,34 @@
         "title": "1. Responsable del Tratamiento",
         "content": {
           "name": "Nombre: Jesús Jiménez Alcántara",
-          "email": "Email: contact@jjalcantara.dev",
+          "email": "Email: jjalcantara.dev@gmail.com",
           "location": "Ubicación: Vélez-Málaga, 29700, España"
         }
       },
       "dataCollection": {
         "title": "2. Datos que Recopilamos",
         "content": {
-          "paragraph1": "A través del formulario de contacto de este sitio web, recopilamos los siguientes datos personales:",
-          "important": "Importante: estos datos NO se almacenan en este sitio web.",
-          "paragraph2": "Los datos se envían a través de la API de contacto y solo se utilizan para que yo pueda responder a su consulta por email.",
-          "list": {
-            "name": "Nombre",
-            "email": "Dirección de correo electrónico",
-            "message": "Mensaje o contenido de la comunicación"
-          },
-          "paragraph3": "Adicionalmente, este sitio web puede recopilar automáticamente ciertos datos técnicos necesarios para su funcionamiento, como la dirección IP, tipo de navegador, sistema operativo y páginas visitadas. Estos datos se recopilan a través del servicio de hosting (Vercel) y se utilizan únicamente para garantizar el correcto funcionamiento del sitio web y para fines de seguridad. Estos datos no se utilizan para identificar usuarios individuales ni para fines de marketing."
+          "paragraph1": "Este sitio web no dispone de formulario de contacto ni recopila datos personales de forma activa. No se solicita nombre, email ni ningún otro dato identificativo a los visitantes.",
+          "paragraph3": "Este sitio web puede recopilar automáticamente ciertos datos técnicos necesarios para su funcionamiento, como la dirección IP, tipo de navegador, sistema operativo y páginas visitadas. Estos datos se recopilan a través del servicio de hosting (Vercel) y se utilizan únicamente para garantizar el correcto funcionamiento del sitio web y para fines de seguridad. No se utilizan para identificar usuarios individuales ni para fines de marketing."
         }
       },
       "purpose": {
         "title": "3. Finalidad del Tratamiento",
         "content": {
-          "paragraph1": "Los datos personales recopilados se utilizan exclusivamente para responder a sus consultas y comunicaciones enviadas a través del formulario de contacto.",
-          "paragraph2": "No utilizamos sus datos para fines de marketing ni los compartimos con terceros para otros propósitos."
+          "paragraph1": "Los únicos datos procesados son los datos técnicos recogidos automáticamente por Vercel (hosting) para garantizar el funcionamiento y la seguridad del sitio web.",
+          "paragraph2": "No se recopilan ni utilizan datos personales para fines de marketing ni se comparten con terceros para otros propósitos."
         }
       },
       "legalBasis": {
         "title": "4. Base Legal",
-        "content": "El tratamiento de sus datos personales se basa en su consentimiento explícito, que usted otorga al marcar la casilla de aceptación en el formulario de contacto antes de enviarlo."
+        "content": "El procesamiento de los datos técnicos automáticos (IP, logs) se basa en el interés legítimo del responsable del tratamiento para garantizar la seguridad y el correcto funcionamiento del sitio web, de conformidad con el artículo 6.1.f del RGPD."
       },
       "dataProcessing": {
         "title": "5. Procesamiento de Datos",
         "content": {
-          "paragraph1": "Los datos del formulario de contacto se procesan a través de una API propia y se envían mediante Resend, un servicio de entrega de emails.",
-          "important": "Este sitio web no almacena ningún dato personal de los usuarios. Los datos se utilizan únicamente para enviarme una notificación por email y no son retenidos por ningún procesador externo.",
+          "paragraph1": "Este sitio web no almacena ni procesa datos personales de los visitantes.",
           "paragraph2": "Este sitio web está alojado en Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, Estados Unidos), que actúa como procesador de datos para el alojamiento y entrega del sitio web. Vercel puede recopilar datos técnicos automáticos (dirección IP, logs del servidor) necesarios para el funcionamiento del servicio.",
-          "paragraph3": "Puede consultar las políticas de privacidad de nuestros procesadores:",
-          "formspreeLink": "https://resend.com/legal/privacy-policy",
-          "formspreeText": "Política de privacidad de Resend",
+          "paragraph3": "Puede consultar la política de privacidad del proveedor de hosting:",
           "vercelLink": "https://vercel.com/legal/privacy-policy",
           "vercelText": "Política de privacidad de Vercel"
         }
@@ -291,9 +264,8 @@
       "dataRetention": {
         "title": "6. Conservación de Datos",
         "content": {
-          "paragraph1": "Este sitio web no almacena datos personales en sus servidores. Los datos enviados a través del formulario se entregan por email mediante Resend y no son retenidos por ningún procesador externo más allá de lo necesario para la entrega.",
-          "paragraph2": "Los datos se conservarán únicamente durante el tiempo necesario para responder a su consulta. Una vez finalizada la comunicación, los datos se eliminarán en un plazo máximo de 2 años, salvo que exista una obligación legal que requiera una conservación más prolongada.",
-          "paragraph3": "La cookie técnica utilizada para el rate limiting expira automáticamente después de 24 horas. Los datos almacenados en localStorage (utilizados como respaldo de la cookie) se eliminan cuando el usuario borra el almacenamiento local de su navegador."
+          "paragraph1": "Este sitio web no almacena datos personales en sus servidores. Los datos técnicos recogidos automáticamente por Vercel se conservan según su propia política de retención.",
+          "paragraph2": "La cookie de preferencia de idioma expira automáticamente al cabo de 1 año."
         }
       },
       "yourRights": {
@@ -310,7 +282,7 @@
             "withdraw": "Retirar su consentimiento en cualquier momento sin afectar la licitud del tratamiento previo",
             "automated": "No ser objeto de decisiones basadas únicamente en el tratamiento automatizado"
           },
-          "contact": "Para ejercer estos derechos, puede contactar conmigo en: contact@jjalcantara.dev",
+          "contact": "Para ejercer estos derechos, puede contactar conmigo en: jjalcantara.dev@gmail.com",
           "responseTime": "Me comprometo a responder a su solicitud en un plazo máximo de un mes desde su recepción. Si la solicitud es compleja o hay múltiples solicitudes, este plazo puede extenderse hasta dos meses, informándole de ello.",
           "complaint": "Si considera que el tratamiento de sus datos personales vulnera el RGPD, tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) en www.aepd.es o ante la autoridad de control de su país de residencia."
         }
@@ -318,25 +290,18 @@
       "cookies": {
         "title": "8. Cookies y Tecnologías Similares",
         "content": {
-          "paragraph1": "Este sitio web utiliza dos cookies técnicas esenciales y localStorage para su correcto funcionamiento.",
-          "cookieLabel": "Cookie de rate limiting",
-          "cookieName": "contact_form_last_submit",
-          "cookieNameLabel": "Nombre",
-          "cookiePurpose": "Almacena únicamente un timestamp del último envío del formulario para limitar los envíos a 3 por hora.",
-          "cookiePurposeLabel": "Finalidad",
-          "cookieDuration": "24 horas (expira automáticamente)",
-          "cookieDurationLabel": "Duración",
-          "cookieType": "Técnica esencial — no requiere consentimiento según el RGPD",
-          "cookieTypeLabel": "Tipo",
+          "paragraph1": "Este sitio web utiliza una única cookie técnica esencial para su correcto funcionamiento.",
           "cookie2Label": "Cookie de preferencia de idioma",
           "cookie2Name": "preferred_locale",
+          "cookieNameLabel": "Nombre",
           "cookie2Purpose": "Guarda el idioma seleccionado por el usuario (es / en) para que el sitio se muestre siempre en el idioma elegido sin volver a redirigir según el navegador.",
+          "cookiePurposeLabel": "Finalidad",
           "cookie2Duration": "1 año",
+          "cookieDurationLabel": "Duración",
           "cookie2Type": "Técnica esencial — no requiere consentimiento según el RGPD",
-          "localStorageLabel": "localStorage",
-          "localStoragePurpose": "Se usa como respaldo de la cookie de rate limiting para garantizar su funcionamiento incluso si las cookies están deshabilitadas. Almacena únicamente un timestamp y se elimina cuando el usuario borra el almacenamiento local del navegador.",
+          "cookieTypeLabel": "Tipo",
           "noTracking": "No se utilizan cookies de seguimiento, publicidad ni análisis. No se comparte información con terceros.",
-          "paragraph6": "Puede configurar su navegador para rechazar cookies o borrar el almacenamiento local en cualquier momento, aunque esto puede afectar la funcionalidad del formulario de contacto y la preferencia de idioma."
+          "paragraph6": "Puede configurar su navegador para rechazar cookies en cualquier momento, aunque esto puede afectar la preferencia de idioma."
         }
       },
       "dataSecurity": {
@@ -356,19 +321,19 @@
       "internationalTransfers": {
         "title": "10. Transferencias Internacionales de Datos",
         "content": {
-          "paragraph1": "Los datos del formulario de contacto se entregan mediante Resend, que tiene servidores en Estados Unidos. El alojamiento del sitio web se realiza a través de Vercel, también con servidores en Estados Unidos.",
-          "paragraph2": "Estas transferencias se realizan bajo las garantías adecuadas establecidas en el RGPD:",
+          "paragraph1": "El alojamiento del sitio web se realiza a través de Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, Estados Unidos), con servidores en Estados Unidos.",
+          "paragraph2": "Esta transferencia se realiza bajo las garantías adecuadas establecidas en el RGPD:",
           "guarantees": {
             "clauses": "Cláusulas contractuales tipo aprobadas por la Comisión Europea",
-            "certification": "Certificaciones de cumplimiento del RGPD por parte de los procesadores",
+            "certification": "Certificaciones de cumplimiento del RGPD por parte del procesador",
             "adequacy": "Marco de adecuación UE-EEUU (cuando aplique)"
           },
-          "paragraph3": "Resend y Vercel han implementado medidas técnicas y organizativas para garantizar que sus datos personales reciban un nivel de protección adecuado equivalente al establecido en el RGPD."
+          "paragraph3": "Vercel ha implementado medidas técnicas y organizativas para garantizar que los datos reciban un nivel de protección adecuado equivalente al establecido en el RGPD."
         }
       },
       "minors": {
         "title": "11. Protección de Menores",
-        "content": "Este sitio web no está dirigido a menores de 16 años. No recopilamos intencionalmente datos personales de menores de 16 años sin el consentimiento de los padres o tutores legales. Si tiene conocimiento de que un menor ha proporcionado datos personales a través de este sitio web, por favor contacte conmigo inmediatamente en contact@jjalcantara.dev para que pueda eliminar dicha información."
+        "content": "Este sitio web no está dirigido a menores de 16 años. No recopilamos intencionalmente datos personales de menores de 16 años sin el consentimiento de los padres o tutores legales. Si tiene conocimiento de que un menor ha proporcionado datos personales a través de este sitio web, por favor contacte conmigo inmediatamente en jjalcantara.dev@gmail.com para que pueda eliminar dicha información."
       },
       "ccpa": {
         "title": "12. Derechos de los Residentes de California (CCPA)",
@@ -380,7 +345,7 @@
             "optOut": "Derecho a optar por no vender sus datos personales (no vendemos datos)",
             "nonDiscrimination": "Derecho a no ser discriminado por ejercer sus derechos de privacidad"
           },
-          "paragraph2": "Para ejercer estos derechos, puede contactar conmigo en contact@jjalcantara.dev. No vendemos ni compartimos datos personales con terceros para fines comerciales."
+          "paragraph2": "Para ejercer estos derechos, puede contactar conmigo en jjalcantara.dev@gmail.com. No vendemos ni compartimos datos personales con terceros para fines comerciales."
         }
       },
       "changes": {

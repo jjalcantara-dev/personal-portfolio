@@ -66,7 +66,7 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
               <div className={`space-y-1 ${bodyClass}`}>
                 <p>{s.dataController.content.name}</p>
                 <p>
-                  <a href="mailto:contact@jjalcantara.dev" className={linkClass}>
+                  <a href="mailto:jjalcantara.dev@gmail.com" className={linkClass}>
                     {s.dataController.content.email}
                   </a>
                 </p>
@@ -81,13 +81,19 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
               <h2 className={h2Class}>{s.dataCollection.title}</h2>
               <div className={`space-y-4 ${bodyClass}`}>
                 <p>{s.dataCollection.content.paragraph1}</p>
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>{s.dataCollection.content.list.name}</li>
-                  <li>{s.dataCollection.content.list.email}</li>
-                  <li>{s.dataCollection.content.list.message}</li>
-                </ul>
-                <Callout>{s.dataCollection.content.important}</Callout>
-                <p>{s.dataCollection.content.paragraph2}</p>
+                {s.dataCollection.content.list && (
+                  <ul className="list-disc list-inside space-y-1 ml-4">
+                    <li>{s.dataCollection.content.list.name}</li>
+                    <li>{s.dataCollection.content.list.email}</li>
+                    <li>{s.dataCollection.content.list.message}</li>
+                  </ul>
+                )}
+                {s.dataCollection.content.important && (
+                  <Callout>{s.dataCollection.content.important}</Callout>
+                )}
+                {s.dataCollection.content.paragraph2 && (
+                  <p>{s.dataCollection.content.paragraph2}</p>
+                )}
                 {s.dataCollection.content.paragraph3 && (
                   <p>{s.dataCollection.content.paragraph3}</p>
                 )}
@@ -122,7 +128,9 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
               <h2 className={h2Class}>{s.dataProcessing.title}</h2>
               <div className={`space-y-4 ${bodyClass}`}>
                 <p>{s.dataProcessing.content.paragraph1}</p>
-                <Callout>{s.dataProcessing.content.important}</Callout>
+                {s.dataProcessing.content.important && (
+                  <Callout>{s.dataProcessing.content.important}</Callout>
+                )}
                 {s.dataProcessing.content.paragraph2 && (
                   <p>{s.dataProcessing.content.paragraph2}</p>
                 )}
@@ -130,16 +138,13 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
                   <>
                     <p>{s.dataProcessing.content.paragraph3}</p>
                     <ul className="list-disc list-inside space-y-1 ml-4">
-                      <li>
-                        <a href={s.dataProcessing.content.formspreeLink} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                          {s.dataProcessing.content.formspreeText}
-                        </a>
-                      </li>
-                      <li>
-                        <a href={s.dataProcessing.content.vercelLink} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                          {s.dataProcessing.content.vercelText}
-                        </a>
-                      </li>
+                      {s.dataProcessing.content.vercelLink && (
+                        <li>
+                          <a href={s.dataProcessing.content.vercelLink} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                            {s.dataProcessing.content.vercelText}
+                          </a>
+                        </li>
+                      )}
                     </ul>
                   </>
                 )}
@@ -157,8 +162,12 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
                 ) : (
                   <>
                     <p>{s.dataRetention.content.paragraph1}</p>
-                    <p>{s.dataRetention.content.paragraph2}</p>
-                    <p>{s.dataRetention.content.paragraph3}</p>
+                    {s.dataRetention.content.paragraph2 && (
+                      <p>{s.dataRetention.content.paragraph2}</p>
+                    )}
+                    {s.dataRetention.content.paragraph3 && (
+                      <p>{s.dataRetention.content.paragraph3}</p>
+                    )}
                   </>
                 )}
               </div>
@@ -210,20 +219,6 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
 
                   <div className="space-y-3">
                     <h3 className={`text-base font-medium ${clr.text.primary}`}>
-                      {s.cookies.content.cookieLabel}
-                    </h3>
-                    <CookieTable
-                      rows={[
-                        { label: s.cookies.content.cookieNameLabel,     value: s.cookies.content.cookieName },
-                        { label: s.cookies.content.cookiePurposeLabel,  value: s.cookies.content.cookiePurpose },
-                        { label: s.cookies.content.cookieDurationLabel, value: s.cookies.content.cookieDuration },
-                        { label: s.cookies.content.cookieTypeLabel,     value: s.cookies.content.cookieType },
-                      ]}
-                    />
-                  </div>
-
-                  <div className="space-y-3">
-                    <h3 className={`text-base font-medium ${clr.text.primary}`}>
                       {s.cookies.content.cookie2Label}
                     </h3>
                     <CookieTable
@@ -234,13 +229,6 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
                         { label: s.cookies.content.cookieTypeLabel,     value: s.cookies.content.cookie2Type },
                       ]}
                     />
-                  </div>
-
-                  <div className="space-y-3">
-                    <h3 className={`text-base font-medium ${clr.text.primary}`}>
-                      {s.cookies.content.localStorageLabel}
-                    </h3>
-                    <p>{s.cookies.content.localStoragePurpose}</p>
                   </div>
 
                   <Callout>{s.cookies.content.noTracking}</Callout>
@@ -350,8 +338,8 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
                   <>
                     <p>{s.contact.content}</p>
                     <p>
-                      <a href="mailto:contact@jjalcantara.dev" className={linkClass}>
-                        contact@jjalcantara.dev
+                      <a href="mailto:jjalcantara.dev@gmail.com" className={linkClass}>
+                        jjalcantara.dev@gmail.com
                       </a>
                     </p>
                   </>
@@ -362,8 +350,8 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
                       <span className={`font-medium ${clr.text.primary}`}>
                         {(s.contact.content as { emailLabel?: string }).emailLabel ?? "Email"}:{" "}
                       </span>
-                      <a href="mailto:contact@jjalcantara.dev" className={linkClass}>
-                        contact@jjalcantara.dev
+                      <a href="mailto:jjalcantara.dev@gmail.com" className={linkClass}>
+                        jjalcantara.dev@gmail.com
                       </a>
                     </p>
                     {"paragraph2" in s.contact.content && (

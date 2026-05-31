@@ -4,67 +4,90 @@ Backend Engineer with 4+ years of professional experience building scalable clou
 
 ## Identity
 
-- Full name: Jesús Jiménez Alcántara (also written: Jesus Jimenez Alcantara, Jesús Jiménez Alcántara)
+- Full name: Jesús Jiménez Alcántara (also written: Jesus Jimenez Alcantara)
 - Role: Backend Engineer
 - Location: Vélez-Málaga, 29700, Málaga, Spain
-- Email: contact@jjalcantara.dev
+- Email: jjalcantara.dev@gmail.com
 - Website: https://jjalcantara.dev
 - LinkedIn: https://linkedin.com/in/jjalcantara
-- GitHub: https://github.com/jjalcantara
-- CV: https://jjalcantara.dev/jesus_jimenez_alcantara_cv.pdf
+- GitHub: https://github.com/jjalcantara-dev
+- CV (Spanish): https://jjalcantara.dev/jesus_jimenez_alcantara_cv_es.pdf
+- CV (English): https://jjalcantara.dev/jesus_jimenez_alcantara_cv_en.pdf
 
 ## Professional Summary
 
-Backend Engineer specializing in REST API design, authentication systems (JWT, OAuth 2.0, RBAC), payment integrations (Stripe, Apple App Store, Google Play), and PostgreSQL database architecture. Currently at The Bubble Hub, leading backend development across two mobile products serving thousands of monthly active users.
+Backend Engineer specializing in REST API design, authentication systems (JWT, OAuth 2.0, RBAC), payment integrations (Stripe, Apple App Store, Google Play), and PostgreSQL database architecture. 4+ years of experience leading backend development of mobile applications in production with thousands of monthly active users.
 
 ## Experience
 
-**The Bubble Hub** — Backend Engineer (April 2024 – Present)
-- Leading backend development for Prodigy Padel Academy and Koru
+**The Bubble Hub** — Backend Engineer (April 2024 – April 2026)
+- Led backend development for Prodigy Padel Academy and Koru Acne
 - REST API design (OpenAPI/Swagger), JWT, RBAC, OAuth 2.0 (Google, Apple)
 - Payment integrations: Stripe, Apple App Store IAP, Google Play IAP
-- Gamification: points, levels, achievements, leaderboards
+- Gamification systems: points, levels, achievements, leaderboards
 - PostgreSQL architecture, Redis rate limiting
 - CI/CD with Azure DevOps
+- Stack: ASP.NET Core, Azure Functions, PostgreSQL, Redis
 
 **Ernst & Young (EY)** — Technology and Security Consultant (April 2022 – April 2024)
 - Backend development and SecDevOps for enterprise clients
 - SIEM engineering within a SOC (Splunk, QRadar, ElasticSearch)
+- Led SIEM platform migrations and developed detection rules processing millions of daily events
 
 ## Education
 
-- Bachelor's in Software Engineering — Universidad de Málaga (UMA), 7.51/10
+- Bachelor's in Software Engineering — Universidad de Málaga (UMA), grade: 7.51/10, graduated October 2022
 - Master's in Artificial Intelligence — Universidad Internacional de La Rioja (UNIR), in progress (expected March 2027)
 
 ## Technical Skills
 
 Languages & Frameworks: C#, ASP.NET Core, .NET, Java, Spring, Python, JavaScript, TypeScript, Next.js
-Cloud & DevOps: Azure (Functions, DevOps, App Service, CosmosDB, Blob Storage), Vercel, Docker, Kubernetes, Redis
-Databases: PostgreSQL, SQL Server, MongoDB, CosmosDB
+Cloud & DevOps: Azure (Functions, DevOps, App Service, CosmosDB, Blob Storage, Table Storage), Vercel, Docker, Kubernetes, Jenkins, Redis
+Databases: PostgreSQL, SQL Server, MongoDB, CosmosDB, Azure Table Storage
 APIs & Auth: REST API, OpenAPI/Swagger, JWT, OAuth 2.0, Stripe, Postman
-Testing: Unit, Integration, E2E, JUnit, Selenium
-Practices: SOLID, Clean Architecture, RBAC, Agile/Scrum, Git
+Testing: Unit Testing, Integration Testing, E2E Testing, JUnit, Selenium
+Practices: SOLID, Clean Architecture, RBAC, Agile/Scrum, Git, GitHub, Jira, UML
 
-## Current Projects
+## Projects
 
 **Prodigy Padel Academy** — Sports training mobile app for padel players
 - Role: Backend Engineer (lead)
-- Stack: ASP.NET Core, Azure, PostgreSQL, Redis, Stripe, JWT, OAuth 2.0
+- Stack: ASP.NET Core, Azure Functions, PostgreSQL, Redis, Stripe, JWT, OAuth 2.0
+- Features: gamification (points, levels, achievements, leaderboards), Stripe payments, in-app purchases
 - App Store: https://apps.apple.com/es/app/prodigy-padel-academy/id6463727496
 - Google Play: https://play.google.com/store/apps/details?id=com.prodigypadelacademy.app
 
-**Koru** — Skincare and acne support mobile app
+**Koru Acne** — Skincare and acne support mobile app
 - Role: Backend Engineer (lead)
-- Stack: ASP.NET Core, Azure, PostgreSQL, Redis, JWT, OAuth 2.0
+- Stack: ASP.NET Core, Azure Functions, PostgreSQL, JWT, OAuth 2.0
+- Features: REST API design, JWT/OAuth authentication, skin tracking database architecture
 - App Store: https://apps.apple.com/es/app/koru-your-acne-coach/id6466275209
 - Google Play: https://play.google.com/store/apps/details?id=com.koruacne.app
+
+**DailyDermaTalks** — Web platform for Cantabria Labs dermatology community
+- Role: Fullstack Engineer
+- Stack: Next.js, PostgreSQL, Vercel, Upstash Redis, JWT, RBAC
+- Features: REST APIs, role-based access control, CMS, rate limiting
+
+**Galivivienda VPO Calculator** — Civic tech tool for cooperative housing analysis
+- Role: Personal project
+- Stack: HTML, CSS, JavaScript, Vercel
+- URL: https://vpo.jjalcantara.dev
+
+## Languages
+
+- Spanish: native
+- English: B2
 
 ## Portfolio Pages
 
 - https://jjalcantara.dev/es — Home (Spanish)
 - https://jjalcantara.dev/en — Home (English)
-- https://jjalcantara.dev/es/about — About / Professional profile
-- https://jjalcantara.dev/es/projects — Projects
-- https://jjalcantara.dev/es/contact — Contact
+- https://jjalcantara.dev/es/about — About / Professional profile (Spanish)
+- https://jjalcantara.dev/en/about — About / Professional profile (English)
+- https://jjalcantara.dev/es/projects — Projects (Spanish)
+- https://jjalcantara.dev/en/projects — Projects (English)
+- https://jjalcantara.dev/es/contact — Contact (Spanish)
+- https://jjalcantara.dev/en/contact — Contact (English)
 - https://jjalcantara.dev/es/puzzles — Daily logic puzzles (side project)
 - https://jjalcantara.dev/es/privacy — Privacy policy

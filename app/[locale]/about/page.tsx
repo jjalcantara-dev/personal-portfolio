@@ -18,25 +18,43 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   return {
     title: locale === "es"
-      ? "Sobre mí | Jesús Jiménez Alcántara"
-      : "About | Jesús Jiménez Alcántara",
+      ? "Sobre mí | Jesús Jiménez Alcántara — Ingeniero Backend"
+      : "About | Jesús Jiménez Alcántara — Backend Engineer",
     description: t.about.description,
     keywords: [
       "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcantara",
       "Backend Engineer",
       "Ingeniero Backend",
+      "ASP.NET Core",
+      "Azure Functions",
       "Azure",
       ".NET",
+      "C#",
+      "PostgreSQL",
+      "Redis",
+      "JWT",
+      "OAuth 2.0",
+      "RBAC",
+      "Stripe",
+      "REST API",
+      "CI/CD",
+      "SOLID",
+      "Clean Architecture",
       "The Bubble Hub",
-      "Ernst & Young",
-      "University of Malaga",
+      "Ernst Young",
+      "EY",
+      "Universidad de Málaga",
+      "UMA",
+      "UNIR",
       "Málaga",
+      "Vélez-Málaga",
     ],
     openGraph: {
+      type: "profile",
       title: locale === "es"
-        ? "Sobre mí | Jesús Jiménez Alcántara"
-        : "About | Jesús Jiménez Alcántara",
+        ? "Sobre mí | Jesús Jiménez Alcántara — Ingeniero Backend"
+        : "About | Jesús Jiménez Alcántara — Backend Engineer",
       description: t.about.description,
       url: `${baseUrl}/${locale}/about`,
     },

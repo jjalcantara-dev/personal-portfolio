@@ -13,21 +13,6 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
-  // Redirects para i18n (reemplaza middleware)
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/es",
-        permanent: false,
-      },
-      {
-        source: "/:path((?!es|en|api|_next|favicon\\.ico|manifest$|robots\\.txt$|sitemap\\.xml$|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|json|pdf)$).*)",
-        destination: "/es/:path*",
-        permanent: false,
-      },
-    ];
-  },
   // Headers de seguridad
   async headers() {
     return [
