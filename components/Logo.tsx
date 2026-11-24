@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
+import { getContent } from "@/lib/content";
 import { focusRing } from "@/lib/constants/colors";
 
 type Props = {
@@ -30,7 +31,7 @@ export default function Logo({ locale, size = "medium" }: LogoProps) {
     <Link
       href={`/${locale}`}
       className={`inline-block ${focusRing}`}
-      aria-label="Jesús Jiménez Alcántara - Ir a inicio"
+      aria-label={`Jesús Jiménez Alcántara, ${getContent(locale).a11y.goHome}`}
     >
       <Image
         src="/logo_final.svg"

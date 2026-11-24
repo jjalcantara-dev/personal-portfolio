@@ -17,22 +17,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const baseUrl = "https://jjalcantara.dev";
 
   return {
-    title: locale === "es"
-      ? "Contacto | Jesús Jiménez Alcántara"
-      : "Contact | Jesús Jiménez Alcántara",
+    title: locale === "es" ? "Contacto" : "Contact",
     description: locale === "es"
-      ? "Página de contacto de Jesús Jiménez Alcántara, Backend Engineer"
-      : "Contact page for Jesús Jiménez Alcántara, Backend Engineer",
+      ? "Contacto con Jesús Jiménez Alcántara, Ingeniero Backend en Málaga: email, LinkedIn y GitHub."
+      : "Get in touch with Jesús Jiménez Alcántara, Backend Engineer in Málaga, Spain: email, LinkedIn and GitHub.",
     keywords: [
       "Jesús Jiménez Alcántara", "Jesus Jimenez Alcantara",
       "contact", "contacto", "Backend Engineer", "Ingeniero Backend",
-      "Málaga", "jjalcantara.dev@gmail.com",
+      "Málaga",
     ],
     alternates: pageAlternates(locale, "/contact"),
     openGraph: {
       images: ogImages(locale),
       title: locale === "es" ? "Contacto | Jesús Jiménez Alcántara" : "Contact | Jesús Jiménez Alcántara",
-      description: locale === "es" ? "Página de contacto de Jesús Jiménez Alcántara, Backend Engineer" : "Contact page for Jesús Jiménez Alcántara, Backend Engineer",
+      description: locale === "es" ? "Contacto con Jesús Jiménez Alcántara, Ingeniero Backend en Málaga: email, LinkedIn y GitHub." : "Get in touch with Jesús Jiménez Alcántara, Backend Engineer in Málaga, Spain: email, LinkedIn and GitHub.",
       url: `${baseUrl}/${locale}/contact`,
     },
   };

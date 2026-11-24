@@ -17,16 +17,16 @@ export default function Navigation({ locale }: Props) {
 
   const navItems = [
     { href: `/${locale}`,          label: t.nav.home },
+    { href: `/${locale}/about`,    label: t.nav.about },
     { href: `/${locale}/projects`, label: t.nav.projects },
     { href: `/${locale}/collab`,   label: t.nav.collab },
-    { href: `/${locale}/about`,    label: t.nav.about },
     { href: `/${locale}/contact`,  label: t.nav.contact },
   ];
 
   return (
     <nav
       className="flex gap-2 sm:gap-4 md:gap-6 lg:gap-8 flex-wrap justify-end"
-      aria-label="Main navigation"
+      aria-label={t.a11y.mainNav}
       role="navigation"
     >
       <ul className="flex gap-2 sm:gap-4 md:gap-6 lg:gap-8 list-none m-0 p-0 flex-wrap">

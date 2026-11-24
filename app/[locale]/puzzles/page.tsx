@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const baseUrl = "https://jjalcantara.dev";
 
   return {
-    title: "Puzzles | Jesús Jiménez Alcántara",
+    title: "Puzzles",
     description: t.puzzles.description,
     keywords: [
       "Jesús Jiménez Alcántara",
@@ -61,7 +61,7 @@ export default async function Puzzles({ params }: { params: Promise<{ locale: st
         <ScrollAnimation animation="fade-up" delay={200}>
           <div className={`border-t ${clr.border.base} pt-12 mb-16`}>
             <div className="max-w-2xl">
-              <p className={`${tx.bodyLg} ${clr.text.body} text-justify mb-8`}>
+              <p className={`${tx.bodyLg} ${clr.text.body} mb-8`}>
                 {t.puzzles.intro}
               </p>
               <p className={`text-sm ${clr.text.muted} italic mb-4`}>
@@ -77,7 +77,7 @@ export default async function Puzzles({ params }: { params: Promise<{ locale: st
           <div className={`border-t ${clr.border.base} pt-12`}>
             <div className="mb-6">
               <h2 className={`text-xl sm:text-2xl font-light mb-2 ${clr.text.primary}`}>
-                {locale === 'es' ? 'Puzzle de Hoy' : "Today's Logic Game"}
+                {locale === 'es' ? 'Puzzle de hoy' : "Today's puzzle"}
               </h2>
             </div>
             <DailyGame locale={locale as Locale} />

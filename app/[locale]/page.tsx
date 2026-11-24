@@ -50,20 +50,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </Link>
           </ScrollAnimation>
 
-          {/* Name */}
-          <ScrollAnimation animation="fade-up" delay={80}>
-            <p className={`${tx.label} sm:text-sm ${clr.text.faint} mb-2 sm:mb-4 select-none`}>
-              Jesús Jiménez Alcántara
-            </p>
-          </ScrollAnimation>
-
-          {/* H1 */}
-          <ScrollAnimation animation="fade-up" delay={150}>
-            <h1
-              id="main-heading"
-              className={`${tx.h1Hero} mb-5 sm:mb-6 ${clr.text.primary}`}
-            >
-              {t.home.title}
+          {/* H1: name + role, so the page's main heading carries the name */}
+          <ScrollAnimation animation="fade-up" delay={100}>
+            <h1 id="main-heading" className="mb-5 sm:mb-6">
+              <span className={`block ${tx.label} sm:text-sm ${clr.text.faint} mb-2 sm:mb-4`}>
+                Jesús Jiménez Alcántara
+              </span>
+              <span className={`block ${tx.h1Hero} ${clr.text.primary}`}>
+                {t.home.title}
+              </span>
             </h1>
 
             {/* Tech stack pills */}
@@ -91,7 +86,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <div
               className="flex flex-col sm:flex-row gap-2.5 sm:gap-4 justify-center"
               role="group"
-              aria-label="Call to action buttons"
+              aria-label={t.a11y.ctaGroup}
             >
               <Link href={`/${locale}/about`} className={btnPrimary}>
                 {t.home.cta.about}
@@ -104,15 +99,17 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </a>
             </div>
 
-            {locale === "es" && (
-              <p className={`mt-4 text-xs ${clr.text.faint} text-center`}>
-                Prefer English?{" "}
-                <Link href="/en" className="underline underline-offset-2 hover:text-gray-600 transition-colors">
-                  Switch to English
-                </Link>{" "}
-                to download the English CV.
-              </p>
-            )}
+            <p className={`mt-4 text-xs ${clr.text.faint} text-center`}>
+              <a
+                href={`/jesus_jimenez_alcantara_cv_${locale === "es" ? "en" : "es"}.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                hrefLang={locale === "es" ? "en" : "es"}
+                className="underline underline-offset-2 hover:text-gray-700 transition-colors"
+              >
+                {t.home.cta.cvOther}
+              </a>
+            </p>
 
             {/* Social links */}
             <div className="flex items-center justify-center gap-6 mt-4">
@@ -156,19 +153,19 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <div className="grid sm:grid-cols-2 gap-0" role="list">
           {[
             {
-              key: "architecture", item: t.home.focus.architecture, delay: 100,
+              key: "apis", item: t.home.focus.apis, delay: 100,
               icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>,
             },
             {
-              key: "cleanCode", item: t.home.focus.cleanCode, delay: 200,
+              key: "cloud", item: t.home.focus.cloud, delay: 200,
               icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" /></svg>,
             },
             {
-              key: "performance", item: t.home.focus.performance, delay: 300,
+              key: "security", item: t.home.focus.security, delay: 300,
               icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
             },
             {
-              key: "professionalism", item: t.home.focus.professionalism, delay: 400,
+              key: "payments", item: t.home.focus.payments, delay: 400,
               icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" /><line x1="1" y1="10" x2="23" y2="10" /></svg>,
             },
           ].map(({ key, item, delay, icon }) => (

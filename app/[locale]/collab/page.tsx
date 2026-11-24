@@ -19,9 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const baseUrl = "https://jjalcantara.dev";
 
   return {
-    title: locale === "es"
-      ? "Colaboradores | Jesús Jiménez Alcántara"
-      : "Collab | Jesús Jiménez Alcántara",
+    title: locale === "es" ? "Colaboradores" : "Collaborators",
     description: t.collab.description,
     keywords: [
       "Jesús Jiménez Alcántara",

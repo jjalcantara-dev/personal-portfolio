@@ -16,7 +16,7 @@ export default function Footer({ locale }: Props) {
     <Link
       href={`/${locale}`}
       className={focusRing}
-      aria-label="Ir a inicio"
+      aria-label={t.a11y.goHome}
     >
       <Image
         src="/logo_final.svg"

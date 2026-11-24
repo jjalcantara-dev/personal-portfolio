@@ -16,58 +16,84 @@
       "projects": "Ver proyectos",
       "contact": "Contactar",
       "about": "Sobre mí",
-      "cv": "Descargar CV"
+      "cv": "Descargar CV",
+      "cvOther": "También en inglés"
     },
     "focus": {
       "title": "En qué trabajo",
-      "architecture": {
+      "apis": {
         "title": "APIs y Contratos",
         "description": "Diseño APIs REST de ciclo completo: análisis de requisitos, definición de casos de uso, documentación OpenAPI/Swagger y soporte en producción. Priorizo la claridad de los contratos, la gestión de versiones y la compatibilidad con clientes móviles. He diseñado y mantenido APIs consumidas por más de 3.000 usuarios activos mensuales."
       },
-      "cleanCode": {
+      "cloud": {
         "title": "Cloud y Arquitectura",
         "description": "Arquitectura cloud-native con Azure Functions y ASP.NET Core. Diseño sistemas con procesamiento asíncrono event-driven usando Azure Storage Queues y Worker Services. Evalúo el modelo de despliegue, serverless vs App Service, analizando coste operativo, escalabilidad y latencia según los requisitos de cada producto."
       },
-      "performance": {
+      "security": {
         "title": "Seguridad",
         "description": "Seguridad aplicada desde el primer commit, no como capa adicional. Implemento autenticación JWT stateless, RBAC por endpoint, OAuth 2.0 con Google y Apple, y rate limiting con Redis contra ataques de fuerza bruta y credential stuffing. Background en SecDevOps en entornos enterprise con Ernst & Young."
       },
-      "professionalism": {
+      "payments": {
         "title": "Pagos e Integraciones",
-        "description": "Integración completa de Stripe: webhooks, idempotencia y gestión del ciclo de vida de suscripciones. Suscripciones nativas con App Store de Apple y Google Play con validación server-side de receipts. He construido sistemas de pago en producción que procesan transacciones de usuarios reales sin incidencias."
+        "description": "Integración completa de Stripe: webhooks, idempotencia y gestión del ciclo de vida de suscripciones. Suscripciones nativas con App Store de Apple y Google Play con validación server-side de receipts. Gestión de renovaciones, periodos de gracia, reembolsos y revocaciones, con conciliación contra el estado de cada tienda."
       }
-    }
+    },
+    "metaDescription": "Ingeniero Backend en Málaga con más de 4 años en ASP.NET Core, Azure y PostgreSQL: APIs REST, autenticación JWT y OAuth 2.0, y pagos con Stripe y App Store."
   },
   "projects": {
     "title": "Proyectos",
-    "description": "Trabajo profesional como Backend Engineer, open source y proyectos personales.",
+    "description": "Trabajo profesional como Ingeniero Backend, open source y proyectos personales.",
     "current": {
       "title": "Trabajo Profesional",
       "prodigy": {
         "name": "Prodigy Padel Academy",
         "type": "Aplicación móvil",
-        "role": "Backend Engineer",
+        "role": "Ingeniero Backend",
         "description": "Plataforma de entrenamiento deportivo para jugadores de pádel, con una metodología de más de 25 años. Backend: sistema de gamificación (puntos, niveles, logros y clasificaciones), pagos con Stripe, compras in-app de App Store y Google Play, arquitectura PostgreSQL optimizada, rate limiting con Redis, y autenticación JWT con RBAC y OAuth 2.0.",
-        "techStack": ["ASP.NET Core", "Azure Functions", "PostgreSQL", "Redis", "Stripe", "JWT", "RBAC", "OAuth 2.0"],
+        "techStack": [
+          "ASP.NET Core",
+          "Azure Functions",
+          "PostgreSQL",
+          "Redis",
+          "Stripe",
+          "JWT",
+          "RBAC",
+          "OAuth 2.0"
+        ],
         "appStore": "https://apps.apple.com/es/app/prodigy-padel-academy/id6463727496?l=es_ES",
         "googlePlay": "https://play.google.com/store/apps/details?id=com.prodigypadelacademy.app&hl=es"
       },
       "koru": {
         "name": "Koru Acne",
         "type": "Aplicación móvil",
-        "role": "Backend Engineer",
-        "description": "Aplicación móvil para seguimiento de la piel y comunidad de apoyo para el acné. Backend: diseño de APIs REST, autenticación JWT y OAuth 2.0, arquitectura de base de datos para gestión de usuarios, seguimiento visual de la piel, identificación de factores desencadenantes y recursos de bienestar.",
-        "techStack": ["ASP.NET Core", "Azure Functions", "PostgreSQL", "JWT", "OAuth 2.0", "REST API"],
+        "role": "Ingeniero Backend",
+        "description": "Aplicación móvil de seguimiento de la piel y comunidad de apoyo para personas con acné. Backend: diseño de APIs REST, autenticación JWT y OAuth 2.0 (Google y Apple) y modelo de datos en PostgreSQL para usuarios, registros fotográficos de la piel, factores desencadenantes y contenido de bienestar.",
+        "techStack": [
+          "ASP.NET Core",
+          "Azure Functions",
+          "PostgreSQL",
+          "JWT",
+          "OAuth 2.0",
+          "REST API"
+        ],
         "appStore": "https://apps.apple.com/es/app/koru-your-acne-coach/id6466275209",
         "googlePlay": "https://play.google.com/store/apps/details?id=com.koruacne.app"
       },
       "dailydermatalks": {
         "name": "DailyDermaTalks",
         "type": "Aplicación web",
-        "role": "Fullstack Engineer",
+        "role": "Ingeniero Fullstack",
         "status": "Próximo lanzamiento",
-        "description": "Plataforma web de la comunidad Cantabria Labs para dermatólogos, con acceso restringido y aforo controlado: el acceso lo concede un administrador manualmente. Diseño e implementación completa: APIs REST, autenticación JWT con RBAC por roles, CMS para gestión de contenido, rate limiting con Upstash Redis y arquitectura de base de datos PostgreSQL. Desplegado en Vercel.",
-        "techStack": ["Next.js", "PostgreSQL", "Vercel", "Upstash Redis", "JWT", "RBAC", "CMS"],
+        "description": "Plataforma web de la comunidad Cantabria Labs para dermatólogos, con acceso restringido y aforo controlado: el acceso lo concede un administrador manualmente. Diseño e implementación completa: APIs REST, autenticación JWT con RBAC, CMS para gestión de contenido, rate limiting con Upstash Redis y arquitectura de base de datos PostgreSQL. Desplegado en Vercel.",
+        "techStack": [
+          "Next.js",
+          "PostgreSQL",
+          "Vercel",
+          "Upstash Redis",
+          "JWT",
+          "RBAC",
+          "CMS"
+        ],
         "url": "https://dailydermatalks.com",
         "visitLabel": "Visitar web"
       }
@@ -80,7 +106,16 @@
         "category": "Open Source",
         "role": "Autor y mantenedor",
         "description": "Librería .NET open source, publicada en NuGet, para verificar desde el backend suscripciones y compras in-app de Apple App Store y Google Play. Unifica las APIs y los webhooks de las dos tiendas tras una única interfaz, autentica criptográficamente las notificaciones (cadena x5c de Apple anclada a Apple Root CA G3 y tokens OIDC de Google Pub/Sub), reintenta ante fallos transitorios y valida la configuración al arrancar. Compatible con .NET 8, 9 y 10, con 197 tests unitarios.",
-        "techStack": ["C#", ".NET", "ASP.NET Core", "App Store Server API", "Google Play Developer API", "JWT", "OIDC", "NuGet"],
+        "techStack": [
+          "C#",
+          ".NET",
+          "ASP.NET Core",
+          "App Store Server API",
+          "Google Play Developer API",
+          "JWT",
+          "OIDC",
+          "NuGet"
+        ],
         "githubUrl": "https://github.com/jjalcantara-dev/StoreBridge",
         "nugetUrl": "https://www.nuget.org/packages/StoreBridge",
         "githubLabel": "Código en GitHub",
@@ -92,7 +127,12 @@
         "category": "Civic Tech",
         "role": "Proyecto personal",
         "description": "Calculadora interactiva para analizar el coste real de una VPO cooperativa en Vélez-Málaga, basada en la documentación pública de la promoción Galivivienda Fortalezas de Vélez (188 viviendas, EMVIPSA). Construida porque la información oficial está dispersa en varios contratos con condiciones poco claras. Permite simular escenarios de IPC, años de alquiler y porcentaje de descuento para calcular el coste total antes de firmar. Implementación: cálculos financieros en tiempo real con capitalización compuesta mensual, gráfico de evolución del alquiler con JS puro sin canvas ni librerías, diseño responsive con grid adaptativo y bottom-sheet nativo en mobile, y SEO completo con JSON-LD. Tracción orgánica inmediata al compartirla en grupos locales de Facebook.",
-        "techStack": ["HTML", "CSS", "JavaScript", "Vercel"],
+        "techStack": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Vercel"
+        ],
         "url": "https://vpo.jjalcantara.dev",
         "visitLabel": "Abrir calculadora"
       }
@@ -162,12 +202,12 @@
   "puzzles": {
     "title": "Puzzles",
     "description": "Puzzles de lógica diarios. Proyecto personal paralelo al trabajo profesional.",
-    "intro": "Cada día se publica un nuevo puzzle de lógica que todos los visitantes ven. El mismo puzzle se muestra a todos durante ese día, y cada día se genera automáticamente uno nuevo.",
+    "intro": "Un puzzle de lógica nuevo cada día, el mismo para todos los visitantes.",
     "comingSoon": "Próximamente: nuevos puzzles en desarrollo."
   },
   "about": {
     "title": "Sobre mí",
-    "description": "Ingeniero Backend con más de 4 años de experiencia construyendo y manteniendo sistemas en producción. En The Bubble Hub lideré el desarrollo backend de dos productos móviles con más de 3.000 usuarios activos mensuales. Mi trabajo se centra en ASP.NET Core, Azure, APIs REST, PostgreSQL y sistemas de autenticación y pago.",
+    "description": "Ingeniero Backend con más de 4 años de experiencia diseñando y desarrollando sistemas cloud-native escalables con ASP.NET Core, Azure Functions y Java. Especializado en diseño de APIs REST, sistemas de autenticación (JWT, OAuth 2.0, RBAC), integración de pagos (Stripe, App Store, Google Play) y arquitectura de bases de datos PostgreSQL. Experiencia liderando el desarrollo backend de productos con miles de usuarios activos mensuales.",
     "intro": {
       "paragraph1": "En The Bubble Hub fui responsable del ciclo completo de ingeniería backend de dos productos móviles con más de 3.000 usuarios activos mensuales: análisis de requisitos, diseño de contratos de API, arquitectura de datos, implementación, integración con servicios externos y soporte en producción. Tomé decisiones técnicas sobre arquitectura, modelo de datos y seguridad.",
       "paragraph2": "El backend que diseñé cubre seguridad en capas, procesamiento asíncrono event-driven e integraciones de pago complejas con Stripe, App Store y Google Play. Cada decisión de arquitectura tuvo impacto directo en el rendimiento y la experiencia de usuario.",
@@ -192,14 +232,14 @@
       },
       "bubbleHub": {
         "company": "The Bubble Hub",
-        "role": "Backend Engineer",
+        "role": "Ingeniero Backend",
         "period": "Abril 2024 – Abril 2026",
         "location": "Málaga, España",
         "description": "Lideré el desarrollo backend de Prodigy Padel Academy y Koru: dos productos móviles con más de 3.000 usuarios activos mensuales. Responsabilidad completa sobre el ciclo de ingeniería: análisis de requisitos, diseño de contratos OpenAPI/Swagger, implementación con ASP.NET Core y Azure Functions, integraciones de pago (Stripe, Apple IAP, Google Play) y soporte en producción. Arquitectura PostgreSQL optimizada, autenticación JWT/RBAC/OAuth 2.0, rate limiting con Redis, procesamiento asíncrono con Azure Storage Queues y pipelines CI/CD con SonarCloud en Azure DevOps."
       },
       "ey": {
         "company": "Ernst & Young",
-        "role": "Technology and Security Consultant",
+        "role": "Consultor de Tecnología y Seguridad",
         "period": "Abril 2022 – Abril 2024",
         "location": "Málaga, España",
         "description": "Desarrollo backend y SecDevOps en entornos enterprise con ciclos de vida de software regulados. Componentes ASP.NET con seguridad aplicada desde el diseño: validación de inputs, cifrado de datos, control de acceso por mínimo privilegio. Optimización de pipelines CI/CD con Jenkins y GitHub Actions. Integración de más de 10 fuentes de seguridad en plataformas SIEM (IBM QRadar, Splunk, Wazuh)."
@@ -223,14 +263,80 @@
     "skills": {
       "title": "Tecnologías",
       "categories": [
-        { "name": "Lenguajes y Frameworks", "items": ["C#", "ASP.NET Core", ".NET", "Java", "Spring", "Python", "JavaScript", "Next.js"] },
-        { "name": "Cloud y DevOps", "items": ["Azure Functions", "Azure DevOps", "App Service", "CosmosDB", "Vercel", "Docker", "Kubernetes", "Jenkins", "Redis"] },
-        { "name": "Bases de datos", "items": ["PostgreSQL", "SQL Server", "MongoDB", "CosmosDB", "Azure Table Storage"] },
-        { "name": "APIs y Auth", "items": ["REST API", "OpenAPI/Swagger", "JWT", "OAuth 2.0", "Stripe", "Postman"] },
-        { "name": "Testing", "items": ["Unit Testing", "Integration Testing", "E2E Testing", "JUnit", "Selenium"] },
-        { "name": "Prácticas", "items": ["SOLID", "Clean Architecture", "RBAC", "Scrum", "Git", "GitHub", "Jira", "UML"] }
+        {
+          "name": "Lenguajes y Frameworks",
+          "items": [
+            "C#",
+            "ASP.NET Core",
+            ".NET",
+            "Java",
+            "Spring",
+            "Python",
+            "JavaScript",
+            "Next.js"
+          ]
+        },
+        {
+          "name": "Cloud y DevOps",
+          "items": [
+            "Azure Functions",
+            "Azure DevOps",
+            "App Service",
+            "CosmosDB",
+            "Vercel",
+            "Docker",
+            "Kubernetes",
+            "Jenkins",
+            "Redis"
+          ]
+        },
+        {
+          "name": "Bases de datos",
+          "items": [
+            "PostgreSQL",
+            "SQL Server",
+            "MongoDB",
+            "CosmosDB",
+            "Azure Table Storage"
+          ]
+        },
+        {
+          "name": "APIs y Auth",
+          "items": [
+            "REST API",
+            "OpenAPI/Swagger",
+            "JWT",
+            "OAuth 2.0",
+            "Stripe",
+            "Postman"
+          ]
+        },
+        {
+          "name": "Testing",
+          "items": [
+            "Unit Testing",
+            "Integration Testing",
+            "E2E Testing",
+            "JUnit",
+            "Selenium"
+          ]
+        },
+        {
+          "name": "Prácticas",
+          "items": [
+            "SOLID",
+            "Clean Architecture",
+            "RBAC",
+            "Scrum",
+            "Git",
+            "GitHub",
+            "Jira",
+            "UML"
+          ]
+        }
       ]
-    }
+    },
+    "metaDescription": "Experiencia, formación y stack de Jesús Jiménez Alcántara, Ingeniero Backend: The Bubble Hub, Ernst & Young, Kaizten Analytics y Máster en IA en UNIR."
   },
   "contact": {
     "title": "Contacto",
@@ -246,11 +352,17 @@
     "privacy": "Política de Privacidad"
   },
   "a11y": {
-    "skipToContent": "Saltar al contenido principal"
+    "skipToContent": "Saltar al contenido principal",
+    "mainNav": "Navegación principal",
+    "goHome": "Ir al inicio",
+    "headerNav": "Navegación y selección de idioma",
+    "selectLanguage": "Seleccionar idioma",
+    "ctaGroup": "Acciones principales",
+    "period": "Período"
   },
   "privacy": {
     "title": "Política de Privacidad",
-    "lastUpdated": "Última actualización: Diciembre 2025",
+    "lastUpdated": "Última actualización: Noviembre 2026",
     "sections": {
       "dataController": {
         "title": "1. Responsable del Tratamiento",
@@ -338,8 +450,7 @@
           "measures": {
             "encryption": "Cifrado de datos en tránsito mediante HTTPS/TLS",
             "headers": "Headers de seguridad configurados (CSP, HSTS, X-Frame-Options, etc.)",
-            "validation": "Validación y sanitización de todos los datos de entrada",
-            "rateLimit": "Limitación de tasa para prevenir abusos",
+            "staticSite": "Sitio estático: sin formularios, cuentas de usuario ni base de datos propia",
             "access": "Acceso restringido a los datos solo para fines autorizados"
           },
           "paragraph2": "A pesar de estas medidas, ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro. No puedo garantizar la seguridad absoluta de los datos, pero me comprometo a notificarle de cualquier violación de seguridad que pueda afectar sus datos personales."
@@ -380,7 +491,7 @@
         "content": {
           "paragraph1": "Me reservo el derecho de actualizar esta política de privacidad cuando sea necesario para reflejar cambios en las prácticas de tratamiento de datos, requisitos legales o mejoras en el sitio web.",
           "paragraph2": "Cualquier cambio material será notificado mediante la actualización de la fecha de \"Última actualización\" al inicio de este documento. Se recomienda revisar periódicamente esta política para estar informado sobre cómo protegemos sus datos.",
-          "paragraph3": "Si los cambios son sustanciales, se le notificará mediante un aviso destacado en el sitio web o por correo electrónico si es posible."
+          "paragraph3": "Si los cambios son sustanciales, se publicará un aviso destacado en el sitio web."
         }
       },
       "contact": {
@@ -394,4 +505,3 @@
     }
   }
 }
-

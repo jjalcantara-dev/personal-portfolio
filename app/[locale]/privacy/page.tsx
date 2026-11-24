@@ -17,6 +17,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   return {
     title: t.privacy.title,
+    description: locale === "es"
+      ? "Política de privacidad de jjalcantara.dev: solo datos técnicos del hosting y una cookie de idioma. Sin formularios, analítica ni seguimiento."
+      : "Privacy policy of jjalcantara.dev: only technical hosting data and a language cookie. No forms, analytics or tracking.",
     alternates: pageAlternates(locale, "/privacy"),
   };
 }
@@ -243,8 +246,7 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
                   <ul className="list-disc list-inside space-y-1 ml-4">
                     <li>{s.dataSecurity.content.measures.encryption}</li>
                     <li>{s.dataSecurity.content.measures.headers}</li>
-                    <li>{s.dataSecurity.content.measures.validation}</li>
-                    <li>{s.dataSecurity.content.measures.rateLimit}</li>
+                    <li>{s.dataSecurity.content.measures.staticSite}</li>
                     <li>{s.dataSecurity.content.measures.access}</li>
                   </ul>
                   <p>{s.dataSecurity.content.paragraph2}</p>

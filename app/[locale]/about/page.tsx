@@ -19,10 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const baseUrl = "https://jjalcantara.dev";
 
   return {
-    title: locale === "es"
-      ? "Sobre mí | Jesús Jiménez Alcántara | Ingeniero Backend"
-      : "About | Jesús Jiménez Alcántara | Backend Engineer",
-    description: t.about.description,
+    title: locale === "es" ? "Sobre mí" : "About",
+    description: t.about.metaDescription,
     keywords: [
       "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcantara",
@@ -61,7 +59,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title: locale === "es"
         ? "Sobre mí | Jesús Jiménez Alcántara | Ingeniero Backend"
         : "About | Jesús Jiménez Alcántara | Backend Engineer",
-      description: t.about.description,
+      description: t.about.metaDescription,
       url: `${baseUrl}/${locale}/about`,
     },
   };
@@ -81,7 +79,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
               <div className="flex-shrink-0">
                 <div className={`relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 ${clr.border.base}`}>
                   <Image
-                    src="/profile.png"
+                    src="/profile.jpg"
                     alt={locale === "es" ? "Foto de perfil de Jesús Jiménez Alcántara" : "Profile photo of Jesús Jiménez Alcántara"}
                     width={160}
                     height={160}
@@ -108,22 +106,22 @@ export default async function About({ params }: { params: Promise<{ locale: stri
         <div className={`border-t ${clr.border.base} pt-12 mb-16`}>
           <div className="space-y-6 max-w-2xl">
             <ScrollAnimation animation="fade-up" delay={0}>
-              <p className={`${tx.bodyLg} ${clr.text.body} text-justify`}>
+              <p className={`${tx.bodyLg} ${clr.text.body}`}>
                 {t.about.intro.paragraph1}
               </p>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-up" delay={100}>
-              <p className={`${tx.bodyLg} ${clr.text.body} text-justify`}>
+              <p className={`${tx.bodyLg} ${clr.text.body}`}>
                 {t.about.intro.paragraph2}
               </p>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-up" delay={200}>
-              <p className={`${tx.bodyLg} ${clr.text.body} text-justify`}>
+              <p className={`${tx.bodyLg} ${clr.text.body}`}>
                 {t.about.intro.paragraph3}
               </p>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-up" delay={300}>
-              <p className={`${tx.bodyLg} ${clr.text.body} text-justify`}>
+              <p className={`${tx.bodyLg} ${clr.text.body}`}>
                 {t.about.intro.paragraph4}
               </p>
             </ScrollAnimation>
@@ -153,7 +151,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
                       <p className={`text-sm ${clr.text.muted} mb-2`}>
                         {job.company} • {job.location}
                       </p>
-                      <p className={`text-xs ${clr.text.subtle} uppercase tracking-wide`} aria-label={`${locale === "es" ? "Período" : "Period"}: ${job.period}`}>
+                      <p className={`text-xs ${clr.text.subtle} uppercase tracking-wide`} aria-label={`${t.a11y.period}: ${job.period}`}>
                         {job.period}
                       </p>
                     </div>

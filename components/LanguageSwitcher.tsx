@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import type { Locale } from "@/lib/i18n";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import { savePreferredLocale } from "@/lib/locale-cookie";
+import { getContent } from "@/lib/content";
 import { clr, focusRing } from "@/lib/constants/colors";
 import { tx } from "@/lib/constants/typography";
 
@@ -69,7 +70,7 @@ export default function LanguageSwitcher() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Select language"
+        aria-label={getContent(currentLocale).a11y.selectLanguage}
         aria-expanded={isOpen}
         aria-haspopup="true"
         className={`flex items-center gap-1.5 ${tx.nav} uppercase tracking-wider ${clr.text.muted} hover:text-black transition-colors px-2 py-1.5 ${focusRing}`}

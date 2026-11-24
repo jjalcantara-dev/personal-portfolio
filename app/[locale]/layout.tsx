@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = getContent(locale);
 
   const title = locale === "es"
-    ? "Jesús Jiménez Alcántara | Ingeniero Backend | Azure & .NET Specialist"
-    : "Jesús Jiménez Alcántara | Backend Engineer | Azure & .NET Specialist";
+    ? "Jesús Jiménez Alcántara | Ingeniero Backend .NET y Azure"
+    : "Jesús Jiménez Alcántara | Backend Engineer, .NET & Azure";
 
   const baseUrl = "https://jjalcantara.dev";
   const canonicalUrl = `${baseUrl}/${locale}`;
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         { url: "/favicon_centered.png", type: "image/png" },
       ],
       apple: [
-        { url: "/logo_final.png", type: "image/png", sizes: "180x180" },
+        { url: "/favicon_centered.png", type: "image/png" },
       ],
       shortcut: [
         { url: "/favicon_centered.png", type: "image/png" },
@@ -52,9 +52,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     title: {
       default: title,
-      template: "%s | jjalcantara.dev",
+      template: "%s | Jesús Jiménez Alcántara",
     },
-    description: t.home.description,
+    description: t.home.metaDescription,
     keywords: [
       // Nombre completo con variaciones
       "Jesús Jiménez Alcántara",
@@ -127,12 +127,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: canonicalUrl,
       siteName: "jjalcantara.dev",
       title,
-      description: t.home.description,
+      description: t.home.metaDescription,
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description: t.home.description,
+      description: t.home.metaDescription,
     },
     alternates: {
       canonical: canonicalUrl,

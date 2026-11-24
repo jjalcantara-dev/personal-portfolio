@@ -33,11 +33,10 @@ export default function StructuredData({ locale }: Props) {
         ? "Ingeniero Backend con más de 4 años de experiencia diseñando sistemas cloud-native escalables con ASP.NET Core, Azure y PostgreSQL. Especializado en APIs REST, autenticación (JWT, OAuth 2.0, RBAC) e integración de pagos (Stripe, App Store, Google Play)."
         : "Backend Engineer with 4+ years of experience building scalable cloud-native systems using ASP.NET Core, Azure and PostgreSQL. Specialized in REST APIs, authentication (JWT, OAuth 2.0, RBAC) and payment integrations (Stripe, App Store, Google Play).",
     url: baseUrl,
-    image: `${baseUrl}/profile.png`,
+    image: `${baseUrl}/profile.jpg`,
     mainEntityOfPage: `${baseUrl}/${locale}/about`,
     sameAs: [
       "https://github.com/jjalcantara-dev",
-      "https://linkedin.com/in/jjalcantara",
       "https://www.linkedin.com/in/jjalcantara/",
     ],
     email: "jjalcantara.dev@gmail.com",

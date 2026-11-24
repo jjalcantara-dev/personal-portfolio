@@ -179,7 +179,7 @@ export default function BlockSlide({ config, onSolve, locale = 'en' }: BlockSlid
           <div className="mb-6 text-center">
             <p className="text-lg text-gray-700 mb-4">
               {locale === 'es' 
-                ? 'Presiona Start para comenzar el puzzle y ver el temporizador.'
+                ? 'Pulsa Empezar para comenzar el puzzle y ver el temporizador.'
                 : 'Press Start to begin the puzzle and start the timer.'}
             </p>
           </div>
@@ -188,7 +188,7 @@ export default function BlockSlide({ config, onSolve, locale = 'en' }: BlockSlid
             className="px-8 py-3 bg-black text-white rounded hover:bg-gray-800 active:bg-gray-700 transition-colors font-medium text-lg min-h-[44px] touch-manipulation"
             aria-label={locale === 'es' ? 'Comenzar puzzle' : 'Start puzzle'}
           >
-            {locale === 'es' ? 'Start' : 'Start'}
+            {locale === 'es' ? 'Empezar' : 'Start'}
           </button>
         </div>
       </div>
