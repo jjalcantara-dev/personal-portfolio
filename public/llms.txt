@@ -72,7 +72,7 @@ Practices: SOLID, Clean Architecture, RBAC, Agile/Scrum, Git, GitHub, Jira, UML
 - App Store: https://apps.apple.com/es/app/koru-your-acne-coach/id6466275209
 - Google Play: https://play.google.com/store/apps/details?id=com.koruacne.app
 
-**DailyDermaTalks** — Web platform for Cantabria Labs dermatology community
+**DailyDermaTalks** — Web learning platform for a community of dermatologists
 - Role: Fullstack Engineer
 - Stack: Next.js, PostgreSQL, Vercel, Upstash Redis, JWT, RBAC
 - Features: REST APIs, role-based access control, CMS, rate limiting

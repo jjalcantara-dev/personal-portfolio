@@ -23,7 +23,7 @@ None. The site is fully static and has no backend services.
 
 **i18n:** Two locales (`es`, `en`), default is `es`. All routes live under `app/[locale]/`. Content is loaded from `content/es.json` / `content/en.json` via `lib/content.ts` → `getContent(locale)`. The `Content` type is inferred from `es.json` (source of truth for the type).
 
-**Layout chain:** `app/layout.tsx` (bare html shell) → `app/[locale]/layout.tsx` (sets `<html lang>`, wraps with `Header`, `Footer`, `BottomNav`, `CookieBanner`, `StructuredData`). Each page receives `params: Promise<{ locale: string }>` and should resolve and validate the locale with `isValidLocale()` from `lib/i18n.ts`.
+**Layout chain:** `app/layout.tsx` (bare html shell) → `app/[locale]/layout.tsx` (sets `<html lang>`, wraps with `Header`, `Footer`, `BottomNav`, `StructuredData`). There is no cookie banner: the only cookie is the technical language one, disclosed in a footer note and the privacy policy. Each page receives `params: Promise<{ locale: string }>` and should resolve and validate the locale with `isValidLocale()` from `lib/i18n.ts`.
 
 **Daily Puzzles (`/puzzles`):** Game configs are defined in `lib/games/library.ts` as a `GameLibrary`. `lib/games/selector.ts` picks the daily game deterministically by hashing `YYYY-MM-DD`. Game types: `path-bridge`, `block-slide`, `color-flow`. Game components live in `components/games/`.
 
@@ -38,7 +38,7 @@ None. The site is fully static and has no backend services.
 - `lib/constants/typography.ts` — semantic type scale (`tx`). Use these for all heading/body/label sizes.
 - **Rule:** modifier-prefixed classes (e.g. `group-hover:text-gray-800`) must stay hardcoded in components — Tailwind cannot scan dynamic class strings.
 
-**Mobile navigation (`components/BottomNav.tsx`):** Fixed bottom nav, visible only on mobile (`sm:hidden`). Features filled/solid icons for the active section, a persistent pill background on the active item, and labels always visible for all items. The active label for `/collab` uses the short label "Colab" (not "Colaboradores") to avoid truncation on narrow screens.
+**Mobile navigation (`components/BottomNav.tsx`):** Fixed bottom nav, visible only on mobile (`sm:hidden`). Features filled/solid icons for the active section, a persistent pill background on the active item, and labels always visible for all items. The `/collab` page is titled "Compañeros" / "Colleagues".
 
 **CV (`cv/`):** LaTeX source of both CVs: `cv_en.tex`, `cv_es.tex` and the shared layout `cv-style.tex`. `npm run cv` compiles them with latexmk (needs a local TeX Live) and copies the PDFs into `public/`. Both must stay on one A4 page and in sync with the experience on the site; check the page count after every change. The repo is public, so keep private notes out of `.tex` comments.
 
@@ -60,7 +60,7 @@ This is the personal portfolio of **Jesús Jiménez Alcántara**, a Backend Engi
 - **Previous role:** Technology and Security Consultant at Ernst & Young (April 2022 – April 2024)
 - **Education:** Bachelor's in Software Engineering, UMA (7.51/10) · Master's in AI, UNIR (in progress, expected March 2027)
 - **Languages:** Spanish (native), English (B2)
-- **Contact:** jesusjimalc98@gmail.com · linkedin.com/in/jjalcantara
+- **Contact:** jjalcantara.dev@gmail.com (the only email shown publicly: site, privacy policy and CV) · linkedin.com/in/jjalcantara
 - **Open to:** New backend engineering opportunities
 
 > **Important:** Jesús is no longer at The Bubble Hub (last day: 30 April 2026). Do NOT use "actualmente en" / "currently at" language anywhere on the site. The Bubble Hub appears only as a past employer with closed dates in the experience timeline.

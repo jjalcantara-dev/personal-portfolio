@@ -84,8 +84,8 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
         </ScrollAnimation>
 
         {/* Card — right column on desktop */}
-        <ScrollAnimation animation="fade-up" delay={100}>
-          <div className="flex-1 min-w-0">
+        <ScrollAnimation animation="fade-up" delay={100} className="flex-1 min-w-0">
+          <div>
             <div className="border border-gray-200 rounded-2xl overflow-hidden divide-y divide-gray-100 shadow-sm">
 
               {/* Email */}

@@ -2,7 +2,7 @@
   "nav": {
     "home": "Inicio",
     "projects": "Proyectos",
-    "collab": "Colaboradores",
+    "collab": "Compañeros",
     "puzzles": "Puzzles",
     "about": "Sobre mí",
     "contact": "Contacto"
@@ -23,7 +23,7 @@
       "title": "En qué trabajo",
       "apis": {
         "title": "APIs y Contratos",
-        "description": "Diseño APIs REST de ciclo completo: análisis de requisitos, definición de casos de uso, documentación OpenAPI/Swagger y soporte en producción. Priorizo la claridad de los contratos, la gestión de versiones y la compatibilidad con clientes móviles. He diseñado y mantenido APIs consumidas por más de 3.000 usuarios activos mensuales."
+        "description": "Diseño APIs REST de ciclo completo: análisis de requisitos, definición de casos de uso, documentación OpenAPI/Swagger y soporte en producción. Priorizo la claridad de los contratos, la gestión de versiones y la compatibilidad con clientes móviles."
       },
       "cloud": {
         "title": "Cloud y Arquitectura",
@@ -84,7 +84,7 @@
         "type": "Aplicación web",
         "role": "Ingeniero Fullstack",
         "status": "Próximo lanzamiento",
-        "description": "Plataforma web de la comunidad Cantabria Labs para dermatólogos, con acceso restringido y aforo controlado: el acceso lo concede un administrador manualmente. Diseño e implementación completa: APIs REST, autenticación JWT con RBAC, CMS para gestión de contenido, rate limiting con Upstash Redis y arquitectura de base de datos PostgreSQL. Desplegado en Vercel.",
+        "description": "Plataforma web de formación para una comunidad de dermatólogos, con acceso restringido y aforo controlado: el acceso lo concede un administrador manualmente. Diseño e implementación completa: APIs REST, autenticación JWT con RBAC, CMS para gestión de contenido, rate limiting con Upstash Redis y arquitectura de base de datos PostgreSQL. Desplegado en Vercel.",
         "techStack": [
           "Next.js",
           "PostgreSQL",
@@ -139,8 +139,8 @@
     }
   },
   "collab": {
-    "title": "Colaboradores",
-    "description": "Personas con las que he trabajado y en las que confío profesionalmente.",
+    "title": "Compañeros",
+    "description": "Personas con las que he trabajado y lo que destaca de cada una.",
     "visitLabel": "Visitar web",
     "people": [
       {
@@ -181,7 +181,7 @@
       },
       {
         "name": "Keyla Xu",
-        "role": "Consultant & Incident Responder en EY | eJPT | Reverse Engineering & Malware Intelligence",
+        "role": "Consultora e Incident Responder en EY · eJPT",
         "url": "https://www.linkedin.com/in/keylaxu/",
         "linkLabel": "LinkedIn",
         "linkedinUrl": "",
@@ -190,7 +190,7 @@
       },
       {
         "name": "María Victoria Ramos León",
-        "role": "QA/BA en Banco Santander | Confirming | Syndication & Distribution | Matemática | Data Scientist",
+        "role": "QA y Business Analyst en Banco Santander · Matemática",
         "url": "https://www.linkedin.com/in/maria-victoria-ramos-leon/",
         "linkLabel": "LinkedIn",
         "linkedinUrl": "",
@@ -209,7 +209,7 @@
     "title": "Sobre mí",
     "description": "Ingeniero Backend con más de 4 años de experiencia diseñando y desarrollando sistemas cloud-native escalables con ASP.NET Core, Azure Functions y Java. Especializado en diseño de APIs REST, sistemas de autenticación (JWT, OAuth 2.0, RBAC), integración de pagos (Stripe, App Store, Google Play) y arquitectura de bases de datos PostgreSQL. Experiencia liderando el desarrollo backend de productos con miles de usuarios activos mensuales.",
     "intro": {
-      "paragraph1": "En The Bubble Hub fui responsable del ciclo completo de ingeniería backend de dos productos móviles con más de 3.000 usuarios activos mensuales: análisis de requisitos, diseño de contratos de API, arquitectura de datos, implementación, integración con servicios externos y soporte en producción. Tomé decisiones técnicas sobre arquitectura, modelo de datos y seguridad.",
+      "paragraph1": "En The Bubble Hub fui responsable del ciclo completo de ingeniería backend de dos productos móviles en producción: análisis de requisitos, diseño de contratos de API, arquitectura de datos, implementación, integración con servicios externos y soporte en producción. Tomé decisiones técnicas sobre arquitectura, modelo de datos y seguridad.",
       "paragraph2": "El backend que diseñé cubre seguridad en capas, procesamiento asíncrono event-driven e integraciones de pago complejas con Stripe, App Store y Google Play. Cada decisión de arquitectura tuvo impacto directo en el rendimiento y la experiencia de usuario.",
       "paragraph3": "Antes de esto, en Ernst & Young trabajé en entornos enterprise con ciclos de vida de software regulados y requisitos de seguridad estrictos. Ese contexto, marcado por SecDevOps, auditorías y sistemas que procesaban millones de eventos diarios, moldea cómo abordo cualquier diseño hoy: seguridad aplicada desde el primer commit, no como capa adicional.",
       "paragraph4": "Actualmente curso un Máster en Inteligencia Artificial en UNIR, dentro del cual he realizado prácticas curriculares en Kaizten Analytics aplicando IA al desarrollo de software. Me interesa especialmente el diseño de arquitecturas backend mantenibles, sistemas distribuidos y soluciones cloud capaces de evolucionar a largo plazo."
@@ -349,7 +349,8 @@
   "footer": {
     "copyright": "© {year} Jesús Jiménez Alcántara",
     "domain": "jjalcantara.dev",
-    "privacy": "Política de Privacidad"
+    "privacy": "Privacidad y cookies",
+    "cookieNote": "Solo una cookie técnica para recordar el idioma. Sin analítica ni seguimiento."
   },
   "a11y": {
     "skipToContent": "Saltar al contenido principal",

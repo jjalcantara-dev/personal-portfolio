@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const baseUrl = "https://jjalcantara.dev";
 
   return {
-    title: locale === "es" ? "Colaboradores" : "Collaborators",
+    title: locale === "es" ? "Compañeros" : "Colleagues",
     description: t.collab.description,
     keywords: [
       "Jesús Jiménez Alcántara",
@@ -32,8 +32,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       images: ogImages(locale),
       title: locale === "es"
-        ? "Colaboradores | Jesús Jiménez Alcántara"
-        : "Collab | Jesús Jiménez Alcántara",
+        ? "Compañeros | Jesús Jiménez Alcántara"
+        : "Colleagues | Jesús Jiménez Alcántara",
       description: t.collab.description,
       url: `${baseUrl}/${locale}/collab`,
     },

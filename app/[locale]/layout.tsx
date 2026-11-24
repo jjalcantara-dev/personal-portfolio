@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import MobileLocaleToggle from "@/components/MobileLocaleToggle";
 import StructuredData from "@/components/StructuredData";
-import CookieBanner from "@/components/CookieBanner";
 import ScrollProgress from "@/components/ScrollProgress";
 import { defaultLocale, isValidLocale, locales } from "@/lib/i18n";
 import { getContent } from "@/lib/content";
@@ -179,7 +178,6 @@ export default async function LocaleLayout({ children, params }: Props) {
             {children}
           </main>
           <Footer locale={locale} />
-          <CookieBanner locale={locale} />
         </div>
         <BottomNav locale={locale} />
         <MobileLocaleToggle locale={locale} />

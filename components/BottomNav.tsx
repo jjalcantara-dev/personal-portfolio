@@ -74,7 +74,7 @@ export default function BottomNav({ locale }: Props) {
     { href: `/${locale}`,          label: t.nav.home,                              icon: "home" },
     { href: `/${locale}/about`,    label: t.nav.about,                             icon: "about" },
     { href: `/${locale}/projects`, label: t.nav.projects,                          icon: "projects" },
-    { href: `/${locale}/collab`,   label: locale === "es" ? "Colab" : t.nav.collab, icon: "collab" },
+    { href: `/${locale}/collab`,   label: t.nav.collab,                            icon: "collab" },
     { href: `/${locale}/contact`,  label: t.nav.contact,                           icon: "contact" },
   ];
 
