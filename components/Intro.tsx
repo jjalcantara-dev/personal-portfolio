@@ -1,0 +1,32 @@
+// First-visit intro: the logo assembles, then the screen opens like two doors.
+//
+// Pure CSS, so it starts with the first paint instead of waiting for React.
+// INTRO_GATE (in <head>) marks <html data-intro> only on the first page load of
+// a browser session and never for prefers-reduced-motion; without that
+// attribute the overlay is display:none. The flag lives in sessionStorage,
+// holds no personal data and is gone when the browser closes (see privacy).
+// The page underneath is fully rendered the whole time.
+
+export const INTRO_GATE = `try{if(!sessionStorage.getItem("intro_seen")&&!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.setAttribute("data-intro","play");sessionStorage.setItem("intro_seen","1")}}catch(e){}`;
+
+// Ends the intro after the animation, or at once on click / key press.
+const INTRO_END = `(function(){var h=document.documentElement;if(!h.hasAttribute("data-intro"))return;var done=false;function finish(){if(done)return;done=true;h.removeAttribute("data-intro")}function skip(){if(done||h.getAttribute("data-intro")==="out")return;h.setAttribute("data-intro","out");setTimeout(finish,450)}document.getElementById("intro").addEventListener("click",skip);document.addEventListener("keydown",skip,{once:true});setTimeout(finish,1900)})()`;
+
+export default function Intro() {
+  return (
+    <div id="intro" aria-hidden="true">
+      <div className="intro-panel intro-panel-top" />
+      <div className="intro-panel intro-panel-bottom" />
+      <div className="intro-seam" />
+      <div className="intro-logo">
+        <svg viewBox="0 0 367 278" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+            <path className="intro-j1" d="m64 34v18l17.3 0.2 17.2 0.3v78 78.1l-2.6 4.9c-5 9.8-15.5 14.8-26.4 12.5-10.5-2.2-18-10.7-19.4-22.2l-0.6-5.3h-17.5-17.5l0.3 6c0.9 16.2 6.2 28.4 17.2 39.6 18.4 18.7 45.6 23.3 69.7 11.7 9.1-4.4 21.5-16.7 26-25.8 7.1-14.3 6.7-7.9 7.1-116.3l0.3-97.7h-35.6-35.5zm27 0v9h-8.5-8.5v-9-9h8.5 8.5z" />
+            <path className="intro-a" d="m143.9 16.4c-0.2 0.2-0.3 8.3-0.1 18l0.3 17.6h13.4 13.5l0.1 25.7c0 14.2 0.4 27.8 0.7 30.1l0.7 4.4 7.5-6.5c4.1-3.5 11.4-10.5 16.2-15.5l8.7-9 8.5 10.1c4.7 5.6 10.6 12.4 13 15.1l4.5 4.9 3-6.8c1.9-4.1 3.5-6.5 4-5.9 1.3 1.3 28.9 60.9 29.7 63.9l0.6 2.5h-25.6-25.6v17.5 17.5l34.6 0.2 34.6 0.3 14.1 30.7 14.2 30.8h19.3c10.5 0 19.2-0.4 19.2-0.8 0-0.7-21.1-46.1-40.5-87.2-4.8-10.2-18.1-38.5-29.5-63-31.4-67.1-44.4-94.3-45.3-94.4-0.5 0-7.3 13.3-15 29.7l-14.2 29.7-0.3-30-0.2-30h-31.8c-17.5 0-32.1 0.2-32.3 0.4z" />
+            <path className="intro-j2" d="m198.1 99.2c-2.1 4.6-10.3 21.8-18.1 38.3-24 50.7-29 61.3-29 61.9 0 0.3 4.6 0.7 10.3 0.8l10.2 0.3-0.3 4.4c-0.4 6.2-4.8 13.9-10 17.6-4.1 2.8-5 3-13.4 3.1h-9l-4.2 8.5c-2.4 4.6-6.2 11.5-8.5 15.3-4.8 7.7-4.8 7.6 3.4 10.2 7.9 2.5 21.9 3 30.9 1 22.2-5 39.2-21.3 45.3-43.7 1.6-5.8 1.8-12 1.8-65.9v-59.5l-2.7-0.3c-2.6-0.3-3 0.3-6.7 8z" />
+            <path className="intro-notch" d="m216 127.2c0 8 0.4 13.8 0.9 13.2 1.1-1.2 12.1-25.3 12.1-26.5 0-0.5-2.9-0.9-6.5-0.9h-6.5z" />
+        </svg>
+      </div>
+      <script dangerouslySetInnerHTML={{ __html: INTRO_END }} />
+    </div>
+  );
+}

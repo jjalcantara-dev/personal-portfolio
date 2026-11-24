@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import MobileLocaleToggle from "@/components/MobileLocaleToggle";
 import StructuredData from "@/components/StructuredData";
+import Intro, { INTRO_GATE } from "@/components/Intro";
 import ScrollProgress from "@/components/ScrollProgress";
 import { defaultLocale, isValidLocale, locales } from "@/lib/i18n";
 import { getContent } from "@/lib/content";
@@ -162,8 +163,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   const t = getContent(locale);
 
   return (
-    <html lang={locale} className="scroll-smooth" data-scroll-behavior="smooth">
+    // suppressHydrationWarning: INTRO_GATE may set data-intro on <html> before hydration
+    <html lang={locale} className="scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: INTRO_GATE }} />
+      </head>
       <body className={`${inter.variable} antialiased`}>
+        <Intro />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-black focus:text-white focus:rounded-sm focus:outline-none focus:ring-2 focus:ring-white"

@@ -443,7 +443,8 @@
           "cookie2Type": "Técnica esencial; no requiere consentimiento según el RGPD",
           "cookieTypeLabel": "Tipo",
           "noTracking": "No se utilizan cookies de seguimiento, publicidad ni análisis. No se comparte información con terceros.",
-          "paragraph6": "Puede configurar su navegador para rechazar cookies en cualquier momento, aunque esto puede afectar la preferencia de idioma."
+          "paragraph6": "Puede configurar su navegador para rechazar cookies en cualquier momento, aunque esto puede afectar la preferencia de idioma.",
+          "sessionStorage": "Además, el navegador guarda en su almacenamiento de sesión (sessionStorage) una marca sin datos personales, intro_seen, para no repetir la animación de entrada en la misma visita. Se borra al cerrar el navegador y nunca sale de su dispositivo."
         }
       },
       "dataSecurity": {

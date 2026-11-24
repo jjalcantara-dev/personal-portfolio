@@ -31,6 +31,8 @@ None. The site is fully static and has no backend services.
 
 **Social preview image:** `app/[locale]/opengraph-image.tsx` generates the 1200×630 Open Graph image per locale (`twitter-image.tsx` re-exports it). Pages that define their own `openGraph` metadata replace the layout's, so they must include `images: ogImages(locale)` from `lib/og.ts`.
 
+**Intro (`components/Intro.tsx`):** ~1.8 s logo animation on the first page load of a browser session, pure CSS (styles at the `First-visit intro` block in `globals.css`). `INTRO_GATE` in `<head>` sets `<html data-intro>`; skipped for `prefers-reduced-motion`; click or any key opens it at once. Its sessionStorage flag `intro_seen` is disclosed in the privacy policy: keep both in sync.
+
 **Styling:** Tailwind CSS v4 with PostCSS. Global styles in `app/globals.css`. Inter font via `next/font/google`. `@source "../lib/**/*.ts"` is set in `globals.css` so Tailwind scans the constants files.
 
 **Design system constants:**

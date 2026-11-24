@@ -443,7 +443,8 @@
           "cookie2Type": "Essential technical; does not require consent under GDPR",
           "cookieTypeLabel": "Type",
           "noTracking": "No tracking, advertising, or analytics cookies are used. No information is shared with third parties.",
-          "paragraph6": "You can configure your browser to reject cookies at any time, although this may affect the language preference."
+          "paragraph6": "You can configure your browser to reject cookies at any time, although this may affect the language preference.",
+          "sessionStorage": "In addition, your browser keeps a flag with no personal data, intro_seen, in its session storage (sessionStorage) so the opening animation is not repeated during the same visit. It is deleted when you close the browser and never leaves your device."
         }
       },
       "dataSecurity": {
