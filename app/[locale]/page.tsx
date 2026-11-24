@@ -40,7 +40,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <ScrollAnimation animation="fade-up" delay={40}>
             <Link
               href={`/${locale}/contact`}
-              className={`inline-flex items-center gap-2 mb-4 sm:mb-6 px-3 py-1.5 border ${clr.border.base} rounded-full text-xs font-medium ${clr.text.muted} hover:border-black hover:text-black transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2`}
+              className={`inline-flex items-center gap-2 mb-4 sm:mb-6 px-3 py-1.5 border ${clr.border.base} rounded-full text-[11px] min-[360px]:text-xs whitespace-nowrap font-medium ${clr.text.muted} hover:border-black hover:text-black transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2`}
             >
               <span className="relative flex h-2 w-2" aria-hidden="true">
                 <span className={`absolute inline-flex h-full w-full rounded-full ${clr.bg.success} opacity-75 motion-safe:animate-ping`} />

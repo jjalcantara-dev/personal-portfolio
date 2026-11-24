@@ -227,34 +227,34 @@
         "company": "Junta de Andalucía",
         "role": "Computer Science Teacher (Temporary Post)",
         "period": "June 2026",
-        "location": "San Pedro de Alcántara, Malaga",
+        "location": "San Pedro de Alcántara, Málaga",
         "description": "Taught Computer Science as a temporary teacher at a public school run by the Andalusian regional government."
       },
       "bubbleHub": {
         "company": "The Bubble Hub",
         "role": "Backend Engineer",
         "period": "April 2024 – April 2026",
-        "location": "Malaga, Spain",
+        "location": "Málaga, Spain",
         "description": "Led backend development for Prodigy Padel Academy and Koru: two mobile products serving 3,000+ monthly active users. Full ownership of the engineering lifecycle: requirements analysis, OpenAPI/Swagger contract design, implementation with ASP.NET Core and Azure Functions, payment integrations (Stripe, Apple IAP, Google Play), and production support. Optimized PostgreSQL architecture, JWT/RBAC/OAuth 2.0 authentication, Redis rate limiting, async processing with Azure Storage Queues, and CI/CD pipelines with SonarCloud in Azure DevOps."
       },
       "ey": {
         "company": "Ernst & Young",
         "role": "Technology and Security Consultant",
         "period": "April 2022 – April 2024",
-        "location": "Malaga, Spain",
+        "location": "Málaga, Spain",
         "description": "Backend development and SecDevOps in enterprise environments with regulated software lifecycles. ASP.NET components with security applied by design: input validation, data encryption, least-privilege access control. CI/CD pipeline optimization with Jenkins and GitHub Actions. Integration of 10+ security sources into SIEM platforms (IBM QRadar, Splunk, Wazuh)."
       }
     },
     "education": {
       "title": "Education",
       "university": {
-        "name": "University of Malaga",
+        "name": "University of Málaga",
         "degree": "Bachelor's Degree in Software Engineering",
         "grade": "7.51/10",
         "date": "October 2022"
       },
       "master": {
-        "name": "UNIR - Universidad Internacional de La Rioja",
+        "name": "International University of La Rioja (UNIR)",
         "degree": "Master's Degree in Artificial Intelligence",
         "grade": "In progress",
         "date": "Expected March 2027"

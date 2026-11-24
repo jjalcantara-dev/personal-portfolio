@@ -152,8 +152,8 @@ export default function BlockSlide({ config, onSolve, locale = 'en' }: BlockSlid
         // Mobile: use 90% of screen width, minus padding
         const maxWidth = (screenWidth - 32) * 0.9; // 32px for padding
         const calculatedSize = Math.floor(maxWidth / config.board.width);
-        // Minimum 40px, maximum 60px on mobile
-        setCellSize(Math.max(40, Math.min(60, calculatedSize)));
+        // Minimum 28px (an 8x8 board must fit a 320px screen), maximum 60px
+        setCellSize(Math.max(28, Math.min(60, calculatedSize)));
       } else if (screenWidth < 1024) {
         // Tablet
         setCellSize(50);

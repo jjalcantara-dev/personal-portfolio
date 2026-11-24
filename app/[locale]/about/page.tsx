@@ -174,19 +174,6 @@ export default async function About({ params }: { params: Promise<{ locale: stri
               <ScrollAnimation animation="fade-up" delay={100}>
                 <article role="listitem" className="group transition-all duration-300 hover:translate-x-1">
                   <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1 transition-colors duration-300 group-hover:text-gray-800`}>
-                    {t.about.education.university.degree}
-                  </h3>
-                  <p className={`text-sm ${clr.text.muted} mb-1`}>
-                    {t.about.education.university.name}
-                  </p>
-                  <p className={`text-xs ${clr.text.subtle}`}>
-                    {t.about.education.university.grade} • {t.about.education.university.date}
-                  </p>
-                </article>
-              </ScrollAnimation>
-              <ScrollAnimation animation="fade-up" delay={200}>
-                <article role="listitem" className="group transition-all duration-300 hover:translate-x-1">
-                  <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1 transition-colors duration-300 group-hover:text-gray-800`}>
                     {t.about.education.master.degree}
                   </h3>
                   <p className={`text-sm ${clr.text.muted} mb-1`}>
@@ -194,6 +181,19 @@ export default async function About({ params }: { params: Promise<{ locale: stri
                   </p>
                   <p className={`text-xs ${clr.text.subtle}`}>
                     {t.about.education.master.grade} • {t.about.education.master.date}
+                  </p>
+                </article>
+              </ScrollAnimation>
+              <ScrollAnimation animation="fade-up" delay={200}>
+                <article role="listitem" className="group transition-all duration-300 hover:translate-x-1">
+                  <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1 transition-colors duration-300 group-hover:text-gray-800`}>
+                    {t.about.education.university.degree}
+                  </h3>
+                  <p className={`text-sm ${clr.text.muted} mb-1`}>
+                    {t.about.education.university.name}
+                  </p>
+                  <p className={`text-xs ${clr.text.subtle}`}>
+                    {t.about.education.university.grade} • {t.about.education.university.date}
                   </p>
                 </article>
               </ScrollAnimation>

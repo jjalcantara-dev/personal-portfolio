@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 function ChevronRight() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={`shrink-0 ${clr.text.ghost} group-hover:text-gray-400 transition-colors duration-150`}>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={`hidden min-[360px]:block shrink-0 ${clr.text.ghost} group-hover:text-gray-400 transition-colors duration-150`}>
       <path d="M9 18l6-6-6-6" />
     </svg>
   );
@@ -53,8 +53,8 @@ function IconBox({ children }: { children: React.ReactNode }) {
 }
 
 const iconProps = { width: 19, height: 19, fill: "white", "aria-hidden": true as const };
-const rowClickable = "group flex items-center gap-4 px-5 sm:px-6 py-4 sm:py-5 bg-white hover:bg-gray-50 transition-colors duration-150 focus:outline-none focus:bg-gray-50";
-const rowStatic   = "flex items-center gap-4 px-5 sm:px-6 py-4 sm:py-5 bg-white";
+const rowClickable = "group flex items-center gap-3 min-[360px]:gap-4 px-4 min-[360px]:px-5 sm:px-6 py-4 sm:py-5 bg-white hover:bg-gray-50 transition-colors duration-150 focus:outline-none focus:bg-gray-50";
+const rowStatic   = "flex items-center gap-3 min-[360px]:gap-4 px-4 min-[360px]:px-5 sm:px-6 py-4 sm:py-5 bg-white";
 
 export default async function Contact({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: localeParam } = await params;
