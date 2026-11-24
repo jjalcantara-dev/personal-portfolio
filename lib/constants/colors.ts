@@ -21,6 +21,7 @@ export const clr = {
     frostLight: 'bg-white/80',
     soft:       'bg-gray-50',
     subtle:     'bg-gray-100',
+    success:    'bg-emerald-500',
   },
   border: {
     base:    'border-gray-200',

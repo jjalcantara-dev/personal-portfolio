@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import CollabList from "@/components/CollabList";
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "Backend Engineer",
     ],
     openGraph: {
+      images: ogImages(locale),
       title: locale === "es"
         ? "Colaboradores | Jesús Jiménez Alcántara"
         : "Collab | Jesús Jiménez Alcántara",

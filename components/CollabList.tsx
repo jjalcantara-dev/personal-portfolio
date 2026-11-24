@@ -59,6 +59,8 @@ export default function CollabList({ people, visitLabel }: Props) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Random order differs between server and client, so it can only be applied after hydration.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setList((prev) => [...prev].sort(() => Math.random() - 0.5));
     setMounted(true);
   }, []);

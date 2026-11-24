@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import type { Locale } from "@/lib/i18n";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
+import { savePreferredLocale } from "@/lib/locale-cookie";
 import { clr, focusRing } from "@/lib/constants/colors";
 import { tx } from "@/lib/constants/typography";
 
@@ -26,8 +27,7 @@ export default function LanguageSwitcher() {
     : pathname;
 
   const switchLocale = (newLocale: Locale) => {
-    const secure = window.location.protocol === "https:";
-    document.cookie = `preferred_locale=${newLocale};path=/;max-age=31536000;SameSite=Lax${secure ? ";Secure" : ""}`;
+    savePreferredLocale(newLocale);
     router.push(`/${newLocale}${pathWithoutLocale}`);
     setIsOpen(false);
   };

@@ -138,13 +138,13 @@ export default function StructuredData({ locale }: Props) {
     "@id": `${baseUrl}/${locale}/about#profilepage`,
     url: `${baseUrl}/${locale}/about`,
     name: locale === "es"
-      ? "Jesús Jiménez Alcántara — Ingeniero Backend"
-      : "Jesús Jiménez Alcántara — Backend Engineer",
+      ? "Jesús Jiménez Alcántara | Ingeniero Backend"
+      : "Jesús Jiménez Alcántara | Backend Engineer",
     description: locale === "es"
       ? "Perfil profesional de Jesús Jiménez Alcántara, Ingeniero Backend especializado en ASP.NET Core, Azure y PostgreSQL. Más de 4 años de experiencia en sistemas cloud-native."
       : "Professional profile of Jesús Jiménez Alcántara, Backend Engineer specialized in ASP.NET Core, Azure and PostgreSQL. 4+ years of experience in cloud-native systems.",
     mainEntity: { "@id": `${baseUrl}/#person` },
-    dateModified: "2026-05-31",
+    dateModified: "2026-11-24",
     inLanguage: locale === "es" ? "es-ES" : "en-US",
   };
 
@@ -153,8 +153,8 @@ export default function StructuredData({ locale }: Props) {
     "@type": "WebSite",
     "@id": `${baseUrl}/#website`,
     name: locale === "es"
-      ? "Jesús Jiménez Alcántara — Ingeniero Backend"
-      : "Jesús Jiménez Alcántara — Backend Engineer",
+      ? "Jesús Jiménez Alcántara | Ingeniero Backend"
+      : "Jesús Jiménez Alcántara | Backend Engineer",
     alternateName: "jjalcantara.dev",
     url: baseUrl,
     description: locale === "es"

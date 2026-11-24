@@ -36,6 +36,20 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             />
           </div>
 
+          {/* Availability */}
+          <ScrollAnimation animation="fade-up" delay={40}>
+            <Link
+              href={`/${locale}/contact`}
+              className={`inline-flex items-center gap-2 mb-4 sm:mb-6 px-3 py-1.5 border ${clr.border.base} rounded-full text-xs font-medium ${clr.text.muted} hover:border-black hover:text-black transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2`}
+            >
+              <span className="relative flex h-2 w-2" aria-hidden="true">
+                <span className={`absolute inline-flex h-full w-full rounded-full ${clr.bg.success} opacity-75 motion-safe:animate-ping`} />
+                <span className={`relative inline-flex h-2 w-2 rounded-full ${clr.bg.success}`} />
+              </span>
+              {t.home.availability}
+            </Link>
+          </ScrollAnimation>
+
           {/* Name */}
           <ScrollAnimation animation="fade-up" delay={80}>
             <p className={`${tx.label} sm:text-sm ${clr.text.faint} mb-2 sm:mb-4 select-none`}>

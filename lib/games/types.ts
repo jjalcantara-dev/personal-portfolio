@@ -21,9 +21,9 @@ export interface GameConfig {
   board: {
     width: number;
     height: number;
-    initialState: Record<string, any>;
+    initialState: Record<string, unknown>;
   };
-  solution: Record<string, any>;
+  solution: Record<string, unknown>;
 }
 
 export interface GameLibrary {

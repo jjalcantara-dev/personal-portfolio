@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getContent } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { clr, skillTag } from "@/lib/constants/colors";
@@ -18,8 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   return {
     title: locale === "es"
-      ? "Sobre mí | Jesús Jiménez Alcántara — Ingeniero Backend"
-      : "About | Jesús Jiménez Alcántara — Backend Engineer",
+      ? "Sobre mí | Jesús Jiménez Alcántara | Ingeniero Backend"
+      : "About | Jesús Jiménez Alcántara | Backend Engineer",
     description: t.about.description,
     keywords: [
       "Jesús Jiménez Alcántara",
@@ -41,6 +42,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "CI/CD",
       "SOLID",
       "Clean Architecture",
+      "Kaizten",
+      "Kaizten Analytics",
       "The Bubble Hub",
       "Ernst Young",
       "EY",
@@ -51,10 +54,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "Vélez-Málaga",
     ],
     openGraph: {
+      images: ogImages(locale),
       type: "profile",
       title: locale === "es"
-        ? "Sobre mí | Jesús Jiménez Alcántara — Ingeniero Backend"
-        : "About | Jesús Jiménez Alcántara — Backend Engineer",
+        ? "Sobre mí | Jesús Jiménez Alcántara | Ingeniero Backend"
+        : "About | Jesús Jiménez Alcántara | Backend Engineer",
       description: t.about.description,
       url: `${baseUrl}/${locale}/about`,
     },
@@ -132,43 +136,31 @@ export default async function About({ params }: { params: Promise<{ locale: stri
               </h2>
             </ScrollAnimation>
             <div className="space-y-12" role="list">
-              <ScrollAnimation animation="slide-left" delay={100}>
-                <article className={`border-l-2 ${clr.border.base} pl-6 group transition-all duration-300 hover:border-black`} role="listitem">
-                  <div className="mb-3">
-                    <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1`}>
-                      {t.about.experience.bubbleHub.role}
-                    </h3>
-                    <p className={`text-sm ${clr.text.muted} mb-2`}>
-                      {t.about.experience.bubbleHub.company} • {t.about.experience.bubbleHub.location}
+              {[
+                t.about.experience.kaizten,
+                t.about.experience.junta,
+                t.about.experience.bubbleHub,
+                t.about.experience.ey,
+              ].map((job, i) => (
+                <ScrollAnimation key={job.company} animation="slide-left" delay={(i + 1) * 100}>
+                  <article className={`border-l-2 ${clr.border.base} pl-6 group transition-all duration-300 hover:border-black`} role="listitem">
+                    <div className="mb-3">
+                      <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1`}>
+                        {job.role}
+                      </h3>
+                      <p className={`text-sm ${clr.text.muted} mb-2`}>
+                        {job.company} • {job.location}
+                      </p>
+                      <p className={`text-xs ${clr.text.subtle} uppercase tracking-wide`} aria-label={`${locale === "es" ? "Período" : "Period"}: ${job.period}`}>
+                        {job.period}
+                      </p>
+                    </div>
+                    <p className={`text-base ${clr.text.body} leading-relaxed`}>
+                      {job.description}
                     </p>
-                    <p className={`text-xs ${clr.text.subtle} uppercase tracking-wide`} aria-label={`Período: ${t.about.experience.bubbleHub.period}`}>
-                      {t.about.experience.bubbleHub.period}
-                    </p>
-                  </div>
-                  <p className={`text-base ${clr.text.body} leading-relaxed`}>
-                    {t.about.experience.bubbleHub.description}
-                  </p>
-                </article>
-              </ScrollAnimation>
-
-              <ScrollAnimation animation="slide-left" delay={200}>
-                <article className={`border-l-2 ${clr.border.base} pl-6 group transition-all duration-300 hover:border-black`} role="listitem">
-                  <div className="mb-3">
-                    <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1`}>
-                      {t.about.experience.ey.role}
-                    </h3>
-                    <p className={`text-sm ${clr.text.muted} mb-2`}>
-                      {t.about.experience.ey.company} • {t.about.experience.ey.location}
-                    </p>
-                    <p className={`text-xs ${clr.text.subtle} uppercase tracking-wide`} aria-label={`Período: ${t.about.experience.ey.period}`}>
-                      {t.about.experience.ey.period}
-                    </p>
-                  </div>
-                  <p className={`text-base ${clr.text.body} leading-relaxed`}>
-                    {t.about.experience.ey.description}
-                  </p>
-                </article>
-              </ScrollAnimation>
+                  </article>
+                </ScrollAnimation>
+              ))}
             </div>
           </section>
 

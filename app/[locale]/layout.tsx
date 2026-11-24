@@ -134,20 +134,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "jjalcantara.dev",
       title,
       description: t.home.description,
-      images: [
-        {
-          url: `${baseUrl}/profile.png`,
-          width: 800,
-          height: 800,
-          alt: "Jesús Jiménez Alcántara - Backend Engineer",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description: t.home.description,
-      creator: "@jjalcantara",
     },
     alternates: {
       canonical: canonicalUrl,

@@ -20,6 +20,14 @@ Backend Engineer specializing in REST API design, authentication systems (JWT, O
 
 ## Experience
 
+**Kaizten Analytics** — AI Engineer, curricular internship (September 2026 – November 2026, remote)
+- Internship within the Master's in Artificial Intelligence at UNIR
+- Tools that integrate code quality analysis with AI coding assistants
+- Stack: Java, Model Context Protocol (MCP), Docker, Maven, GitHub Actions
+
+**Junta de Andalucía** — Computer Science Teacher, temporary post (June 2026, San Pedro de Alcántara, Málaga)
+- Taught Computer Science at a public school
+
 **The Bubble Hub** — Backend Engineer (April 2024 – April 2026)
 - Led backend development for Prodigy Padel Academy and Koru Acne
 - REST API design (OpenAPI/Swagger), JWT, RBAC, OAuth 2.0 (Google, Apple)
@@ -68,6 +76,12 @@ Practices: SOLID, Clean Architecture, RBAC, Agile/Scrum, Git, GitHub, Jira, UML
 - Role: Fullstack Engineer
 - Stack: Next.js, PostgreSQL, Vercel, Upstash Redis, JWT, RBAC
 - Features: REST APIs, role-based access control, CMS, rate limiting
+
+**StoreBridge** — Open-source .NET library (author and maintainer)
+- Server-side verification of Apple App Store and Google Play subscriptions and in-app purchases, with cryptographic webhook authentication
+- Stack: C#, .NET 8/9/10, App Store Server API, Google Play Developer API, JWT, OIDC
+- GitHub: https://github.com/jjalcantara-dev/StoreBridge
+- NuGet: https://www.nuget.org/packages/StoreBridge
 
 **Galivivienda VPO Calculator** — Civic tech tool for cooperative housing analysis
 - Role: Personal project

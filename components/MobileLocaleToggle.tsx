@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import type { Locale } from "@/lib/i18n";
+import { savePreferredLocale } from "@/lib/locale-cookie";
 import { clr } from "@/lib/constants/colors";
 
 type Props = { locale: Locale };
@@ -33,8 +34,7 @@ export default function MobileLocaleToggle({ locale }: Props) {
   const switchLocale = () => {
     const newLocale: Locale = locale === "es" ? "en" : "es";
     const newPath = pathname.replace(`/${locale}`, `/${newLocale}`) || `/${newLocale}`;
-    const secure = window.location.protocol === "https:";
-    document.cookie = `preferred_locale=${newLocale};path=/;max-age=31536000;SameSite=Lax${secure ? ";Secure" : ""}`;
+    savePreferredLocale(newLocale);
     router.push(newPath);
   };
 

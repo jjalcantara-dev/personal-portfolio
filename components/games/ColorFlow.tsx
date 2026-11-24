@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
+import { useOnSolve } from './useOnSolve';
 import type { GameConfig, ColorCell } from '@/lib/games';
 
 interface ColorFlowProps {
@@ -26,7 +27,6 @@ export default function ColorFlow({ config, onSolve }: ColorFlowProps) {
   });
   
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
-  const [isSolved, setIsSolved] = useState(false);
 
   const getCell = useCallback((x: number, y: number): ColorCell | undefined => {
     return cells.find(c => c.x === x && c.y === y);
@@ -40,7 +40,9 @@ export default function ColorFlow({ config, onSolve }: ColorFlowProps) {
       }
     }
     return true;
-  }, [cells, solutionCells, getCell]);
+  }, [solutionCells, getCell]);
+
+  const isSolved = checkSolution();
 
   const handleCellClick = useCallback((x: number, y: number) => {
     if (isSolved) return;
@@ -73,15 +75,9 @@ export default function ColorFlow({ config, onSolve }: ColorFlowProps) {
     }
     setCells(allCells);
     setSelectedColor(null);
-    setIsSolved(false);
   }, [initialCells, config.board.height, config.board.width]);
 
-  useEffect(() => {
-    if (checkSolution() && !isSolved) {
-      setIsSolved(true);
-      onSolve?.();
-    }
-  }, [cells, checkSolution, isSolved, onSolve]);
+  useOnSolve(isSolved, onSolve);
 
   const cellSize = 50;
   const boardWidth = config.board.width * cellSize;

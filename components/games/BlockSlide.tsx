@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useEffect } from 'react';
+import { useOnSolve } from './useOnSolve';
 import type { GameConfig, Block } from '@/lib/games';
 
 interface BlockSlideProps {
@@ -17,7 +18,6 @@ export default function BlockSlide({ config, onSolve, locale = 'en' }: BlockSlid
   
   const [blocks, setBlocks] = useState<Block[]>(initialBlocks);
   const [selectedBlock, setSelectedBlock] = useState<string | null>(null);
-  const [isSolved, setIsSolved] = useState(false);
   const [isStarted, setIsStarted] = useState(false);
   const [startTime, setStartTime] = useState<number | null>(null);
   const [elapsedTime, setElapsedTime] = useState<number>(0);
@@ -54,7 +54,7 @@ export default function BlockSlide({ config, onSolve, locale = 'en' }: BlockSlid
     }
 
     return true;
-  }, [blocks, config.board.width, config.board.height, getBlockAt]);
+  }, [config.board.width, config.board.height, getBlockAt]);
 
   const moveBlock = useCallback((blockId: string, direction: 'up' | 'down' | 'left' | 'right') => {
     setBlocks(prev => prev.map(block => {
@@ -79,6 +79,8 @@ export default function BlockSlide({ config, onSolve, locale = 'en' }: BlockSlid
     // Check if target block completely covers the exit area
     return targetBlock.x === exit.x && targetBlock.y === exit.y;
   }, [blocks, exit]);
+
+  const isSolved = checkSolution();
 
   const handleBlockClick = useCallback((block: Block) => {
     if (!isStarted || isSolved) return;
@@ -107,12 +109,7 @@ export default function BlockSlide({ config, onSolve, locale = 'en' }: BlockSlid
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
 
-  useEffect(() => {
-    if (checkSolution() && !isSolved) {
-      setIsSolved(true);
-      onSolve?.();
-    }
-  }, [blocks, checkSolution, isSolved, onSolve]);
+  useOnSolve(isSolved, onSolve);
 
   // Timer effect
   useEffect(() => {
@@ -139,7 +136,6 @@ export default function BlockSlide({ config, onSolve, locale = 'en' }: BlockSlid
   const handleReset = useCallback(() => {
     setBlocks(initialBlocks.map(b => ({ ...b })));
     setSelectedBlock(null);
-    setIsSolved(false);
     setIsStarted(false);
     setStartTime(null);
     setElapsedTime(0);

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
+import { useOnSolve } from './useOnSolve';
 import type { GameConfig, Island, Bridge } from '@/lib/games';
 
 interface PathBridgeProps {
@@ -14,7 +15,6 @@ export default function PathBridge({ config, onSolve }: PathBridgeProps) {
   
   const [bridges, setBridges] = useState<Bridge[]>([]);
   const [selectedIsland, setSelectedIsland] = useState<Island | null>(null);
-  const [isSolved, setIsSolved] = useState(false);
 
   const getIslandAt = useCallback((x: number, y: number): Island | undefined => {
     return islands.find(island => island.x === x && island.y === y);
@@ -49,6 +49,8 @@ export default function PathBridge({ config, onSolve }: PathBridgeProps) {
 
     return true;
   }, [bridges, solutionBridges, islands, getBridgeCount, bridgesMatch]);
+
+  const isSolved = checkSolution();
 
   const handleIslandClick = useCallback((island: Island) => {
     if (isSolved) return;
@@ -91,16 +93,9 @@ export default function PathBridge({ config, onSolve }: PathBridgeProps) {
   const handleReset = useCallback(() => {
     setBridges([]);
     setSelectedIsland(null);
-    setIsSolved(false);
   }, []);
 
-  // Check solution whenever bridges change
-  useEffect(() => {
-    if (checkSolution() && !isSolved) {
-      setIsSolved(true);
-      onSolve?.();
-    }
-  }, [bridges, checkSolution, isSolved, onSolve]);
+  useOnSolve(isSolved, onSolve);
 
   const cellSize = 60;
   const boardWidth = config.board.width * cellSize;

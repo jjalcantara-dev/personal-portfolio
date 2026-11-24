@@ -15,23 +15,21 @@ No test suite is configured.
 
 ## Environment Variables
 
-Copy `.env.example` to `.env.local` and fill in:
-
-- `RESEND_API_KEY` — Resend API key for sending contact form emails
-- `UPSTASH_REDIS_REST_URL` — Upstash Redis REST URL for rate limiting
-- `UPSTASH_REDIS_REST_TOKEN` — Upstash Redis REST token
+None. The site is fully static and has no backend services.
 
 ## Architecture
 
-**Framework:** Next.js 16 App Router with full SSG. No middleware — i18n routing is handled via `next.config.ts` redirects that rewrite `/` → `/es` and bare paths → `/es/:path*`.
+**Framework:** Next.js 16 App Router with full SSG. i18n routing is handled by `proxy.ts` (Next 16 proxy): paths without a locale redirect to the `preferred_locale` cookie if set, otherwise to the `Accept-Language` match, falling back to `es`. The cookie is written by `lib/locale-cookie.ts`.
 
 **i18n:** Two locales (`es`, `en`), default is `es`. All routes live under `app/[locale]/`. Content is loaded from `content/es.json` / `content/en.json` via `lib/content.ts` → `getContent(locale)`. The `Content` type is inferred from `es.json` (source of truth for the type).
 
-**Layout chain:** `app/layout.tsx` (bare html shell) → `app/[locale]/layout.tsx` (sets `<html lang>`, wraps with `Header`, `Footer`, `CookieBanner`, `ReCaptchaProvider`, `StructuredData`). Each page receives `params: Promise<{ locale: string }>` and should resolve and validate the locale with `isValidLocale()` from `lib/i18n.ts`.
+**Layout chain:** `app/layout.tsx` (bare html shell) → `app/[locale]/layout.tsx` (sets `<html lang>`, wraps with `Header`, `Footer`, `BottomNav`, `CookieBanner`, `StructuredData`). Each page receives `params: Promise<{ locale: string }>` and should resolve and validate the locale with `isValidLocale()` from `lib/i18n.ts`.
 
 **Daily Puzzles (`/puzzles`):** Game configs are defined in `lib/games/library.ts` as a `GameLibrary`. `lib/games/selector.ts` picks the daily game deterministically by hashing `YYYY-MM-DD`. Game types: `path-bridge`, `block-slide`, `color-flow`. Game components live in `components/games/`.
 
-**Contact Form:** Uses a Next.js API route (`app/api/contact/route.ts`). Emails sent via Resend. Rate limited server-side with Upstash Redis (3 req/10 min per IP). GDPR-compliant: explicit consent checkbox required before submission.
+**Contact page:** Static list of email, LinkedIn, GitHub and location. There is no contact form and no API route; the privacy policy states the site collects no personal data, so keep it that way unless the policy is updated too.
+
+**Social preview image:** `app/[locale]/opengraph-image.tsx` generates the 1200×630 Open Graph image per locale (`twitter-image.tsx` re-exports it). Pages that define their own `openGraph` metadata replace the layout's, so they must include `images: ogImages(locale)` from `lib/og.ts`.
 
 **Styling:** Tailwind CSS v4 with PostCSS. Global styles in `app/globals.css`. Inter font via `next/font/google`. `@source "../lib/**/*.ts"` is set in `globals.css` so Tailwind scans the constants files.
 
@@ -55,7 +53,8 @@ This is the personal portfolio of **Jesús Jiménez Alcántara**, a Backend Engi
 ### Professional positioning
 - **Title:** Backend Engineer
 - **Stack:** ASP.NET Core, Azure Functions, PostgreSQL, Redis, MongoDB, CosmosDB, Docker, Next.js, Vercel
-- **Most recent role:** Backend Engineer at The Bubble Hub (April 2024 – April 2026)
+- **Most recent role:** AI Engineer, curricular internship at Kaizten Analytics (September – November 2026, remote, part of the UNIR Master's). Keep its description to stack and area only: the work feeds journal articles for a doctoral thesis.
+- **Other roles:** Computer Science teacher, temporary post, Junta de Andalucía (June 2026, San Pedro de Alcántara) · Backend Engineer at The Bubble Hub (April 2024 – April 2026)
 - **Previous role:** Technology and Security Consultant at Ernst & Young (April 2022 – April 2024)
 - **Education:** Bachelor's in Software Engineering, UMA (7.51/10) · Master's in AI, UNIR (in progress, expected March 2027)
 - **Languages:** Spanish (native), English (B2)
@@ -112,12 +111,12 @@ This is the personal portfolio of **Jesús Jiménez Alcántara**, a Backend Engi
   - APIs & Auth: REST API, Swagger/OpenAPI, JWT, OAuth 2.0, Stripe, Postman
   - Testing: Testing pyramid (unit/integration/E2E), JUnit, Selenium
   - Practices: SOLID, Clean Architecture, RBAC, Agile/Scrum, Git, GitHub, Jira, UML
-- **Experience timeline:** The Bubble Hub: April 2024 – April 2026. EY: April 2022 – April 2024.
+- **Experience timeline:** Kaizten Analytics: September – November 2026. Junta de Andalucía: June 2026. The Bubble Hub: April 2024 – April 2026. EY: April 2022 – April 2024.
 - **Education:** UMA + UNIR (in progress)
 
 ### /contact — Contact
-- Remove phone number if currently displayed — not appropriate for a public portfolio
-- Keep: email, LinkedIn link, optional contact form
+- No phone number: not appropriate for a public portfolio
+- Keep: email, LinkedIn link
 - Tone: professional, brief — no "don't hesitate to reach out" filler phrases
 
 ### /puzzles — Daily Puzzles

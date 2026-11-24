@@ -8,9 +8,10 @@
     "contact": "Contacto"
   },
   "home": {
+    "availability": "Disponible · Backend .NET · Remoto o Málaga",
     "title": "Ingeniero Backend",
     "subtitle": "ASP.NET Core · Azure · REST APIs",
-    "description": "Diseño APIs REST y sistemas de pago con ASP.NET Core y Azure. Cuatro años construyendo el backend de aplicaciones móviles en producción con más de 3.000 usuarios activos mensuales.",
+    "description": "Diseño APIs REST y sistemas de pago con ASP.NET Core y Azure. Más de cuatro años de experiencia backend, dos de ellos liderando el backend de aplicaciones móviles en producción con más de 3.000 usuarios activos mensuales.",
     "cta": {
       "projects": "Ver proyectos",
       "contact": "Contactar",
@@ -39,7 +40,7 @@
   },
   "projects": {
     "title": "Proyectos",
-    "description": "Trabajo profesional como Backend Engineer y proyectos personales.",
+    "description": "Trabajo profesional como Backend Engineer, open source y proyectos personales.",
     "current": {
       "title": "Trabajo Profesional",
       "prodigy": {
@@ -72,7 +73,19 @@
       }
     },
     "personal": {
-      "title": "Proyectos Personales",
+      "title": "Open source y proyectos personales",
+      "storebridge": {
+        "name": "StoreBridge",
+        "type": "Librería .NET",
+        "category": "Open Source",
+        "role": "Autor y mantenedor",
+        "description": "Librería .NET open source, publicada en NuGet, para verificar desde el backend suscripciones y compras in-app de Apple App Store y Google Play. Unifica las APIs y los webhooks de las dos tiendas tras una única interfaz, autentica criptográficamente las notificaciones (cadena x5c de Apple anclada a Apple Root CA G3 y tokens OIDC de Google Pub/Sub), reintenta ante fallos transitorios y valida la configuración al arrancar. Compatible con .NET 8, 9 y 10, con 197 tests unitarios.",
+        "techStack": ["C#", ".NET", "ASP.NET Core", "App Store Server API", "Google Play Developer API", "JWT", "OIDC", "NuGet"],
+        "githubUrl": "https://github.com/jjalcantara-dev/StoreBridge",
+        "nugetUrl": "https://www.nuget.org/packages/StoreBridge",
+        "githubLabel": "Código en GitHub",
+        "nugetLabel": "Paquete en NuGet"
+      },
       "galivivienda": {
         "name": "Calculadora VPO Galivivienda",
         "type": "Aplicación web",
@@ -148,7 +161,7 @@
   },
   "puzzles": {
     "title": "Puzzles",
-    "description": "Puzzles de lógica diarios. Me encanta resolver puzzles y por eso hay una sección dedicada en mi portfolio.",
+    "description": "Puzzles de lógica diarios. Proyecto personal paralelo al trabajo profesional.",
     "intro": "Cada día se publica un nuevo puzzle de lógica que todos los visitantes ven. El mismo puzzle se muestra a todos durante ese día, y cada día se genera automáticamente uno nuevo.",
     "comingSoon": "Próximamente: nuevos puzzles en desarrollo."
   },
@@ -159,13 +172,27 @@
       "paragraph1": "En The Bubble Hub fui responsable del ciclo completo de ingeniería backend de dos productos móviles con más de 3.000 usuarios activos mensuales: análisis de requisitos, diseño de contratos de API, arquitectura de datos, implementación, integración con servicios externos y soporte en producción. Tomé decisiones técnicas sobre arquitectura, modelo de datos y seguridad.",
       "paragraph2": "El backend que diseñé cubre seguridad en capas, procesamiento asíncrono event-driven e integraciones de pago complejas con Stripe, App Store y Google Play. Cada decisión de arquitectura tuvo impacto directo en el rendimiento y la experiencia de usuario.",
       "paragraph3": "Antes de esto, en Ernst & Young trabajé en entornos enterprise con ciclos de vida de software regulados y requisitos de seguridad estrictos. Ese contexto, marcado por SecDevOps, auditorías y sistemas que procesaban millones de eventos diarios, moldea cómo abordo cualquier diseño hoy: seguridad aplicada desde el primer commit, no como capa adicional.",
-      "paragraph4": "Actualmente curso un Máster en Inteligencia Artificial en UNIR, orientado al diseño de sistemas backend y arquitectura cloud-native. Me interesa especialmente el diseño de arquitecturas backend mantenibles, sistemas distribuidos y soluciones cloud capaces de evolucionar a largo plazo."
+      "paragraph4": "Actualmente curso un Máster en Inteligencia Artificial en UNIR, dentro del cual he realizado prácticas curriculares en Kaizten Analytics aplicando IA al desarrollo de software. Me interesa especialmente el diseño de arquitecturas backend mantenibles, sistemas distribuidos y soluciones cloud capaces de evolucionar a largo plazo."
     },
     "experience": {
       "title": "Experiencia",
+      "kaizten": {
+        "company": "Kaizten Analytics",
+        "role": "Ingeniero de IA (prácticas curriculares)",
+        "period": "Septiembre 2026 – Noviembre 2026",
+        "location": "Remoto",
+        "description": "Prácticas curriculares del Máster en Inteligencia Artificial de UNIR. Desarrollo de herramientas que integran el análisis de calidad de código con asistentes de programación basados en IA. Java, Model Context Protocol (MCP), Docker, Maven y CI/CD con GitHub Actions."
+      },
+      "junta": {
+        "company": "Junta de Andalucía",
+        "role": "Profesor interino de Informática",
+        "period": "Junio 2026",
+        "location": "San Pedro de Alcántara, Málaga",
+        "description": "Docencia de Informática como profesor interino en un centro educativo público."
+      },
       "bubbleHub": {
         "company": "The Bubble Hub",
-        "role": "Back-end Engineer",
+        "role": "Backend Engineer",
         "period": "Abril 2024 – Abril 2026",
         "location": "Málaga, España",
         "description": "Lideré el desarrollo backend de Prodigy Padel Academy y Koru: dos productos móviles con más de 3.000 usuarios activos mensuales. Responsabilidad completa sobre el ciclo de ingeniería: análisis de requisitos, diseño de contratos OpenAPI/Swagger, implementación con ASP.NET Core y Azure Functions, integraciones de pago (Stripe, Apple IAP, Google Play) y soporte en producción. Arquitectura PostgreSQL optimizada, autenticación JWT/RBAC/OAuth 2.0, rate limiting con Redis, procesamiento asíncrono con Azure Storage Queues y pipelines CI/CD con SonarCloud en Azure DevOps."
@@ -298,7 +325,7 @@
           "cookiePurposeLabel": "Finalidad",
           "cookie2Duration": "1 año",
           "cookieDurationLabel": "Duración",
-          "cookie2Type": "Técnica esencial — no requiere consentimiento según el RGPD",
+          "cookie2Type": "Técnica esencial; no requiere consentimiento según el RGPD",
           "cookieTypeLabel": "Tipo",
           "noTracking": "No se utilizan cookies de seguimiento, publicidad ni análisis. No se comparte información con terceros.",
           "paragraph6": "Puede configurar su navegador para rechazar cookies en cualquier momento, aunque esto puede afectar la preferencia de idioma."

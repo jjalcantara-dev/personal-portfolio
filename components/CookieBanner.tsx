@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n';
-import { getContent } from '@/lib/content';
 import { clr, focusRing } from '@/lib/constants/colors';
 
 interface CookieBannerProps {
@@ -12,7 +11,6 @@ interface CookieBannerProps {
 
 export default function CookieBanner({ locale }: CookieBannerProps) {
   const [isVisible, setIsVisible] = useState(false);
-  const t = getContent(locale);
 
   useEffect(() => {
     const cookieBannerDismissed = localStorage.getItem('cookie_banner_dismissed');
@@ -55,9 +53,9 @@ export default function CookieBanner({ locale }: CookieBannerProps) {
             {locale === 'es' ? (
               <>
                 Este sitio web utiliza una{' '}
-                <strong>cookie técnica esencial</strong> para prevenir el envío masivo de mensajes
-                a través del formulario de contacto. Esta cookie no requiere consentimiento según el
-                RGPD. Puede obtener más información en nuestra{' '}
+                <strong>cookie técnica esencial</strong> para recordar el idioma que elija. No se
+                usan cookies de seguimiento ni de análisis. Puede obtener más información en
+                nuestra{' '}
                 <Link
                   href={`/${locale}/privacy`}
                   className={`underline hover:text-black ${focusRing}`}
@@ -68,9 +66,9 @@ export default function CookieBanner({ locale }: CookieBannerProps) {
               </>
             ) : (
               <>
-                This website uses an <strong>essential technical cookie</strong> to prevent mass
-                submission of messages through the contact form. This cookie does not require
-                consent under GDPR. You can learn more in our{' '}
+                This website uses an <strong>essential technical cookie</strong> to remember your
+                language choice. No tracking or analytics cookies are used. You can learn more in
+                our{' '}
                 <Link
                   href={`/${locale}/privacy`}
                   className={`underline hover:text-black ${focusRing}`}
