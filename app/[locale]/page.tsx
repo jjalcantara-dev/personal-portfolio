@@ -177,13 +177,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 role="listitem"
                 className={`group border-t ${clr.border.base} py-8 sm:py-10 sm:pr-12`}
               >
-                <div className={`${clr.text.ghost} mb-4`}>
+                <div className={`${clr.text.subtle} mb-4`}>
                   {icon}
                 </div>
-                <p className={`text-xs font-semibold uppercase tracking-widest ${clr.text.faint} mb-3`}>
+                <p className={`text-xs font-semibold uppercase tracking-widest ${clr.text.strong} mb-3`}>
                   {item.title}
                 </p>
-                <p className={`text-sm sm:text-base ${clr.text.muted} leading-relaxed`}>
+                <p className={`text-sm sm:text-base ${clr.text.body} leading-relaxed`}>
                   {item.description}
                 </p>
               </article>
