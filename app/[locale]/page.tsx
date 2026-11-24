@@ -99,17 +99,16 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </a>
             </div>
 
-            <p className={`mt-4 text-xs ${clr.text.faint} text-center`}>
-              <a
-                href={`/jesus_jimenez_alcantara_cv_${locale === "es" ? "en" : "es"}.pdf`}
-                target="_blank"
-                rel="noopener noreferrer"
-                hrefLang={locale === "es" ? "en" : "es"}
-                className="underline underline-offset-2 hover:text-gray-700 transition-colors"
-              >
-                {t.home.cta.cvOther}
-              </a>
-            </p>
+            {/* Written in English on purpose: it is for visitors who don't read Spanish */}
+            {locale === "es" && (
+              <p lang="en" className={`mt-4 text-xs ${clr.text.faint} text-center`}>
+                Prefer English?{" "}
+                <Link href="/en" hrefLang="en" className="underline underline-offset-2 hover:text-gray-700 transition-colors">
+                  Switch to English
+                </Link>{" "}
+                to download the English CV.
+              </p>
+            )}
 
             {/* Social links */}
             <div className="flex items-center justify-center gap-6 mt-4">
