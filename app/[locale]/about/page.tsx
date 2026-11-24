@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getContent } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { pageAlternates } from "@/lib/seo";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { clr, skillTag } from "@/lib/constants/colors";
@@ -53,6 +54,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "Málaga",
       "Vélez-Málaga",
     ],
+    alternates: pageAlternates(locale, "/about"),
     openGraph: {
       images: ogImages(locale),
       type: "profile",
@@ -80,7 +82,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
                 <div className={`relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 ${clr.border.base}`}>
                   <Image
                     src="/profile.png"
-                    alt="Foto de perfil de Jesús Jiménez Alcántara"
+                    alt={locale === "es" ? "Foto de perfil de Jesús Jiménez Alcántara" : "Profile photo of Jesús Jiménez Alcántara"}
                     width={160}
                     height={160}
                     className="object-cover w-full h-full"

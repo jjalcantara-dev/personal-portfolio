@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { pageAlternates } from "@/lib/seo";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { clr } from "@/lib/constants/colors";
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "contact", "contacto", "Backend Engineer", "Ingeniero Backend",
       "Málaga", "jjalcantara.dev@gmail.com",
     ],
+    alternates: pageAlternates(locale, "/contact"),
     openGraph: {
       images: ogImages(locale),
       title: locale === "es" ? "Contacto | Jesús Jiménez Alcántara" : "Contact | Jesús Jiménez Alcántara",

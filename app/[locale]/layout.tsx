@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -41,13 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     metadataBase: new URL(baseUrl),
     icons: {
       icon: [
-        { url: "/favicon_centered.png", type: "image/png", sizes: "512x512" },
-        { url: "/favicon_centered.png", type: "image/png", sizes: "192x192" },
-        { url: "/favicon_centered.png", type: "image/png", sizes: "96x96" },
-        { url: "/favicon_centered.png", type: "image/png", sizes: "64x64" },
-        { url: "/favicon_centered.png", type: "image/png", sizes: "48x48" },
-        { url: "/favicon_centered.png", type: "image/png", sizes: "32x32" },
-        { url: "/favicon_centered.png", type: "image/png", sizes: "16x16" },
+        { url: "/favicon_centered.png", type: "image/png" },
       ],
       apple: [
         { url: "/logo_final.png", type: "image/png", sizes: "180x180" },
@@ -155,8 +149,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       // bing: "tu-codigo-bing",
     },
     manifest: "/manifest.json",
+    formatDetection: { telephone: false },
   };
 }
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+};
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale: localeParam } = await params;
@@ -165,18 +164,6 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} className="scroll-smooth" data-scroll-behavior="smooth">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="author" content="Jesús Jiménez Alcántara" />
-        <link rel="icon" type="image/png" href="/favicon_centered.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/favicon_centered.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_centered.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_centered.png" />
-        <link rel="shortcut icon" type="image/png" href="/favicon_centered.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/logo_final.png" />
-      </head>
       <body className={`${inter.variable} antialiased`}>
         <a
           href="#main-content"

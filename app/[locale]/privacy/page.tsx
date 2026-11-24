@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
+import { pageAlternates } from "@/lib/seo";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { clr, focusRing } from "@/lib/constants/colors";
@@ -6,6 +8,17 @@ import { tx } from "@/lib/constants/typography";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale: localeParam } = await params;
+  const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
+  const t = getContent(locale);
+
+  return {
+    title: t.privacy.title,
+    alternates: pageAlternates(locale, "/privacy"),
+  };
 }
 
 function Callout({ children }: { children: React.ReactNode }) {

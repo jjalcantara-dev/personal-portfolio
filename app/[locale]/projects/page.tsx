@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getContent } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { pageAlternates } from "@/lib/seo";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { clr, externalLink } from "@/lib/constants/colors";
@@ -55,6 +56,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "The Bubble Hub",
       "portfolio",
     ],
+    alternates: pageAlternates(locale, "/projects"),
     openGraph: {
       images: ogImages(locale),
       title: locale === "es"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { pageAlternates } from "@/lib/seo";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import CollabList from "@/components/CollabList";
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "network",
       "Backend Engineer",
     ],
+    alternates: pageAlternates(locale, "/collab"),
     openGraph: {
       images: ogImages(locale),
       title: locale === "es"

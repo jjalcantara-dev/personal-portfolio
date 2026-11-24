@@ -42,7 +42,7 @@ None. The site is fully static and has no backend services.
 
 **Adding content:** Edit `content/es.json` and `content/en.json` in parallel — both must stay in sync.
 
-**Adding a new page:** Create `app/[locale]/your-page/page.tsx`, call `getContent(locale)` for translations, and add nav entries in both JSON files and `components/Navigation.tsx`.
+**Adding a new page:** Create `app/[locale]/your-page/page.tsx`, call `getContent(locale)` for translations, and add nav entries in both JSON files and `components/Navigation.tsx`. Its `generateMetadata` must set `alternates: pageAlternates(locale, "/your-page")` (`lib/seo.ts`); without it the page inherits the home canonical and search engines treat it as a duplicate of home. Add it to `app/sitemap.ts` too.
 
 ---
 

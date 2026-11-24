@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { pageAlternates } from "@/lib/seo";
 import { locales, defaultLocale, isValidLocale, type Locale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import DailyGame from "@/components/games/DailyGame";
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "Backend Engineer",
       "Ingeniero Backend",
     ],
+    alternates: pageAlternates(locale, "/puzzles"),
     openGraph: {
       images: ogImages(locale),
       title: "Puzzles | Jesús Jiménez Alcántara",
