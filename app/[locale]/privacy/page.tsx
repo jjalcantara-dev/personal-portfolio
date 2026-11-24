@@ -228,8 +228,6 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
 
                   <Callout>{s.cookies.content.noTracking}</Callout>
 
-                  <p>{s.cookies.content.sessionStorage}</p>
-
                   {s.cookies.content.paragraph6 && (
                     <p>{s.cookies.content.paragraph6}</p>
                   )}

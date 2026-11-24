@@ -1,13 +1,14 @@
-// First-visit intro: the logo assembles, then the screen opens like two doors.
+// Intro on every full page load: the logo assembles, then the screen opens
+// like two doors.
 //
 // Pure CSS, so it starts with the first paint instead of waiting for React.
-// INTRO_GATE (in <head>) marks <html data-intro> only on the first page load of
-// a browser session and never for prefers-reduced-motion; without that
-// attribute the overlay is display:none. The flag lives in sessionStorage,
-// holds no personal data and is gone when the browser closes (see privacy).
+// INTRO_GATE runs from <head> only when the browser loads a document (first
+// visit, reload, new tab). Moving between pages is client-side navigation, which
+// never re-runs it, so the intro does not repeat while browsing the site.
+// Never shown with prefers-reduced-motion. Nothing is stored on the device.
 // The page underneath is fully rendered the whole time.
 
-export const INTRO_GATE = `try{if(!sessionStorage.getItem("intro_seen")&&!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.setAttribute("data-intro","play");sessionStorage.setItem("intro_seen","1")}}catch(e){}`;
+export const INTRO_GATE = `try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.setAttribute("data-intro","play")}}catch(e){}`;
 
 // Ends the intro after the animation, or at once on click / key press.
 const INTRO_END = `(function(){var h=document.documentElement;if(!h.hasAttribute("data-intro"))return;var done=false;function finish(){if(done)return;done=true;h.removeAttribute("data-intro")}function skip(){if(done||h.getAttribute("data-intro")==="out")return;h.setAttribute("data-intro","out");setTimeout(finish,450)}document.getElementById("intro").addEventListener("click",skip);document.addEventListener("keydown",skip,{once:true});setTimeout(finish,1900)})()`;

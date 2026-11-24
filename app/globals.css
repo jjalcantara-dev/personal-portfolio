@@ -111,7 +111,7 @@ a[href="#main-content"]:focus {
   }
 }
 
-/* ─── First-visit intro (components/Intro.tsx) ──── */
+/* ─── Intro on full page loads (components/Intro.tsx) ─ */
 
 #intro {
   display: none;
