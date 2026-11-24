@@ -40,7 +40,7 @@ None. The site is fully static and has no backend services.
 - `lib/constants/typography.ts` — semantic type scale (`tx`). Use these for all heading/body/label sizes.
 - **Rule:** modifier-prefixed classes (e.g. `group-hover:text-gray-800`) must stay hardcoded in components — Tailwind cannot scan dynamic class strings.
 
-**Mobile navigation (`components/BottomNav.tsx`):** Fixed bottom nav, visible only on mobile (`sm:hidden`). Features filled/solid icons for the active section, a persistent pill background on the active item, and labels always visible for all items. The `/collab` page is titled "Compañeros" / "Colleagues".
+**Mobile navigation (`components/BottomNav.tsx`):** Fixed bottom nav, visible only on mobile (`sm:hidden`). Features filled/solid icons for the active section, a persistent pill background on the active item, and labels always visible for all items. The `/collab` page is titled "Compañeros" / "Colleagues". Pages not in the bottom nav (`/puzzles`, `/privacy`, listed in `SECONDARY_PAGES` in `components/MobileBackButton.tsx`) get a floating back arrow top left, paired with the language toggle top right: it goes back if the visitor came from another page of the site, otherwise to home.
 
 **CV (`cv/`):** LaTeX source of both CVs: `cv_en.tex`, `cv_es.tex` and the shared layout `cv-style.tex`. `npm run cv` compiles them with latexmk (needs a local TeX Live) and copies the PDFs into `public/`. Both must stay on one A4 page and in sync with the experience on the site; check the page count after every change. The repo is public, so keep private notes out of `.tex` comments.
 

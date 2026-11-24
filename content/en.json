@@ -361,7 +361,8 @@
     "headerNav": "Navigation and language selection",
     "selectLanguage": "Select language",
     "ctaGroup": "Main actions",
-    "period": "Period"
+    "period": "Period",
+    "back": "Back"
   },
   "privacy": {
     "title": "Privacy Policy",

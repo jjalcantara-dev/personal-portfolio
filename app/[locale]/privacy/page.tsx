@@ -59,7 +59,7 @@ export default async function Privacy({ params }: { params: Promise<{ locale: st
   const linkClass = `underline hover:text-black ${focusRing}`;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20 md:py-32">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-16 pb-12 sm:py-20 md:py-32">
       <article>
         <ScrollAnimation animation="fade-up" delay={0}>
           <h1 className={`${tx.h1} mb-6 ${clr.text.primary}`}>

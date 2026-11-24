@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import MobileLocaleToggle from "@/components/MobileLocaleToggle";
+import MobileBackButton from "@/components/MobileBackButton";
 import StructuredData from "@/components/StructuredData";
 import Intro, { INTRO_GATE } from "@/components/Intro";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -186,6 +187,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <Footer locale={locale} />
         </div>
         <BottomNav locale={locale} />
+        <MobileBackButton locale={locale} />
         <MobileLocaleToggle locale={locale} />
       </body>
     </html>
