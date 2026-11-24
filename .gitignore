@@ -55,3 +55,6 @@ next-env.d.ts
 
 # OS
 Thumbs.db
+
+# LaTeX build output of the CV (npm run cv)
+/cv/build/

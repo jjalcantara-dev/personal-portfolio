@@ -1,0 +1,119 @@
+% CV, English. Build both versions with `npm run cv`.
+\documentclass[a4paper,10pt]{article}
+\usepackage[english]{babel}
+\input{cv-style}
+\hypersetup{pdftitle={Jesús Jiménez Alcántara, Backend Engineer, CV}, pdfauthor={Jesús Jiménez Alcántara}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Jesús Jiménez Alcántara} \\ \vspace{3pt}
+    \href{mailto:jesusjimalc98@gmail.com}{\underline{jesusjimalc98@gmail.com}} $|$
+    \href{https://linkedin.com/in/jjalcantara}{\underline{linkedin.com/in/jjalcantara}} $|$
+    \href{https://github.com/jjalcantara-dev}{\underline{github.com/jjalcantara-dev}} $|$
+    \href{https://jjalcantara.dev}{\underline{jjalcantara.dev}} $|$
+    Vélez-Málaga, Spain
+\end{center}
+
+\vspace{-6pt}
+
+%-----------SUMMARY-----------
+\section{Professional Summary}
+\small
+Backend engineer with 4+ years building production systems in \textbf{C\#/.NET}, plus \textbf{Java} and \textbf{Python}, with a
+security engineering background from Ernst \& Young. Experienced in \textbf{security data pipelines}, event-driven processing,
+REST APIs, and cloud-native architecture, owning services from data modeling and API design through CI/CD and production
+support. Pursuing a Master's Degree in Artificial Intelligence, including an internship building tooling for AI coding assistants.
+
+\vspace{-2pt}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Kaizten Analytics}{Remote}
+      {AI Engineer, Curricular Internship (Master's in AI)}{September 2026 -- November 2026}
+    \resumeItemListStart
+        \resumeItem{Built tooling that integrates code quality analysis into AI coding assistants (\textbf{Java}, \textbf{MCP}, Docker, Maven, GitHub Actions).}
+    \resumeItemListEnd
+
+    \jobdivider
+
+    \resumeSubheading
+      {Junta de Andalucía}{San Pedro de Alcántara, Spain}
+      {Computer Science Teacher (Temporary Post)}{June 2026}
+
+    \jobdivider
+
+    \resumeSubheading
+      {The Bubble Hub}{Málaga, Spain}
+      {Backend Engineer}{April 2024 -- April 2026}
+    \resumeItemListStart
+        \resumeItem{Architected and delivered cloud-native backend services in \textbf{ASP.NET Core}, containerized with Docker, for two consumer products, applying Clean Architecture and SOLID while supporting growth from dozens to \textbf{3,000+ monthly active users}.}
+        \resumeItem{Owned production REST APIs from requirements through production support, defining data contracts and failure semantics with iOS and Android developers and versioning OpenAPI specifications so mobile releases could ship independently of backend deployments.}
+        \resumeItem{Moved long-running work off the request path with Azure Storage Queues and Worker Services, fixing dropped subscription webhooks through \textbf{idempotent processing} and dead-letter queues at \textbf{tens of thousands of requests per day}.}
+        \resumeItem{Built and shipped the payments layer end-to-end: \textbf{Stripe} integration with webhook handling, idempotency keys, and reconciliation, plus Apple App Store and Google Play subscriptions with state handling for renewals, grace periods, refunds, and revocations.}
+        \resumeItem{Implemented layered security using stateless \textbf{JWT} authentication, RBAC, OAuth 2.0 (Google and Apple), and Redis-backed rate limiting to protect authentication and API endpoints from abuse.}
+        \resumeItem{Designed the relational data model in \textbf{PostgreSQL}, including normalization, query-optimized indexes, referential integrity, and schema evolution, while using CosmosDB for document-oriented workloads.}
+        \resumeItem{Replaced manual deployments with a gated Azure DevOps pipeline (automated tests, SonarCloud quality gates) promoting across development, staging, and production, with rollback and Application Insights monitoring.}
+        \resumeItem{Drove backend architecture and data-layer development for DailyDermaTalks, a pharmaceutical learning platform built with Next.js, PostgreSQL/Neon, and Redis/Upstash, collaborating with one other developer across backend and frontend.}
+    \resumeItemListEnd
+
+    \jobdivider
+
+    \resumeSubheading
+      {Ernst \& Young (EY)}{Málaga, Spain}
+      {Technology and Security Consultant}{April 2022 -- April 2024}
+    \resumeItemListStart
+        \resumeItem{Built \textbf{security log ingestion pipelines} feeding \textbf{10+ heterogeneous sources} into IBM QRadar, Splunk, and Wazuh, and authored the detection layer: Splunk use cases, correlation searches, and alerting playbooks for the SOC.}
+        \resumeItem{Developed ASP.NET backend components in enterprise SecDevOps environments, applying security-by-design through input validation, data encryption, and least-privilege access control across regulated client environments.}
+        \resumeItem{Optimized CI/CD workflows with Jenkins and GitHub Actions, introducing automated testing and quality gates while maintaining controlled deployments under strict change-management requirements.}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+\vspace{-4pt}
+
+%-----------OPEN SOURCE-----------
+\section{Open Source}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{StoreBridge} $|$ \emph{C\#, .NET 8/9/10, NuGet}}
+      {\href{https://github.com/jjalcantara-dev/StoreBridge}{\underline{github.com/jjalcantara-dev/StoreBridge}}}
+    \resumeItemListStart
+        \resumeItem{Author of a \textbf{NuGet} library for server-side verification of App Store and Google Play subscriptions and in-app purchases.}
+        \resumeItem{Cryptographically authenticates store webhooks (Apple x5c certificate chain anchored to Apple Root CA G3, Google Pub/Sub OIDC tokens), with retry policies, startup configuration validation, and \textbf{197 unit tests}.}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+\vspace{-4pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {International University of La Rioja (UNIR)}{La Rioja, Spain}
+      {Master's Degree in Artificial Intelligence}{Expected 2027}
+    \resumeSubheading
+      {University of Malaga (UMA)}{Málaga, Spain}
+      {Bachelor's Degree in Software Engineering}{October 2022}
+  \resumeSubHeadingListEnd
+
+\vspace{-4pt}
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\vspace{2pt}
+\small
+\begin{itemize}[leftmargin=0pt, label={}, topsep=0pt, itemsep=1pt, parsep=0pt]
+  \item \textbf{Languages \& Frameworks:} C\#, Java, Python, TypeScript, SQL; ASP.NET Core, Entity Framework Core, Spring Boot, Next.js
+  \item \textbf{Cloud \& DevOps:} Azure (Functions, DevOps, App Service, Storage), Docker, GitHub Actions, Jenkins, Maven, SonarCloud
+  \item \textbf{Data \& Messaging:} PostgreSQL, SQL Server, CosmosDB, Redis, Azure Storage Queues, Worker Services
+  \item \textbf{APIs \& Security:} REST, OpenAPI/Swagger, JWT, OAuth 2.0, RBAC, rate limiting, Stripe, App Store/Google Play billing
+  \item \textbf{AI, Testing \& Practices:} Model Context Protocol (MCP), TDD, xUnit, SOLID, Clean Architecture, Agile/Scrum
+  \item \textbf{Spoken Languages:} Spanish (native), English (professional working proficiency)
+\end{itemize}
+
+\end{document}

@@ -40,6 +40,8 @@ None. The site is fully static and has no backend services.
 
 **Mobile navigation (`components/BottomNav.tsx`):** Fixed bottom nav, visible only on mobile (`sm:hidden`). Features filled/solid icons for the active section, a persistent pill background on the active item, and labels always visible for all items. The active label for `/collab` uses the short label "Colab" (not "Colaboradores") to avoid truncation on narrow screens.
 
+**CV (`cv/`):** LaTeX source of both CVs: `cv_en.tex`, `cv_es.tex` and the shared layout `cv-style.tex`. `npm run cv` compiles them with latexmk (needs a local TeX Live) and copies the PDFs into `public/`. Both must stay on one A4 page and in sync with the experience on the site; check the page count after every change. The repo is public, so keep private notes out of `.tex` comments.
+
 **Adding content:** Edit `content/es.json` and `content/en.json` in parallel — both must stay in sync.
 
 **Adding a new page:** Create `app/[locale]/your-page/page.tsx`, call `getContent(locale)` for translations, and add nav entries in both JSON files and `components/Navigation.tsx`. Its `generateMetadata` must set `alternates: pageAlternates(locale, "/your-page")` (`lib/seo.ts`); without it the page inherits the home canonical and search engines treat it as a duplicate of home. Add it to `app/sitemap.ts` too.
@@ -83,7 +85,7 @@ This is the personal portfolio of **Jesús Jiménez Alcántara**, a Backend Engi
 - Headline: "Backend Engineer" / "Ingeniero Backend". ✅
 - Subheadline: ASP.NET Core · Azure · REST APIs. ✅
 - CTAs: About, Projects, CV download. ✅
-- **CV download:** PDF must exist at `/public/jesus_jimenez_alcantara_cv.pdf`.
+- **CV download:** links to `/public/jesus_jimenez_alcantara_cv_{es,en}.pdf`, generated from `cv/` (see CV below).
 
 ### /projects — Projects
 - **The Bubble Hub products** should be featured prominently:
@@ -134,4 +136,4 @@ This is the personal portfolio of **Jesús Jiménez Alcántara**, a Backend Engi
 - **Tone:** Direct, technical, professional. No generic soft skills, no filler adjectives
 - **Keywords to include naturally:** ASP.NET Core, Azure, REST API, PostgreSQL, Redis, JWT, OAuth, RBAC, Stripe, CI/CD, SOLID, Clean Architecture, Backend Engineer
 - **Do not include:** phone number on any public-facing page, personal hobbies unrelated to tech, generic "I'm passionate about technology" copy, references to The Bubble Hub as current employer
-- **CV download:** The CV PDF should be available at `/public/jesus_jimenez_alcantara_cv.pdf` and linked from both the hero and the about page
+- **CV download:** `/public/jesus_jimenez_alcantara_cv_es.pdf` and `_en.pdf`, linked from the hero. Never edit the PDFs by hand: change `cv/` and run `npm run cv`

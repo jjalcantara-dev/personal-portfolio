@@ -1,0 +1,119 @@
+% CV, español. Compila las dos versiones con `npm run cv`.
+\documentclass[a4paper,10pt]{article}
+\usepackage[spanish,es-noshorthands,es-nolists,es-nodecimaldot]{babel}
+\input{cv-style}
+\hypersetup{pdftitle={Jesús Jiménez Alcántara, Ingeniero Backend, CV}, pdfauthor={Jesús Jiménez Alcántara}}
+
+\begin{document}
+
+%----------CABECERA----------
+\begin{center}
+    \textbf{\Huge \scshape Jesús Jiménez Alcántara} \\ \vspace{3pt}
+    \href{mailto:jesusjimalc98@gmail.com}{\underline{jesusjimalc98@gmail.com}} $|$
+    \href{https://linkedin.com/in/jjalcantara}{\underline{linkedin.com/in/jjalcantara}} $|$
+    \href{https://github.com/jjalcantara-dev}{\underline{github.com/jjalcantara-dev}} $|$
+    \href{https://jjalcantara.dev}{\underline{jjalcantara.dev}} $|$
+    Vélez-Málaga, España
+\end{center}
+
+\vspace{-6pt}
+
+%-----------RESUMEN-----------
+\section{Resumen Profesional}
+\small
+\noindent Ingeniero backend con más de 4 años construyendo sistemas en producción con \textbf{C\#/.NET}, además de \textbf{Java} y
+\textbf{Python}, y experiencia en ingeniería de seguridad en Ernst \& Young. Experiencia en \textbf{pipelines de datos de seguridad},
+procesamiento orientado a eventos, APIs REST y arquitectura cloud-native, desde el modelado de datos y el diseño de APIs hasta CI/CD
+y producción. Cursando un Máster en IA, con prácticas desarrollando herramientas para asistentes de programación con IA.
+
+\vspace{-2pt}
+
+%-----------EXPERIENCIA-----------
+\section{Experiencia}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Kaizten Analytics}{Remoto}
+      {Ingeniero de IA, prácticas curriculares (Máster en IA)}{Septiembre 2026 -- Noviembre 2026}
+    \resumeItemListStart
+        \resumeItem{Integración del análisis de calidad de código en asistentes de programación con IA (\textbf{Java}, \textbf{MCP}, Docker, Maven, GitHub Actions).}
+    \resumeItemListEnd
+
+    \jobdivider
+
+    \resumeSubheading
+      {Junta de Andalucía}{San Pedro de Alcántara, España}
+      {Profesor interino de Informática}{Junio 2026}
+
+    \jobdivider
+
+    \resumeSubheading
+      {The Bubble Hub}{Málaga, España}
+      {Ingeniero Backend}{Abril 2024 -- Abril 2026}
+    \resumeItemListStart
+        \resumeItem{Diseñé y entregué servicios backend cloud-native en \textbf{ASP.NET Core}, contenerizados con Docker, para dos productos de consumo, aplicando Clean Architecture y SOLID mientras crecían de decenas a \textbf{más de 3.000 usuarios activos mensuales}.}
+        \resumeItem{Responsable de APIs REST en producción de los requisitos al soporte, acordando contratos de datos y semántica de errores con iOS y Android y versionando OpenAPI para publicar las apps sin depender del backend.}
+        \resumeItem{Saqué el trabajo de larga duración del ciclo de petición con Azure Storage Queues y Worker Services, resolviendo la pérdida de webhooks de suscripción con \textbf{procesamiento idempotente} y colas dead-letter, con \textbf{decenas de miles de peticiones al día}.}
+        \resumeItem{Construí la capa de pagos de principio a fin: integración con \textbf{Stripe} con webhooks, claves de idempotencia y conciliación, y suscripciones de App Store y Google Play con gestión de renovaciones, periodos de gracia, reembolsos y revocaciones.}
+        \resumeItem{Implementé seguridad por capas con autenticación \textbf{JWT} stateless, RBAC, OAuth 2.0 (Google y Apple) y rate limiting con Redis para proteger los endpoints de autenticación y de la API frente a abusos.}
+        \resumeItem{Diseñé el modelo de datos relacional en \textbf{PostgreSQL}: normalización, índices optimizados, integridad referencial y evolución del esquema, con CosmosDB para cargas orientadas a documentos.}
+        \resumeItem{Sustituí los despliegues manuales por un pipeline de Azure DevOps con puertas de calidad (tests automatizados, SonarCloud) y promoción entre desarrollo, preproducción y producción, con rollback y monitorización con Application Insights.}
+        \resumeItem{Lideré la arquitectura backend y la capa de datos de DailyDermaTalks, plataforma de formación farmacéutica con Next.js, PostgreSQL/Neon y Redis/Upstash, junto a otro desarrollador en backend y frontend.}
+    \resumeItemListEnd
+
+    \jobdivider
+
+    \resumeSubheading
+      {Ernst \& Young (EY)}{Málaga, España}
+      {Consultor de Tecnología y Seguridad}{Abril 2022 -- Abril 2024}
+    \resumeItemListStart
+        \resumeItem{Construí \textbf{pipelines de ingesta de logs de seguridad} que integraban \textbf{más de 10 fuentes heterogéneas} en IBM QRadar, Splunk y Wazuh, y desarrollé la capa de detección: casos de uso de Splunk, búsquedas de correlación y playbooks de alertas para el SOC.}
+        \resumeItem{Desarrollé componentes backend en ASP.NET en entornos enterprise SecDevOps, aplicando seguridad desde el diseño: validación de entradas, cifrado de datos y control de acceso por mínimo privilegio en clientes regulados.}
+        \resumeItem{Optimicé flujos CI/CD con Jenkins y GitHub Actions, incorporando tests automatizados y puertas de calidad con despliegues controlados bajo estrictos requisitos de gestión del cambio.}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+\vspace{-4pt}
+
+%-----------OPEN SOURCE-----------
+\section{Open Source}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{StoreBridge} $|$ \emph{C\#, .NET 8/9/10, NuGet}}
+      {\href{https://github.com/jjalcantara-dev/StoreBridge}{\underline{github.com/jjalcantara-dev/StoreBridge}}}
+    \resumeItemListStart
+        \resumeItem{Autor de una librería en \textbf{NuGet} para verificar desde el backend suscripciones y compras in-app de App Store y Google Play.}
+        \resumeItem{Autentica criptográficamente los webhooks de las tiendas (cadena x5c de Apple anclada a Apple Root CA G3, tokens OIDC de Google Pub/Sub), con reintentos, validación de la configuración al arrancar y \textbf{197 tests unitarios}.}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+\vspace{-4pt}
+
+%-----------FORMACIÓN-----------
+\section{Formación}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Universidad Internacional de La Rioja (UNIR)}{La Rioja, España}
+      {Máster en Inteligencia Artificial}{Previsto 2027}
+    \resumeSubheading
+      {Universidad de Málaga (UMA)}{Málaga, España}
+      {Grado en Ingeniería del Software}{Octubre 2022}
+  \resumeSubHeadingListEnd
+
+\vspace{-4pt}
+
+%-----------HABILIDADES-----------
+\section{Habilidades Técnicas}
+\vspace{2pt}
+\small
+\begin{itemize}[leftmargin=0pt, label={}, topsep=0pt, itemsep=1pt, parsep=0pt]
+  \item \textbf{Lenguajes y frameworks:} C\#, Java, Python, TypeScript, SQL; ASP.NET Core, Entity Framework Core, Spring Boot, Next.js
+  \item \textbf{Cloud y DevOps:} Azure (Functions, DevOps, App Service, Storage), Docker, GitHub Actions, Jenkins, Maven, SonarCloud
+  \item \textbf{Datos y mensajería:} PostgreSQL, SQL Server, CosmosDB, Redis, Azure Storage Queues, Worker Services
+  \item \textbf{APIs y seguridad:} REST, OpenAPI/Swagger, JWT, OAuth 2.0, RBAC, rate limiting, Stripe, pagos de App Store/Google Play
+  \item \textbf{IA, testing y prácticas:} Model Context Protocol (MCP), TDD, xUnit, SOLID, Clean Architecture, Agile/Scrum
+  \item \textbf{Idiomas:} español (nativo), inglés (competencia profesional)
+\end{itemize}
+
+\end{document}
