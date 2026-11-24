@@ -22,11 +22,8 @@ Backend Engineer specializing in REST API design, authentication systems (JWT, O
 
 **Kaizten Analytics** — AI Engineer, curricular internship (September 2026 – November 2026, remote)
 - Internship within the Master's in Artificial Intelligence at UNIR
-- Tools that integrate code quality analysis with AI coding assistants
-- Stack: Java, Model Context Protocol (MCP), Docker, Maven, GitHub Actions
-
-**Junta de Andalucía** — Computer Science Teacher, temporary post (June 2026, San Pedro de Alcántara, Málaga)
-- Taught Computer Science at a public school
+- Sole developer of the tooling that connects Kaizten's code standards analyzer to AI coding assistants through the Model Context Protocol (MCP), in Java 17
+- Cross-platform distribution (Linux, macOS, Windows installers, Maven plugin, CI quality gate), 17 releases via GitHub Actions and Docker, 1,500+ automated tests
 
 **The Bubble Hub** — Backend Engineer (April 2024 – April 2026)
 - Led backend development for Prodigy Padel Academy and Koru Acne
@@ -41,6 +38,10 @@ Backend Engineer specializing in REST API design, authentication systems (JWT, O
 - Backend development and SecDevOps for enterprise clients
 - SIEM engineering within a SOC (Splunk, QRadar, ElasticSearch)
 - Led SIEM platform migrations and developed detection rules processing millions of daily events
+
+## Other Experience
+
+- Junta de Andalucía — Computer Science Teacher, temporary post (June 2026, San Pedro de Alcántara, Málaga)
 
 ## Education
 

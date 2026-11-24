@@ -21,10 +21,9 @@
 %-----------SUMMARY-----------
 \section{Professional Summary}
 \small
-Backend engineer with 4+ years building production systems in \textbf{C\#/.NET}, plus \textbf{Java} and \textbf{Python}, with a
+Backend engineer with 4+ years building production systems in \textbf{C\#/.NET}, plus \textbf{Java} and \textbf{Python}, and a
 security engineering background from Ernst \& Young. Experienced in \textbf{security data pipelines}, event-driven processing,
-REST APIs, and cloud-native architecture, owning services from data modeling and API design through CI/CD and production
-support. Pursuing a Master's Degree in Artificial Intelligence, including an internship building tooling for AI coding assistants.
+REST APIs, and cloud-native architecture, from data modeling to CI/CD and production support. Pursuing a Master's in AI.
 
 \vspace{-2pt}
 
@@ -36,14 +35,10 @@ support. Pursuing a Master's Degree in Artificial Intelligence, including an int
       {Kaizten Analytics}{Remote}
       {AI Engineer, Curricular Internship (Master's in AI)}{September 2026 -- November 2026}
     \resumeItemListStart
-        \resumeItem{Built tooling that integrates code quality analysis into AI coding assistants (\textbf{Java}, \textbf{MCP}, Docker, Maven, GitHub Actions).}
+        \resumeItem{Sole developer (\textbf{Java 17}) of the tooling that connects Kaizten's code analyzer to Claude Code and Codex via \textbf{MCP}.}
+        \resumeItem{Shipped one cross-platform distribution (Linux, macOS, Windows installers, Maven plugin, CI gate) across \textbf{17 releases}.}
+        \resumeItem{Backed it with \textbf{1,500+ automated tests} and bilingual (ES/EN) user documentation generated with each release.}
     \resumeItemListEnd
-
-    \jobdivider
-
-    \resumeSubheading
-      {Junta de Andalucía}{San Pedro de Alcántara, Spain}
-      {Computer Science Teacher (Temporary Post)}{June 2026}
 
     \jobdivider
 
@@ -55,10 +50,10 @@ support. Pursuing a Master's Degree in Artificial Intelligence, including an int
         \resumeItem{Owned production REST APIs from requirements through production support, defining data contracts and failure semantics with iOS and Android developers and versioning OpenAPI specifications so mobile releases could ship independently of backend deployments.}
         \resumeItem{Moved long-running work off the request path with Azure Storage Queues and Worker Services, fixing dropped subscription webhooks through \textbf{idempotent processing} and dead-letter queues at \textbf{tens of thousands of requests per day}.}
         \resumeItem{Built and shipped the payments layer end-to-end: \textbf{Stripe} integration with webhook handling, idempotency keys, and reconciliation, plus Apple App Store and Google Play subscriptions with state handling for renewals, grace periods, refunds, and revocations.}
-        \resumeItem{Implemented layered security using stateless \textbf{JWT} authentication, RBAC, OAuth 2.0 (Google and Apple), and Redis-backed rate limiting to protect authentication and API endpoints from abuse.}
-        \resumeItem{Designed the relational data model in \textbf{PostgreSQL}, including normalization, query-optimized indexes, referential integrity, and schema evolution, while using CosmosDB for document-oriented workloads.}
+        \resumeItem{Implemented layered security with stateless \textbf{JWT}, RBAC, OAuth 2.0 (Google, Apple), and Redis rate limiting on API endpoints.}
+        \resumeItem{Designed the \textbf{PostgreSQL} data model (normalization, indexing, referential integrity, migrations) plus CosmosDB.}
         \resumeItem{Replaced manual deployments with a gated Azure DevOps pipeline (automated tests, SonarCloud quality gates) promoting across development, staging, and production, with rollback and Application Insights monitoring.}
-        \resumeItem{Drove backend architecture and data-layer development for DailyDermaTalks, a pharmaceutical learning platform built with Next.js, PostgreSQL/Neon, and Redis/Upstash, collaborating with one other developer across backend and frontend.}
+        \resumeItem{Led backend architecture and data layer for DailyDermaTalks, a pharma learning platform (Next.js, PostgreSQL, Redis).}
     \resumeItemListEnd
 
     \jobdivider
@@ -69,7 +64,7 @@ support. Pursuing a Master's Degree in Artificial Intelligence, including an int
     \resumeItemListStart
         \resumeItem{Built \textbf{security log ingestion pipelines} feeding \textbf{10+ heterogeneous sources} into IBM QRadar, Splunk, and Wazuh, and authored the detection layer: Splunk use cases, correlation searches, and alerting playbooks for the SOC.}
         \resumeItem{Developed ASP.NET backend components in enterprise SecDevOps environments, applying security-by-design through input validation, data encryption, and least-privilege access control across regulated client environments.}
-        \resumeItem{Optimized CI/CD workflows with Jenkins and GitHub Actions, introducing automated testing and quality gates while maintaining controlled deployments under strict change-management requirements.}
+        \resumeItem{Optimized CI/CD with Jenkins and GitHub Actions, adding automated tests and quality gates under strict change management.}
     \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -97,7 +92,7 @@ support. Pursuing a Master's Degree in Artificial Intelligence, including an int
       {International University of La Rioja (UNIR)}{La Rioja, Spain}
       {Master's Degree in Artificial Intelligence}{Expected 2027}
     \resumeSubheading
-      {University of Malaga (UMA)}{Málaga, Spain}
+      {University of Málaga (UMA)}{Málaga, Spain}
       {Bachelor's Degree in Software Engineering}{October 2022}
   \resumeSubHeadingListEnd
 
@@ -115,5 +110,12 @@ support. Pursuing a Master's Degree in Artificial Intelligence, including an int
   \item \textbf{AI, Testing \& Practices:} Model Context Protocol (MCP), TDD, xUnit, SOLID, Clean Architecture, Agile/Scrum
   \item \textbf{Spoken Languages:} Spanish (native), English (professional working proficiency)
 \end{itemize}
+
+\vspace{-4pt}
+
+%-----------OTHER EXPERIENCE-----------
+\section{Other Experience}
+\small
+\textbf{Junta de Andalucía}, San Pedro de Alcántara, Spain: Computer Science Teacher (temporary post), June 2026.
 
 \end{document}

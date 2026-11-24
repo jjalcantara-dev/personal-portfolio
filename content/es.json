@@ -221,7 +221,7 @@
         "role": "Ingeniero de IA (prácticas curriculares)",
         "period": "Septiembre 2026 – Noviembre 2026",
         "location": "Remoto",
-        "description": "Prácticas curriculares del Máster en Inteligencia Artificial de UNIR. Desarrollo de herramientas que integran el análisis de calidad de código con asistentes de programación basados en IA. Java, Model Context Protocol (MCP), Docker, Maven y CI/CD con GitHub Actions."
+        "description": "Prácticas curriculares del Máster en Inteligencia Artificial de UNIR, como único desarrollador de las herramientas que conectan el analizador de estándares de código de Kaizten con asistentes de programación con IA (Claude Code, Codex, Antigravity) mediante Model Context Protocol (MCP), en Java 17. Lo entregué como una distribución multiplataforma: instaladores de una línea para Linux, macOS y Windows, un plugin de Maven y una puerta de calidad para CI, con 17 versiones publicadas mediante GitHub Actions y Docker, más de 1.500 tests automatizados y documentación de usuario bilingüe generada en cada versión."
       },
       "junta": {
         "company": "Junta de Andalucía",
@@ -336,7 +336,10 @@
         }
       ]
     },
-    "metaDescription": "Experiencia, formación y stack de Jesús Jiménez Alcántara, Ingeniero Backend: The Bubble Hub, Ernst & Young, Kaizten Analytics y Máster en IA en UNIR."
+    "metaDescription": "Experiencia, formación y stack de Jesús Jiménez Alcántara, Ingeniero Backend: The Bubble Hub, Ernst & Young, Kaizten Analytics y Máster en IA en UNIR.",
+    "otherExperience": {
+      "title": "Otra experiencia"
+    }
   },
   "contact": {
     "title": "Contacto",

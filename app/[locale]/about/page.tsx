@@ -138,7 +138,6 @@ export default async function About({ params }: { params: Promise<{ locale: stri
             <div className="space-y-12" role="list">
               {[
                 t.about.experience.kaizten,
-                t.about.experience.junta,
                 t.about.experience.bubbleHub,
                 t.about.experience.ey,
               ].map((job, i) => (
@@ -240,6 +239,25 @@ export default async function About({ params }: { params: Promise<{ locale: stri
                 );
               })}
             </div>
+          </section>
+
+          <section className={`border-t ${clr.border.base} pt-12`} aria-labelledby="other-experience-heading">
+            <ScrollAnimation animation="fade-up" delay={0}>
+              <h2 id="other-experience-heading" className={`${tx.h2} mb-8 ${clr.text.primary}`}>
+                {t.about.otherExperience.title}
+              </h2>
+              <article>
+                <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1`}>
+                  {t.about.experience.junta.role}
+                </h3>
+                <p className={`text-sm ${clr.text.muted} mb-1`}>
+                  {t.about.experience.junta.company} • {t.about.experience.junta.location}
+                </p>
+                <p className={`text-xs ${clr.text.subtle} uppercase tracking-wide`}>
+                  {t.about.experience.junta.period}
+                </p>
+              </article>
+            </ScrollAnimation>
           </section>
         </div>
       </article>

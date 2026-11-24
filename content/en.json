@@ -221,7 +221,7 @@
         "role": "AI Engineer (Curricular Internship)",
         "period": "September 2026 – November 2026",
         "location": "Remote",
-        "description": "Curricular internship as part of the Master's in Artificial Intelligence at UNIR. Development of tools that integrate code quality analysis with AI coding assistants. Java, Model Context Protocol (MCP), Docker, Maven, and CI/CD with GitHub Actions."
+        "description": "Curricular internship within the Master's in Artificial Intelligence at UNIR, as sole developer of the tooling that connects Kaizten's code standards analyzer to AI coding assistants (Claude Code, Codex, Antigravity) through the Model Context Protocol (MCP), in Java 17. Shipped it as one cross-platform distribution: one-line installers for Linux, macOS, and Windows, a Maven plugin, and a CI quality gate, with 17 releases automated through GitHub Actions and Docker, 1,500+ automated tests, and bilingual user documentation generated with each release."
       },
       "junta": {
         "company": "Junta de Andalucía",
@@ -336,7 +336,10 @@
         }
       ]
     },
-    "metaDescription": "Experience, education and stack of Jesús Jiménez Alcántara, Backend Engineer: The Bubble Hub, Ernst & Young, Kaizten Analytics and a Master's in AI at UNIR."
+    "metaDescription": "Experience, education and stack of Jesús Jiménez Alcántara, Backend Engineer: The Bubble Hub, Ernst & Young, Kaizten Analytics and a Master's in AI at UNIR.",
+    "otherExperience": {
+      "title": "Other experience"
+    }
   },
   "contact": {
     "title": "Contact",
