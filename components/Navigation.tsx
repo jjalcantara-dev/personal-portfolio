@@ -37,7 +37,7 @@ export default function Navigation({ locale }: Props) {
               <Link
                 href={item.href}
                 className={`group relative ${tx.nav} transition-colors duration-200 ${focusRing} px-1 pb-1 ${
-                  isActive ? clr.text.primary : `${clr.text.subtle} hover:text-black`
+                  isActive ? clr.text.primary : `${clr.text.muted} hover:text-black`
                 }`}
                 aria-current={isActive ? "page" : undefined}
               >

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getContent } from "@/lib/content";
-import { ogImages } from "@/lib/og";
-import { pageAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
+import { profilePageJsonLd, safeJsonLd } from "@/components/StructuredData";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { clr, skillTag } from "@/lib/constants/colors";
@@ -16,11 +16,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: localeParam } = await params;
   const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getContent(locale);
-  const baseUrl = "https://jjalcantara.dev";
 
-  return {
+  return pageMetadata({
+    locale,
+    path: "/about",
     title: locale === "es" ? "Sobre mí" : "About",
+    socialTitle: locale === "es"
+      ? "Sobre mí | Jesús Jiménez Alcántara | Ingeniero Backend"
+      : "About | Jesús Jiménez Alcántara | Backend Engineer",
     description: t.about.metaDescription,
+    type: "profile",
     keywords: [
       "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcantara",
@@ -52,25 +57,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "Málaga",
       "Vélez-Málaga",
     ],
-    alternates: pageAlternates(locale, "/about"),
-    openGraph: {
-      images: ogImages(locale),
-      type: "profile",
-      title: locale === "es"
-        ? "Sobre mí | Jesús Jiménez Alcántara | Ingeniero Backend"
-        : "About | Jesús Jiménez Alcántara | Backend Engineer",
-      description: t.about.metaDescription,
-      url: `${baseUrl}/${locale}/about`,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: locale === "es"
-        ? "Sobre mí | Jesús Jiménez Alcántara | Ingeniero Backend"
-        : "About | Jesús Jiménez Alcántara | Backend Engineer",
-      description: t.about.metaDescription,
-      images: ogImages(locale),
-    },
-  };
+  });
 }
 
 export default async function About({ params }: { params: Promise<{ locale: string }> }) {
@@ -80,6 +67,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20 md:py-32">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(profilePageJsonLd(locale)) }} />
       <article>
         <div className="mb-12">
           <ScrollAnimation animation="fade-up" delay={0}>

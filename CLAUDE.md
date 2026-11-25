@@ -5,13 +5,18 @@ This file provides guidance to Claude Code when working with code in this reposi
 ## Commands
 
 ```bash
-npm run dev       # Start dev server at localhost:3000
-npm run build     # Production build (SSG)
-npm run start     # Serve production build locally
-npm run lint      # Run ESLint
+npm run dev            # Start dev server at localhost:3000
+npm run build          # Production build (SSG)
+npm run start          # Serve production build locally
+npm run lint           # Run ESLint
+npm run i18n:check     # es.json and en.json must have the same keys (exit 1 otherwise)
+npm run puzzles        # Regenerate puzzle levels (slow; see scripts/puzzles/README.md)
+npm run puzzles:verify # Every puzzle level: single solution, no repeated boards
+npm run cv             # Build the public CV PDFs into public/
+npm run cv:private     # Build CVs with phone number into cv/private/ (git-ignored)
 ```
 
-No test suite is configured.
+No test suite is configured. CI (`.github/workflows/ci.yml`, Node 22) runs lint, `tsc --noEmit`, `i18n:check`, `puzzles:verify` and `build` on every push and pull request; keep all five green.
 
 ## Environment Variables
 
@@ -46,7 +51,13 @@ None. The site is fully static and has no backend services.
 
 **Adding content:** Edit `content/es.json` and `content/en.json` in parallel — both must stay in sync.
 
-**Adding a new page:** Create `app/[locale]/your-page/page.tsx`, call `getContent(locale)` for translations, and add nav entries in both JSON files and `components/Navigation.tsx`. Its `generateMetadata` must set `alternates: pageAlternates(locale, "/your-page")` (`lib/seo.ts`); without it the page inherits the home canonical and search engines treat it as a duplicate of home. Add it to `app/sitemap.ts` too.
+**Shared constants (`lib/site.ts`):** `SITE_URL`, `SITE_NAME`, `AUTHOR_NAME`, `CONTACT_EMAIL`, `SOCIAL_URLS`, `displayUrl()` and `isSafeUrl()`. Never hardcode the domain, email or profile URLs in pages or components.
+
+**Page metadata (`lib/seo.ts`):** subpages build their metadata with `pageMetadata({ locale, path, title, socialTitle?, description, keywords?, type? })`, which sets canonical + hreflang and full Open Graph / Twitter with the generated image. JSON-LD: `components/StructuredData.tsx` emits `Person` and `WebSite` site-wide; `ProfilePage` only on `/about` (`profilePageJsonLd`).
+
+**Projects (`components/ProjectCard.tsx`):** each card is a `<ProjectCard>` (image or text logo, optional badge, type, role, description, stack tags, external links with icons); the page only passes data.
+
+**Adding a new page:** Create `app/[locale]/your-page/page.tsx`, call `getContent(locale)` for translations, and add nav entries in both JSON files and `components/Navigation.tsx`. Its `generateMetadata` must return `pageMetadata({ locale, path: "/your-page", ... })` (`lib/seo.ts`); without its own canonical the page inherits the home one and search engines treat it as a duplicate of home. Add it to `app/sitemap.ts` too.
 
 ---
 

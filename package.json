@@ -10,7 +10,8 @@
     "cv": "cd cv && latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build cv_en.tex cv_es.tex && cp build/cv_en.pdf ../public/jesus_jimenez_alcantara_cv_en.pdf && cp build/cv_es.pdf ../public/jesus_jimenez_alcantara_cv_es.pdf",
     "puzzles": "node scripts/puzzles/generate.mjs",
     "puzzles:verify": "node scripts/puzzles/verify.mjs",
-    "cv:private": "cd cv && test -f private.tex || { echo 'Missing cv/private.tex: copy cv/private.example.tex and add your phone'; exit 1; } && latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build-private -usepretex='\\def\\cvprivate{}' cv_en.tex cv_es.tex && mkdir -p private && cp build-private/cv_en.pdf private/jesus_jimenez_alcantara_cv_en.pdf && cp build-private/cv_es.pdf private/jesus_jimenez_alcantara_cv_es.pdf && echo 'Private CVs with phone: cv/private/'"
+    "cv:private": "cd cv && test -f private.tex || { echo 'Missing cv/private.tex: copy cv/private.example.tex and add your phone'; exit 1; } && latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build-private -usepretex='\\def\\cvprivate{}' cv_en.tex cv_es.tex && mkdir -p private && cp build-private/cv_en.pdf private/jesus_jimenez_alcantara_cv_en.pdf && cp build-private/cv_es.pdf private/jesus_jimenez_alcantara_cv_es.pdf && echo 'Private CVs with phone: cv/private/'",
+    "i18n:check": "node scripts/check-i18n.mjs"
   },
   "dependencies": {
     "babel-plugin-react-compiler": "^1.0.0",

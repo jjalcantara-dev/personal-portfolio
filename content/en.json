@@ -383,7 +383,10 @@
     "email": "Email",
     "location": "Location",
     "linkedin": "LinkedIn",
-    "github": "GitHub"
+    "github": "GitHub",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyAria": "Copy email"
   },
   "footer": {
     "copyright": "© {year} Jesús Jiménez Alcántara",

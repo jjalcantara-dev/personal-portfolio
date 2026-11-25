@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Fragment, type ReactNode } from "react";
 import { getContent } from "@/lib/content";
-import { ogImages } from "@/lib/og";
-import { pageAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { clr, focusRing } from "@/lib/constants/colors";
 import { tx } from "@/lib/constants/typography";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -16,37 +16,26 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: localeParam } = await params;
   const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getContent(locale);
-  const baseUrl = "https://jjalcantara.dev";
-  const description = locale === "es"
-    ? "Política de privacidad de jjalcantara.dev: solo datos técnicos del alojamiento y una cookie de idioma. Sin formularios, analítica ni seguimiento."
-    : "Privacy policy of jjalcantara.dev: only technical hosting data and a language cookie. No forms, analytics or tracking.";
-  const socialTitle = `${t.privacy.title} | Jesús Jiménez Alcántara`;
 
-  return {
+  return pageMetadata({
+    locale,
+    path: "/privacy",
     title: t.privacy.title,
-    description,
-    alternates: pageAlternates(locale, "/privacy"),
-    openGraph: {
-      images: ogImages(locale),
-      title: socialTitle,
-      description,
-      url: `${baseUrl}/${locale}/privacy`,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: socialTitle,
-      description,
-      images: ogImages(locale),
-    },
-  };
+    description: locale === "es"
+      ? "Política de privacidad de jjalcantara.dev: solo datos técnicos del alojamiento y una cookie de idioma. Sin formularios, analítica ni seguimiento."
+      : "Privacy policy of jjalcantara.dev: only technical hosting data and a language cookie. No forms, analytics or tracking.",
+  });
 }
 
 const linkClass = `underline underline-offset-2 hover:text-black ${focusRing}`;
 
-// Turns the email address and www.aepd.es inside policy text into links.
+const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const LINKED = new RegExp(`(${escapeRe(CONTACT_EMAIL)}|www\\.aepd\\.es)`);
+
+// Turns the contact email and www.aepd.es inside policy text into links.
 function linkify(text: string): ReactNode {
-  return text.split(/(jjalcantara\.dev@gmail\.com|www\.aepd\.es)/).map((part, i) =>
-    part === "jjalcantara.dev@gmail.com" ? (
+  return text.split(LINKED).map((part, i) =>
+    part === CONTACT_EMAIL ? (
       <a key={i} href={`mailto:${part}`} className={linkClass}>{part}</a>
     ) : part === "www.aepd.es" ? (
       <a key={i} href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" className={linkClass}>{part}</a>

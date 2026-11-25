@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
-import { ogImages } from "@/lib/og";
-import { pageAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import { locales, defaultLocale, isValidLocale, type Locale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import DailyGame from "@/components/games/DailyGame";
@@ -16,9 +15,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: localeParam } = await params;
   const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getContent(locale);
-  const baseUrl = "https://jjalcantara.dev";
 
-  return {
+  return pageMetadata({
+    locale,
+    path: "/puzzles",
     title: locale === "es" ? "Puzzles de lógica diarios" : "Daily logic puzzles",
     description: t.puzzles.description,
     keywords: [
@@ -29,20 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "Backend Engineer",
       "Ingeniero Backend",
     ],
-    alternates: pageAlternates(locale, "/puzzles"),
-    openGraph: {
-      images: ogImages(locale),
-      title: locale === "es" ? "Puzzles de lógica diarios | Jesús Jiménez Alcántara" : "Daily logic puzzles | Jesús Jiménez Alcántara",
-      description: t.puzzles.description,
-      url: `${baseUrl}/${locale}/puzzles`,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: locale === "es" ? "Puzzles de lógica diarios | Jesús Jiménez Alcántara" : "Daily logic puzzles | Jesús Jiménez Alcántara",
-      description: t.puzzles.description,
-      images: ogImages(locale),
-    },
-  };
+  });
 }
 
 export default async function Puzzles({ params }: { params: Promise<{ locale: string }> }) {

@@ -5,6 +5,7 @@ import ScrollAnimation from "@/components/ScrollAnimation";
 import ParallaxLogo from "@/components/ParallaxLogo";
 import { clr, btnPrimary, btnOutline, btnGhost, focusRing } from "@/lib/constants/colors";
 import { tx } from "@/lib/constants/typography";
+import { SOCIAL_URLS } from "@/lib/site";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -113,7 +114,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             {/* Social links */}
             <div className="flex items-center justify-center gap-6 mt-4">
               <a
-                href="https://github.com/jjalcantara-dev"
+                href={SOCIAL_URLS.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -124,7 +125,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/jjalcantara"
+                href={SOCIAL_URLS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"

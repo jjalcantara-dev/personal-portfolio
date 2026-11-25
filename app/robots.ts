@@ -1,8 +1,7 @@
 import { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://jjalcantara.dev";
-
   return {
     rules: [
       {
@@ -20,7 +19,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "meta-externalagent", allow: "/" },
       { userAgent: "cohere-ai",        allow: "/" },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

@@ -1,9 +1,8 @@
 import { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 import { locales } from "@/lib/i18n";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://jjalcantara.dev";
-
   const routes: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
     { path: "",          priority: 1.0, freq: "weekly"  },
     { path: "/about",   priority: 0.9, freq: "monthly" },
@@ -19,15 +18,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   locales.forEach((locale) => {
     routes.forEach(({ path, priority, freq }) => {
       entries.push({
-        url: `${baseUrl}/${locale}${path}`,
+        url: `${SITE_URL}/${locale}${path}`,
         lastModified: new Date(),
         changeFrequency: freq,
         priority,
         alternates: {
           languages: {
-            "es-ES": `${baseUrl}/es${path}`,
-            "en-US": `${baseUrl}/en${path}`,
-            "x-default": `${baseUrl}/es${path}`,
+            "es-ES": `${SITE_URL}/es${path}`,
+            "en-US": `${SITE_URL}/en${path}`,
+            "x-default": `${SITE_URL}/es${path}`,
           },
         },
       });

@@ -2,6 +2,7 @@ import Image from "next/image";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { clr, externalLink } from "@/lib/constants/colors";
 import { tx } from "@/lib/constants/typography";
+import { isSafeUrl } from "@/lib/site";
 
 type Person = {
   name: string;
@@ -17,15 +18,6 @@ type Props = {
   people: Person[];
   visitLabel: string;
 };
-
-function isSafeUrl(url: string): boolean {
-  try {
-    const { protocol } = new URL(url);
-    return protocol === "https:" || protocol === "http:";
-  } catch {
-    return false;
-  }
-}
 
 function getInitials(name: string): string {
   return name

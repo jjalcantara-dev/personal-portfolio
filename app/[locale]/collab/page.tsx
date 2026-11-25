@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
-import { ogImages } from "@/lib/og";
-import { pageAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import CollabList from "@/components/CollabList";
@@ -16,9 +15,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: localeParam } = await params;
   const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getContent(locale);
-  const baseUrl = "https://jjalcantara.dev";
 
-  return {
+  return pageMetadata({
+    locale,
+    path: "/collab",
     title: locale === "es" ? "Compañeros" : "Colleagues",
     description: t.collab.description,
     keywords: [
@@ -28,24 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "network",
       "Backend Engineer",
     ],
-    alternates: pageAlternates(locale, "/collab"),
-    openGraph: {
-      images: ogImages(locale),
-      title: locale === "es"
-        ? "Compañeros | Jesús Jiménez Alcántara"
-        : "Colleagues | Jesús Jiménez Alcántara",
-      description: t.collab.description,
-      url: `${baseUrl}/${locale}/collab`,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: locale === "es"
-        ? "Compañeros | Jesús Jiménez Alcántara"
-        : "Colleagues | Jesús Jiménez Alcántara",
-      description: t.collab.description,
-      images: ogImages(locale),
-    },
-  };
+  });
 }
 
 export default async function Collab({ params }: { params: Promise<{ locale: string }> }) {

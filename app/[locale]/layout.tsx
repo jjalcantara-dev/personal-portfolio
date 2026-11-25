@@ -10,6 +10,7 @@ import Intro, { INTRO_GATE } from "@/components/Intro";
 import ScrollProgress from "@/components/ScrollProgress";
 import { defaultLocale, isValidLocale, locales } from "@/lib/i18n";
 import { getContent } from "@/lib/content";
+import { AUTHOR_NAME, SITE_NAME, SITE_URL, SOCIAL_URLS, displayUrl } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,11 +36,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? "Jesús Jiménez Alcántara | Ingeniero Backend .NET y Azure"
     : "Jesús Jiménez Alcántara | Backend Engineer, .NET & Azure";
 
-  const baseUrl = "https://jjalcantara.dev";
-  const canonicalUrl = `${baseUrl}/${locale}`;
+  const canonicalUrl = `${SITE_URL}/${locale}`;
 
   return {
-    metadataBase: new URL(baseUrl),
+    metadataBase: new URL(SITE_URL),
     icons: {
       icon: [
         { url: "/favicon_centered.png", type: "image/png" },
@@ -100,16 +100,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "Spain",
       "España",
       // Perfiles
-      "github.com/jjalcantara-dev",
+      displayUrl(SOCIAL_URLS.github),
       // Empresa
       "The Bubble Hub",
       "Ernst Young",
       "Backend Engineer Málaga",
       "Ingeniero Backend Málaga",
     ],
-    authors: [{ name: "Jesús Jiménez Alcántara" }],
-    creator: "Jesús Jiménez Alcántara",
-    publisher: "Jesús Jiménez Alcántara",
+    authors: [{ name: AUTHOR_NAME }],
+    creator: AUTHOR_NAME,
+    publisher: AUTHOR_NAME,
     robots: {
       index: true,
       follow: true,
@@ -126,7 +126,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: locale === "es" ? "es_ES" : "en_US",
       alternateLocale: locale === "es" ? ["en_US"] : ["es_ES"],
       url: canonicalUrl,
-      siteName: "jjalcantara.dev",
+      siteName: SITE_NAME,
       title,
       description: t.home.metaDescription,
     },
@@ -138,9 +138,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        "es-ES": `${baseUrl}/es`,
-        "en-US": `${baseUrl}/en`,
-        "x-default": `${baseUrl}/${defaultLocale}`,
+        "es-ES": `${SITE_URL}/es`,
+        "en-US": `${SITE_URL}/en`,
+        "x-default": `${SITE_URL}/${defaultLocale}`,
       },
     },
     verification: {
