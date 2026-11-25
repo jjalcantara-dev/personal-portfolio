@@ -18,9 +18,10 @@
 %-----------RESUMEN-----------
 \section{Resumen Profesional}
 \small
-\noindent Ingeniero backend con más de 4 años construyendo sistemas en producción con \textbf{C\#/.NET}, además de \textbf{Java} y
-\textbf{Python}, y experiencia en ingeniería de seguridad en Ernst \& Young. Experiencia en \textbf{pipelines de datos de seguridad},
-procesamiento orientado a eventos, APIs REST y arquitectura cloud-native, del modelado de datos a CI/CD y producción. Cursando un Máster en IA.
+\noindent Ingeniero backend y arquitecto de soluciones cloud con más de 4 años diseñando y llevando a producción sistemas en
+\textbf{C\#/.NET} sobre \textbf{Azure}: APIs REST, procesamiento orientado a eventos, pagos (Stripe, App Store, Google Play) y
+seguridad (JWT, OAuth 2.0, RBAC), del modelo de datos a CI/CD y soporte en producción. Experiencia en ingeniería de seguridad
+en Ernst \& Young; cursando un Máster en IA, con prácticas en herramientas para asistentes de programación con IA.
 
 \vspace{-2pt}
 
@@ -32,9 +33,9 @@ procesamiento orientado a eventos, APIs REST y arquitectura cloud-native, del mo
       {Kaizten Analytics}{Remoto}
       {Ingeniero de IA, prácticas curriculares (Máster en IA)}{Septiembre 2026 -- Noviembre 2026}
     \resumeItemListStart
-        \resumeItem{Único desarrollador (\textbf{Java 17}) de las herramientas que conectan el analizador de Kaizten con Claude Code y Codex vía \textbf{MCP}.}
-        \resumeItem{Distribución multiplataforma (instaladores para Linux, macOS y Windows, plugin de Maven, puerta de CI) en \textbf{17 versiones}.}
-        \resumeItem{Respaldado por \textbf{más de 1.500 tests automatizados} y documentación de usuario bilingüe (ES/EN) generada en cada versión.}
+        \resumeItem{Desarrollé en solitario, en \textbf{Java 17}, las herramientas que conectan el analizador de Kaizten con Claude Code y Codex vía \textbf{MCP}.}
+        \resumeItem{Publiqué \textbf{17 versiones} multiplataforma (instaladores para Linux, macOS y Windows, plugin de Maven, control de CI).}
+        \resumeItem{Aseguré la calidad con \textbf{más de 1.500 tests automatizados} y documentación bilingüe (ES/EN) generada en cada versión.}
     \resumeItemListEnd
 
     \jobdivider
@@ -43,14 +44,12 @@ procesamiento orientado a eventos, APIs REST y arquitectura cloud-native, del mo
       {The Bubble Hub}{Málaga, España}
       {Ingeniero Backend}{Abril 2024 -- Abril 2026}
     \resumeItemListStart
-        \resumeItem{Diseñé y entregué servicios backend cloud-native en \textbf{ASP.NET Core}, contenerizados con Docker, para dos productos de consumo, aplicando Clean Architecture y SOLID mientras crecían de decenas a \textbf{más de 3.000 usuarios activos mensuales}.}
-        \resumeItem{Responsable de APIs REST en producción de los requisitos al soporte, acordando contratos de datos y semántica de errores con iOS y Android y versionando OpenAPI para publicar las apps sin depender del backend.}
-        \resumeItem{Saqué el trabajo de larga duración del ciclo de petición con Azure Storage Queues y Worker Services, resolviendo la pérdida de webhooks de suscripción con \textbf{procesamiento idempotente} y colas dead-letter, con \textbf{decenas de miles de peticiones al día}.}
-        \resumeItem{Construí la capa de pagos de principio a fin: integración con \textbf{Stripe} con webhooks, claves de idempotencia y conciliación, y suscripciones de App Store y Google Play con gestión de renovaciones, periodos de gracia, reembolsos y revocaciones.}
-        \resumeItem{Implementé seguridad por capas con \textbf{JWT} stateless, RBAC, OAuth 2.0 (Google, Apple) y rate limiting con Redis.}
-        \resumeItem{Diseñé el modelo de datos en \textbf{PostgreSQL} (normalización, índices, integridad referencial, migraciones); CosmosDB para documentos.}
-        \resumeItem{Sustituí los despliegues manuales por un pipeline de Azure DevOps con puertas de calidad (tests automatizados, SonarCloud) y promoción entre desarrollo, preproducción y producción, con rollback y monitorización con Application Insights.}
-        \resumeItem{Lideré la arquitectura backend y la capa de datos de DailyDermaTalks, plataforma de formación farmacéutica con Next.js.}
+        \resumeItem{Diseñé la arquitectura backend de dos apps móviles en \textbf{ASP.NET Core} sobre \textbf{Azure} (Clean Architecture, SOLID, Docker), que crecieron de decenas a \textbf{más de 3.000 usuarios activos mensuales}, y de la plataforma formativa DailyDermaTalks (Next.js).}
+        \resumeItem{Me encargué de las APIs REST en producción de principio a fin: acordé contratos de datos y semántica de errores con los equipos de iOS y Android y versioné las especificaciones \textbf{OpenAPI} para que las apps se publicaran sin depender del backend.}
+        \resumeItem{Moví las tareas largas fuera del ciclo petición-respuesta con \textbf{Azure Storage Queues} y Worker Services y eliminé la pérdida de webhooks de suscripción con \textbf{procesamiento idempotente} y colas dead-letter, a \textbf{decenas de miles de peticiones al día}.}
+        \resumeItem{Construí la capa de pagos completa: \textbf{Stripe} (webhooks, claves de idempotencia y conciliación) y suscripciones de App Store y Google Play, con renovaciones, periodos de gracia, reembolsos y revocaciones.}
+        \resumeItem{Diseñé el modelo de datos en \textbf{PostgreSQL} (normalización, índices, integridad referencial, migraciones) y la seguridad por capas: \textbf{JWT} stateless, RBAC, OAuth 2.0 (Google, Apple) y rate limiting con Redis.}
+        \resumeItem{Sustituí los despliegues manuales por un pipeline de \textbf{Azure DevOps} con controles de calidad (tests automatizados, SonarCloud) y promoción entre desarrollo, preproducción y producción, con rollback y monitorización con Application Insights.}
     \resumeItemListEnd
 
     \jobdivider
@@ -59,9 +58,9 @@ procesamiento orientado a eventos, APIs REST y arquitectura cloud-native, del mo
       {Ernst \& Young (EY)}{Málaga, España}
       {Consultor de Tecnología y Seguridad}{Abril 2022 -- Abril 2024}
     \resumeItemListStart
-        \resumeItem{Construí \textbf{pipelines de ingesta de logs de seguridad} que integraban \textbf{más de 10 fuentes heterogéneas} en IBM QRadar, Splunk y Wazuh, y desarrollé la capa de detección: casos de uso de Splunk, búsquedas de correlación y playbooks de alertas para el SOC.}
-        \resumeItem{Desarrollé componentes backend en ASP.NET en entornos enterprise SecDevOps, aplicando seguridad desde el diseño: validación de entradas, cifrado de datos y control de acceso por mínimo privilegio en clientes regulados.}
-        \resumeItem{Optimicé CI/CD con Jenkins y GitHub Actions, con tests automatizados y puertas de calidad bajo una gestión del cambio estricta.}
+        \resumeItem{Desarrollé componentes backend en ASP.NET para clientes enterprise regulados en entornos SecDevOps, con seguridad desde el diseño: validación de entradas, cifrado de datos y control de acceso por mínimo privilegio.}
+        \resumeItem{Construí \textbf{pipelines de ingesta de logs de seguridad} que integraban \textbf{más de 10 fuentes heterogéneas} en IBM QRadar, Splunk y Wazuh, y desarrollé la capa de detección (casos de uso, búsquedas de correlación y playbooks de alertas) para el SOC.}
+        \resumeItem{Optimicé CI/CD con Jenkins y GitHub Actions, con tests automatizados y controles de calidad bajo una gestión del cambio estricta.}
     \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -87,7 +86,7 @@ procesamiento orientado a eventos, APIs REST y arquitectura cloud-native, del mo
   \resumeSubHeadingListStart
     \resumeSubheading
       {Universidad Internacional de La Rioja (UNIR)}{La Rioja, España}
-      {Máster en Inteligencia Artificial}{Previsto 2027}
+      {Máster en Inteligencia Artificial}{Previsto marzo 2027}
     \resumeSubheading
       {Universidad de Málaga (UMA)}{Málaga, España}
       {Grado en Ingeniería del Software}{Octubre 2022}
