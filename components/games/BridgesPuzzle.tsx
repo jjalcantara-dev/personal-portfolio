@@ -104,7 +104,9 @@ export default function BridgesPuzzle({ level, locale, onSolve }: { level: Bridg
   }
 
   const onPointerDown = (i: number) => (e: React.PointerEvent) => {
-    e.currentTarget.releasePointerCapture?.(e.pointerId);
+    // touch input captures the pointer on the island; release it so pointerup
+    // reports the island the finger ends on (drag from one island to another)
+    if (e.currentTarget.hasPointerCapture?.(e.pointerId)) e.currentTarget.releasePointerCapture(e.pointerId);
     dragFrom.current = i;
   };
   const onPointerUp = (i: number) => (e: React.PointerEvent) => {

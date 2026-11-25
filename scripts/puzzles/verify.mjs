@@ -1,6 +1,6 @@
 // Re-checks every level in lib/games/library.ts from scratch:
 //   npm run puzzles:verify
-// slide: the stored minMoves is the true optimum and the shortest solution is
+// No board repeats within a list. slide: the stored minMoves is the true optimum and the shortest solution is
 // unique (up to the order of independent moves); bridges: exactly one solution.
 
 import { readFileSync } from "node:fs";
@@ -13,6 +13,18 @@ const slideLevels = grab("slideLevels");
 const bridgesLevels = grab("bridgesLevels");
 
 let bad = 0;
+// No level may appear twice in a list.
+for (const [list, key] of [
+  [slideLevels, (l) => JSON.stringify(l.blocks)],
+  [bridgesLevels, (l) => JSON.stringify([...l.islands].sort())],
+]) {
+  const seen = new Map();
+  for (const l of list) {
+    const k = key(l);
+    if (seen.has(k)) { bad++; console.log(`FAIL ${l.id}: same board as ${seen.get(k)}`); }
+    else seen.set(k, l.id);
+  }
+}
 for (const lvl of slideLevels) {
   const blocks = lvl.blocks.map(([h, len, fixed, pos]) => ({ h: h === 1, len, fixed, pos }));
   const ok0 = blocks[0].h && blocks[0].fixed === EXIT_ROW && blocks.every((b) => b.pos + b.len <= SIZE);

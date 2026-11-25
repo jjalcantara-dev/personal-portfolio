@@ -61,3 +61,10 @@ Thumbs.db
 
 # Puzzle generator candidate cache (npm run puzzles)
 /scripts/puzzles/.pool-*.json
+
+# Local AI tool folders (Antigravity, Aider Desk, Claude Code skills)
+/.agents/
+/.aider-desk/
+/.claude/skills/
+/data/skills/
+/skills-lock.json

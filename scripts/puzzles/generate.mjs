@@ -66,8 +66,15 @@ if (!isMainThread) {
   console.log(`slide: ${slideAll.length} candidates, kept ${slideLevels.length} (${slideLevels.at(-1)?.minMoves}-${slideLevels[0]?.minMoves} moves) after ${((Date.now() - t0) / 1000).toFixed(0)}s`);
 
   const bridgeAll = await run("bridges");
-  const bridgeLevels = bridgeAll.sort((a, b) => b.guesses - a.guesses || b.islands.length - a.islands.length).slice(0, PER_KIND);
-  console.log(`bridges: ${bridgeAll.length} candidates, kept ${bridgeLevels.length} after ${((Date.now() - t0) / 1000).toFixed(0)}s`);
+  const seenBridges = new Set();
+  const bridgeLevels = bridgeAll
+    .filter((p) => {
+      const sig = p.islands.map((i) => `${i.x},${i.y},${i.n}`).sort().join("|");
+      return !seenBridges.has(sig) && seenBridges.add(sig);
+    })
+    .sort((a, b) => b.guesses - a.guesses || b.islands.length - a.islands.length)
+    .slice(0, PER_KIND);
+  console.log(`bridges: ${bridgeAll.length} candidates (${seenBridges.size} distinct), kept ${bridgeLevels.length} after ${((Date.now() - t0) / 1000).toFixed(0)}s`);
 
   if (slideLevels.length < PER_KIND || bridgeLevels.length < PER_KIND) {
     console.error("Not enough levels: raise triesPerWorker.");
