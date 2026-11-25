@@ -1,7 +1,9 @@
 'use client';
 
-import { useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { clr, btnPrimary, btnOutline } from '@/lib/constants/colors';
+import { tx } from '@/lib/constants/typography';
 
 export default function Error({
   error,
@@ -10,34 +12,38 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  useEffect(() => {
-    // Removido console.error
-  }, [error]);
+  const pathname = usePathname();
+  const isEn = pathname === '/en' || pathname.startsWith('/en/');
+  const homeHref = isEn ? '/en' : '/es';
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="text-center max-w-md">
-        <h1 className="text-4xl font-light mb-4 text-black">Algo salió mal</h1>
-        <p className="text-gray-700 mb-8">
-          Ha ocurrido un error inesperado. Por favor, intenta recargar la página o vuelve al inicio.
+        <h1 className={`${tx.h2} mb-4 ${clr.text.primary}`}>
+          {isEn ? 'Something went wrong' : 'Algo salió mal'}
+        </h1>
+        <p className={`${tx.body} ${clr.text.body} mb-8`}>
+          {isEn
+            ? 'An unexpected error occurred. Please try reloading the page or return to the home page.'
+            : 'Ha ocurrido un error inesperado. Por favor, intenta recargar la página o vuelve al inicio.'}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={reset}
-            className="px-6 py-3 bg-black text-white text-sm font-medium hover:bg-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-            aria-label="Intentar de nuevo"
+            className={btnPrimary}
+            aria-label={isEn ? 'Try again' : 'Intentar de nuevo'}
           >
-            Intentar de nuevo
+            {isEn ? 'Try again' : 'Intentar de nuevo'}
           </button>
           <Link
-            href="/es"
-            className="px-6 py-3 border-2 border-black text-black text-sm font-medium hover:bg-black hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 inline-block"
+            href={homeHref}
+            className={btnOutline}
           >
-            Volver al inicio
+            {isEn ? 'Back to home' : 'Volver al inicio'}
           </Link>
         </div>
         {process.env.NODE_ENV === "development" && error.digest && (
-          <p className="mt-8 text-xs text-gray-500">
+          <p className={`mt-8 text-xs ${clr.text.subtle}`}>
             Error ID: {error.digest}
           </p>
         )}
@@ -45,4 +51,5 @@ export default function Error({
     </div>
   );
 }
+
 

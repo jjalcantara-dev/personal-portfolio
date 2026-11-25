@@ -1,5 +1,3 @@
-export { gameLibrary } from './library';
-export { getDailyGame, getGameDate } from './selector';
-export type { GameConfig, GameType, GameLibrary, Island, Bridge, Block, ColorCell } from './types';
-
-
+export { getDailyPuzzle, dayNumber } from "./selector";
+export type { DailyPuzzle, SlideLevel, SlideBlock, BridgesLevel, BridgesIsland } from "./types";
+export { SLIDE_SIZE, SLIDE_EXIT_ROW } from "./types";

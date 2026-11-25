@@ -7,6 +7,7 @@ import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { clr, externalLink } from "@/lib/constants/colors";
 import { tx } from "@/lib/constants/typography";
+import { safeJsonLd } from "@/components/StructuredData";
 
 function isSafeUrl(url: string): boolean {
   try {
@@ -63,6 +64,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: t.projects.description,
       url: `${baseUrl}/${locale}/projects`,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: locale === "es"
+        ? "Proyectos | Jesús Jiménez Alcántara"
+        : "Projects | Jesús Jiménez Alcántara",
+      description: t.projects.description,
+      images: ogImages(locale),
+    },
   };
 }
 
@@ -71,8 +80,24 @@ export default async function Projects({ params }: { params: Promise<{ locale: s
   const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getContent(locale);
 
+  const sb = t.projects.personal.storebridge;
+  const storeBridgeSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    name: sb.name,
+    description: sb.description,
+    codeRepository: sb.githubUrl,
+    url: sb.nugetUrl,
+    programmingLanguage: "C#",
+    runtimePlatform: ".NET",
+    license: "https://opensource.org/licenses/MIT",
+    author: { "@id": "https://jjalcantara.dev/#person" },
+    inLanguage: locale === "es" ? "es-ES" : "en-US",
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20 md:py-32">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(storeBridgeSchema) }} />
       <article>
         <ScrollAnimation animation="fade-up" delay={0}>
           <h1 className={`${tx.h1} mb-6 ${clr.text.primary}`}>

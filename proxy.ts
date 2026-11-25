@@ -1,12 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-
-const LOCALES = ["es", "en"] as const;
-type Locale = (typeof LOCALES)[number];
-const DEFAULT: Locale = "es";
-const COOKIE = "preferred_locale";
+import { locales, defaultLocale, isValidLocale, type Locale } from "@/lib/i18n";
+import { LOCALE_COOKIE } from "@/lib/locale-cookie";
 
 function detectLocale(acceptLanguage: string | null): Locale {
-  if (!acceptLanguage) return DEFAULT;
+  if (!acceptLanguage) return defaultLocale;
 
   const candidates = acceptLanguage
     .split(",")
@@ -18,26 +15,25 @@ function detectLocale(acceptLanguage: string | null): Locale {
     .map((x) => x.lang);
 
   for (const lang of candidates) {
-    if (lang === "en") return "en";
-    if (lang === "es") return "es";
+    if (isValidLocale(lang)) return lang;
   }
 
-  return DEFAULT;
+  return defaultLocale;
 }
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Already has a locale prefix → let it through
-  if (LOCALES.some((loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`))) {
+  if (locales.some((loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`))) {
     return NextResponse.next();
   }
 
   // Cookie set by the user via the language switcher wins
-  const cookie = request.cookies.get(COOKIE)?.value;
+  const cookie = request.cookies.get(LOCALE_COOKIE)?.value;
   const locale: Locale =
-    cookie && (LOCALES as readonly string[]).includes(cookie)
-      ? (cookie as Locale)
+    cookie && isValidLocale(cookie)
+      ? cookie
       : detectLocale(request.headers.get("accept-language"));
 
   const url = request.nextUrl.clone();

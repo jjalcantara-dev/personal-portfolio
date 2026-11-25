@@ -201,8 +201,46 @@
   "puzzles": {
     "title": "Puzzles",
     "description": "Daily logic puzzles. A personal side project, separate from my professional work.",
-    "intro": "A new logic puzzle every day, the same for every visitor.",
-    "comingSoon": "Coming soon: new puzzles in development."
+    "intro": "A new logic puzzle every day, the same for every visitor. Two kinds take turns and every level has exactly one solution, checked by computer.",
+    "schedule": "Changes every day at midnight (00:00 UTC).",
+    "today": "Today's puzzle",
+    "number": "No. {n}",
+    "slide": {
+      "title": "Unblock",
+      "rules": [
+        "Get the red block out through the exit on the right.",
+        "Horizontal blocks only move left and right; vertical ones, up and down.",
+        "Drag a block to move it. With a keyboard: Tab to pick a block, arrow keys to move it."
+      ]
+    },
+    "bridges": {
+      "title": "Bridges",
+      "rules": [
+        "Join the islands with horizontal or vertical bridges. Each island's number is how many bridges leave it.",
+        "Two islands can share one or two bridges, and bridges cannot cross.",
+        "In the end, every island must be connected to every other.",
+        "Tap an island and then another to add a bridge; repeat for a second one or to remove them. You can also drag from one island to another."
+      ]
+    },
+    "ui": {
+      "start": "Start",
+      "startHint": "The clock starts when you press it.",
+      "time": "Time",
+      "moves": "Moves",
+      "minimum": "Minimum",
+      "undo": "Undo",
+      "reset": "Reset",
+      "solved": "Solved!",
+      "solvedTime": "Time: {time}",
+      "solvedMoves": "{moves} moves. The minimum is {min}.",
+      "perfect": "Perfect solution: you did it in the fewest moves possible.",
+      "redBlock": "Red block",
+      "hBlock": "Horizontal block",
+      "vBlock": "Vertical block",
+      "board": "Board",
+      "island": "Island that needs {n} bridges, has {have}",
+      "exit": "Exit"
+    }
   },
   "about": {
     "title": "About",
@@ -352,7 +390,7 @@
     "copyright": "© {year} Jesús Jiménez Alcántara",
     "domain": "jjalcantara.dev",
     "privacy": "Privacy & cookies",
-    "cookieNote": "Only one technical cookie, to remember your language. No analytics or tracking."
+    "cookieNote": "One cookie, and only if you choose a language. No analytics or tracking."
   },
   "a11y": {
     "skipToContent": "Skip to main content",
@@ -365,147 +403,106 @@
     "back": "Back"
   },
   "privacy": {
-    "title": "Privacy Policy",
-    "lastUpdated": "Last updated: November 2026",
-    "sections": {
-      "dataController": {
-        "title": "1. Data Controller",
-        "content": {
-          "name": "Name: Jesús Jiménez Alcántara",
-          "email": "Email: jjalcantara.dev@gmail.com",
-          "location": "Location: Vélez-Málaga, 29700, Spain"
-        }
+    "title": "Privacy policy",
+    "lastUpdated": "Last updated: 24 November 2026",
+    "summary": "In short: this website has no forms, accounts, analytics or advertising, and asks you for no data. The only data processed is the technical information any web server needs to deliver pages to you (such as your IP address), and there is a single cookie, created only if you choose a language.",
+    "sections": [
+      {
+        "title": "Data controller",
+        "paragraphs": [
+          "Jesús Jiménez Alcántara, Vélez-Málaga (29700, Málaga, Spain). Contact: jjalcantara.dev@gmail.com."
+        ]
       },
-      "dataCollection": {
-        "title": "2. Data We Collect",
-        "content": {
-          "paragraph1": "This website does not have a contact form and does not actively collect personal data. No name, email, or any other identifying information is requested from visitors.",
-          "paragraph3": "This website may automatically collect certain technical data necessary for its operation, such as IP address, browser type, operating system, and pages visited. This data is collected through the hosting service (Vercel) and is used solely to ensure the proper functioning of the website and for security purposes. This data is not used to identify individual users or for marketing purposes."
-        }
+      {
+        "title": "What data is processed",
+        "paragraphs": [
+          "No personal data is requested or stored: there are no forms, sign-ups, comments or newsletters.",
+          "When you visit, the hosting service (Vercel) automatically receives technical connection data: your IP address, browser and operating system type, the page requested, and the date and time. An IP address counts as personal data, which is why it is explained here."
+        ]
       },
-      "purpose": {
-        "title": "3. Purpose of Processing",
-        "content": {
-          "paragraph1": "The only data processed is technical data automatically collected by Vercel (hosting) to ensure the functioning and security of the website.",
-          "paragraph2": "No personal data is collected or used for marketing purposes, nor shared with third parties for other purposes."
-        }
+      {
+        "title": "Purpose and legal basis",
+        "paragraphs": [
+          "This technical data is used only to serve the website, keep it available and protect it against abuse or attacks. It is not used for profiling, audience measurement or advertising.",
+          "The legal basis is the legitimate interest in keeping the website working and secure (Article 6(1)(f) GDPR)."
+        ]
       },
-      "legalBasis": {
-        "title": "4. Legal Basis",
-        "content": "The processing of automatic technical data (IP, logs) is based on the legitimate interest of the data controller to ensure the security and proper functioning of the website, in accordance with Article 6.1.f of the GDPR."
-      },
-      "dataProcessing": {
-        "title": "5. Data Processing",
-        "content": {
-          "paragraph1": "This website does not store or process personal data from visitors.",
-          "paragraph2": "This website is hosted on Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, United States), which acts as a data processor for hosting and delivering the website. Vercel may collect automatic technical data (IP address, server logs) necessary for the service operation.",
-          "paragraph3": "You can review the hosting provider's privacy policy:",
-          "vercelLink": "https://vercel.com/legal/privacy-policy",
-          "vercelText": "Vercel's privacy policy"
-        }
-      },
-      "dataRetention": {
-        "title": "6. Data Retention",
-        "content": {
-          "paragraph1": "This website does not store personal data on its servers. Technical data automatically collected by Vercel is retained according to their own retention policy.",
-          "paragraph2": "The language preference cookie expires automatically after 1 year."
-        }
-      },
-      "yourRights": {
-        "title": "7. Your Rights",
-        "content": {
-          "intro": "In accordance with the General Data Protection Regulation (GDPR), you have the right to:",
-          "rights": {
-            "access": "Access your personal data and obtain information about its processing",
-            "rectification": "Rectify inaccurate or incomplete data",
-            "erasure": "Request deletion of your data (right to be forgotten)",
-            "objection": "Object to the processing of your data",
-            "portability": "Request portability of your data in a structured format",
-            "restriction": "Request restriction of processing of your data",
-            "withdraw": "Withdraw your consent at any time without affecting the lawfulness of prior processing",
-            "automated": "Not be subject to decisions based solely on automated processing"
+      {
+        "title": "Who else has access",
+        "paragraphs": [
+          "Vercel Inc., which hosts the website, acts as a data processor: it processes this technical data on the controller's behalf under its data processing agreement.",
+          "Vercel is a U.S. company and the data may be processed in the United States. That transfer is covered by the European Commission's adequacy decision on the EU-U.S. Data Privacy Framework, under which Vercel is certified, and by the European Commission's Standard Contractual Clauses included in its data processing agreement.",
+          "No data is shared with anyone else. The website loads no third-party resources: fonts and images are served from its own domain. Links to LinkedIn, GitHub, NuGet or the app stores lead to sites with their own policies."
+        ],
+        "links": [
+          {
+            "label": "Vercel privacy policy",
+            "href": "https://vercel.com/legal/privacy-policy"
           },
-          "contact": "To exercise these rights, you can contact me at: jjalcantara.dev@gmail.com",
-          "responseTime": "I commit to responding to your request within a maximum period of one month from receipt. If the request is complex or there are multiple requests, this period may be extended to two months, with notification to you.",
-          "complaint": "If you believe that the processing of your personal data violates the GDPR, you have the right to file a complaint with the Spanish Data Protection Agency (AEPD) at www.aepd.es or with the supervisory authority in your country of residence."
-        }
+          {
+            "label": "Vercel data processing agreement",
+            "href": "https://vercel.com/legal/dpa"
+          }
+        ]
       },
-      "cookies": {
-        "title": "8. Cookies and Similar Technologies",
-        "content": {
-          "paragraph1": "This website uses a single essential technical cookie for its proper functioning.",
-          "cookie2Label": "Language preference cookie",
-          "cookie2Name": "preferred_locale",
-          "cookieNameLabel": "Name",
-          "cookie2Purpose": "Stores the language selected by the user (es / en) so the site always displays in the chosen language without redirecting based on browser settings.",
-          "cookiePurposeLabel": "Purpose",
-          "cookie2Duration": "1 year",
-          "cookieDurationLabel": "Duration",
-          "cookie2Type": "Essential technical; does not require consent under GDPR",
-          "cookieTypeLabel": "Type",
-          "noTracking": "No tracking, advertising, or analytics cookies are used. No information is shared with third parties.",
-          "paragraph6": "You can configure your browser to reject cookies at any time, although this may affect the language preference."
-        }
+      {
+        "title": "How long data is kept",
+        "paragraphs": [
+          "Technical logs are kept for the limited period Vercel sets for its service logs, and then deleted automatically.",
+          "The language cookie lasts one year, or until you delete it."
+        ]
       },
-      "dataSecurity": {
-        "title": "9. Data Security",
-        "content": {
-          "paragraph1": "I implement appropriate technical and organizational measures to protect your personal data against unauthorized access, loss, destruction, or alteration. These measures include:",
-          "measures": {
-            "encryption": "Encryption of data in transit via HTTPS/TLS",
-            "headers": "Security headers configured (CSP, HSTS, X-Frame-Options, etc.)",
-            "staticSite": "Static site: no forms, user accounts or database of its own",
-            "access": "Restricted access to data only for authorized purposes"
+      {
+        "title": "Cookies",
+        "paragraphs": [
+          "This website uses a single cookie, and only if you switch language with the selector. There are no analytics, advertising or third-party cookies."
+        ],
+        "table": [
+          {
+            "label": "Name",
+            "value": "preferred_locale"
           },
-          "paragraph2": "Despite these measures, no method of transmission over the Internet or electronic storage is 100% secure. I cannot guarantee absolute security of data, but I commit to notifying you of any security breach that may affect your personal data."
-        }
-      },
-      "internationalTransfers": {
-        "title": "10. International Data Transfers",
-        "content": {
-          "paragraph1": "Website hosting is provided through Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, United States), with servers in the United States.",
-          "paragraph2": "This transfer is made under the appropriate safeguards established in the GDPR:",
-          "guarantees": {
-            "clauses": "Standard contractual clauses approved by the European Commission",
-            "certification": "GDPR compliance certifications by the processor",
-            "adequacy": "EU-US adequacy framework (when applicable)"
+          {
+            "label": "Purpose",
+            "value": "Remember the language you chose (Spanish or English) so the website always shows in it."
           },
-          "paragraph3": "Vercel has implemented technical and organizational measures to ensure that data receives an adequate level of protection equivalent to that established in the GDPR."
-        }
-      },
-      "minors": {
-        "title": "11. Protection of Minors",
-        "content": "This website is not directed to minors under 16 years of age. We do not intentionally collect personal data from minors under 16 without parental or legal guardian consent. If you are aware that a minor has provided personal data through this website, please contact me immediately at jjalcantara.dev@gmail.com so I can delete such information."
-      },
-      "ccpa": {
-        "title": "12. California Residents' Rights (CCPA)",
-        "content": {
-          "paragraph1": "If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA):",
-          "rights": {
-            "know": "Right to know what personal data is collected, used, shared, or sold",
-            "delete": "Right to request deletion of your personal data",
-            "optOut": "Right to opt-out of the sale of your personal data (we do not sell data)",
-            "nonDiscrimination": "Right to not be discriminated against for exercising your privacy rights"
+          {
+            "label": "When it is set",
+            "value": "Only when you switch language with the selector."
           },
-          "paragraph2": "To exercise these rights, you can contact me at jjalcantara.dev@gmail.com. We do not sell or share personal data with third parties for commercial purposes."
-        }
+          {
+            "label": "Duration",
+            "value": "1 year."
+          },
+          {
+            "label": "Type",
+            "value": "First-party, a personalisation cookie chosen by the user. Exempt from consent under Article 22.2 of the Spanish LSSI and the Spanish Data Protection Agency's cookie guidelines."
+          }
+        ],
+        "after": [
+          "You can delete or block it in your browser settings. If you do, the website will pick the language from your browser's settings."
+        ]
       },
-      "changes": {
-        "title": "13. Changes to Privacy Policy",
-        "content": {
-          "paragraph1": "I reserve the right to update this privacy policy when necessary to reflect changes in data processing practices, legal requirements, or website improvements.",
-          "paragraph2": "Any material changes will be notified by updating the \"Last updated\" date at the beginning of this document. It is recommended to periodically review this policy to stay informed about how we protect your data.",
-          "paragraph3": "If changes are substantial, a prominent notice will be published on the website."
-        }
+      {
+        "title": "Your rights",
+        "paragraphs": [
+          "You can exercise your rights of access, rectification, erasure, objection and restriction of processing by writing to jjalcantara.dev@gmail.com. Since no data that identifies you is stored, it may not be possible to find the technical logs of your visit; if so, you will be told.",
+          "You will get an answer within one month, extendable to two for complex requests, as the GDPR provides.",
+          "If you believe your rights have not been respected, you can lodge a complaint with the Spanish Data Protection Agency (www.aepd.es) or the authority of your country."
+        ]
       },
-      "contact": {
-        "title": "14. Contact",
-        "content": {
-          "paragraph1": "If you have any questions about this privacy policy, about the processing of your personal data, or wish to exercise your rights, you can contact me at:",
-          "emailLabel": "Email",
-          "paragraph2": "As the data controller, I commit to responding to all your inquiries and requests in a timely manner and in accordance with applicable legislation."
-        }
+      {
+        "title": "Security",
+        "paragraphs": [
+          "The website is always served over HTTPS, with security headers (CSP, HSTS, X-Frame-Options), and has no database, forms or accounts that could expose information."
+        ]
+      },
+      {
+        "title": "Changes to this policy",
+        "paragraphs": [
+          "If anything explained here changes, this page and its last-updated date will be updated."
+        ]
       }
-    }
+    ]
   }
 }

@@ -37,6 +37,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: t.collab.description,
       url: `${baseUrl}/${locale}/collab`,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: locale === "es"
+        ? "Compañeros | Jesús Jiménez Alcántara"
+        : "Colleagues | Jesús Jiménez Alcántara",
+      description: t.collab.description,
+      images: ogImages(locale),
+    },
   };
 }
 

@@ -62,6 +62,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: t.about.metaDescription,
       url: `${baseUrl}/${locale}/about`,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: locale === "es"
+        ? "Sobre mí | Jesús Jiménez Alcántara | Ingeniero Backend"
+        : "About | Jesús Jiménez Alcántara | Backend Engineer",
+      description: t.about.metaDescription,
+      images: ogImages(locale),
+    },
   };
 }
 

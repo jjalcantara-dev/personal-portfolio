@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const baseUrl = "https://jjalcantara.dev";
 
   return {
-    title: "Puzzles",
+    title: locale === "es" ? "Puzzles de lógica diarios" : "Daily logic puzzles",
     description: t.puzzles.description,
     keywords: [
       "Jesús Jiménez Alcántara",
@@ -32,9 +32,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: pageAlternates(locale, "/puzzles"),
     openGraph: {
       images: ogImages(locale),
-      title: "Puzzles | Jesús Jiménez Alcántara",
+      title: locale === "es" ? "Puzzles de lógica diarios | Jesús Jiménez Alcántara" : "Daily logic puzzles | Jesús Jiménez Alcántara",
       description: t.puzzles.description,
       url: `${baseUrl}/${locale}/puzzles`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: locale === "es" ? "Puzzles de lógica diarios | Jesús Jiménez Alcántara" : "Daily logic puzzles | Jesús Jiménez Alcántara",
+      description: t.puzzles.description,
+      images: ogImages(locale),
     },
   };
 }
@@ -64,10 +70,8 @@ export default async function Puzzles({ params }: { params: Promise<{ locale: st
               <p className={`${tx.bodyLg} ${clr.text.body} mb-8`}>
                 {t.puzzles.intro}
               </p>
-              <p className={`text-sm ${clr.text.muted} italic mb-4`}>
-                {locale === 'es'
-                  ? 'Los puzzles se actualizan automáticamente cada día a medianoche (00:00 UTC).'
-                  : 'Puzzles update automatically every day at midnight (00:00 UTC).'}
+              <p className={`text-sm ${clr.text.muted} mb-4`}>
+                {t.puzzles.schedule}
               </p>
             </div>
           </div>
@@ -77,7 +81,7 @@ export default async function Puzzles({ params }: { params: Promise<{ locale: st
           <div className={`border-t ${clr.border.base} pt-12`}>
             <div className="mb-6">
               <h2 className={`text-xl sm:text-2xl font-light mb-2 ${clr.text.primary}`}>
-                {locale === 'es' ? 'Puzzle de hoy' : "Today's puzzle"}
+                {t.puzzles.today}
               </h2>
             </div>
             <DailyGame locale={locale as Locale} />

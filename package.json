@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "cv": "cd cv && latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build cv_en.tex cv_es.tex && cp build/cv_en.pdf ../public/jesus_jimenez_alcantara_cv_en.pdf && cp build/cv_es.pdf ../public/jesus_jimenez_alcantara_cv_es.pdf"
+    "cv": "cd cv && latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build cv_en.tex cv_es.tex && cp build/cv_en.pdf ../public/jesus_jimenez_alcantara_cv_en.pdf && cp build/cv_es.pdf ../public/jesus_jimenez_alcantara_cv_es.pdf",
+    "puzzles": "node scripts/puzzles/generate.mjs",
+    "puzzles:verify": "node scripts/puzzles/verify.mjs"
   },
   "dependencies": {
     "babel-plugin-react-compiler": "^1.0.0",

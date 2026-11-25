@@ -58,3 +58,6 @@ Thumbs.db
 
 # LaTeX build output of the CV (npm run cv)
 /cv/build/
+
+# Puzzle generator candidate cache (npm run puzzles)
+/scripts/puzzles/.pool-*.json

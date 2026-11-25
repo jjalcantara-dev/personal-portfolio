@@ -4,7 +4,7 @@ type Props = {
   locale: Locale;
 };
 
-function safeJsonLd(obj: unknown): string {
+export function safeJsonLd(obj: unknown): string {
   return JSON.stringify(obj)
     .replace(/</g, "\\u003c")
     .replace(/>/g, "\\u003e")
@@ -21,8 +21,9 @@ export default function StructuredData({ locale }: Props) {
     name: "Jesús Jiménez Alcántara",
     alternateName: [
       "Jesus Jimenez Alcantara",
-      "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcántara",
+      "Jesús Jimenez Alcántara",
+      "Jesus Jiménez Alcantara",
       "JJA",
       "jjalcantara",
       "jjalcantara-dev",
@@ -128,6 +129,9 @@ export default function StructuredData({ locale }: Props) {
       "Clean Architecture",
       "Software Engineering",
       "Artificial Intelligence",
+      "Model Context Protocol",
+      "AI Developer Tooling",
+      "Open Source",
     ],
   };
 

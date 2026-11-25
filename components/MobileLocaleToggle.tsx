@@ -15,7 +15,7 @@ export default function MobileLocaleToggle({ locale }: Props) {
 
   const switchLocale = () => {
     const newLocale: Locale = locale === "es" ? "en" : "es";
-    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`) || `/${newLocale}`;
+    const newPath = pathname.replace(new RegExp(`^/${locale}(?=/|$)`), `/${newLocale}`) || `/${newLocale}`;
     savePreferredLocale(newLocale);
     router.push(newPath);
   };

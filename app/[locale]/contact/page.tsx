@@ -33,6 +33,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: locale === "es" ? "Contacto con Jesús Jiménez Alcántara, Ingeniero Backend en Málaga: email, LinkedIn y GitHub." : "Get in touch with Jesús Jiménez Alcántara, Backend Engineer in Málaga, Spain: email, LinkedIn and GitHub.",
       url: `${baseUrl}/${locale}/contact`,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: locale === "es" ? "Contacto | Jesús Jiménez Alcántara" : "Contact | Jesús Jiménez Alcántara",
+      description: locale === "es" ? "Contacto con Jesús Jiménez Alcántara, Ingeniero Backend en Málaga: email, LinkedIn y GitHub." : "Get in touch with Jesús Jiménez Alcántara, Backend Engineer in Málaga, Spain: email, LinkedIn and GitHub.",
+      images: ogImages(locale),
+    },
   };
 }
 
@@ -63,6 +69,7 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
 
   const preferred = locale === "es" ? "Preferido" : "Preferred";
   const responseNote = locale === "es" ? "Suelo responder en menos de 24h." : "I usually respond within 24h.";
+  const locationValue = locale === "es" ? "Vélez-Málaga, España" : "Vélez-Málaga, Spain";
 
   return (
     <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 py-12">
@@ -151,7 +158,7 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
                 </div>
                 <div className="flex-1">
                   <p className={`${tx.captionLabel} ${clr.text.faint} mb-0.5`}>{t.contact.location}</p>
-                  <p className={`text-sm sm:text-base ${clr.text.primary}`}>Vélez-Málaga, España</p>
+                  <p className={`text-sm sm:text-base ${clr.text.primary}`}>{locationValue}</p>
                 </div>
               </div>
 

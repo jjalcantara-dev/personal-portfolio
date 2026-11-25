@@ -60,7 +60,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       // Nombre completo con variaciones
       "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcantara",
-      "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcántara",
       "Jesús Jimenez Alcántara",
       "Jesus Jiménez Alcantara",
@@ -125,6 +124,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "website",
       locale: locale === "es" ? "es_ES" : "en_US",
+      alternateLocale: locale === "es" ? ["en_US"] : ["es_ES"],
       url: canonicalUrl,
       siteName: "jjalcantara.dev",
       title,

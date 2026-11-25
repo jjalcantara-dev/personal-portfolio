@@ -201,8 +201,46 @@
   "puzzles": {
     "title": "Puzzles",
     "description": "Puzzles de lógica diarios. Proyecto personal paralelo al trabajo profesional.",
-    "intro": "Un puzzle de lógica nuevo cada día, el mismo para todos los visitantes.",
-    "comingSoon": "Próximamente: nuevos puzzles en desarrollo."
+    "intro": "Un puzzle de lógica nuevo cada día, el mismo para todos los visitantes. Se alternan dos tipos y cada nivel tiene una única solución, comprobada por ordenador.",
+    "schedule": "Cambia cada día a medianoche (00:00 UTC).",
+    "today": "Puzzle de hoy",
+    "number": "Nº {n}",
+    "slide": {
+      "title": "Desbloquea",
+      "rules": [
+        "Saca el bloque rojo por la salida de la derecha.",
+        "Los bloques horizontales solo se mueven a izquierda y derecha; los verticales, arriba y abajo.",
+        "Arrastra un bloque para moverlo. Con teclado: Tab para elegir bloque y flechas para moverlo."
+      ]
+    },
+    "bridges": {
+      "title": "Puentes",
+      "rules": [
+        "Une las islas con puentes horizontales o verticales. El número de cada isla es cuántos puentes salen de ella.",
+        "Entre dos islas puede haber uno o dos puentes, y los puentes no se pueden cruzar.",
+        "Al final, todas las islas tienen que quedar conectadas entre sí.",
+        "Toca una isla y después otra para añadir un puente; repite para el segundo o para quitarlos. También puedes arrastrar de una isla a otra."
+      ]
+    },
+    "ui": {
+      "start": "Empezar",
+      "startHint": "El tiempo empieza a contar al pulsar.",
+      "time": "Tiempo",
+      "moves": "Movimientos",
+      "minimum": "Mínimo",
+      "undo": "Deshacer",
+      "reset": "Reiniciar",
+      "solved": "¡Resuelto!",
+      "solvedTime": "Tiempo: {time}",
+      "solvedMoves": "{moves} movimientos. El mínimo es {min}.",
+      "perfect": "Solución perfecta: lo has hecho en el mínimo posible.",
+      "redBlock": "Bloque rojo",
+      "hBlock": "Bloque horizontal",
+      "vBlock": "Bloque vertical",
+      "board": "Tablero",
+      "island": "Isla que necesita {n} puentes, tiene {have}",
+      "exit": "Salida"
+    }
   },
   "about": {
     "title": "Sobre mí",
@@ -352,7 +390,7 @@
     "copyright": "© {year} Jesús Jiménez Alcántara",
     "domain": "jjalcantara.dev",
     "privacy": "Privacidad y cookies",
-    "cookieNote": "Solo una cookie técnica para recordar el idioma. Sin analítica ni seguimiento."
+    "cookieNote": "Una sola cookie, y solo si eliges idioma. Sin analítica ni seguimiento."
   },
   "a11y": {
     "skipToContent": "Saltar al contenido principal",
@@ -365,147 +403,106 @@
     "back": "Volver"
   },
   "privacy": {
-    "title": "Política de Privacidad",
-    "lastUpdated": "Última actualización: Noviembre 2026",
-    "sections": {
-      "dataController": {
-        "title": "1. Responsable del Tratamiento",
-        "content": {
-          "name": "Nombre: Jesús Jiménez Alcántara",
-          "email": "Email: jjalcantara.dev@gmail.com",
-          "location": "Ubicación: Vélez-Málaga, 29700, España"
-        }
+    "title": "Política de privacidad",
+    "lastUpdated": "Última actualización: 24 de noviembre de 2026",
+    "summary": "En resumen: esta web no tiene formularios, cuentas, analítica ni publicidad, y no te pide ningún dato. Solo se tratan los datos técnicos que cualquier servidor necesita para entregarte las páginas (como tu dirección IP), y hay una única cookie que solo se crea si eliges idioma.",
+    "sections": [
+      {
+        "title": "Responsable del tratamiento",
+        "paragraphs": [
+          "Jesús Jiménez Alcántara, Vélez-Málaga (29700, Málaga, España). Contacto: jjalcantara.dev@gmail.com."
+        ]
       },
-      "dataCollection": {
-        "title": "2. Datos que Recopilamos",
-        "content": {
-          "paragraph1": "Este sitio web no dispone de formulario de contacto ni recopila datos personales de forma activa. No se solicita nombre, email ni ningún otro dato identificativo a los visitantes.",
-          "paragraph3": "Este sitio web puede recopilar automáticamente ciertos datos técnicos necesarios para su funcionamiento, como la dirección IP, tipo de navegador, sistema operativo y páginas visitadas. Estos datos se recopilan a través del servicio de hosting (Vercel) y se utilizan únicamente para garantizar el correcto funcionamiento del sitio web y para fines de seguridad. No se utilizan para identificar usuarios individuales ni para fines de marketing."
-        }
+      {
+        "title": "Qué datos se tratan",
+        "paragraphs": [
+          "No te pido ni guardo ningún dato personal: no hay formularios, registro, comentarios ni boletín.",
+          "Al visitar la web, el servicio de alojamiento (Vercel) recibe automáticamente datos técnicos de la conexión: tu dirección IP, el tipo de navegador y de sistema operativo, la página solicitada y la fecha y hora. La dirección IP se considera un dato personal, y por eso se explica aquí."
+        ]
       },
-      "purpose": {
-        "title": "3. Finalidad del Tratamiento",
-        "content": {
-          "paragraph1": "Los únicos datos procesados son los datos técnicos recogidos automáticamente por Vercel (hosting) para garantizar el funcionamiento y la seguridad del sitio web.",
-          "paragraph2": "No se recopilan ni utilizan datos personales para fines de marketing ni se comparten con terceros para otros propósitos."
-        }
+      {
+        "title": "Finalidad y base legal",
+        "paragraphs": [
+          "Esos datos técnicos se usan solo para servir la web, mantenerla disponible y protegerla frente a abusos o ataques. No se usan para crear perfiles, medir audiencias ni con fines publicitarios.",
+          "La base legal es el interés legítimo en que la web funcione y sea segura (artículo 6.1.f del RGPD)."
+        ]
       },
-      "legalBasis": {
-        "title": "4. Base Legal",
-        "content": "El procesamiento de los datos técnicos automáticos (IP, logs) se basa en el interés legítimo del responsable del tratamiento para garantizar la seguridad y el correcto funcionamiento del sitio web, de conformidad con el artículo 6.1.f del RGPD."
-      },
-      "dataProcessing": {
-        "title": "5. Procesamiento de Datos",
-        "content": {
-          "paragraph1": "Este sitio web no almacena ni procesa datos personales de los visitantes.",
-          "paragraph2": "Este sitio web está alojado en Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, Estados Unidos), que actúa como procesador de datos para el alojamiento y entrega del sitio web. Vercel puede recopilar datos técnicos automáticos (dirección IP, logs del servidor) necesarios para el funcionamiento del servicio.",
-          "paragraph3": "Puede consultar la política de privacidad del proveedor de hosting:",
-          "vercelLink": "https://vercel.com/legal/privacy-policy",
-          "vercelText": "Política de privacidad de Vercel"
-        }
-      },
-      "dataRetention": {
-        "title": "6. Conservación de Datos",
-        "content": {
-          "paragraph1": "Este sitio web no almacena datos personales en sus servidores. Los datos técnicos recogidos automáticamente por Vercel se conservan según su propia política de retención.",
-          "paragraph2": "La cookie de preferencia de idioma expira automáticamente al cabo de 1 año."
-        }
-      },
-      "yourRights": {
-        "title": "7. Sus Derechos",
-        "content": {
-          "intro": "De acuerdo con el Reglamento General de Protección de Datos (RGPD), usted tiene derecho a:",
-          "rights": {
-            "access": "Acceder a sus datos personales y obtener información sobre su tratamiento",
-            "rectification": "Rectificar datos inexactos o incompletos",
-            "erasure": "Solicitar la supresión de sus datos (derecho al olvido)",
-            "objection": "Oponerse al tratamiento de sus datos",
-            "portability": "Solicitar la portabilidad de sus datos en un formato estructurado",
-            "restriction": "Solicitar la limitación del tratamiento de sus datos",
-            "withdraw": "Retirar su consentimiento en cualquier momento sin afectar la licitud del tratamiento previo",
-            "automated": "No ser objeto de decisiones basadas únicamente en el tratamiento automatizado"
+      {
+        "title": "Quién más accede a los datos",
+        "paragraphs": [
+          "Vercel Inc., la empresa que aloja la web, actúa como encargado del tratamiento: trata esos datos técnicos por cuenta del responsable y conforme a su acuerdo de tratamiento de datos.",
+          "Vercel es una empresa estadounidense y los datos pueden tratarse en Estados Unidos. Esa transferencia está amparada por la decisión de adecuación de la Comisión Europea sobre el Marco de Privacidad de Datos UE-EE. UU., en el que Vercel está certificada, y por las cláusulas contractuales tipo de la Comisión Europea incluidas en su acuerdo de tratamiento.",
+          "No se ceden datos a nadie más. La web no carga recursos de terceros: tipografías e imágenes se sirven desde el propio dominio. Los enlaces a LinkedIn, GitHub, NuGet o las tiendas de aplicaciones llevan a sitios con sus propias políticas."
+        ],
+        "links": [
+          {
+            "label": "Política de privacidad de Vercel",
+            "href": "https://vercel.com/legal/privacy-policy"
           },
-          "contact": "Para ejercer estos derechos, puede contactar conmigo en: jjalcantara.dev@gmail.com",
-          "responseTime": "Me comprometo a responder a su solicitud en un plazo máximo de un mes desde su recepción. Si la solicitud es compleja o hay múltiples solicitudes, este plazo puede extenderse hasta dos meses, informándole de ello.",
-          "complaint": "Si considera que el tratamiento de sus datos personales vulnera el RGPD, tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) en www.aepd.es o ante la autoridad de control de su país de residencia."
-        }
+          {
+            "label": "Acuerdo de tratamiento de datos de Vercel",
+            "href": "https://vercel.com/legal/dpa"
+          }
+        ]
       },
-      "cookies": {
-        "title": "8. Cookies y Tecnologías Similares",
-        "content": {
-          "paragraph1": "Este sitio web utiliza una única cookie técnica esencial para su correcto funcionamiento.",
-          "cookie2Label": "Cookie de preferencia de idioma",
-          "cookie2Name": "preferred_locale",
-          "cookieNameLabel": "Nombre",
-          "cookie2Purpose": "Guarda el idioma seleccionado por el usuario (es / en) para que el sitio se muestre siempre en el idioma elegido sin volver a redirigir según el navegador.",
-          "cookiePurposeLabel": "Finalidad",
-          "cookie2Duration": "1 año",
-          "cookieDurationLabel": "Duración",
-          "cookie2Type": "Técnica esencial; no requiere consentimiento según el RGPD",
-          "cookieTypeLabel": "Tipo",
-          "noTracking": "No se utilizan cookies de seguimiento, publicidad ni análisis. No se comparte información con terceros.",
-          "paragraph6": "Puede configurar su navegador para rechazar cookies en cualquier momento, aunque esto puede afectar la preferencia de idioma."
-        }
+      {
+        "title": "Cuánto tiempo se conservan",
+        "paragraphs": [
+          "Los registros técnicos se conservan durante el tiempo limitado que fija Vercel para los registros de su servicio, y después se eliminan automáticamente.",
+          "La cookie de idioma dura un año, o hasta que la borres."
+        ]
       },
-      "dataSecurity": {
-        "title": "9. Seguridad de los Datos",
-        "content": {
-          "paragraph1": "Implemento medidas técnicas y organizativas apropiadas para proteger sus datos personales contra el acceso no autorizado, la pérdida, la destrucción o la alteración. Estas medidas incluyen:",
-          "measures": {
-            "encryption": "Cifrado de datos en tránsito mediante HTTPS/TLS",
-            "headers": "Headers de seguridad configurados (CSP, HSTS, X-Frame-Options, etc.)",
-            "staticSite": "Sitio estático: sin formularios, cuentas de usuario ni base de datos propia",
-            "access": "Acceso restringido a los datos solo para fines autorizados"
+      {
+        "title": "Cookies",
+        "paragraphs": [
+          "Esta web usa una sola cookie, y solo si cambias de idioma con el selector. No hay cookies de análisis, de publicidad ni de terceros."
+        ],
+        "table": [
+          {
+            "label": "Nombre",
+            "value": "preferred_locale"
           },
-          "paragraph2": "A pesar de estas medidas, ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro. No puedo garantizar la seguridad absoluta de los datos, pero me comprometo a notificarle de cualquier violación de seguridad que pueda afectar sus datos personales."
-        }
-      },
-      "internationalTransfers": {
-        "title": "10. Transferencias Internacionales de Datos",
-        "content": {
-          "paragraph1": "El alojamiento del sitio web se realiza a través de Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, Estados Unidos), con servidores en Estados Unidos.",
-          "paragraph2": "Esta transferencia se realiza bajo las garantías adecuadas establecidas en el RGPD:",
-          "guarantees": {
-            "clauses": "Cláusulas contractuales tipo aprobadas por la Comisión Europea",
-            "certification": "Certificaciones de cumplimiento del RGPD por parte del procesador",
-            "adequacy": "Marco de adecuación UE-EEUU (cuando aplique)"
+          {
+            "label": "Finalidad",
+            "value": "Recordar el idioma que has elegido (español o inglés) para mostrarte siempre la web en ese idioma."
           },
-          "paragraph3": "Vercel ha implementado medidas técnicas y organizativas para garantizar que los datos reciban un nivel de protección adecuado equivalente al establecido en el RGPD."
-        }
-      },
-      "minors": {
-        "title": "11. Protección de Menores",
-        "content": "Este sitio web no está dirigido a menores de 16 años. No recopilamos intencionalmente datos personales de menores de 16 años sin el consentimiento de los padres o tutores legales. Si tiene conocimiento de que un menor ha proporcionado datos personales a través de este sitio web, por favor contacte conmigo inmediatamente en jjalcantara.dev@gmail.com para que pueda eliminar dicha información."
-      },
-      "ccpa": {
-        "title": "12. Derechos de los Residentes de California (CCPA)",
-        "content": {
-          "paragraph1": "Si es residente de California, tiene derechos adicionales bajo la Ley de Privacidad del Consumidor de California (CCPA):",
-          "rights": {
-            "know": "Derecho a saber qué datos personales se recopilan, utilizan, comparten o venden",
-            "delete": "Derecho a solicitar la eliminación de sus datos personales",
-            "optOut": "Derecho a optar por no vender sus datos personales (no vendemos datos)",
-            "nonDiscrimination": "Derecho a no ser discriminado por ejercer sus derechos de privacidad"
+          {
+            "label": "Cuándo se crea",
+            "value": "Solo al cambiar de idioma con el selector."
           },
-          "paragraph2": "Para ejercer estos derechos, puede contactar conmigo en jjalcantara.dev@gmail.com. No vendemos ni compartimos datos personales con terceros para fines comerciales."
-        }
+          {
+            "label": "Duración",
+            "value": "1 año."
+          },
+          {
+            "label": "Tipo",
+            "value": "Propia, de personalización elegida por el usuario. Exenta de consentimiento según el artículo 22.2 de la LSSI y la Guía sobre el uso de las cookies de la AEPD."
+          }
+        ],
+        "after": [
+          "Puedes borrarla o bloquearla desde la configuración de tu navegador. Si lo haces, la web elegirá el idioma según el de tu navegador."
+        ]
       },
-      "changes": {
-        "title": "13. Cambios en la Política de Privacidad",
-        "content": {
-          "paragraph1": "Me reservo el derecho de actualizar esta política de privacidad cuando sea necesario para reflejar cambios en las prácticas de tratamiento de datos, requisitos legales o mejoras en el sitio web.",
-          "paragraph2": "Cualquier cambio material será notificado mediante la actualización de la fecha de \"Última actualización\" al inicio de este documento. Se recomienda revisar periódicamente esta política para estar informado sobre cómo protegemos sus datos.",
-          "paragraph3": "Si los cambios son sustanciales, se publicará un aviso destacado en el sitio web."
-        }
+      {
+        "title": "Tus derechos",
+        "paragraphs": [
+          "Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición y limitación del tratamiento escribiendo a jjalcantara.dev@gmail.com. Como no se guardan datos que te identifiquen, puede que no sea posible localizar los registros técnicos de tu visita; en ese caso se te indicará.",
+          "La respuesta llegará en el plazo de un mes, ampliable a dos en casos complejos, como prevé el RGPD.",
+          "Si consideras que no se han respetado tus derechos, puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es) o ante la autoridad de tu país."
+        ]
       },
-      "contact": {
-        "title": "14. Contacto",
-        "content": {
-          "paragraph1": "Si tiene alguna pregunta sobre esta política de privacidad, sobre el tratamiento de sus datos personales, o desea ejercer sus derechos, puede contactar conmigo en:",
-          "emailLabel": "Email",
-          "paragraph2": "Como responsable del tratamiento, me comprometo a responder a todas sus consultas y solicitudes de manera oportuna y conforme a la legislación aplicable."
-        }
+      {
+        "title": "Seguridad",
+        "paragraphs": [
+          "La web se sirve siempre por HTTPS, con cabeceras de seguridad (CSP, HSTS, X-Frame-Options), y no tiene base de datos, formularios ni cuentas que puedan exponer información."
+        ]
+      },
+      {
+        "title": "Cambios en esta política",
+        "paragraphs": [
+          "Si cambia algo de lo que se explica aquí, se actualizará esta página y su fecha de última actualización."
+        ]
       }
-    }
+    ]
   }
 }

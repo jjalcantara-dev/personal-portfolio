@@ -104,5 +104,7 @@ Practices: SOLID, Clean Architecture, RBAC, Agile/Scrum, Git, GitHub, Jira, UML
 - https://jjalcantara.dev/en/projects — Projects (English)
 - https://jjalcantara.dev/es/contact — Contact (Spanish)
 - https://jjalcantara.dev/en/contact — Contact (English)
-- https://jjalcantara.dev/es/puzzles — Daily logic puzzles (side project)
-- https://jjalcantara.dev/es/privacy — Privacy policy
+- https://jjalcantara.dev/es/collab — Colleagues: people Jesús has worked with (Spanish)
+- https://jjalcantara.dev/en/collab — Colleagues (English)
+- https://jjalcantara.dev/es/puzzles — Daily logic puzzles, a personal side project: sliding blocks and bridges, each level verified by a solver to have a single solution
+- https://jjalcantara.dev/es/privacy — Privacy policy (no forms, analytics or tracking)
