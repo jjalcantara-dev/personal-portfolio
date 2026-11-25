@@ -68,3 +68,8 @@ Thumbs.db
 /.claude/skills/
 /data/skills/
 /skills-lock.json
+
+# Private CV build with phone number (npm run cv:private). Never commit.
+/cv/private.tex
+/cv/build-private/
+/cv/private/

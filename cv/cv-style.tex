@@ -89,3 +89,12 @@
       \small #1 & \small #2 \\
     \end{tabular*}\vspace{1pt}%
 }
+
+% Private build (npm run cv:private) defines \cvprivate and adds the phone
+% number from cv/private.tex, which git ignores. The public build
+% (npm run cv) never reads that file, so the PDFs on the website have no phone.
+\ifdefined\cvprivate
+  \IfFileExists{private.tex}{\input{private.tex}}{%
+    \errmessage{Missing cv/private.tex: copy cv/private.example.tex and put your phone number in it}}
+\fi
+\newcommand{\cvphoneline}{\ifdefined\cvphone\\ \cvphone\fi}

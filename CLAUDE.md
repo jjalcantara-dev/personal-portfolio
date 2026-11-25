@@ -42,7 +42,7 @@ None. The site is fully static and has no backend services.
 
 **Mobile navigation (`components/BottomNav.tsx`):** Fixed bottom nav, visible only on mobile (`sm:hidden`). Features filled/solid icons for the active section, a persistent pill background on the active item, and labels always visible for all items. The `/collab` page is titled "Compañeros" / "Colleagues". Pages not in the bottom nav (`/puzzles`, `/privacy`, listed in `SECONDARY_PAGES` in `components/MobileBackButton.tsx`) get a floating back arrow top left, paired with the language toggle top right: it goes back if the visitor came from another page of the site, otherwise to home.
 
-**CV (`cv/`):** LaTeX source of both CVs: `cv_en.tex`, `cv_es.tex` and the shared layout `cv-style.tex`. `npm run cv` compiles them with latexmk (needs a local TeX Live) and copies the PDFs into `public/`. Both must stay on one A4 page and in sync with the experience on the site; check the page count after every change. The repo is public, so keep private notes out of `.tex` comments.
+**CV (`cv/`):** LaTeX source of both CVs: `cv_en.tex`, `cv_es.tex` and the shared layout `cv-style.tex`. `npm run cv` compiles them with latexmk (needs a local TeX Live) and copies the PDFs into `public/`. Both must stay on one A4 page and in sync with the experience on the site; check the page count after every change. The repo is public, so keep private notes out of `.tex` comments. `npm run cv:private` builds a copy with the phone number into `cv/private/` from `cv/private.tex` (template: `cv/private.example.tex`); both paths are git-ignored and the public build never reads that file. Never commit the phone number.
 
 **Adding content:** Edit `content/es.json` and `content/en.json` in parallel — both must stay in sync.
 
