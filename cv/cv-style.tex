@@ -97,4 +97,4 @@
   \IfFileExists{private.tex}{\input{private.tex}}{%
     \errmessage{Missing cv/private.tex: copy cv/private.example.tex and put your phone number in it}}
 \fi
-\newcommand{\cvphoneline}{\ifdefined\cvphone\\ \cvphone\fi}
+\newcommand{\cvphoneitem}{\ifdefined\cvphone\cvphone{} $|$ \fi}
