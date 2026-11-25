@@ -108,9 +108,9 @@ This is the personal portfolio of **Jesús Jiménez Alcántara**, a Backend Engi
   > Ingeniero Backend con más de 4 años de experiencia diseñando y desarrollando sistemas cloud-native escalables con ASP.NET Core, Azure Functions y Java. Especializado en diseño de APIs REST, sistemas de autenticación (JWT, OAuth 2.0, RBAC), integración de pagos (Stripe, App Store, Google Play) y arquitectura de bases de datos PostgreSQL. Experiencia liderando el desarrollo backend de productos con miles de usuarios activos mensuales.
 - **Professional summary to use (EN):**
   > Backend Engineer with 4+ years of experience designing and building scalable cloud-native systems using ASP.NET Core, Azure Functions, and Java. Specialized in REST API design, authentication systems (JWT, OAuth 2.0, RBAC), payment integrations (Stripe, App Store, Google Play), and PostgreSQL database architecture. Experience leading backend development across products serving thousands of monthly active users.
-- **Skills section:** Group by category, not a flat list:
+- **Skills section:** Group by category, not a flat list. List only technologies used in real projects (e.g. Kubernetes was studied but never used in a project, so it is not listed):
   - Languages & Frameworks: C#, ASP.NET Core, .NET, Java, Spring, Python, JavaScript, Next.js
-  - Cloud & DevOps: Azure (Functions, DevOps, App Service, Table Storage, Blob Storage, CosmosDB), Vercel, Docker, Kubernetes, Jenkins, Redis
+  - Cloud & DevOps: Azure (Functions, DevOps, App Service, Table Storage, Blob Storage, CosmosDB), Vercel, Docker, Jenkins, Redis
   - Databases: PostgreSQL, SQL Server, MongoDB, CosmosDB, Azure Table Storage
   - APIs & Auth: REST API, Swagger/OpenAPI, JWT, OAuth 2.0, Stripe, Postman
   - Testing: Testing pyramid (unit/integration/E2E), JUnit, Selenium

@@ -122,7 +122,6 @@ export default function StructuredData({ locale }: Props) {
       "In-App Purchases",
       "Gamification Systems",
       "Docker",
-      "Kubernetes",
       "CI/CD",
       "Azure DevOps",
       "SOLID Principles",

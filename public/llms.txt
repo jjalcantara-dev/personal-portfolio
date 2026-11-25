@@ -51,7 +51,7 @@ Backend Engineer specializing in REST API design, authentication systems (JWT, O
 ## Technical Skills
 
 Languages & Frameworks: C#, ASP.NET Core, .NET, Java, Spring, Python, JavaScript, TypeScript, Next.js
-Cloud & DevOps: Azure (Functions, DevOps, App Service, CosmosDB, Blob Storage, Table Storage), Vercel, Docker, Kubernetes, Jenkins, Redis
+Cloud & DevOps: Azure (Functions, DevOps, App Service, CosmosDB, Blob Storage, Table Storage), Vercel, Docker, Jenkins, Redis
 Databases: PostgreSQL, SQL Server, MongoDB, CosmosDB, Azure Table Storage
 APIs & Auth: REST API, OpenAPI/Swagger, JWT, OAuth 2.0, Stripe, Postman
 Testing: Unit Testing, Integration Testing, E2E Testing, JUnit, Selenium
