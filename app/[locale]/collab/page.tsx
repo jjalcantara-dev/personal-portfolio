@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import CollabList from "@/components/CollabList";
@@ -14,12 +15,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: localeParam } = await params;
   const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getContent(locale);
-  const baseUrl = "https://jjalcantara.dev";
 
-  return {
-    title: locale === "es"
-      ? "Colaboradores | Jesús Jiménez Alcántara"
-      : "Collab | Jesús Jiménez Alcántara",
+  return pageMetadata({
+    locale,
+    path: "/collab",
+    title: locale === "es" ? "Compañeros" : "Colleagues",
     description: t.collab.description,
     keywords: [
       "Jesús Jiménez Alcántara",
@@ -28,14 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "network",
       "Backend Engineer",
     ],
-    openGraph: {
-      title: locale === "es"
-        ? "Colaboradores | Jesús Jiménez Alcántara"
-        : "Collab | Jesús Jiménez Alcántara",
-      description: t.collab.description,
-      url: `${baseUrl}/${locale}/collab`,
-    },
-  };
+  });
 }
 
 export default async function Collab({ params }: { params: Promise<{ locale: string }> }) {

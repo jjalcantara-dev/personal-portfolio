@@ -1,28 +1,30 @@
 import type { Locale } from "@/lib/i18n";
+import { AUTHOR_NAME, CONTACT_EMAIL, SITE_NAME, SITE_URL, SOCIAL_URLS } from "@/lib/site";
 
 type Props = {
   locale: Locale;
 };
 
-function safeJsonLd(obj: unknown): string {
+export function safeJsonLd(obj: unknown): string {
   return JSON.stringify(obj)
     .replace(/</g, "\\u003c")
     .replace(/>/g, "\\u003e")
     .replace(/&/g, "\\u0026");
 }
 
+// Site-wide JSON-LD (every page): the Person and the WebSite. The ProfilePage
+// schema belongs to /about only, see profilePageJsonLd().
 export default function StructuredData({ locale }: Props) {
-  const baseUrl = "https://jjalcantara.dev";
-
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `${baseUrl}/#person`,
-    name: "Jesús Jiménez Alcántara",
+    "@id": `${SITE_URL}/#person`,
+    name: AUTHOR_NAME,
     alternateName: [
       "Jesus Jimenez Alcantara",
-      "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcántara",
+      "Jesús Jimenez Alcántara",
+      "Jesus Jiménez Alcantara",
       "JJA",
       "jjalcantara",
       "jjalcantara-dev",
@@ -32,15 +34,11 @@ export default function StructuredData({ locale }: Props) {
       locale === "es"
         ? "Ingeniero Backend con más de 4 años de experiencia diseñando sistemas cloud-native escalables con ASP.NET Core, Azure y PostgreSQL. Especializado en APIs REST, autenticación (JWT, OAuth 2.0, RBAC) e integración de pagos (Stripe, App Store, Google Play)."
         : "Backend Engineer with 4+ years of experience building scalable cloud-native systems using ASP.NET Core, Azure and PostgreSQL. Specialized in REST APIs, authentication (JWT, OAuth 2.0, RBAC) and payment integrations (Stripe, App Store, Google Play).",
-    url: baseUrl,
-    image: `${baseUrl}/profile.png`,
-    mainEntityOfPage: `${baseUrl}/${locale}/about`,
-    sameAs: [
-      "https://github.com/jjalcantara-dev",
-      "https://linkedin.com/in/jjalcantara",
-      "https://www.linkedin.com/in/jjalcantara/",
-    ],
-    email: "jjalcantara.dev@gmail.com",
+    url: SITE_URL,
+    image: `${SITE_URL}/profile.jpg`,
+    mainEntityOfPage: `${SITE_URL}/${locale}/about`,
+    sameAs: [SOCIAL_URLS.github, SOCIAL_URLS.linkedin],
+    email: CONTACT_EMAIL,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Vélez-Málaga",
@@ -122,45 +120,31 @@ export default function StructuredData({ locale }: Props) {
       "In-App Purchases",
       "Gamification Systems",
       "Docker",
-      "Kubernetes",
       "CI/CD",
       "Azure DevOps",
       "SOLID Principles",
       "Clean Architecture",
       "Software Engineering",
       "Artificial Intelligence",
+      "Model Context Protocol",
+      "AI Developer Tooling",
+      "Open Source",
     ],
-  };
-
-  const profilePageSchema = {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "@id": `${baseUrl}/${locale}/about#profilepage`,
-    url: `${baseUrl}/${locale}/about`,
-    name: locale === "es"
-      ? "Jesús Jiménez Alcántara — Ingeniero Backend"
-      : "Jesús Jiménez Alcántara — Backend Engineer",
-    description: locale === "es"
-      ? "Perfil profesional de Jesús Jiménez Alcántara, Ingeniero Backend especializado en ASP.NET Core, Azure y PostgreSQL. Más de 4 años de experiencia en sistemas cloud-native."
-      : "Professional profile of Jesús Jiménez Alcántara, Backend Engineer specialized in ASP.NET Core, Azure and PostgreSQL. 4+ years of experience in cloud-native systems.",
-    mainEntity: { "@id": `${baseUrl}/#person` },
-    dateModified: "2026-05-31",
-    inLanguage: locale === "es" ? "es-ES" : "en-US",
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${baseUrl}/#website`,
+    "@id": `${SITE_URL}/#website`,
     name: locale === "es"
-      ? "Jesús Jiménez Alcántara — Ingeniero Backend"
-      : "Jesús Jiménez Alcántara — Backend Engineer",
-    alternateName: "jjalcantara.dev",
-    url: baseUrl,
+      ? "Jesús Jiménez Alcántara | Ingeniero Backend"
+      : "Jesús Jiménez Alcántara | Backend Engineer",
+    alternateName: SITE_NAME,
+    url: SITE_URL,
     description: locale === "es"
       ? "Portfolio profesional de Jesús Jiménez Alcántara, Ingeniero Backend especializado en Azure, ASP.NET Core y PostgreSQL."
       : "Professional portfolio of Jesús Jiménez Alcántara, Backend Engineer specialized in Azure, ASP.NET Core and PostgreSQL.",
-    author: { "@id": `${baseUrl}/#person` },
+    author: { "@id": `${SITE_URL}/#person` },
     inLanguage: ["es-ES", "en-US"],
   };
 
@@ -172,12 +156,27 @@ export default function StructuredData({ locale }: Props) {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(profilePageSchema) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(websiteSchema) }}
       />
     </>
   );
+}
+
+/** ProfilePage schema for /about: the page is about the Person declared site-wide. */
+export function profilePageJsonLd(locale: Locale) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${SITE_URL}/${locale}/about#profilepage`,
+    url: `${SITE_URL}/${locale}/about`,
+    name: locale === "es"
+      ? "Jesús Jiménez Alcántara | Ingeniero Backend"
+      : "Jesús Jiménez Alcántara | Backend Engineer",
+    description: locale === "es"
+      ? "Perfil profesional de Jesús Jiménez Alcántara, Ingeniero Backend especializado en ASP.NET Core, Azure y PostgreSQL. Más de 4 años de experiencia en sistemas cloud-native."
+      : "Professional profile of Jesús Jiménez Alcántara, Backend Engineer specialized in ASP.NET Core, Azure and PostgreSQL. 4+ years of experience in cloud-native systems.",
+    mainEntity: { "@id": `${SITE_URL}/#person` },
+    dateModified: "2026-11-24",
+    inLanguage: locale === "es" ? "es-ES" : "en-US",
+  };
 }

@@ -111,6 +111,84 @@ a[href="#main-content"]:focus {
   }
 }
 
+/* ─── Intro on full page loads (components/Intro.tsx) ─ */
+
+#intro {
+  display: none;
+}
+
+html[data-intro] {
+  overflow: hidden;
+}
+
+html[data-intro] #intro {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  cursor: pointer;
+}
+
+.intro-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50.5%;
+  background: #000;
+}
+.intro-panel-top { top: 0; }
+.intro-panel-bottom { bottom: 0; }
+
+.intro-seam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #fff;
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+.intro-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(46vw, 220px);
+  transform: translate(-50%, -50%);
+}
+.intro-logo svg { display: block; width: 100%; height: auto; overflow: visible; }
+.intro-logo path { transform-box: fill-box; transform-origin: center; }
+
+/* 1. pieces fly in and join (0 - 0.85s) */
+html[data-intro="play"] .intro-j1    { animation: intro-from-left  .7s cubic-bezier(.22,1,.36,1) both; }
+html[data-intro="play"] .intro-a     { animation: intro-from-top   .7s cubic-bezier(.22,1,.36,1) .08s both; }
+html[data-intro="play"] .intro-j2    { animation: intro-from-bottom .7s cubic-bezier(.22,1,.36,1) .16s both; }
+html[data-intro="play"] .intro-notch { animation: intro-pop .25s cubic-bezier(.34,1.56,.64,1) .62s both; }
+
+/* 2. beat + seam of light (0.85 - 1.2s) */
+html[data-intro="play"] .intro-logo svg { animation: intro-beat .3s ease-out .85s both, intro-logo-out .5s cubic-bezier(.4,0,1,1) 1.2s forwards; }
+html[data-intro="play"] .intro-seam     { animation: intro-seam .55s cubic-bezier(.22,1,.36,1) .95s both; }
+
+/* 3. the screen opens (1.2 - 1.8s) */
+html[data-intro="play"] .intro-panel-top    { animation: intro-open-up   .6s cubic-bezier(.76,0,.24,1) 1.2s forwards; }
+html[data-intro="play"] .intro-panel-bottom { animation: intro-open-down .6s cubic-bezier(.76,0,.24,1) 1.2s forwards; }
+
+/* skipped: open at once */
+html[data-intro="out"] .intro-logo svg      { animation: intro-logo-out .3s ease-in forwards; }
+html[data-intro="out"] .intro-panel-top    { animation: intro-open-up   .45s cubic-bezier(.76,0,.24,1) forwards; }
+html[data-intro="out"] .intro-panel-bottom { animation: intro-open-down .45s cubic-bezier(.76,0,.24,1) forwards; }
+
+@keyframes intro-from-left   { from { transform: translateX(-140%); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes intro-from-top    { from { transform: translateY(-120%); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes intro-from-bottom { from { transform: translateY(140%);  opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes intro-pop         { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes intro-beat        { 0%, 100% { transform: scale(1); } 45% { transform: scale(1.07); } }
+@keyframes intro-logo-out    { to { transform: scale(1.25); opacity: 0; } }
+@keyframes intro-seam        { 0% { transform: scaleX(0); opacity: 1; } 70% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(1); opacity: 0; } }
+@keyframes intro-open-up     { to { transform: translateY(-100%); } }
+@keyframes intro-open-down   { to { transform: translateY(100%); } }
+
 /* ─── Reduced motion ────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {

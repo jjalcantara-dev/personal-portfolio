@@ -1,7 +1,13 @@
 'use client';
 
+import './globals.css';
+import { Inter } from 'next/font/google';
+import { clr, btnPrimary } from '@/lib/constants/colors';
+import { tx } from '@/lib/constants/typography';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+
 export default function GlobalError({
-  error,
   reset,
 }: {
   error: Error & { digest?: string };
@@ -9,24 +15,25 @@ export default function GlobalError({
 }) {
   return (
     <html lang="es">
-      <body>
-        <div className="min-h-screen flex items-center justify-center px-4">
+      <body className={`${inter.variable} antialiased`}>
+        <main className="min-h-screen flex items-center justify-center px-4">
           <div className="text-center max-w-md">
-            <h1 className="text-4xl font-light mb-4 text-black">Error crítico</h1>
-            <p className="text-gray-700 mb-8">
-              Ha ocurrido un error crítico en la aplicación. Por favor, recarga la página.
+            <h1 className={`${tx.h2} ${clr.text.primary} mb-2`}>Error inesperado</h1>
+            <p className={`${tx.body} ${clr.text.muted} mb-8`}>
+              An unexpected error occurred. Please reload the page.
             </p>
             <button
               onClick={reset}
-              className="px-6 py-3 bg-black text-white text-sm font-medium hover:bg-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-              aria-label="Recargar página"
+              className={btnPrimary}
+              aria-label="Recargar página / Reload page"
             >
-              Recargar página
+              Recargar / Reload
             </button>
           </div>
-        </div>
+        </main>
       </body>
     </html>
   );
 }
+
 

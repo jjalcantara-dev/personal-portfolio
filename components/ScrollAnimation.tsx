@@ -43,22 +43,12 @@ export default function ScrollAnimation({
     const el = ref.current;
     if (!el) return;
 
-    // If the element is already in the viewport on load, show it immediately
-    // without any animation — avoids flash of invisible content on mobile
-    const rect = el.getBoundingClientRect();
-    const alreadyInView = rect.top < window.innerHeight && rect.bottom > 0;
-
-    if (alreadyInView) {
-      setMounted(true);
-      setVisible(true);
-      return;
-    }
-
-    // Element is below the fold: mark as mounted (apply hidden styles) and observe
-    setMounted(true);
-
+    // The observer's first callback reports whether the element starts in view.
+    // In view: show it at once, no animation (avoids a flash of invisible
+    // content on mobile). Below the fold: hide it, then reveal on entry.
     const observer = new IntersectionObserver(
       ([entry]) => {
+        setMounted(true);
         if (entry.isIntersecting) {
           setVisible(true);
           observer.disconnect();

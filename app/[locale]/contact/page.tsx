@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { clr } from "@/lib/constants/colors";
 import { tx } from "@/lib/constants/typography";
+import { AUTHOR_NAME, CONTACT_EMAIL, SOCIAL_URLS, displayUrl } from "@/lib/site";
+import CopyEmailButton from "@/components/CopyEmailButton";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -12,31 +15,29 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale: localeParam } = await params;
   const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
-  const baseUrl = "https://jjalcantara.dev";
 
-  return {
-    title: locale === "es"
-      ? "Contacto | Jesús Jiménez Alcántara"
-      : "Contact | Jesús Jiménez Alcántara",
+  return pageMetadata({
+    locale,
+    path: "/contact",
+    title: locale === "es" ? "Contacto" : "Contact",
     description: locale === "es"
-      ? "Página de contacto de Jesús Jiménez Alcántara, Backend Engineer"
-      : "Contact page for Jesús Jiménez Alcántara, Backend Engineer",
+      ? "Contacto con Jesús Jiménez Alcántara, Ingeniero Backend en Málaga: email, LinkedIn y GitHub."
+      : "Get in touch with Jesús Jiménez Alcántara, Backend Engineer in Málaga, Spain: email, LinkedIn and GitHub.",
     keywords: [
-      "Jesús Jiménez Alcántara", "Jesus Jimenez Alcantara",
-      "contact", "contacto", "Backend Engineer", "Ingeniero Backend",
-      "Málaga", "jjalcantara.dev@gmail.com",
+      "Jesús Jiménez Alcántara",
+      "Jesus Jimenez Alcantara",
+      "contact",
+      "contacto",
+      "Backend Engineer",
+      "Ingeniero Backend",
+      "Málaga",
     ],
-    openGraph: {
-      title: locale === "es" ? "Contacto | Jesús Jiménez Alcántara" : "Contact | Jesús Jiménez Alcántara",
-      description: locale === "es" ? "Página de contacto de Jesús Jiménez Alcántara, Backend Engineer" : "Contact page for Jesús Jiménez Alcántara, Backend Engineer",
-      url: `${baseUrl}/${locale}/contact`,
-    },
-  };
+  });
 }
 
 function ChevronRight() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={`shrink-0 ${clr.text.ghost} group-hover:text-gray-400 transition-colors duration-150`}>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={`hidden min-[360px]:block shrink-0 ${clr.text.ghost} group-hover:text-gray-400 transition-colors duration-150`}>
       <path d="M9 18l6-6-6-6" />
     </svg>
   );
@@ -51,8 +52,8 @@ function IconBox({ children }: { children: React.ReactNode }) {
 }
 
 const iconProps = { width: 19, height: 19, fill: "white", "aria-hidden": true as const };
-const rowClickable = "group flex items-center gap-4 px-5 sm:px-6 py-4 sm:py-5 bg-white hover:bg-gray-50 transition-colors duration-150 focus:outline-none focus:bg-gray-50";
-const rowStatic   = "flex items-center gap-4 px-5 sm:px-6 py-4 sm:py-5 bg-white";
+const rowClickable = "group flex items-center gap-3 min-[360px]:gap-4 px-4 min-[360px]:px-5 sm:px-6 py-4 sm:py-5 bg-white hover:bg-gray-50 transition-colors duration-150 focus:outline-none focus:bg-gray-50";
+const rowStatic   = "flex items-center gap-3 min-[360px]:gap-4 px-4 min-[360px]:px-5 sm:px-6 py-4 sm:py-5 bg-white";
 
 export default async function Contact({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: localeParam } = await params;
@@ -61,6 +62,7 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
 
   const preferred = locale === "es" ? "Preferido" : "Preferred";
   const responseNote = locale === "es" ? "Suelo responder en menos de 24h." : "I usually respond within 24h.";
+  const locationValue = locale === "es" ? "Vélez-Málaga, España" : "Vélez-Málaga, Spain";
 
   return (
     <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 py-12">
@@ -70,7 +72,7 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
         <ScrollAnimation animation="fade-up" delay={0}>
           <div className="lg:w-64 shrink-0 mb-10 lg:mb-0 lg:sticky lg:top-24">
             <p className={`${tx.label} ${clr.text.faint} mb-3 select-none`}>
-              Jesús Jiménez Alcántara
+              {AUTHOR_NAME}
             </p>
             <h1 className={`text-4xl lg:text-5xl font-light tracking-tight mb-4 ${clr.text.primary}`}>
               {t.contact.title}
@@ -82,12 +84,12 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
         </ScrollAnimation>
 
         {/* Card — right column on desktop */}
-        <ScrollAnimation animation="fade-up" delay={100}>
-          <div className="flex-1 min-w-0">
+        <ScrollAnimation animation="fade-up" delay={100} className="flex-1 min-w-0">
+          <div>
             <div className="border border-gray-200 rounded-2xl overflow-hidden divide-y divide-gray-100 shadow-sm">
 
-              {/* Email */}
-              <a href="mailto:jjalcantara.dev@gmail.com" className={rowClickable}>
+              {/* Email: the address is a mailto link stretched over the row; the copy button sits above it */}
+              <div className={`relative ${rowClickable} focus-within:bg-gray-50`}>
                 <IconBox>
                   <svg {...iconProps} viewBox="0 0 24 24">
                     <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
@@ -95,46 +97,50 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
                   </svg>
                 </IconBox>
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <p className={`${tx.captionLabel} ${clr.text.faint}`}>{t.contact.email}</p>
+                  <div className="flex flex-wrap items-center gap-2 mb-0.5">
+                    <p className={`${tx.captionLabel} ${clr.text.muted}`}>{t.contact.email}</p>
                     <span className="text-[9px] font-bold uppercase tracking-widest bg-black text-white px-1.5 py-0.5 rounded-full leading-none">
                       {preferred}
                     </span>
+                    <CopyEmailButton email={CONTACT_EMAIL} copyLabel={t.contact.copy} copiedLabel={t.contact.copied} ariaLabel={t.contact.copyAria} />
                   </div>
-                  <p className={`text-sm sm:text-base ${clr.text.primary} truncate`}>
-                    jjalcantara.dev@gmail.com
-                  </p>
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className={`block text-sm sm:text-base ${clr.text.primary} truncate focus:outline-none focus-visible:underline after:absolute after:inset-0 after:content-['']`}
+                  >
+                    {CONTACT_EMAIL}
+                  </a>
                 </div>
                 <ChevronRight />
-              </a>
+              </div>
 
               {/* LinkedIn */}
-              <a href="https://linkedin.com/in/jjalcantara" target="_blank" rel="noopener noreferrer" className={rowClickable}>
+              <a href={SOCIAL_URLS.linkedin} target="_blank" rel="noopener noreferrer" className={rowClickable}>
                 <IconBox>
                   <svg {...iconProps} viewBox="0 0 24 24">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                   </svg>
                 </IconBox>
                 <div className="flex-1 min-w-0">
-                  <p className={`${tx.captionLabel} ${clr.text.faint} mb-0.5`}>{t.contact.linkedin}</p>
+                  <p className={`${tx.captionLabel} ${clr.text.muted} mb-0.5`}>{t.contact.linkedin}</p>
                   <p className={`text-sm sm:text-base ${clr.text.primary} truncate`}>
-                    linkedin.com/in/jjalcantara
+                    {displayUrl(SOCIAL_URLS.linkedin)}
                   </p>
                 </div>
                 <ChevronRight />
               </a>
 
               {/* GitHub */}
-              <a href="https://github.com/jjalcantara-dev" target="_blank" rel="noopener noreferrer" className={rowClickable}>
+              <a href={SOCIAL_URLS.github} target="_blank" rel="noopener noreferrer" className={rowClickable}>
                 <IconBox>
                   <svg {...iconProps} viewBox="0 0 24 24">
                     <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                   </svg>
                 </IconBox>
                 <div className="flex-1 min-w-0">
-                  <p className={`${tx.captionLabel} ${clr.text.faint} mb-0.5`}>{t.contact.github}</p>
+                  <p className={`${tx.captionLabel} ${clr.text.muted} mb-0.5`}>{t.contact.github}</p>
                   <p className={`text-sm sm:text-base ${clr.text.primary} truncate`}>
-                    github.com/jjalcantara-dev
+                    {displayUrl(SOCIAL_URLS.github)}
                   </p>
                 </div>
                 <ChevronRight />
@@ -148,8 +154,8 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <p className={`${tx.captionLabel} ${clr.text.faint} mb-0.5`}>{t.contact.location}</p>
-                  <p className={`text-sm sm:text-base ${clr.text.primary}`}>Vélez-Málaga, España</p>
+                  <p className={`${tx.captionLabel} ${clr.text.muted} mb-0.5`}>{t.contact.location}</p>
+                  <p className={`text-sm sm:text-base ${clr.text.primary}`}>{locationValue}</p>
                 </div>
               </div>
 

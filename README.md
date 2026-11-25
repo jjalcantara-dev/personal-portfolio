@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-Professional portfolio built with Next.js, TypeScript and Tailwind CSS, showcasing my experience as a Software Engineer focused on backend development, cloud technologies and software architecture.
+Professional portfolio built with Next.js, TypeScript and Tailwind CSS, showcasing my experience as a Backend Engineer focused on cloud-native systems, REST API design, authentication, payments and PostgreSQL architecture.
 
 ## Live Demo
 
@@ -8,15 +8,15 @@ Professional portfolio built with Next.js, TypeScript and Tailwind CSS, showcasi
 
 ## Features
 
-* Next.js 16 with App Router
+* Next.js 16 with App Router & React Compiler
 * TypeScript
 * Tailwind CSS 4
 * Internationalization (Spanish / English)
-* Responsive design
+* Responsive design (mobile-first with bottom navigation)
 * WCAG 2.1 AA accessibility
-* SEO optimized
-* Contact form integration
-* GDPR compliant
+* SEO & AI-crawler optimized (`sitemap.xml`, `robots.txt`, JSON-LD, `llms.txt`, dynamic OpenGraph images)
+* Daily logic puzzles with verified single-solution levels
+* GDPR / LSSI compliant (no tracking, no third-party requests, no forms)
 * Static Site Generation (SSG)
 * Deployed on Vercel
 
@@ -25,19 +25,19 @@ Professional portfolio built with Next.js, TypeScript and Tailwind CSS, showcasi
 ### Frontend
 
 * Next.js 16
-* React
-* TypeScript
+* React 19
+* TypeScript 5
 * Tailwind CSS 4
 
 ### Infrastructure
 
 * Vercel
 * Cloudflare
-* Formspree
 
 ### Development
 
-* ESLint
+* ESLint 9
+* LaTeX (`latexmk` for CV generation)
 * GitHub
 * Git
 
@@ -66,18 +66,6 @@ Install dependencies:
 npm install
 ```
 
-Configure environment variables:
-
-```bash
-cp .env.example .env.local
-```
-
-Add your Formspree ID:
-
-```env
-NEXT_PUBLIC_FORMSPREE_ID=your_formspree_id
-```
-
 Start development server:
 
 ```bash
@@ -104,14 +92,25 @@ Run production server locally:
 npm run start
 ```
 
+## Additional Scripts
+
+```bash
+npm run lint            # Run ESLint
+npm run puzzles         # Generate daily puzzle library
+npm run puzzles:verify  # Verify unique solutions for all puzzle levels
+npm run cv              # Compile LaTeX CVs (ES/EN) into public/
+```
+
 ## Project Structure
 
 ```text
-app/
-components/
-content/
-lib/
-public/
+app/         # Next.js App Router pages, layouts, metadata & OG image generation
+components/  # UI components & interactive daily puzzle boards
+content/     # Bilingual dictionaries (es.json, en.json)
+cv/          # LaTeX source files for Spanish and English CVs
+lib/         # i18n, SEO helpers, design tokens & daily puzzle selector/library
+public/      # Static assets, icons, CVs & llms.txt
+scripts/     # Deterministic puzzle generators and uniqueness verifiers
 ```
 
 ## Accessibility
@@ -140,13 +139,12 @@ Routes:
 
 ## Privacy & GDPR
 
-The website is designed to comply with GDPR requirements:
+The website is designed to comply with GDPR and LSSI requirements:
 
-* No tracking cookies
-* Explicit consent for contact forms
-* Privacy policy available
-* Minimal data collection
-* Secure third-party form processing
+* No tracking or analytics cookies
+* Only one optional technical cookie (`preferred_locale`) to remember language selection
+* Self-hosted fonts (`next/font`) with zero third-party requests
+* Clear privacy policy available at `/es/privacy` and `/en/privacy`
 
 ## Deployment
 
@@ -156,11 +154,11 @@ The application is automatically deployed through Vercel.
 
 ### Jesús Jiménez Alcántara
 
-Software Engineer
+Backend Engineer
 
 * Website: https://jjalcantara.dev
 * GitHub: https://github.com/jjalcantara-dev
-* LinkedIn: https://www.linkedin.com/in/jesus-jimenez-alcantara
+* LinkedIn: https://linkedin.com/in/jjalcantara
 
 ## License
 

@@ -1,14 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import MobileLocaleToggle from "@/components/MobileLocaleToggle";
+import MobileBackButton from "@/components/MobileBackButton";
 import StructuredData from "@/components/StructuredData";
-import CookieBanner from "@/components/CookieBanner";
+import Intro, { INTRO_GATE } from "@/components/Intro";
 import ScrollProgress from "@/components/ScrollProgress";
 import { defaultLocale, isValidLocale, locales } from "@/lib/i18n";
 import { getContent } from "@/lib/content";
+import { AUTHOR_NAME, SITE_NAME, SITE_URL, SOCIAL_URLS, displayUrl } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,26 +33,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = getContent(locale);
 
   const title = locale === "es"
-    ? "Jesús Jiménez Alcántara | Ingeniero Backend | Azure & .NET Specialist"
-    : "Jesús Jiménez Alcántara | Backend Engineer | Azure & .NET Specialist";
+    ? "Jesús Jiménez Alcántara | Ingeniero Backend .NET y Azure"
+    : "Jesús Jiménez Alcántara | Backend Engineer, .NET & Azure";
 
-  const baseUrl = "https://jjalcantara.dev";
-  const canonicalUrl = `${baseUrl}/${locale}`;
+  const canonicalUrl = `${SITE_URL}/${locale}`;
 
   return {
-    metadataBase: new URL(baseUrl),
+    metadataBase: new URL(SITE_URL),
     icons: {
       icon: [
-        { url: "/favicon_centered.png", type: "image/png", sizes: "512x512" },
-        { url: "/favicon_centered.png", type: "image/png", sizes: "192x192" },
-        { url: "/favicon_centered.png", type: "image/png", sizes: "96x96" },
-        { url: "/favicon_centered.png", type: "image/png", sizes: "64x64" },
-        { url: "/favicon_centered.png", type: "image/png", sizes: "48x48" },
-        { url: "/favicon_centered.png", type: "image/png", sizes: "32x32" },
-        { url: "/favicon_centered.png", type: "image/png", sizes: "16x16" },
+        { url: "/favicon_centered.png", type: "image/png" },
       ],
       apple: [
-        { url: "/logo_final.png", type: "image/png", sizes: "180x180" },
+        { url: "/favicon_centered.png", type: "image/png" },
       ],
       shortcut: [
         { url: "/favicon_centered.png", type: "image/png" },
@@ -58,14 +53,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     title: {
       default: title,
-      template: "%s | jjalcantara.dev",
+      template: "%s | Jesús Jiménez Alcántara",
     },
-    description: t.home.description,
+    description: t.home.metaDescription,
     keywords: [
       // Nombre completo con variaciones
       "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcantara",
-      "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcántara",
       "Jesús Jimenez Alcántara",
       "Jesus Jiménez Alcantara",
@@ -106,16 +100,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "Spain",
       "España",
       // Perfiles
-      "github.com/jjalcantara-dev",
+      displayUrl(SOCIAL_URLS.github),
       // Empresa
       "The Bubble Hub",
       "Ernst Young",
       "Backend Engineer Málaga",
       "Ingeniero Backend Málaga",
     ],
-    authors: [{ name: "Jesús Jiménez Alcántara" }],
-    creator: "Jesús Jiménez Alcántara",
-    publisher: "Jesús Jiménez Alcántara",
+    authors: [{ name: AUTHOR_NAME }],
+    creator: AUTHOR_NAME,
+    publisher: AUTHOR_NAME,
     robots: {
       index: true,
       follow: true,
@@ -130,31 +124,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "website",
       locale: locale === "es" ? "es_ES" : "en_US",
+      alternateLocale: locale === "es" ? ["en_US"] : ["es_ES"],
       url: canonicalUrl,
-      siteName: "jjalcantara.dev",
+      siteName: SITE_NAME,
       title,
-      description: t.home.description,
-      images: [
-        {
-          url: `${baseUrl}/profile.png`,
-          width: 800,
-          height: 800,
-          alt: "Jesús Jiménez Alcántara - Backend Engineer",
-        },
-      ],
+      description: t.home.metaDescription,
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description: t.home.description,
-      creator: "@jjalcantara",
+      description: t.home.metaDescription,
     },
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        "es-ES": `${baseUrl}/es`,
-        "en-US": `${baseUrl}/en`,
-        "x-default": `${baseUrl}/${defaultLocale}`,
+        "es-ES": `${SITE_URL}/es`,
+        "en-US": `${SITE_URL}/en`,
+        "x-default": `${SITE_URL}/${defaultLocale}`,
       },
     },
     verification: {
@@ -164,8 +150,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       // bing: "tu-codigo-bing",
     },
     manifest: "/manifest.json",
+    formatDetection: { telephone: false },
   };
 }
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+};
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale: localeParam } = await params;
@@ -173,20 +164,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   const t = getContent(locale);
 
   return (
-    <html lang={locale} className="scroll-smooth" data-scroll-behavior="smooth">
+    // suppressHydrationWarning: INTRO_GATE may set data-intro on <html> before hydration
+    <html lang={locale} className="scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="author" content="Jesús Jiménez Alcántara" />
-        <link rel="icon" type="image/png" href="/favicon_centered.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/favicon_centered.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_centered.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_centered.png" />
-        <link rel="shortcut icon" type="image/png" href="/favicon_centered.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/logo_final.png" />
+        <script dangerouslySetInnerHTML={{ __html: INTRO_GATE }} />
       </head>
       <body className={`${inter.variable} antialiased`}>
+        <Intro />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-black focus:text-white focus:rounded-sm focus:outline-none focus:ring-2 focus:ring-white"
@@ -201,9 +185,9 @@ export default async function LocaleLayout({ children, params }: Props) {
             {children}
           </main>
           <Footer locale={locale} />
-          <CookieBanner locale={locale} />
         </div>
         <BottomNav locale={locale} />
+        <MobileBackButton locale={locale} />
         <MobileLocaleToggle locale={locale} />
       </body>
     </html>

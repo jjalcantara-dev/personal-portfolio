@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import { locales, defaultLocale, isValidLocale, type Locale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import DailyGame from "@/components/games/DailyGame";
@@ -14,10 +15,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: localeParam } = await params;
   const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getContent(locale);
-  const baseUrl = "https://jjalcantara.dev";
 
-  return {
-    title: "Puzzles | Jesús Jiménez Alcántara",
+  return pageMetadata({
+    locale,
+    path: "/puzzles",
+    title: locale === "es" ? "Puzzles de lógica diarios" : "Daily logic puzzles",
     description: t.puzzles.description,
     keywords: [
       "Jesús Jiménez Alcántara",
@@ -27,12 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "Backend Engineer",
       "Ingeniero Backend",
     ],
-    openGraph: {
-      title: "Puzzles | Jesús Jiménez Alcántara",
-      description: t.puzzles.description,
-      url: `${baseUrl}/${locale}/puzzles`,
-    },
-  };
+  });
 }
 
 export default async function Puzzles({ params }: { params: Promise<{ locale: string }> }) {
@@ -41,7 +38,7 @@ export default async function Puzzles({ params }: { params: Promise<{ locale: st
   const t = getContent(locale);
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20 md:py-32">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-16 pb-12 sm:py-20 md:py-32">
       <article>
         <ScrollAnimation animation="fade-up" delay={0}>
           <h1 className={`${tx.h1} mb-6 ${clr.text.primary}`}>
@@ -57,13 +54,11 @@ export default async function Puzzles({ params }: { params: Promise<{ locale: st
         <ScrollAnimation animation="fade-up" delay={200}>
           <div className={`border-t ${clr.border.base} pt-12 mb-16`}>
             <div className="max-w-2xl">
-              <p className={`${tx.bodyLg} ${clr.text.body} text-justify mb-8`}>
+              <p className={`${tx.bodyLg} ${clr.text.body} mb-8`}>
                 {t.puzzles.intro}
               </p>
-              <p className={`text-sm ${clr.text.muted} italic mb-4`}>
-                {locale === 'es'
-                  ? 'Los puzzles se actualizan automáticamente cada día a medianoche (00:00 UTC).'
-                  : 'Puzzles update automatically every day at midnight (00:00 UTC).'}
+              <p className={`text-sm ${clr.text.muted} mb-4`}>
+                {t.puzzles.schedule}
               </p>
             </div>
           </div>
@@ -73,7 +68,7 @@ export default async function Puzzles({ params }: { params: Promise<{ locale: st
           <div className={`border-t ${clr.border.base} pt-12`}>
             <div className="mb-6">
               <h2 className={`text-xl sm:text-2xl font-light mb-2 ${clr.text.primary}`}>
-                {locale === 'es' ? 'Puzzle de Hoy' : "Today's Logic Game"}
+                {t.puzzles.today}
               </h2>
             </div>
             <DailyGame locale={locale as Locale} />

@@ -2,15 +2,16 @@
   "nav": {
     "home": "Home",
     "projects": "Projects",
-    "collab": "Collab",
+    "collab": "Colleagues",
     "puzzles": "Puzzles",
     "about": "About",
     "contact": "Contact"
   },
   "home": {
+    "availability": "Available · .NET Backend · Remote or Málaga",
     "title": "Backend Engineer",
     "subtitle": "ASP.NET Core · Azure · REST APIs",
-    "description": "I build REST APIs and payment systems with ASP.NET Core and Azure. Four years of backend development for mobile apps in production with 3,000+ monthly active users.",
+    "description": "I build REST APIs and payment systems with ASP.NET Core and Azure. 4+ years of backend experience, two of them leading the backend of production mobile apps with 3,000+ monthly active users.",
     "cta": {
       "projects": "View projects",
       "contact": "Contact",
@@ -19,27 +20,28 @@
     },
     "focus": {
       "title": "What I work on",
-      "architecture": {
+      "apis": {
         "title": "APIs & Contracts",
-        "description": "Full-cycle REST API design: requirements analysis, use case definition, OpenAPI/Swagger documentation, and production support. I prioritize contract clarity, versioning, and compatibility with mobile clients. I've designed and maintained APIs consumed by 3,000+ monthly active users in production."
+        "description": "Full-cycle REST API design: requirements analysis, use case definition, OpenAPI/Swagger documentation, and production support. I prioritize contract clarity, versioning, and compatibility with mobile clients."
       },
-      "cleanCode": {
+      "cloud": {
         "title": "Cloud & Architecture",
         "description": "Cloud-native architecture with Azure Functions and ASP.NET Core. I design systems with event-driven async processing using Azure Storage Queues and Worker Services. I evaluate deployment models, serverless vs App Service, analyzing operational cost, scalability, and latency based on each product's requirements."
       },
-      "performance": {
+      "security": {
         "title": "Security",
         "description": "Security applied from the first commit, not as an afterthought. I implement stateless JWT authentication, endpoint-level RBAC, OAuth 2.0 with Google and Apple, and Redis-backed rate limiting against brute-force and credential-stuffing attacks. Background in SecDevOps in enterprise environments at Ernst & Young."
       },
-      "professionalism": {
+      "payments": {
         "title": "Payments & Integrations",
-        "description": "Full Stripe integration: webhooks, idempotency, and subscription lifecycle management. Native subscriptions with Apple App Store and Google Play including server-side receipt validation. I've built payment systems in production that process real user transactions without incidents."
+        "description": "Full Stripe integration: webhooks, idempotency, and subscription lifecycle management. Native subscriptions with Apple App Store and Google Play including server-side receipt validation. Handling of renewals, grace periods, refunds, and revocations, reconciled against each store's state."
       }
-    }
+    },
+    "metaDescription": "Backend Engineer in Málaga, Spain. 4+ years with ASP.NET Core, Azure and PostgreSQL: REST APIs, JWT and OAuth 2.0 auth, Stripe and in-app payments."
   },
   "projects": {
     "title": "Projects",
-    "description": "Professional backend engineering work and personal projects.",
+    "description": "Professional backend engineering work, open source, and personal projects.",
     "current": {
       "title": "Professional Work",
       "prodigy": {
@@ -47,7 +49,16 @@
         "type": "Mobile Application",
         "role": "Backend Engineer",
         "description": "Sports training platform for padel players, built around a proven 25-year methodology. Backend: gamification system (points, levels, achievements, leaderboards), Stripe payments, App Store and Google Play in-app purchases, optimized PostgreSQL architecture, Redis rate limiting, and JWT authentication with RBAC and OAuth 2.0.",
-        "techStack": ["ASP.NET Core", "Azure Functions", "PostgreSQL", "Redis", "Stripe", "JWT", "RBAC", "OAuth 2.0"],
+        "techStack": [
+          "ASP.NET Core",
+          "Azure Functions",
+          "PostgreSQL",
+          "Redis",
+          "Stripe",
+          "JWT",
+          "RBAC",
+          "OAuth 2.0"
+        ],
         "appStore": "https://apps.apple.com/es/app/prodigy-padel-academy/id6463727496?l=es_ES",
         "googlePlay": "https://play.google.com/store/apps/details?id=com.prodigypadelacademy.app&hl=es"
       },
@@ -55,8 +66,15 @@
         "name": "Koru Acne",
         "type": "Mobile Application",
         "role": "Backend Engineer",
-        "description": "Mobile application for skin tracking and acne support community. Backend: REST API design, JWT and OAuth 2.0 authentication, database architecture for user management, visual skin tracking, trigger factor identification, and wellness resources.",
-        "techStack": ["ASP.NET Core", "Azure Functions", "PostgreSQL", "JWT", "OAuth 2.0", "REST API"],
+        "description": "Mobile app for skin tracking and an acne support community. Backend: REST API design, JWT and OAuth 2.0 authentication (Google and Apple), and a PostgreSQL data model for users, photo-based skin logs, trigger factors, and wellness content.",
+        "techStack": [
+          "ASP.NET Core",
+          "Azure Functions",
+          "PostgreSQL",
+          "JWT",
+          "OAuth 2.0",
+          "REST API"
+        ],
         "appStore": "https://apps.apple.com/es/app/koru-your-acne-coach/id6466275209",
         "googlePlay": "https://play.google.com/store/apps/details?id=com.koruacne.app"
       },
@@ -65,29 +83,63 @@
         "type": "Web Application",
         "role": "Fullstack Engineer",
         "status": "Launching Soon",
-        "description": "Web platform for the Cantabria Labs dermatology community, with restricted access and controlled capacity: access is granted manually by an administrator. Full design and implementation: REST APIs, JWT authentication with role-based RBAC, CMS for content management, Upstash Redis rate limiting, and PostgreSQL database architecture. Deployed on Vercel.",
-        "techStack": ["Next.js", "PostgreSQL", "Vercel", "Upstash Redis", "JWT", "RBAC", "CMS"],
+        "description": "Web learning platform for a community of dermatologists, with restricted access and controlled capacity: access is granted manually by an administrator. Full design and implementation: REST APIs, JWT authentication with RBAC, CMS for content management, Upstash Redis rate limiting, and PostgreSQL database architecture. Deployed on Vercel.",
+        "techStack": [
+          "Next.js",
+          "PostgreSQL",
+          "Vercel",
+          "Upstash Redis",
+          "JWT",
+          "RBAC",
+          "CMS"
+        ],
         "url": "https://dailydermatalks.com",
         "visitLabel": "Visit website"
       }
     },
     "personal": {
-      "title": "Personal Projects",
+      "title": "Open Source & Personal Projects",
+      "storebridge": {
+        "name": "StoreBridge",
+        "type": ".NET library",
+        "category": "Open Source",
+        "role": "Author and maintainer",
+        "description": "Open-source .NET library, published on NuGet, for server-side verification of Apple App Store and Google Play subscriptions and in-app purchases. It unifies both stores' APIs and webhooks behind a single interface, cryptographically authenticates notifications (Apple x5c chain anchored to Apple Root CA G3 and Google Pub/Sub OIDC tokens), retries on transient failures, and validates configuration at startup. Targets .NET 8, 9, and 10, with 197 unit tests.",
+        "techStack": [
+          "C#",
+          ".NET",
+          "ASP.NET Core",
+          "App Store Server API",
+          "Google Play Developer API",
+          "JWT",
+          "OIDC",
+          "NuGet"
+        ],
+        "githubUrl": "https://github.com/jjalcantara-dev/StoreBridge",
+        "nugetUrl": "https://www.nuget.org/packages/StoreBridge",
+        "githubLabel": "Code on GitHub",
+        "nugetLabel": "Package on NuGet"
+      },
       "galivivienda": {
         "name": "Galivivienda VPO Calculator",
         "type": "Web Application",
         "category": "Civic Tech",
         "role": "Personal project",
-        "description": "Interactive calculator to analyze the real cost of a cooperative VPO housing unit in Vélez-Málaga, based on the public documentation for the Galivivienda Fortalezas de Vélez development (188 units, EMVIPSA). Built because the official information is fragmented across multiple contracts with unclear terms — lets users simulate different IPC scenarios, rental years, and discount percentages to calculate the actual total cost before signing. Implementation: real-time financial calculations with monthly compound interest, a rent evolution chart rendered with pure JS (no canvas or libraries), responsive design with adaptive grid and native mobile bottom-sheet, and full SEO with JSON-LD. Immediate organic traction when shared in local Facebook groups.",
-        "techStack": ["HTML", "CSS", "JavaScript", "Vercel"],
+        "description": "Interactive calculator to analyze the real cost of a cooperative VPO housing unit in Vélez-Málaga, based on the public documentation for the Galivivienda Fortalezas de Vélez development (188 units, EMVIPSA). Built because the official information is fragmented across multiple contracts with unclear terms. It lets users simulate different IPC scenarios, rental years, and discount percentages to calculate the actual total cost before signing. Implementation: real-time financial calculations with monthly compound interest, a rent evolution chart rendered with pure JS (no canvas or libraries), responsive design with adaptive grid and native mobile bottom-sheet, and full SEO with JSON-LD. Immediate organic traction when shared in local Facebook groups.",
+        "techStack": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Vercel"
+        ],
         "url": "https://vpo.jjalcantara.dev",
         "visitLabel": "Open calculator"
       }
     }
   },
   "collab": {
-    "title": "Collab",
-    "description": "People I've worked with and trust professionally.",
+    "title": "Colleagues",
+    "description": "People I've worked with and what sets each of them apart.",
     "visitLabel": "Visit website",
     "people": [
       {
@@ -128,7 +180,7 @@
       },
       {
         "name": "Keyla Xu",
-        "role": "Consultant & Incident Responder at EY | eJPT | Reverse Engineering & Malware Intelligence",
+        "role": "Consultant & Incident Responder at EY · eJPT",
         "url": "https://www.linkedin.com/in/keylaxu/",
         "linkLabel": "LinkedIn",
         "linkedinUrl": "",
@@ -137,7 +189,7 @@
       },
       {
         "name": "María Victoria Ramos León",
-        "role": "QA/BA for Banco Santander | Confirming | Syndication & Distribution | Mathematician | Data Scientist",
+        "role": "QA & Business Analyst at Banco Santander · Mathematician",
         "url": "https://www.linkedin.com/in/maria-victoria-ramos-leon/",
         "linkLabel": "LinkedIn",
         "linkedinUrl": "",
@@ -148,46 +200,98 @@
   },
   "puzzles": {
     "title": "Puzzles",
-    "description": "Daily logic puzzles. I love solving puzzles, which is why there's a dedicated section in my portfolio.",
-    "intro": "A new logic puzzle is published each day that all visitors see. The same puzzle is shown to everyone during that day, and a new one is automatically generated each day.",
-    "comingSoon": "Coming soon: new puzzles in development."
+    "description": "Daily logic puzzles. A personal side project, separate from my professional work.",
+    "intro": "A new logic puzzle every day, the same for every visitor. Two kinds take turns and every level has exactly one solution, checked by computer.",
+    "schedule": "Changes every day at midnight (00:00 UTC).",
+    "today": "Today's puzzle",
+    "number": "No. {n}",
+    "slide": {
+      "title": "Unblock",
+      "rules": [
+        "Get the red block out through the exit on the right.",
+        "Horizontal blocks only move left and right; vertical ones, up and down.",
+        "Drag a block to move it. With a keyboard: Tab to pick a block, arrow keys to move it."
+      ]
+    },
+    "bridges": {
+      "title": "Bridges",
+      "rules": [
+        "Join the islands with horizontal or vertical bridges. Each island's number is how many bridges leave it.",
+        "Two islands can share one or two bridges, and bridges cannot cross.",
+        "In the end, every island must be connected to every other.",
+        "Tap an island and then another to add a bridge; repeat for a second one or to remove them. You can also drag from one island to another."
+      ]
+    },
+    "ui": {
+      "start": "Start",
+      "startHint": "The clock starts when you press it.",
+      "time": "Time",
+      "moves": "Moves",
+      "minimum": "Minimum",
+      "undo": "Undo",
+      "reset": "Reset",
+      "solved": "Solved!",
+      "solvedTime": "Time: {time}",
+      "solvedMoves": "{moves} moves. The minimum is {min}.",
+      "perfect": "Perfect solution: you did it in the fewest moves possible.",
+      "redBlock": "Red block",
+      "hBlock": "Horizontal block",
+      "vBlock": "Vertical block",
+      "board": "Board",
+      "island": "Island that needs {n} bridges, has {have}",
+      "exit": "Exit"
+    }
   },
   "about": {
     "title": "About",
-    "description": "Backend Engineer with 4+ years of experience building and maintaining production systems. At The Bubble Hub I led backend development for two mobile products serving 3,000+ monthly active users. My work focuses on ASP.NET Core, Azure, REST APIs, PostgreSQL, and authentication and payment systems.",
+    "description": "Backend Engineer with 4+ years of experience designing and building scalable cloud-native systems using ASP.NET Core, Azure Functions, and Java. Specialized in REST API design, authentication systems (JWT, OAuth 2.0, RBAC), payment integrations (Stripe, App Store, Google Play), and PostgreSQL database architecture. Experience leading backend development across products serving thousands of monthly active users.",
     "intro": {
-      "paragraph1": "At The Bubble Hub I owned the full backend engineering lifecycle for two mobile products serving 3,000+ monthly active users: requirements analysis, API contract design, data architecture, implementation, third-party integrations, and production support. I made technical decisions on architecture, data modeling, and security.",
+      "paragraph1": "At The Bubble Hub I owned the full backend engineering lifecycle for two production mobile products: requirements analysis, API contract design, data architecture, implementation, third-party integrations, and production support. I made technical decisions on architecture, data modeling, and security.",
       "paragraph2": "The backend I designed covers layered security, event-driven async processing, and complex payment integrations with Stripe, App Store, and Google Play. Every architectural decision had direct impact on performance and user experience.",
       "paragraph3": "Before this, at Ernst & Young I worked in enterprise environments with regulated software lifecycles and strict security requirements. That context, marked by SecDevOps, audits, and systems processing millions of daily events, shapes how I approach any design today: security applied from the first commit, not as an afterthought.",
-      "paragraph4": "I'm currently completing a Master's in Artificial Intelligence at UNIR, focused on backend system design and cloud-native architecture. I'm particularly interested in designing maintainable backend architectures, distributed systems, and cloud solutions capable of evolving over the long term."
+      "paragraph4": "I'm currently completing a Master's in Artificial Intelligence at UNIR, which included a curricular internship at Kaizten Analytics applying AI to software development. I'm particularly interested in designing maintainable backend architectures, distributed systems, and cloud solutions capable of evolving over the long term."
     },
     "experience": {
       "title": "Experience",
+      "kaizten": {
+        "company": "Kaizten Analytics",
+        "role": "AI Engineer (Curricular Internship)",
+        "period": "September 2026 – November 2026",
+        "location": "Remote",
+        "description": "Curricular internship within the Master's in Artificial Intelligence at UNIR, as sole developer of the tooling that connects Kaizten's code standards analyzer to AI coding assistants (Claude Code, Codex, Antigravity) through the Model Context Protocol (MCP), in Java 17. Shipped it as one cross-platform distribution: one-line installers for Linux, macOS, and Windows, a Maven plugin, and a CI quality gate, with 17 releases automated through GitHub Actions and Docker, 1,500+ automated tests, and bilingual user documentation generated with each release."
+      },
+      "junta": {
+        "company": "Junta de Andalucía",
+        "role": "Computer Science Teacher (Temporary Post)",
+        "period": "June 2026",
+        "location": "San Pedro de Alcántara, Málaga",
+        "description": "Taught Computer Science as a temporary teacher at a public school run by the Andalusian regional government."
+      },
       "bubbleHub": {
         "company": "The Bubble Hub",
-        "role": "Back-end Engineer",
+        "role": "Backend Engineer",
         "period": "April 2024 – April 2026",
-        "location": "Malaga, Spain",
+        "location": "Málaga, Spain",
         "description": "Led backend development for Prodigy Padel Academy and Koru: two mobile products serving 3,000+ monthly active users. Full ownership of the engineering lifecycle: requirements analysis, OpenAPI/Swagger contract design, implementation with ASP.NET Core and Azure Functions, payment integrations (Stripe, Apple IAP, Google Play), and production support. Optimized PostgreSQL architecture, JWT/RBAC/OAuth 2.0 authentication, Redis rate limiting, async processing with Azure Storage Queues, and CI/CD pipelines with SonarCloud in Azure DevOps."
       },
       "ey": {
         "company": "Ernst & Young",
         "role": "Technology and Security Consultant",
         "period": "April 2022 – April 2024",
-        "location": "Malaga, Spain",
+        "location": "Málaga, Spain",
         "description": "Backend development and SecDevOps in enterprise environments with regulated software lifecycles. ASP.NET components with security applied by design: input validation, data encryption, least-privilege access control. CI/CD pipeline optimization with Jenkins and GitHub Actions. Integration of 10+ security sources into SIEM platforms (IBM QRadar, Splunk, Wazuh)."
       }
     },
     "education": {
       "title": "Education",
       "university": {
-        "name": "University of Malaga",
+        "name": "University of Málaga",
         "degree": "Bachelor's Degree in Software Engineering",
         "grade": "7.51/10",
         "date": "October 2022"
       },
       "master": {
-        "name": "UNIR - Universidad Internacional de La Rioja",
+        "name": "International University of La Rioja (UNIR)",
         "degree": "Master's Degree in Artificial Intelligence",
         "grade": "In progress",
         "date": "Expected March 2027"
@@ -196,13 +300,81 @@
     "skills": {
       "title": "Technologies",
       "categories": [
-        { "name": "Languages & Frameworks", "items": ["C#", "ASP.NET Core", ".NET", "Java", "Spring", "Python", "JavaScript", "Next.js"] },
-        { "name": "Cloud & DevOps", "items": ["Azure Functions", "Azure DevOps", "App Service", "CosmosDB", "Vercel", "Docker", "Kubernetes", "Jenkins", "Redis"] },
-        { "name": "Databases", "items": ["PostgreSQL", "SQL Server", "MongoDB", "CosmosDB", "Azure Table Storage"] },
-        { "name": "APIs & Auth", "items": ["REST API", "OpenAPI/Swagger", "JWT", "OAuth 2.0", "Stripe", "Postman"] },
-        { "name": "Testing", "items": ["Unit Testing", "Integration Testing", "E2E Testing", "JUnit", "Selenium"] },
-        { "name": "Practices", "items": ["SOLID", "Clean Architecture", "RBAC", "Scrum", "Git", "GitHub", "Jira", "UML"] }
+        {
+          "name": "Languages & Frameworks",
+          "items": [
+            "C#",
+            "ASP.NET Core",
+            ".NET",
+            "Java",
+            "Spring",
+            "Python",
+            "JavaScript",
+            "Next.js"
+          ]
+        },
+        {
+          "name": "Cloud & DevOps",
+          "items": [
+            "Azure Functions",
+            "Azure DevOps",
+            "App Service",
+            "CosmosDB",
+            "Vercel",
+            "Docker",
+            "Jenkins",
+            "Redis"
+          ]
+        },
+        {
+          "name": "Databases",
+          "items": [
+            "PostgreSQL",
+            "SQL Server",
+            "MongoDB",
+            "CosmosDB",
+            "Azure Table Storage"
+          ]
+        },
+        {
+          "name": "APIs & Auth",
+          "items": [
+            "REST API",
+            "OpenAPI/Swagger",
+            "JWT",
+            "OAuth 2.0",
+            "Stripe",
+            "Postman"
+          ]
+        },
+        {
+          "name": "Testing",
+          "items": [
+            "Unit Testing",
+            "Integration Testing",
+            "E2E Testing",
+            "JUnit",
+            "Selenium"
+          ]
+        },
+        {
+          "name": "Practices",
+          "items": [
+            "SOLID",
+            "Clean Architecture",
+            "RBAC",
+            "Scrum",
+            "Git",
+            "GitHub",
+            "Jira",
+            "UML"
+          ]
+        }
       ]
+    },
+    "metaDescription": "Experience, education and stack of Jesús Jiménez Alcántara, Backend Engineer: The Bubble Hub, Ernst & Young, Kaizten Analytics and a Master's in AI at UNIR.",
+    "otherExperience": {
+      "title": "Other experience"
     }
   },
   "contact": {
@@ -211,160 +383,128 @@
     "email": "Email",
     "location": "Location",
     "linkedin": "LinkedIn",
-    "github": "GitHub"
+    "github": "GitHub",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyAria": "Copy email"
   },
   "footer": {
     "copyright": "© {year} Jesús Jiménez Alcántara",
     "domain": "jjalcantara.dev",
-    "privacy": "Privacy Policy"
+    "privacy": "Privacy & cookies",
+    "cookieNote": "One cookie, and only if you choose a language. No analytics or tracking."
   },
   "a11y": {
-    "skipToContent": "Skip to main content"
+    "skipToContent": "Skip to main content",
+    "mainNav": "Main navigation",
+    "goHome": "Go to home",
+    "headerNav": "Navigation and language selection",
+    "selectLanguage": "Select language",
+    "ctaGroup": "Main actions",
+    "period": "Period",
+    "back": "Back"
   },
   "privacy": {
-    "title": "Privacy Policy",
-    "lastUpdated": "Last updated: December 2025",
-    "sections": {
-      "dataController": {
-        "title": "1. Data Controller",
-        "content": {
-          "name": "Name: Jesús Jiménez Alcántara",
-          "email": "Email: jjalcantara.dev@gmail.com",
-          "location": "Location: Vélez-Málaga, 29700, Spain"
-        }
+    "title": "Privacy policy",
+    "lastUpdated": "Last updated: 24 November 2026",
+    "summary": "In short: this website has no forms, accounts, analytics or advertising, and asks you for no data. The only data processed is the technical information any web server needs to deliver pages to you (such as your IP address), and there is a single cookie, created only if you choose a language.",
+    "sections": [
+      {
+        "title": "Data controller",
+        "paragraphs": [
+          "Jesús Jiménez Alcántara, Vélez-Málaga (29700, Málaga, Spain). Contact: jjalcantara.dev@gmail.com."
+        ]
       },
-      "dataCollection": {
-        "title": "2. Data We Collect",
-        "content": {
-          "paragraph1": "This website does not have a contact form and does not actively collect personal data. No name, email, or any other identifying information is requested from visitors.",
-          "paragraph3": "This website may automatically collect certain technical data necessary for its operation, such as IP address, browser type, operating system, and pages visited. This data is collected through the hosting service (Vercel) and is used solely to ensure the proper functioning of the website and for security purposes. This data is not used to identify individual users or for marketing purposes."
-        }
+      {
+        "title": "What data is processed",
+        "paragraphs": [
+          "No personal data is requested or stored: there are no forms, sign-ups, comments or newsletters.",
+          "When you visit, the hosting service (Vercel) automatically receives technical connection data: your IP address, browser and operating system type, the page requested, and the date and time. An IP address counts as personal data, which is why it is explained here."
+        ]
       },
-      "purpose": {
-        "title": "3. Purpose of Processing",
-        "content": {
-          "paragraph1": "The only data processed is technical data automatically collected by Vercel (hosting) to ensure the functioning and security of the website.",
-          "paragraph2": "No personal data is collected or used for marketing purposes, nor shared with third parties for other purposes."
-        }
+      {
+        "title": "Purpose and legal basis",
+        "paragraphs": [
+          "This technical data is used only to serve the website, keep it available and protect it against abuse or attacks. It is not used for profiling, audience measurement or advertising.",
+          "The legal basis is the legitimate interest in keeping the website working and secure (Article 6(1)(f) GDPR)."
+        ]
       },
-      "legalBasis": {
-        "title": "4. Legal Basis",
-        "content": "The processing of automatic technical data (IP, logs) is based on the legitimate interest of the data controller to ensure the security and proper functioning of the website, in accordance with Article 6.1.f of the GDPR."
-      },
-      "dataProcessing": {
-        "title": "5. Data Processing",
-        "content": {
-          "paragraph1": "This website does not store or process personal data from visitors.",
-          "paragraph2": "This website is hosted on Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, United States), which acts as a data processor for hosting and delivering the website. Vercel may collect automatic technical data (IP address, server logs) necessary for the service operation.",
-          "paragraph3": "You can review the hosting provider's privacy policy:",
-          "vercelLink": "https://vercel.com/legal/privacy-policy",
-          "vercelText": "Vercel's privacy policy"
-        }
-      },
-      "dataRetention": {
-        "title": "6. Data Retention",
-        "content": {
-          "paragraph1": "This website does not store personal data on its servers. Technical data automatically collected by Vercel is retained according to their own retention policy.",
-          "paragraph2": "The language preference cookie expires automatically after 1 year."
-        }
-      },
-      "yourRights": {
-        "title": "7. Your Rights",
-        "content": {
-          "intro": "In accordance with the General Data Protection Regulation (GDPR), you have the right to:",
-          "rights": {
-            "access": "Access your personal data and obtain information about its processing",
-            "rectification": "Rectify inaccurate or incomplete data",
-            "erasure": "Request deletion of your data (right to be forgotten)",
-            "objection": "Object to the processing of your data",
-            "portability": "Request portability of your data in a structured format",
-            "restriction": "Request restriction of processing of your data",
-            "withdraw": "Withdraw your consent at any time without affecting the lawfulness of prior processing",
-            "automated": "Not be subject to decisions based solely on automated processing"
+      {
+        "title": "Who else has access",
+        "paragraphs": [
+          "Vercel Inc., which hosts the website, acts as a data processor: it processes this technical data on the controller's behalf under its data processing agreement.",
+          "Vercel is a U.S. company and the data may be processed in the United States. That transfer is covered by the European Commission's adequacy decision on the EU-U.S. Data Privacy Framework, under which Vercel is certified, and by the European Commission's Standard Contractual Clauses included in its data processing agreement.",
+          "No data is shared with anyone else. The website loads no third-party resources: fonts and images are served from its own domain. Links to LinkedIn, GitHub, NuGet or the app stores lead to sites with their own policies."
+        ],
+        "links": [
+          {
+            "label": "Vercel privacy policy",
+            "href": "https://vercel.com/legal/privacy-policy"
           },
-          "contact": "To exercise these rights, you can contact me at: jjalcantara.dev@gmail.com",
-          "responseTime": "I commit to responding to your request within a maximum period of one month from receipt. If the request is complex or there are multiple requests, this period may be extended to two months, with notification to you.",
-          "complaint": "If you believe that the processing of your personal data violates the GDPR, you have the right to file a complaint with the Spanish Data Protection Agency (AEPD) at www.aepd.es or with the supervisory authority in your country of residence."
-        }
+          {
+            "label": "Vercel data processing agreement",
+            "href": "https://vercel.com/legal/dpa"
+          }
+        ]
       },
-      "cookies": {
-        "title": "8. Cookies and Similar Technologies",
-        "content": {
-          "paragraph1": "This website uses a single essential technical cookie for its proper functioning.",
-          "cookie2Label": "Language preference cookie",
-          "cookie2Name": "preferred_locale",
-          "cookieNameLabel": "Name",
-          "cookie2Purpose": "Stores the language selected by the user (es / en) so the site always displays in the chosen language without redirecting based on browser settings.",
-          "cookiePurposeLabel": "Purpose",
-          "cookie2Duration": "1 year",
-          "cookieDurationLabel": "Duration",
-          "cookie2Type": "Essential technical — does not require consent under GDPR",
-          "cookieTypeLabel": "Type",
-          "noTracking": "No tracking, advertising, or analytics cookies are used. No information is shared with third parties.",
-          "paragraph6": "You can configure your browser to reject cookies at any time, although this may affect the language preference."
-        }
+      {
+        "title": "How long data is kept",
+        "paragraphs": [
+          "Technical logs are kept for the limited period Vercel sets for its service logs, and then deleted automatically.",
+          "The language cookie lasts one year, or until you delete it."
+        ]
       },
-      "dataSecurity": {
-        "title": "9. Data Security",
-        "content": {
-          "paragraph1": "I implement appropriate technical and organizational measures to protect your personal data against unauthorized access, loss, destruction, or alteration. These measures include:",
-          "measures": {
-            "encryption": "Encryption of data in transit via HTTPS/TLS",
-            "headers": "Security headers configured (CSP, HSTS, X-Frame-Options, etc.)",
-            "validation": "Validation and sanitization of all input data",
-            "rateLimit": "Rate limiting to prevent abuse",
-            "access": "Restricted access to data only for authorized purposes"
+      {
+        "title": "Cookies",
+        "paragraphs": [
+          "This website uses a single cookie, and only if you switch language with the selector. There are no analytics, advertising or third-party cookies."
+        ],
+        "table": [
+          {
+            "label": "Name",
+            "value": "preferred_locale"
           },
-          "paragraph2": "Despite these measures, no method of transmission over the Internet or electronic storage is 100% secure. I cannot guarantee absolute security of data, but I commit to notifying you of any security breach that may affect your personal data."
-        }
-      },
-      "internationalTransfers": {
-        "title": "10. International Data Transfers",
-        "content": {
-          "paragraph1": "Website hosting is provided through Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, United States), with servers in the United States.",
-          "paragraph2": "This transfer is made under the appropriate safeguards established in the GDPR:",
-          "guarantees": {
-            "clauses": "Standard contractual clauses approved by the European Commission",
-            "certification": "GDPR compliance certifications by the processor",
-            "adequacy": "EU-US adequacy framework (when applicable)"
+          {
+            "label": "Purpose",
+            "value": "Remember the language you chose (Spanish or English) so the website always shows in it."
           },
-          "paragraph3": "Vercel has implemented technical and organizational measures to ensure that data receives an adequate level of protection equivalent to that established in the GDPR."
-        }
-      },
-      "minors": {
-        "title": "11. Protection of Minors",
-        "content": "This website is not directed to minors under 16 years of age. We do not intentionally collect personal data from minors under 16 without parental or legal guardian consent. If you are aware that a minor has provided personal data through this website, please contact me immediately at jjalcantara.dev@gmail.com so I can delete such information."
-      },
-      "ccpa": {
-        "title": "12. California Residents' Rights (CCPA)",
-        "content": {
-          "paragraph1": "If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA):",
-          "rights": {
-            "know": "Right to know what personal data is collected, used, shared, or sold",
-            "delete": "Right to request deletion of your personal data",
-            "optOut": "Right to opt-out of the sale of your personal data (we do not sell data)",
-            "nonDiscrimination": "Right to not be discriminated against for exercising your privacy rights"
+          {
+            "label": "When it is set",
+            "value": "Only when you switch language with the selector."
           },
-          "paragraph2": "To exercise these rights, you can contact me at jjalcantara.dev@gmail.com. We do not sell or share personal data with third parties for commercial purposes."
-        }
+          {
+            "label": "Duration",
+            "value": "1 year."
+          },
+          {
+            "label": "Type",
+            "value": "First-party, a personalisation cookie chosen by the user. Exempt from consent under Article 22.2 of the Spanish LSSI and the Spanish Data Protection Agency's cookie guidelines."
+          }
+        ],
+        "after": [
+          "You can delete or block it in your browser settings. If you do, the website will pick the language from your browser's settings."
+        ]
       },
-      "changes": {
-        "title": "13. Changes to Privacy Policy",
-        "content": {
-          "paragraph1": "I reserve the right to update this privacy policy when necessary to reflect changes in data processing practices, legal requirements, or website improvements.",
-          "paragraph2": "Any material changes will be notified by updating the \"Last updated\" date at the beginning of this document. It is recommended to periodically review this policy to stay informed about how we protect your data.",
-          "paragraph3": "If changes are substantial, you will be notified through a prominent notice on the website or by email if possible."
-        }
+      {
+        "title": "Your rights",
+        "paragraphs": [
+          "You can exercise your rights of access, rectification, erasure, objection and restriction of processing by writing to jjalcantara.dev@gmail.com. Since no data that identifies you is stored, it may not be possible to find the technical logs of your visit; if so, you will be told.",
+          "You will get an answer within one month, extendable to two for complex requests, as the GDPR provides.",
+          "If you believe your rights have not been respected, you can lodge a complaint with the Spanish Data Protection Agency (www.aepd.es) or the authority of your country."
+        ]
       },
-      "contact": {
-        "title": "14. Contact",
-        "content": {
-          "paragraph1": "If you have any questions about this privacy policy, about the processing of your personal data, or wish to exercise your rights, you can contact me at:",
-          "emailLabel": "Email",
-          "paragraph2": "As the data controller, I commit to responding to all your inquiries and requests in a timely manner and in accordance with applicable legislation."
-        }
+      {
+        "title": "Security",
+        "paragraphs": [
+          "The website is always served over HTTPS, with security headers (CSP, HSTS, X-Frame-Options), and has no database, forms or accounts that could expose information."
+        ]
+      },
+      {
+        "title": "Changes to this policy",
+        "paragraphs": [
+          "If anything explained here changes, this page and its last-updated date will be updated."
+        ]
       }
-    }
+    ]
   }
 }
-

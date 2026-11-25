@@ -55,3 +55,21 @@ next-env.d.ts
 
 # OS
 Thumbs.db
+
+# LaTeX build output of the CV (npm run cv)
+/cv/build/
+
+# Puzzle generator candidate cache (npm run puzzles)
+/scripts/puzzles/.pool-*.json
+
+# Local AI tool folders (Antigravity, Aider Desk, Claude Code skills)
+/.agents/
+/.aider-desk/
+/.claude/skills/
+/data/skills/
+/skills-lock.json
+
+# Private CV build with phone number (npm run cv:private). Never commit.
+/cv/private.tex
+/cv/build-private/
+/cv/private/

@@ -1,0 +1,101 @@
+% Shared layout for cv_en.tex and cv_es.tex.
+% Base template: Jake Gutierrez's resume (MIT).
+% Each CV loads its own babel language before \input{cv-style}.
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% No hyphenation: ATS parsers read "valida-" + "tion" as two broken words and
+% miss the keyword. Lines may stretch a little instead.
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=1.5em
+
+%--- Page style ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%--- Margins ---
+\addtolength{\oddsidemargin}{-0.65in}
+\addtolength{\evensidemargin}{-0.65in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\topmargin}{-0.35in}
+\addtolength{\textheight}{1.2in}
+
+%--- Global spacing reset ---
+\urlstyle{same}
+\raggedbottom
+\setlength{\tabcolsep}{0in}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+
+%--- Section title formatting ---
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule\vspace{-4pt}]
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{%
+  \item\small{\linespread{0.8}\selectfont #1}\vspace{-2pt}%
+}
+
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{3pt}\item[]%
+    \begin{tabular*}{\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+      \textbf{#1} & \small #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{1pt}%
+}
+
+\newcommand{\jobdivider}{%
+  \par\vspace{2pt}%
+  \noindent\textcolor{gray!50}{\rule{\textwidth}{0.25pt}}%
+  \vspace{-2pt}%
+}
+
+\newcommand{\resumeSubHeadingListStart}{%
+  \begin{itemize}[leftmargin=0pt, label={}, topsep=0pt, itemsep=0pt, parsep=0pt]%
+}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{%
+  \begin{itemize}[leftmargin=0.2in, topsep=1pt, itemsep=2pt, parsep=0pt]%
+}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{1pt}}
+
+% Project heading: name and stack on the left, link on the right.
+\newcommand{\resumeProjectHeading}[2]{%
+  \vspace{3pt}\item[]%
+    \begin{tabular*}{\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+      \small #1 & \small #2 \\
+    \end{tabular*}\vspace{1pt}%
+}
+
+% Private build (npm run cv:private) defines \cvprivate and adds the phone
+% number from cv/private.tex, which git ignores. The public build
+% (npm run cv) never reads that file, so the PDFs on the website have no phone.
+\ifdefined\cvprivate
+  \IfFileExists{private.tex}{\input{private.tex}}{%
+    \errmessage{Missing cv/private.tex: copy cv/private.example.tex and put your phone number in it}}
+\fi
+\newcommand{\cvsep}{\hspace{0.5em}\textbar\hspace{0.5em}}
+\newcommand{\cvphoneitem}{\ifdefined\cvphone\cvphone\cvsep\fi}

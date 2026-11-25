@@ -72,9 +72,9 @@ export default function BottomNav({ locale }: Props) {
 
   const navItems: { href: string; label: string; icon: IconKey }[] = [
     { href: `/${locale}`,          label: t.nav.home,                              icon: "home" },
-    { href: `/${locale}/projects`, label: t.nav.projects,                          icon: "projects" },
-    { href: `/${locale}/collab`,   label: locale === "es" ? "Colab" : t.nav.collab, icon: "collab" },
     { href: `/${locale}/about`,    label: t.nav.about,                             icon: "about" },
+    { href: `/${locale}/projects`, label: t.nav.projects,                          icon: "projects" },
+    { href: `/${locale}/collab`,   label: t.nav.collab,                            icon: "collab" },
     { href: `/${locale}/contact`,  label: t.nav.contact,                           icon: "contact" },
   ];
 
@@ -82,7 +82,7 @@ export default function BottomNav({ locale }: Props) {
     <nav
       className={`fixed bottom-0 left-0 right-0 z-50 ${clr.bg.white} border-t ${clr.border.base} sm:hidden`}
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
-      aria-label="Main navigation"
+      aria-label={t.a11y.mainNav}
       role="navigation"
     >
       <ul className="flex list-none m-0 p-0">

@@ -5,6 +5,7 @@ import ScrollAnimation from "@/components/ScrollAnimation";
 import ParallaxLogo from "@/components/ParallaxLogo";
 import { clr, btnPrimary, btnOutline, btnGhost, focusRing } from "@/lib/constants/colors";
 import { tx } from "@/lib/constants/typography";
+import { SOCIAL_URLS } from "@/lib/site";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -36,20 +37,29 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             />
           </div>
 
-          {/* Name */}
-          <ScrollAnimation animation="fade-up" delay={80}>
-            <p className={`${tx.label} sm:text-sm ${clr.text.faint} mb-2 sm:mb-4 select-none`}>
-              Jesús Jiménez Alcántara
-            </p>
+          {/* Availability */}
+          <ScrollAnimation animation="fade-up" delay={40}>
+            <Link
+              href={`/${locale}/contact`}
+              className={`inline-flex items-center gap-2 mb-4 sm:mb-6 px-3 py-1.5 border ${clr.border.base} rounded-full text-[11px] min-[360px]:text-xs whitespace-nowrap font-medium ${clr.text.muted} hover:border-black hover:text-black transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2`}
+            >
+              <span className="relative flex h-2 w-2" aria-hidden="true">
+                <span className={`absolute inline-flex h-full w-full rounded-full ${clr.bg.success} opacity-75 motion-safe:animate-ping`} />
+                <span className={`relative inline-flex h-2 w-2 rounded-full ${clr.bg.success}`} />
+              </span>
+              {t.home.availability}
+            </Link>
           </ScrollAnimation>
 
-          {/* H1 */}
-          <ScrollAnimation animation="fade-up" delay={150}>
-            <h1
-              id="main-heading"
-              className={`${tx.h1Hero} mb-5 sm:mb-6 ${clr.text.primary}`}
-            >
-              {t.home.title}
+          {/* H1: name + role, so the page's main heading carries the name */}
+          <ScrollAnimation animation="fade-up" delay={100}>
+            <h1 id="main-heading" className="mb-5 sm:mb-6">
+              <span className={`block ${tx.label} sm:text-sm ${clr.text.faint} mb-2 sm:mb-4`}>
+                Jesús Jiménez Alcántara
+              </span>
+              <span className={`block ${tx.h1Hero} ${clr.text.primary}`}>
+                {t.home.title}
+              </span>
             </h1>
 
             {/* Tech stack pills */}
@@ -77,7 +87,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <div
               className="flex flex-col sm:flex-row gap-2.5 sm:gap-4 justify-center"
               role="group"
-              aria-label="Call to action buttons"
+              aria-label={t.a11y.ctaGroup}
             >
               <Link href={`/${locale}/about`} className={btnPrimary}>
                 {t.home.cta.about}
@@ -90,10 +100,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </a>
             </div>
 
+            {/* Written in English on purpose: it is for visitors who don't read Spanish */}
             {locale === "es" && (
-              <p className={`mt-4 text-xs ${clr.text.faint} text-center`}>
+              <p lang="en" className={`mt-4 text-xs ${clr.text.faint} text-center`}>
                 Prefer English?{" "}
-                <Link href="/en" className="underline underline-offset-2 hover:text-gray-600 transition-colors">
+                <Link href="/en" hrefLang="en" className="underline underline-offset-2 hover:text-gray-700 transition-colors">
                   Switch to English
                 </Link>{" "}
                 to download the English CV.
@@ -103,7 +114,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             {/* Social links */}
             <div className="flex items-center justify-center gap-6 mt-4">
               <a
-                href="https://github.com/jjalcantara-dev"
+                href={SOCIAL_URLS.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -114,7 +125,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/jjalcantara"
+                href={SOCIAL_URLS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -142,19 +153,19 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <div className="grid sm:grid-cols-2 gap-0" role="list">
           {[
             {
-              key: "architecture", item: t.home.focus.architecture, delay: 100,
+              key: "apis", item: t.home.focus.apis, delay: 100,
               icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>,
             },
             {
-              key: "cleanCode", item: t.home.focus.cleanCode, delay: 200,
+              key: "cloud", item: t.home.focus.cloud, delay: 200,
               icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" /></svg>,
             },
             {
-              key: "performance", item: t.home.focus.performance, delay: 300,
+              key: "security", item: t.home.focus.security, delay: 300,
               icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
             },
             {
-              key: "professionalism", item: t.home.focus.professionalism, delay: 400,
+              key: "payments", item: t.home.focus.payments, delay: 400,
               icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" /><line x1="1" y1="10" x2="23" y2="10" /></svg>,
             },
           ].map(({ key, item, delay, icon }) => (
@@ -163,13 +174,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 role="listitem"
                 className={`group border-t ${clr.border.base} py-8 sm:py-10 sm:pr-12`}
               >
-                <div className={`${clr.text.ghost} mb-4`}>
+                <div className={`${clr.text.subtle} mb-4`}>
                   {icon}
                 </div>
-                <p className={`text-xs font-semibold uppercase tracking-widest ${clr.text.faint} mb-3`}>
+                <p className={`text-xs font-semibold uppercase tracking-widest ${clr.text.strong} mb-3`}>
                   {item.title}
                 </p>
-                <p className={`text-sm sm:text-base ${clr.text.muted} leading-relaxed`}>
+                <p className={`text-sm sm:text-base ${clr.text.body} leading-relaxed`}>
                   {item.description}
                 </p>
               </article>

@@ -1,40 +1,22 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import type { Locale } from "@/lib/i18n";
+import { savePreferredLocale } from "@/lib/locale-cookie";
 import { clr } from "@/lib/constants/colors";
+import { useHideOnScroll } from "@/components/useHideOnScroll";
 
 type Props = { locale: Locale };
 
 export default function MobileLocaleToggle({ locale }: Props) {
-  const [visible, setVisible] = useState(true);
-  const lastY = useRef(0);
+  const visible = useHideOnScroll();
   const pathname = usePathname();
   const router = useRouter();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-      if (currentY < 10) {
-        setVisible(true);
-      } else if (currentY > lastY.current) {
-        setVisible(false);
-      } else {
-        setVisible(true);
-      }
-      lastY.current = currentY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const switchLocale = () => {
     const newLocale: Locale = locale === "es" ? "en" : "es";
-    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`) || `/${newLocale}`;
-    const secure = window.location.protocol === "https:";
-    document.cookie = `preferred_locale=${newLocale};path=/;max-age=31536000;SameSite=Lax${secure ? ";Secure" : ""}`;
+    const newPath = pathname.replace(new RegExp(`^/${locale}(?=/|$)`), `/${newLocale}`) || `/${newLocale}`;
+    savePreferredLocale(newLocale);
     router.push(newPath);
   };
 

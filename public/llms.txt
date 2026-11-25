@@ -20,6 +20,11 @@ Backend Engineer specializing in REST API design, authentication systems (JWT, O
 
 ## Experience
 
+**Kaizten Analytics** — AI Engineer, curricular internship (September 2026 – November 2026, remote)
+- Internship within the Master's in Artificial Intelligence at UNIR
+- Sole developer of the tooling that connects Kaizten's code standards analyzer to AI coding assistants through the Model Context Protocol (MCP), in Java 17
+- Cross-platform distribution (Linux, macOS, Windows installers, Maven plugin, CI quality gate), 17 releases via GitHub Actions and Docker, 1,500+ automated tests
+
 **The Bubble Hub** — Backend Engineer (April 2024 – April 2026)
 - Led backend development for Prodigy Padel Academy and Koru Acne
 - REST API design (OpenAPI/Swagger), JWT, RBAC, OAuth 2.0 (Google, Apple)
@@ -34,6 +39,10 @@ Backend Engineer specializing in REST API design, authentication systems (JWT, O
 - SIEM engineering within a SOC (Splunk, QRadar, ElasticSearch)
 - Led SIEM platform migrations and developed detection rules processing millions of daily events
 
+## Other Experience
+
+- Junta de Andalucía — Computer Science Teacher, temporary post (June 2026, San Pedro de Alcántara, Málaga)
+
 ## Education
 
 - Bachelor's in Software Engineering — Universidad de Málaga (UMA), grade: 7.51/10, graduated October 2022
@@ -42,7 +51,7 @@ Backend Engineer specializing in REST API design, authentication systems (JWT, O
 ## Technical Skills
 
 Languages & Frameworks: C#, ASP.NET Core, .NET, Java, Spring, Python, JavaScript, TypeScript, Next.js
-Cloud & DevOps: Azure (Functions, DevOps, App Service, CosmosDB, Blob Storage, Table Storage), Vercel, Docker, Kubernetes, Jenkins, Redis
+Cloud & DevOps: Azure (Functions, DevOps, App Service, CosmosDB, Blob Storage, Table Storage), Vercel, Docker, Jenkins, Redis
 Databases: PostgreSQL, SQL Server, MongoDB, CosmosDB, Azure Table Storage
 APIs & Auth: REST API, OpenAPI/Swagger, JWT, OAuth 2.0, Stripe, Postman
 Testing: Unit Testing, Integration Testing, E2E Testing, JUnit, Selenium
@@ -64,10 +73,16 @@ Practices: SOLID, Clean Architecture, RBAC, Agile/Scrum, Git, GitHub, Jira, UML
 - App Store: https://apps.apple.com/es/app/koru-your-acne-coach/id6466275209
 - Google Play: https://play.google.com/store/apps/details?id=com.koruacne.app
 
-**DailyDermaTalks** — Web platform for Cantabria Labs dermatology community
+**DailyDermaTalks** — Web learning platform for a community of dermatologists
 - Role: Fullstack Engineer
 - Stack: Next.js, PostgreSQL, Vercel, Upstash Redis, JWT, RBAC
 - Features: REST APIs, role-based access control, CMS, rate limiting
+
+**StoreBridge** — Open-source .NET library (author and maintainer)
+- Server-side verification of Apple App Store and Google Play subscriptions and in-app purchases, with cryptographic webhook authentication
+- Stack: C#, .NET 8/9/10, App Store Server API, Google Play Developer API, JWT, OIDC
+- GitHub: https://github.com/jjalcantara-dev/StoreBridge
+- NuGet: https://www.nuget.org/packages/StoreBridge
 
 **Galivivienda VPO Calculator** — Civic tech tool for cooperative housing analysis
 - Role: Personal project
@@ -89,5 +104,7 @@ Practices: SOLID, Clean Architecture, RBAC, Agile/Scrum, Git, GitHub, Jira, UML
 - https://jjalcantara.dev/en/projects — Projects (English)
 - https://jjalcantara.dev/es/contact — Contact (Spanish)
 - https://jjalcantara.dev/en/contact — Contact (English)
-- https://jjalcantara.dev/es/puzzles — Daily logic puzzles (side project)
-- https://jjalcantara.dev/es/privacy — Privacy policy
+- https://jjalcantara.dev/es/collab — Colleagues: people Jesús has worked with (Spanish)
+- https://jjalcantara.dev/en/collab — Colleagues (English)
+- https://jjalcantara.dev/es/puzzles — Daily logic puzzles, a personal side project: sliding blocks and bridges, each level verified by a solver to have a single solution
+- https://jjalcantara.dev/es/privacy — Privacy policy (no forms, analytics or tracking)

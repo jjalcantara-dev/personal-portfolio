@@ -5,6 +5,7 @@ import Logo from "./Logo";
 import Navigation from "./Navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 import type { Locale } from "@/lib/i18n";
+import { getContent } from "@/lib/content";
 import { clr } from "@/lib/constants/colors";
 
 type Props = {
@@ -36,7 +37,7 @@ export default function Header({ locale }: Props) {
           <div
             className="flex items-center flex-shrink-0"
             role="toolbar"
-            aria-label="Navigation and language selection"
+            aria-label={getContent(locale).a11y.headerNav}
           >
             <div className="hidden sm:flex">
               <Navigation locale={locale} />

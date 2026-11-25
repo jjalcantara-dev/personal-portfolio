@@ -1,9 +1,8 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import ScrollAnimation from "@/components/ScrollAnimation";
 import { clr, externalLink } from "@/lib/constants/colors";
 import { tx } from "@/lib/constants/typography";
+import { isSafeUrl } from "@/lib/site";
 
 type Person = {
   name: string;
@@ -19,15 +18,6 @@ type Props = {
   people: Person[];
   visitLabel: string;
 };
-
-function isSafeUrl(url: string): boolean {
-  try {
-    const { protocol } = new URL(url);
-    return protocol === "https:" || protocol === "http:";
-  } catch {
-    return false;
-  }
-}
 
 function getInitials(name: string): string {
   return name
@@ -52,32 +42,17 @@ const GlobeIcon = () => (
   </svg>
 );
 
-const EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
-
 export default function CollabList({ people, visitLabel }: Props) {
-  const [list, setList] = useState(people);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setList((prev) => [...prev].sort(() => Math.random() - 0.5));
-    setMounted(true);
-  }, []);
-
   return (
     <ul className="space-y-12 list-none m-0 p-0">
-      {list.map((person, index) => {
+      {people.map((person) => {
         const isLinkedIn = person.url.includes("linkedin.com");
-        const delay = index * 80;
         return (
           <li
             key={person.url}
             className={`border-b ${clr.border.base} pb-12 last:border-b-0 last:pb-0`}
-            style={{
-              opacity: mounted ? 1 : 0,
-              transform: mounted ? "none" : "translateY(22px)",
-              transition: `opacity 0.65s ${EASING} ${delay}ms, transform 0.65s ${EASING} ${delay}ms`,
-            }}
           >
+            <ScrollAnimation animation="fade-up">
             <article className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
               <div className="flex-shrink-0">
                 {person.image ? (
@@ -143,6 +118,7 @@ export default function CollabList({ people, visitLabel }: Props) {
                 </div>
               </div>
             </article>
+            </ScrollAnimation>
           </li>
         );
       })}

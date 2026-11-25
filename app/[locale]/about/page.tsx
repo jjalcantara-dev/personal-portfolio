@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getContent } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
+import { profilePageJsonLd, safeJsonLd } from "@/components/StructuredData";
 import { locales, defaultLocale, isValidLocale } from "@/lib/i18n";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import { clr, skillTag } from "@/lib/constants/colors";
@@ -14,13 +16,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: localeParam } = await params;
   const locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getContent(locale);
-  const baseUrl = "https://jjalcantara.dev";
 
-  return {
-    title: locale === "es"
-      ? "Sobre mí | Jesús Jiménez Alcántara — Ingeniero Backend"
-      : "About | Jesús Jiménez Alcántara — Backend Engineer",
-    description: t.about.description,
+  return pageMetadata({
+    locale,
+    path: "/about",
+    title: locale === "es" ? "Sobre mí" : "About",
+    socialTitle: locale === "es"
+      ? "Sobre mí | Jesús Jiménez Alcántara | Ingeniero Backend"
+      : "About | Jesús Jiménez Alcántara | Backend Engineer",
+    description: t.about.metaDescription,
+    type: "profile",
     keywords: [
       "Jesús Jiménez Alcántara",
       "Jesus Jimenez Alcantara",
@@ -41,6 +46,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "CI/CD",
       "SOLID",
       "Clean Architecture",
+      "Kaizten",
+      "Kaizten Analytics",
       "The Bubble Hub",
       "Ernst Young",
       "EY",
@@ -50,15 +57,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "Málaga",
       "Vélez-Málaga",
     ],
-    openGraph: {
-      type: "profile",
-      title: locale === "es"
-        ? "Sobre mí | Jesús Jiménez Alcántara — Ingeniero Backend"
-        : "About | Jesús Jiménez Alcántara — Backend Engineer",
-      description: t.about.description,
-      url: `${baseUrl}/${locale}/about`,
-    },
-  };
+  });
 }
 
 export default async function About({ params }: { params: Promise<{ locale: string }> }) {
@@ -68,6 +67,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20 md:py-32">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(profilePageJsonLd(locale)) }} />
       <article>
         <div className="mb-12">
           <ScrollAnimation animation="fade-up" delay={0}>
@@ -75,8 +75,8 @@ export default async function About({ params }: { params: Promise<{ locale: stri
               <div className="flex-shrink-0">
                 <div className={`relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 ${clr.border.base}`}>
                   <Image
-                    src="/profile.png"
-                    alt="Foto de perfil de Jesús Jiménez Alcántara"
+                    src="/profile.jpg"
+                    alt={locale === "es" ? "Foto de perfil de Jesús Jiménez Alcántara" : "Profile photo of Jesús Jiménez Alcántara"}
                     width={160}
                     height={160}
                     className="object-cover w-full h-full"
@@ -102,22 +102,22 @@ export default async function About({ params }: { params: Promise<{ locale: stri
         <div className={`border-t ${clr.border.base} pt-12 mb-16`}>
           <div className="space-y-6 max-w-2xl">
             <ScrollAnimation animation="fade-up" delay={0}>
-              <p className={`${tx.bodyLg} ${clr.text.body} text-justify`}>
+              <p className={`${tx.bodyLg} ${clr.text.body}`}>
                 {t.about.intro.paragraph1}
               </p>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-up" delay={100}>
-              <p className={`${tx.bodyLg} ${clr.text.body} text-justify`}>
+              <p className={`${tx.bodyLg} ${clr.text.body}`}>
                 {t.about.intro.paragraph2}
               </p>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-up" delay={200}>
-              <p className={`${tx.bodyLg} ${clr.text.body} text-justify`}>
+              <p className={`${tx.bodyLg} ${clr.text.body}`}>
                 {t.about.intro.paragraph3}
               </p>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-up" delay={300}>
-              <p className={`${tx.bodyLg} ${clr.text.body} text-justify`}>
+              <p className={`${tx.bodyLg} ${clr.text.body}`}>
                 {t.about.intro.paragraph4}
               </p>
             </ScrollAnimation>
@@ -132,43 +132,30 @@ export default async function About({ params }: { params: Promise<{ locale: stri
               </h2>
             </ScrollAnimation>
             <div className="space-y-12" role="list">
-              <ScrollAnimation animation="slide-left" delay={100}>
-                <article className={`border-l-2 ${clr.border.base} pl-6 group transition-all duration-300 hover:border-black`} role="listitem">
-                  <div className="mb-3">
-                    <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1`}>
-                      {t.about.experience.bubbleHub.role}
-                    </h3>
-                    <p className={`text-sm ${clr.text.muted} mb-2`}>
-                      {t.about.experience.bubbleHub.company} • {t.about.experience.bubbleHub.location}
+              {[
+                t.about.experience.kaizten,
+                t.about.experience.bubbleHub,
+                t.about.experience.ey,
+              ].map((job, i) => (
+                <ScrollAnimation key={job.company} animation="slide-left" delay={(i + 1) * 100}>
+                  <article className={`border-l-2 ${clr.border.base} pl-6 group transition-all duration-300 hover:border-black`} role="listitem">
+                    <div className="mb-3">
+                      <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1`}>
+                        {job.role}
+                      </h3>
+                      <p className={`text-sm ${clr.text.muted} mb-2`}>
+                        {job.company} • {job.location}
+                      </p>
+                      <p className={`text-xs ${clr.text.subtle} uppercase tracking-wide`} aria-label={`${t.a11y.period}: ${job.period}`}>
+                        {job.period}
+                      </p>
+                    </div>
+                    <p className={`text-base ${clr.text.body} leading-relaxed`}>
+                      {job.description}
                     </p>
-                    <p className={`text-xs ${clr.text.subtle} uppercase tracking-wide`} aria-label={`Período: ${t.about.experience.bubbleHub.period}`}>
-                      {t.about.experience.bubbleHub.period}
-                    </p>
-                  </div>
-                  <p className={`text-base ${clr.text.body} leading-relaxed`}>
-                    {t.about.experience.bubbleHub.description}
-                  </p>
-                </article>
-              </ScrollAnimation>
-
-              <ScrollAnimation animation="slide-left" delay={200}>
-                <article className={`border-l-2 ${clr.border.base} pl-6 group transition-all duration-300 hover:border-black`} role="listitem">
-                  <div className="mb-3">
-                    <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1`}>
-                      {t.about.experience.ey.role}
-                    </h3>
-                    <p className={`text-sm ${clr.text.muted} mb-2`}>
-                      {t.about.experience.ey.company} • {t.about.experience.ey.location}
-                    </p>
-                    <p className={`text-xs ${clr.text.subtle} uppercase tracking-wide`} aria-label={`Período: ${t.about.experience.ey.period}`}>
-                      {t.about.experience.ey.period}
-                    </p>
-                  </div>
-                  <p className={`text-base ${clr.text.body} leading-relaxed`}>
-                    {t.about.experience.ey.description}
-                  </p>
-                </article>
-              </ScrollAnimation>
+                  </article>
+                </ScrollAnimation>
+              ))}
             </div>
           </section>
 
@@ -182,19 +169,6 @@ export default async function About({ params }: { params: Promise<{ locale: stri
               <ScrollAnimation animation="fade-up" delay={100}>
                 <article role="listitem" className="group transition-all duration-300 hover:translate-x-1">
                   <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1 transition-colors duration-300 group-hover:text-gray-800`}>
-                    {t.about.education.university.degree}
-                  </h3>
-                  <p className={`text-sm ${clr.text.muted} mb-1`}>
-                    {t.about.education.university.name}
-                  </p>
-                  <p className={`text-xs ${clr.text.subtle}`}>
-                    {t.about.education.university.grade} • {t.about.education.university.date}
-                  </p>
-                </article>
-              </ScrollAnimation>
-              <ScrollAnimation animation="fade-up" delay={200}>
-                <article role="listitem" className="group transition-all duration-300 hover:translate-x-1">
-                  <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1 transition-colors duration-300 group-hover:text-gray-800`}>
                     {t.about.education.master.degree}
                   </h3>
                   <p className={`text-sm ${clr.text.muted} mb-1`}>
@@ -202,6 +176,19 @@ export default async function About({ params }: { params: Promise<{ locale: stri
                   </p>
                   <p className={`text-xs ${clr.text.subtle}`}>
                     {t.about.education.master.grade} • {t.about.education.master.date}
+                  </p>
+                </article>
+              </ScrollAnimation>
+              <ScrollAnimation animation="fade-up" delay={200}>
+                <article role="listitem" className="group transition-all duration-300 hover:translate-x-1">
+                  <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1 transition-colors duration-300 group-hover:text-gray-800`}>
+                    {t.about.education.university.degree}
+                  </h3>
+                  <p className={`text-sm ${clr.text.muted} mb-1`}>
+                    {t.about.education.university.name}
+                  </p>
+                  <p className={`text-xs ${clr.text.subtle}`}>
+                    {t.about.education.university.grade} • {t.about.education.university.date}
                   </p>
                 </article>
               </ScrollAnimation>
@@ -248,6 +235,25 @@ export default async function About({ params }: { params: Promise<{ locale: stri
                 );
               })}
             </div>
+          </section>
+
+          <section className={`border-t ${clr.border.base} pt-12`} aria-labelledby="other-experience-heading">
+            <ScrollAnimation animation="fade-up" delay={0}>
+              <h2 id="other-experience-heading" className={`${tx.h2} mb-8 ${clr.text.primary}`}>
+                {t.about.otherExperience.title}
+              </h2>
+              <article>
+                <h3 className={`${tx.h3sm} ${clr.text.primary} mb-1`}>
+                  {t.about.experience.junta.role}
+                </h3>
+                <p className={`text-sm ${clr.text.muted} mb-1`}>
+                  {t.about.experience.junta.company} • {t.about.experience.junta.location}
+                </p>
+                <p className={`text-xs ${clr.text.subtle} uppercase tracking-wide`}>
+                  {t.about.experience.junta.period}
+                </p>
+              </article>
+            </ScrollAnimation>
           </section>
         </div>
       </article>

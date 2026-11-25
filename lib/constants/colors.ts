@@ -8,7 +8,7 @@ export const clr = {
     body:    'text-gray-700',
     muted:   'text-gray-600',
     subtle:  'text-gray-500',
-    faint:   'text-gray-400',
+    faint:   'text-gray-500',
     ghost:   'text-gray-300',
     white:   'text-white',
     error:   'text-red-600',
@@ -21,6 +21,7 @@ export const clr = {
     frostLight: 'bg-white/80',
     soft:       'bg-gray-50',
     subtle:     'bg-gray-100',
+    success:    'bg-emerald-500',
   },
   border: {
     base:    'border-gray-200',

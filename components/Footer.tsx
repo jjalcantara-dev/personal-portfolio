@@ -16,7 +16,7 @@ export default function Footer({ locale }: Props) {
     <Link
       href={`/${locale}`}
       className={focusRing}
-      aria-label="Ir a inicio"
+      aria-label={t.a11y.goHome}
     >
       <Image
         src="/logo_final.svg"
@@ -52,6 +52,7 @@ export default function Footer({ locale }: Props) {
                 {t.footer.privacy}
               </Link>
             </div>
+            <p className={`text-xs ${clr.text.subtle}`}>{t.footer.cookieNote}</p>
           </div>
           <div className="shrink-0 pl-8">
             {logoLink}
@@ -78,6 +79,7 @@ export default function Footer({ locale }: Props) {
             >
               {t.footer.privacy}
             </Link>
+            <p className={`basis-full text-xs ${clr.text.subtle}`}>{t.footer.cookieNote}</p>
           </div>
           {logoLink}
         </div>
