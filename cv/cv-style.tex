@@ -19,6 +19,12 @@
 \input{glyphtounicode}
 \pdfgentounicode=1
 
+% No hyphenation: ATS parsers read "valida-" + "tion" as two broken words and
+% miss the keyword. Lines may stretch a little instead.
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=1.5em
+
 %--- Page style ---
 \pagestyle{fancy}
 \fancyhf{}
